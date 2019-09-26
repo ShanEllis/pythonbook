@@ -51,31 +51,31 @@
   - title: Why This Book?
     url: /01-intro/why
     not_numbered: false
-#   - title: Who is this for?
-#     url: /01-intro/who
-#     not_numbered: false
-#   - title: Tools
-#     url: /01-intro/tools
-#     not_numbered: false
-#   - title: Jupyter Notebooks
-#     url: /intro/notebooks
-#     not_numbered: false
+  - title: Who is this for?
+    url: /01-intro/who
+    not_numbered: false
+  - title: Tools
+    url: /01-intro/tools
+    not_numbered: false
+  - title: Jupyter Notebooks
+    url: /01-intro/jupyter_notebooks
+    not_numbered: false
 # - title: Python Basics
-#   url: /basics
+#   url: /02-basics/basics
 #   not_numbered: false
 #   expand_sections: true
 #   sections:
 #    - title: Variables
-#     url: /variables
+#     url: /02-basics/variables
 #     not_numbered: false
 #    - title: Operators
-#     url: /operators
+#     url: /02-basics/operators
 #     not_numbered: false
 #    - title: Conditionals
-#     url: /conditionals
+#     url: /02-basics/conditionals
 #     not_numbered: false
 #    - title: Conditionals
-#     url: /conditionals
+#     url: /02-basics/conditionals
 #     not_numbered: false 
 # - title: Types & Operations
 #   url: /operations
