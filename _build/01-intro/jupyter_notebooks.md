@@ -8,8 +8,8 @@ prev_page:
   url: /01-intro/tools
   title: 'Tools'
 next_page:
-  url: 
-  title: ''
+  url: /02-basics/basics
+  title: 'Python Basics'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
@@ -294,25 +294,36 @@ Your kernel also stores your **namespace** - all the variables and code that you
 
 It can be useful to clear and re-launch the kernel. You can do this from the 'kernel' drop down menu, at the top, optionally also clearing all ouputs. Note that this will erase any variables that are stored in memory. 
 
+<div class="alert alert-info">
+For more useful information, check out Jupyter Notebooks 
+<a href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/" class="alert-link">tips & tricks</a>
+, and more information on how 
+<a href="http://jupyter.readthedocs.io/en/latest/architecture/how_jupyter_ipython_work.html" class="alert-link">notebooks work</a>.
+</div>
+
 ## Exercises
 
-1. What does three underscores around text accomplish?
+1. **What does three underscores around text accomplish?**  
 A) bold  
 B) italicize  
 C) bold + italicize  
 D) plain text    
 
-2. Add a cell to a notebook, change it to be a Markdown cell, and add your name as (1) plain text, (2) italicized text, and (3) bold text.
 
-3. What would happen if I specified a numbered list but put the same number before each list item?
+2. **Add a cell to a notebook, change it to be a Markdown cell, and add your name as (1) plain text, (2) italicized text, and (3) bold text.**
+  
+
+3. **What would happen if I specified a numbered list but put the same number before each list item?**  
 A) the list would have the same number before each item  
 B) markdown would still format it with sequential numbers  
 C) markdown wouldn't know it was a list  
 D) normal text with everything on a single line  
 
-4. Write code in a code cell and execute it so that the value returned from the cell is '6'.
 
-5. If the following were in a code cell, what would be the output of that cell?
+4. **Write code in a code cell and execute it so that the value returned from the cell is '6'.**
+ 
+
+5. **If the following were in a code cell, what would be the output of the following?**
 
 ```python
 a = 1
@@ -320,8 +331,8 @@ b = 2
 c = 3
 print(a + b + c)
 ```
-
-6. If the following were in a code cell, what would be the output of that cell?
+  
+6. **If the following were in a code cell, what would be the output of the following?**
 
 ```python
 a = 1
@@ -329,8 +340,8 @@ b = 2
 c = 3
 a + b + c
 ```
-
-7. If the following were in a code cell, what would be the output of that cell?
+  
+7. **If the following were in a code cell, what would be the output of the following?**
 
 ```python
 a = 1

@@ -60,17 +60,17 @@
   - title: Jupyter Notebooks
     url: /01-intro/jupyter_notebooks
     not_numbered: false
-# - title: Python Basics
-#   url: /02-basics/basics
-#   not_numbered: false
-#   expand_sections: true
-#   sections:
-#    - title: Variables
-#     url: /02-basics/variables
-#     not_numbered: false
-#    - title: Operators
-#     url: /02-basics/operators
-#     not_numbered: false
+- title: Python Basics
+  url: /02-basics/basics
+  not_numbered: false 
+  expand_sections: true
+  sections:
+   - title: Variables
+     url: /02-basics/variables
+     not_numbered: false
+   - title: Operators
+     url: /02-basics/operators
+     not_numbered: false
 #    - title: Conditionals
 #     url: /02-basics/conditionals
 #     not_numbered: false
