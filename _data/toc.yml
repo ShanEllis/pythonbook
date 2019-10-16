@@ -71,12 +71,9 @@
    - title: Operators
      url: /02-basics/operators
      not_numbered: false
-#    - title: Conditionals
-#     url: /02-basics/conditionals
-#     not_numbered: false
-#    - title: Conditionals
-#     url: /02-basics/conditionals
-#     not_numbered: false 
+   - title: Conditionals
+     url: /02-basics/conditionals
+     not_numbered: false
 # - title: Types & Operations
 #   url: /operations
 #   not_numbered: false
