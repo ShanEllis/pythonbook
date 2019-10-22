@@ -74,20 +74,17 @@
    - title: Conditionals
      url: /02-basics/conditionals
      not_numbered: false
-# - title: Types & Operations
-#   url: /operations
-#   not_numbered: false
-#   expand_sections: true
-#   sections:
-#    - title: Lists & Tuples
-#     url: /lists
-#     not_numbered: false      
+- title: Collections & Loops
+  url: /03-operations/collections_loops
+  not_numbered: false
+  expand_sections: true
+  sections:
+   - title: Collections
+     url: /03-operations/collections
+     not_numbered: false      
 #    - title: Loops
 #     url: /loops
-#     not_numbered: false 
-#    - title: Dictionaries
-#     url: /dictionaries
-#     not_numbered: false  
+#     not_numbered: false   
 # - title: Functions
 #   url: /functions
 #   not_numbered: false

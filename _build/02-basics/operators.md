@@ -6,8 +6,8 @@ prev_page:
   url: /02-basics/variables
   title: 'Variables'
 next_page:
-  url: 
-  title: ''
+  url: /02-basics/conditionals
+  title: 'Conditionals'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
@@ -1416,7 +1416,6 @@ e = 'Hello!'
 f = 567
 g = 567
 
-# EDIT CODE HERE
 true_variable = ---
 false_variable = ---
 

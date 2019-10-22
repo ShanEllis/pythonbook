@@ -79,3 +79,145 @@
 [NotebookApp | INFO] Saving file at /content/02-basics/conditionals.ipynb
 [NotebookApp | INFO] Starting buffering for dcc77e73-bddf-4ddf-9697-624e06d61b4b:30d652580f474ee1bc9cd90ee168ee1d
 [NotebookApp | INFO] Kernel shutdown: dcc77e73-bddf-4ddf-9697-624e06d61b4b
+[NotebookApp | INFO] Shutting down on /api/shutdown request.
+[NotebookApp | INFO] Shutting down 0 kernels
+[NotebookApp | WARNING] No nbgrader_config.py file found (rerun with --debug to see where nbgrader is looking)
+[NotebookApp | INFO] Loading the validate_assignment nbgrader serverextension
+[NotebookApp | INFO] Serving notebooks from local directory: /Users/shannonellis/Desktop/Teaching/COGS18/pythonbook
+[NotebookApp | INFO] The Jupyter Notebook is running at:
+[NotebookApp | INFO] http://localhost:8889/?token=7d2fb649fa8f87b6f28e74d8e497e1b6413ae107b6679946
+[NotebookApp | INFO]  or http://127.0.0.1:8889/?token=7d2fb649fa8f87b6f28e74d8e497e1b6413ae107b6679946
+[NotebookApp | INFO] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[NotebookApp | CRITICAL] 
+    
+    To access the notebook, open this file in a browser:
+        file:///Users/shannonellis/Library/Jupyter/runtime/nbserver-51871-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:8889/?token=7d2fb649fa8f87b6f28e74d8e497e1b6413ae107b6679946
+     or http://127.0.0.1:8889/?token=7d2fb649fa8f87b6f28e74d8e497e1b6413ae107b6679946
+[NotebookApp | INFO] Kernel started: 20682580-47e1-4cf8-a941-785e0cac9a3f
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel 20682580-47e1-4cf8-a941-785e0cac9a3f) to 5.3 (client).
+[NotebookApp | INFO] Kernel started: 5439aec1-a0d9-4117-812f-1a2bdd9cda45
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel 5439aec1-a0d9-4117-812f-1a2bdd9cda45) to 5.3 (client).
+[NotebookApp | INFO] Saving file at /content/02-basics/conditionals.ipynb
+[NotebookApp | INFO] Saving file at /content/02-basics/conditionals.ipynb
+[NotebookApp | INFO] Starting buffering for 5439aec1-a0d9-4117-812f-1a2bdd9cda45:922e203b21cd46769a09d4b2c7cba9ef
+[NotebookApp | INFO] Kernel shutdown: 5439aec1-a0d9-4117-812f-1a2bdd9cda45
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel 20682580-47e1-4cf8-a941-785e0cac9a3f) to 5.3 (client).
+[NotebookApp | INFO] Kernel started: 080c8603-7d72-4e0c-a897-ac93b2d1b08a
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel 080c8603-7d72-4e0c-a897-ac93b2d1b08a) to 5.3 (client).
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Kernel shutdown: 20682580-47e1-4cf8-a941-785e0cac9a3f
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | WARNING] 404 POST /api/kernels/20682580-47e1-4cf8-a941-785e0cac9a3f/interrupt (::1): Kernel does not exist: 20682580-47e1-4cf8-a941-785e0cac9a3f
+[NotebookApp | WARNING] Kernel does not exist: 20682580-47e1-4cf8-a941-785e0cac9a3f
+[NotebookApp | WARNING] 404 POST /api/kernels/20682580-47e1-4cf8-a941-785e0cac9a3f/interrupt (::1) 1.44ms referer=http://localhost:8889/notebooks/content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | ERROR] Exception restarting kernel
+    Traceback (most recent call last):
+      File "/anaconda3/lib/python3.6/site-packages/notebook/services/kernels/handlers.py", line 83, in post
+        yield maybe_future(km.restart_kernel(kernel_id))
+      File "/anaconda3/lib/python3.6/site-packages/tornado/gen.py", line 1133, in run
+        value = future.result()
+      File "/anaconda3/lib/python3.6/site-packages/tornado/gen.py", line 326, in wrapper
+        yielded = next(result)
+      File "/anaconda3/lib/python3.6/site-packages/notebook/services/kernels/kernelmanager.py", line 307, in restart_kernel
+        self._check_kernel_id(kernel_id)
+      File "/anaconda3/lib/python3.6/site-packages/notebook/services/kernels/kernelmanager.py", line 387, in _check_kernel_id
+        raise web.HTTPError(404, u'Kernel does not exist: %s' % kernel_id)
+    tornado.web.HTTPError: HTTP 404: Not Found (Kernel does not exist: 20682580-47e1-4cf8-a941-785e0cac9a3f)
+[NotebookApp | ERROR] {
+      "Host": "localhost:8889",
+      "Connection": "keep-alive",
+      "Content-Length": "0",
+      "Accept": "application/json, text/javascript, */*; q=0.01",
+      "Origin": "http://localhost:8889",
+      "X-Requested-With": "XMLHttpRequest",
+      "X-Xsrftoken": "2|1b71b4a9|f726d001fd955fe187f22ccc9667c9a6|1570377811",
+      "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36",
+      "Sec-Fetch-Mode": "cors",
+      "Sec-Fetch-Site": "same-origin",
+      "Referer": "http://localhost:8889/notebooks/content/03-operations/collections.ipynb",
+      "Accept-Encoding": "gzip, deflate, br",
+      "Accept-Language": "en-US,en;q=0.9",
+      "Cookie": "_xsrf=2|1b71b4a9|f726d001fd955fe187f22ccc9667c9a6|1570377811; username-localhost-8890=\"2|1:0|10:1571073800|23:username-localhost-8890|44:MWVkYzZiNTEzZjNlNGE2MGE4MGYyNDQyMWE1MzUyZmM=|8c45abed8e5588858687bd9a1c1c9baa6c3d4f79746426b36de2ff70569977b1\"; username-localhost-8888=\"2|1:0|10:1571770714|23:username-localhost-8888|44:ZGE3NzNmNDU4NGQ5NDExYmEzZDZhYzhlYjlhZTAyNzc=|171b423828424ffd41da0204b0b338bc37d53e79ea06162f8a23c71f22efd2f0\"; username-localhost-8889=\"2|1:0|10:1571772186|23:username-localhost-8889|44:YjkyYjc2MTY2ODI0NGQzYWI3Y2E1NjYzZTI1ZDIwODM=|6436e0d8442bf580baa4d7d301ba570723c61ba688f582910af9339d8f1af725\""
+    }
+[NotebookApp | ERROR] 500 POST /api/kernels/20682580-47e1-4cf8-a941-785e0cac9a3f/restart (::1) 5.70ms referer=http://localhost:8889/notebooks/content/03-operations/collections.ipynb
+[NotebookApp | WARNING] 404 DELETE /api/sessions/2c9389c0-2ec4-4926-bad3-664cd0d08f61 (::1): Session not found: session_id='2c9389c0-2ec4-4926-bad3-664cd0d08f61'
+[NotebookApp | WARNING] Session not found: session_id='2c9389c0-2ec4-4926-bad3-664cd0d08f61'
+[NotebookApp | WARNING] 404 DELETE /api/sessions/2c9389c0-2ec4-4926-bad3-664cd0d08f61 (::1) 1.60ms referer=http://localhost:8889/notebooks/content/03-operations/collections.ipynb
+[NotebookApp | INFO] Kernel started: 4498f5a0-33d5-495d-bdee-82ccbabb2957
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel 4498f5a0-33d5-495d-bdee-82ccbabb2957) to 5.3 (client).
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/02-basics/operators.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/02-basics/operators.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/02-basics/operators.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Creating new notebook in /content/03-operations
+[NotebookApp | INFO] Kernel started: c9d7f291-a79e-42f8-886e-486a54305fba
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel c9d7f291-a79e-42f8-886e-486a54305fba) to 5.3 (client).
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/loops.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Starting buffering for c9d7f291-a79e-42f8-886e-486a54305fba:74e78b63fb074c95823acf61b9fcd3a9
+[NotebookApp | INFO] Starting buffering for 4498f5a0-33d5-495d-bdee-82ccbabb2957:81b2897ecb084fe997202762c7423ce4
+[NotebookApp | INFO] Starting buffering for 080c8603-7d72-4e0c-a897-ac93b2d1b08a:52b73a085ae64164ac3a60c9bdb5ca23
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel c9d7f291-a79e-42f8-886e-486a54305fba) to 5.3 (client).
+[NotebookApp | INFO] Restoring connection for c9d7f291-a79e-42f8-886e-486a54305fba:74e78b63fb074c95823acf61b9fcd3a9
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel 4498f5a0-33d5-495d-bdee-82ccbabb2957) to 5.3 (client).
+[NotebookApp | INFO] Restoring connection for 4498f5a0-33d5-495d-bdee-82ccbabb2957:81b2897ecb084fe997202762c7423ce4
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel 080c8603-7d72-4e0c-a897-ac93b2d1b08a) to 5.3 (client).
+[NotebookApp | INFO] Restoring connection for 080c8603-7d72-4e0c-a897-ac93b2d1b08a:52b73a085ae64164ac3a60c9bdb5ca23
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections_loops.md
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
+[NotebookApp | INFO] Saving file at /content/02-basics/operators.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/collections.ipynb
