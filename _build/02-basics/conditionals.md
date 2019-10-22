@@ -327,3 +327,20 @@ A) Yay Python!
 B) Oh no.  
 C) I'm here.  
 D) This code won't execute.  
+
+6. **What would be the output of running the following code?**
+
+```python
+condition = 5 < 7
+
+if condition: 
+    print('SO GOOD!')
+else:
+    print('NOT SO GOOD.')
+```
+
+A) SO GOOD!  
+B) NOT SO GOOD.  
+C) True  
+D) False  
+E) SyntaxError  

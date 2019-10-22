@@ -82,9 +82,9 @@
    - title: Collections
      url: /03-operations/collections
      not_numbered: false      
-#    - title: Loops
-#     url: /loops
-#     not_numbered: false   
+   - title: Loops
+     url: /03-operations/loops
+     not_numbered: false   
 # - title: Functions
 #   url: /functions
 #   not_numbered: false
