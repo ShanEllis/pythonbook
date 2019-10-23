@@ -265,3 +265,70 @@
 [NotebookApp | INFO] Saving file at /content/03-operations/loops.ipynb
 [NotebookApp | INFO] Saving file at /content/03-operations/loops.ipynb
 [NotebookApp | INFO] Saving file at /content/03-operations/loops.ipynb
+[NotebookApp | INFO] Saving file at /content/03-operations/loops.ipynb
+[NotebookApp | INFO] Starting buffering for 11ec9920-4cdc-4fcb-a31f-cd4a88debcf6:526e071089384e029302f362a0713489
+[NotebookApp | INFO] Kernel shutdown: 11ec9920-4cdc-4fcb-a31f-cd4a88debcf6
+[NotebookApp | INFO] Starting buffering for c9d7f291-a79e-42f8-886e-486a54305fba:74e78b63fb074c95823acf61b9fcd3a9
+[NotebookApp | INFO] Kernel shutdown: c9d7f291-a79e-42f8-886e-486a54305fba
+[NotebookApp | WARNING] 404 DELETE /api/sessions/71650720-d9bc-4013-82cb-be5b5108191b (::1): Session not found: session_id='71650720-d9bc-4013-82cb-be5b5108191b'
+[NotebookApp | WARNING] Session not found: session_id='71650720-d9bc-4013-82cb-be5b5108191b'
+[NotebookApp | WARNING] 404 DELETE /api/sessions/71650720-d9bc-4013-82cb-be5b5108191b (::1) 1.48ms referer=http://localhost:8889/tree/content/03-operations
+[NotebookApp | WARNING] 404 DELETE /api/sessions/1bfe4da9-9fe6-4f30-a309-c3450bfe2229 (::1): Session not found: session_id='1bfe4da9-9fe6-4f30-a309-c3450bfe2229'
+[NotebookApp | WARNING] Session not found: session_id='1bfe4da9-9fe6-4f30-a309-c3450bfe2229'
+[NotebookApp | WARNING] 404 DELETE /api/sessions/1bfe4da9-9fe6-4f30-a309-c3450bfe2229 (::1) 1.28ms referer=http://localhost:8889/tree/content/03-operations
+[NotebookApp | INFO] Creating new directory in /content
+[NotebookApp | INFO] Creating new directory in /content
+[NotebookApp | INFO] Creating new file in /content/04-functions
+[NotebookApp | INFO] Creating new notebook in /content/04-functions
+[NotebookApp | INFO] Kernel started: 41dfbd3f-223f-4e42-8f7e-54c1e4d807b9
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel 41dfbd3f-223f-4e42-8f7e-54c1e4d807b9) to 5.3 (client).
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Kernel started: 4c8d1cea-47e7-40d4-aabc-de639dd77606
+[NotebookApp | INFO] 302 GET /notebooks/content/images/01-intro/not_executed.png (::1) 2.38ms
+[NotebookApp | INFO] 302 GET /notebooks/content/images/01-intro/markdown_cell.png (::1) 1.33ms
+[NotebookApp | INFO] 302 GET /notebooks/content/images/01-intro/code_cell.png (::1) 0.79ms
+[NotebookApp | INFO] 302 GET /notebooks/content/images/01-intro/executed_code.png (::1) 0.69ms
+[NotebookApp | INFO] 302 GET /notebooks/content/images/01-intro/stop.png (::1) 1.68ms
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel 4c8d1cea-47e7-40d4-aabc-de639dd77606) to 5.3 (client).
+[NotebookApp | INFO] Kernel started: b4e745fb-8608-45ac-9ac7-b022ff0f9eed
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel b4e745fb-8608-45ac-9ac7-b022ff0f9eed) to 5.3 (client).
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/02-basics/variables.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Starting buffering for 41dfbd3f-223f-4e42-8f7e-54c1e4d807b9:e62616e7d2464993885b9340e7ea83ca
+[NotebookApp | INFO] Kernel restarted: 41dfbd3f-223f-4e42-8f7e-54c1e4d807b9
+[NotebookApp | INFO] Adapting from protocol version 5.1 (kernel 41dfbd3f-223f-4e42-8f7e-54c1e4d807b9) to 5.3 (client).
+[NotebookApp | INFO] Restoring connection for 41dfbd3f-223f-4e42-8f7e-54c1e4d807b9:e62616e7d2464993885b9340e7ea83ca
+[NotebookApp | INFO] Replaying 6 buffered messages
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb

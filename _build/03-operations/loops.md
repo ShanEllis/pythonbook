@@ -6,8 +6,8 @@ prev_page:
   url: /03-operations/collections
   title: 'Collections'
 next_page:
-  url: 
-  title: ''
+  url: /04-functions/functions
+  title: 'Functions'
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
@@ -16,8 +16,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 We previously discussed conditionals as a way to control the flow of your code. Here, we introduce the concept of loops. We'll discuss `while` loops and `for` loops and introduce how to incorporate these into your code.
 
 Specifically, **loops** are a procedure utilized in code to repeat a piece of code more than once.
-
-## Loops
 
 <div class="alert alert-success">
 A <b>loop</b> is a procedure to repeat a piece of code.

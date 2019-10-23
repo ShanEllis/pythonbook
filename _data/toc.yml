@@ -85,33 +85,33 @@
    - title: Loops
      url: /03-operations/loops
      not_numbered: false   
-# - title: Functions
-#   url: /functions
-#   not_numbered: false
-#   expand_sections: true
-#   sections:
-#    - title: Function Basics
-#     url: /basic_functions
-#     not_numbered: false  
+- title: Functions
+  url: /04-functions/functions
+  not_numbered: false
+  expand_sections: true
+  sections:
+   - title: Function Basics
+     url: /04-functions/function_basics
+     not_numbered: false  
 #    - title: Docstrings
-#     url: /docstrings
+#     url: /04-functions/docstrings
 #     not_numbered: false  
 #    - title: Methods
-#     url: /methods
+#     url: /04-functions/methods
 #     not_numbered: false
 # - title: Objects & Classes 
-#   url: /classes
+#   url: /05-classes/classes_overview
 #   not_numbered: false
 #   expand_sections: true
 #   sections:
 #    - title: Object-Oriented Programming
-#     url: /object
+#     url: /05-classes/object
 #     not_numbered: false   
 #    - title: Classes
-#     url: /classes
+#     url: /05-classes/classes
 #     not_numbered: false 
 #   - title: Namespaces
-#     url: /namespaces
+#     url: /05-classes/namespaces
 #     not_numbered: false    
 # - title: Good Code
 #   url: /good_code
