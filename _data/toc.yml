@@ -90,12 +90,15 @@
   not_numbered: false
   expand_sections: true
   sections:
-   - title: Function Basics
-     url: /04-functions/function_basics
+   - title: Functions
+     url: /04-functions/functions
      not_numbered: false  
-#    - title: Docstrings
-#     url: /04-functions/docstrings
-#     not_numbered: false  
+   - title: Debugging & Errors
+     url: /04-functions/debugging_errors
+     not_numbered: false  
+   - title: Namespaces & Scope
+     url: /04-functions/namespaces_scope
+     not_numbered: false  
 #    - title: Methods
 #     url: /04-functions/methods
 #     not_numbered: false

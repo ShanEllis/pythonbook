@@ -332,3 +332,12 @@
 [NotebookApp | INFO] Replaying 6 buffered messages
 [NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
 [NotebookApp | INFO] Saving file at /content/04-functions/function_basics.ipynb
+[NotebookApp | INFO] Starting buffering for 41dfbd3f-223f-4e42-8f7e-54c1e4d807b9:e62616e7d2464993885b9340e7ea83ca
+[NotebookApp | INFO] Kernel shutdown: 41dfbd3f-223f-4e42-8f7e-54c1e4d807b9
+[NotebookApp | INFO] Starting buffering for 4c8d1cea-47e7-40d4-aabc-de639dd77606:48086b1417794279bd07abc9191bc4c9
+[NotebookApp | INFO] Kernel shutdown: 4c8d1cea-47e7-40d4-aabc-de639dd77606
+[NotebookApp | INFO] Starting buffering for b4e745fb-8608-45ac-9ac7-b022ff0f9eed:b81ddb6fdeb441c28c20567b75538cd1
+[NotebookApp | INFO] Kernel shutdown: b4e745fb-8608-45ac-9ac7-b022ff0f9eed
+[NotebookApp | INFO] interrupted
+[NotebookApp | CRITICAL] Shutdown confirmed
+[NotebookApp | INFO] Shutting down 0 kernels
