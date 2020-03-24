@@ -1,0 +1,1143 @@
+---
+interact_link: content/03-operations/loops.ipynb
+kernel_name: python3
+kernel_path: content/03-operations
+has_widgets: false
+title: |-
+  Loops
+pagenum: 12
+prev_page:
+  url: /03-operations/collections.html
+next_page:
+  url: /04-functions/functions.html
+suffix: .ipynb
+search: loop code value while through print loops list counter range values true printed condition div alert stored continue myitem within element here encountered last item break python example once not procedure want stores second iteration dictionary operator temp previously well repeat class success using refer stop execute keeplooping used string person b met contents note store however statement false terminates below after keys tea temperature mylst concept avoid pasting only every emails longer increase thus conditional third executes same variable end looping strings weve discussed discuss specifically piece its copying where email specify something terminate printing start create refers above
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Loops</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Loops">Loops<a class="anchor-link" href="#Loops"> </a></h1><p>We previously discussed conditionals as a way to control the flow of your code. Here, we introduce the concept of loops. We'll discuss <code>while</code> loops and <code>for</code> loops and introduce how to incorporate these into your code.</p>
+<p>Specifically, <strong>loops</strong> are a procedure utilized in code to repeat a piece of code more than once.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+A <b>loop</b> is a procedure to repeat a piece of code.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>More specifically, loops help you to avoid copy and pasting similar pieces of your code over and over again throughout your code. It's best to avoid copying and pasting code to (1) make your code more readable to yourself and others and (2) to avoid errors when debugging. By avoiding copying and pasting, when you make a change to improve your code, you only have to make that edit in one single location rather than in every place where the code has been copy and pasted.</p>
+<p>This means that when it comes to repetitive actions in code, if you find yourself copying + pasting, rethink your strategy. Loops are one way to avoid this. We'll discuss other approaches later on.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Why-loops?">Why loops?<a class="anchor-link" href="#Why-loops?"> </a></h2><p>Imagine you wanted to send an email to all the email addresses in your list.</p>
+<p>Well, if you only had two emails in your list, you could specify who the email is being sent to using something like what we see here:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">email_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;friend@yahoo.com&#39;</span><span class="p">,</span> <span class="s1">&#39;them@bing.com&#39;</span><span class="p">]</span>
+
+<span class="n">email</span> <span class="o">=</span> <span class="n">email_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># send email</span>
+
+<span class="n">email</span> <span class="o">=</span> <span class="n">email_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="c1"># send email</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But, what if you had 100 emails or 1000 emails? Going through and changing the index to refer to the individual in your list of emails would take a long time and would be prone to error.</p>
+<p>This is when you want to turn to loops!</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="while-Loops"><code>while</code> Loops<a class="anchor-link" href="#while-Loops"> </a></h2><p>A <code>while</code> loop is a procedure to use that will repeat the code within the loop for as long as a condition is met. The loop will terminate (stop running the code) once the condition is no longer met.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+A <b>while loop</b> is a procedure to repeat a piece of code while some condition is still met. 
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>While loops always have the structure:</p>
+<div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># Loop contents</span>
+</pre></div>
+<p><code>while</code> is followed by a condition. The condition is then followed by a colon (<code>:</code>). The contents within the loop - the code that you want to execute as long as the condition is met are on the subsequent lines and are all indented, visibly indicating that those lines of code are part of the while loop.</p>
+<p>Note that <code>condition</code> can change - this is what determines whether your <code>while</code> loop continues to run. While <code>condition is</code>True<code>, the code contents will execute. The code within the loop will repeat until condition is no longer</code>True`.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, we have an example of a while loop, where <code>number</code> initially stores the value '-5'.</p>
+<p>Then we have a <code>while</code> loop where the condition looks to see if <code>number</code> is less than (<code>&lt;</code>) the number 0. This means that as long as <code>number</code> is negative, the contents within the <code>while</code> loop will execute.</p>
+<p>Within the <code>while</code> loop, the current value stored in <code>number</code> will <code>print()</code> <em>and</em> the value stored in <code>number</code> will increase by 1.</p>
+<p>Thus, the first time through the loop <code>number</code> will store -5. The second time through, it will increase by one to store the value -4. This will continue and the loop will continue to run, printing the current value stored in <code>number</code> each time through the loop.</p>
+<p>However, once <code>number</code> stores the value 0, the condition <code>number &lt; 0</code> will no longer be met. At this point, the <code>while</code> loop will stop executing, terminating the loop.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+
+<span class="k">while</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-5
+-4
+-3
+-2
+-1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that <code>while</code> loops can be combined with the other code constructs you've previously learned - such as conditionals.</p>
+<p>Here we see a <code>while</code> loop with a nested <code>if</code> statement.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">keep_looping</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">keep_looping</span><span class="p">:</span>
+
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+    
+    <span class="k">if</span> <span class="n">counter</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">keep_looping</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this code, two variables are created: <code>keep_looping</code> which stores the boolean <code>True</code> and  <code>counter</code>, which stores the value '0' to start.</p>
+<p>From there, the <code>while</code> loop will execute, as <code>keep_looping</code> is <code>True</code>.</p>
+<p>Within the <code>while</code> loop, <code>counter</code> will increment by 1. The first time through the loop, <code>counter</code> will update to store '1'.</p>
+<p>Then, the conditional <code>if</code> statement is encountered. At this point, <code>counter</code> stores the value 1, which is <em>not</em> greater than (<code>&gt;</code>) 2, so the code within the conditional will <em>not</em> execute.</p>
+<p>The <code>while</code> loop will then enter its second iteration. <code>counter</code> will increase by 1 to store the value '2'. The conditional is still <code>False</code>, so the <code>while</code> loop will execute once again.</p>
+<p>During its third iteration, <code>counter</code> will increase to store the value '3'. Now, the conditional statement evaluates as <code>True</code>, as the value 3 (stored in <code>counter</code>) <em>is</em> greater than 2.</p>
+<p><code>keep_looping</code> now stores the value <code>False</code>. The <code>while</code> condition is no longer <code>True</code>, and the loop terminates.</p>
+<p>Note that the final line of code here (the <code>print()</code> statement) is <em>not</em> indented. This indicates that it is <em>not</em> part of the <code>while</code> loop. This line only executes, printing the last value stored in <code>counter</code> (3) once the <code>while</code> loop terminates.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="for-Loops"><code>for</code> Loops<a class="anchor-link" href="#for-Loops"> </a></h2><p>The second type of loop we'll discuss for controlling the flow of your code is a <code>for</code> loop. This procedure repeats code for every element in a collection.</p>
+<p>So if you have a list and want the same code to operate on every element in the list, you'll want to use a <code>for</code> loop.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+A <b>for loop</b> is a procedure a to repeat code for every element in a sequence.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, here we create a list with three items. If we want to carry out some operation on each element in this list, we'll use a <code>for</code> loop.</p>
+<p>The operation we'll carry out in this first example is simply to print each element of the list as it loops through the list.</p>
+<p>What's most important in the code below is the use of the variable <code>my_item</code>. Note that this variable has <em>not</em> been previously defined. This variable is used to refer to each element in the list as the loop progresses.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define a list of items</span>
+<span class="n">list_of_items</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+
+<span class="c1"># Loop across each element</span>
+<span class="k">for</span> <span class="n">my_item</span> <span class="ow">in</span> <span class="n">list_of_items</span><span class="p">:</span>
+     <span class="nb">print</span><span class="p">(</span><span class="n">my_item</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>A
+True
+12
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>More specifically, the first time through the <code>for</code> loop, <code>my_item</code> will refer to the first element in <code>list_of_items</code> - the string <code>'A'</code>.</p>
+<p>The code within the <code>for</code> loop specifies to <code>print(my_item)</code>. Thus, the information stored in <code>my_item</code> - the string <code>'A'</code> is printed.</p>
+<p>With the first iteration of the loop, the <code>for</code> loop continues on, repeating the code within the <code>for</code> loop on the second element in the list - <code>True</code>. Now, <code>my_item</code> refers to the second element in the list - <code>True</code>. So when <code>print(my_item)</code> is encountered, the value <code>True</code> is printed.</p>
+<p>The third time through the loop, <code>my_item</code> refers to the third element in the list - the value '12'. Thus, that is printed when <code>print(my_item)</code> is encountered.</p>
+<p>After this third iteration, the <code>for</code> loop has reached the end of the list. Once the end of the collection the <code>for</code> loop is iterating through is reached, the execution of the loop will terminate.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After this loop executes, the value stored in <code>my_item</code> will be the last value stored in <code>my_item</code> in the loop - the last element of the list.</p>
+<p>We can use <code>print(my_item)</code> to verify the contents stored in this variable:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># my_item exists outside the loop</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_item</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>12
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Above, we see that even though <code>my_item</code> was created and utilized within the <code>for</code> loop, it exists after the loop executes, storing whatever the last value stored during the <code>for</code> loops execution was.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Looping-through-strings">Looping through strings<a class="anchor-link" href="#Looping-through-strings"> </a></h3><p>Note that loops are not used exclusively with strings. You can loop through all of the collections we've discussed previously - strings, tuples, and dictionaries.</p>
+<p>When we loop through strings, each character in the string is iterated through until the end of the string is encountered:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Loop across items in a string</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s1">&#39;python&#39;</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>p
+y
+t
+h
+o
+n
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Looping-through-dictionaries">Looping through dictionaries<a class="anchor-link" href="#Looping-through-dictionaries"> </a></h3><p>Further, when we loop through dictionaries, we iterate across the keys. To see what we mean, let's re-create a dictionary we've seen previously for use in this example:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">student_emails</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Betty Jennings&#39;</span> <span class="p">:</span> <span class="s1">&#39;bjennings@eniac.org&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Ada Lovelace&#39;</span> <span class="p">:</span> <span class="s1">&#39;ada@analyticengine.com&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Alan Turing&#39;</span> <span class="p">:</span> <span class="s1">&#39;aturing@thebomb.gov&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Grace Hopper&#39;</span> <span class="p">:</span> <span class="s1">&#39;ghopper@navy.usa&#39;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the example below, <code>person</code> refers to the keys in the dictionary. So, the first time through the loop, <code>person</code> will refer to the first person in the <code>student_emails</code> dictionary - 'Betty Jennings'. The second time through, the second key, and so on and so forth:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Loop over a dictionary loops across the keys</span>
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">student_emails</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Betty Jennings
+Ada Lovelace
+Alan Turing
+Grace Hopper
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This can be combined with indexing, if you want to see the values stored in the keys. Here, instead of printing the key, using <code>person</code>, we can <strong>index</strong> from the <code>student_emails</code> dictionary, which returns the values stored in the keys.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Loop over a dictionary loops across the keys</span>
+<span class="c1">#   Inside the loop, you can use the key to access the associated value</span>
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">student_emails</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">student_emails</span><span class="p">[</span><span class="n">person</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>bjennings@eniac.org
+ada@analyticengine.com
+aturing@thebomb.gov
+ghopper@navy.usa
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In each of these scenarios, as we loop through a dictionary, we are using <code>person</code> to refer to the keys in the <code>student_emails</code> dictionary. Within the <code>for</code> loop, we can <em>refer</em> to <code>person</code> to specify the <em>key</em> in the dictionary.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="range"><code>range</code><a class="anchor-link" href="#range"> </a></h2><p>As you begin to write loops, you'll become familiar with the <code>range</code> operator, which creates a range of numbers. This operator is frequently used with loops.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+<code>range</code> is an operator to create a range of numbers, that is often used with loops.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To demonstrate why <code>range</code> is helpful, consider looping over a list of integers from 0 to 4, inclusive. To do this using the tools we've discussed so far, you would use the following:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+2
+3
+4
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, often we want to iterate across lists containing <em>many</em> more numbers. Typing each individual number out would become onerous and we'd likely make a typo.</p>
+<p>Alternatively, we could use <code>range()</code>. <code>range</code> uses the same (<code>start</code>, <code>stop</code>, <code>step</code>) concept we used for indexing; however, the values are separated by commas when using range, rather than by colons (as we used for indexing).</p>
+<p>The code below accomplishes the same procedure we saw above; however, instead of specifying each number in the list, we can use <code>range()</code> and specify the <code>start</code> and <code>stop</code> values. Recall that the <code>stop</code> value (here, 5) is <em>not</em> included in the range, just as the <code>stop</code> value specified in a slice was not included.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Loop across a sequence of numbers, using range</span>
+<span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+2
+3
+4
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By including a <code>step</code> value, <code>range</code> further allows us to skip over values in the range, to, for example, only include even values, as we see here:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Range, like indexing, is defined by &#39;start&#39;, &#39;stop&#39;, &#39;step&#39;</span>
+<span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+4
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="continue"><code>continue</code><a class="anchor-link" href="#continue"> </a></h2><p>Another helpful operator is <code>continue</code>. When encountered ina loop, <code>continue</code> specifies to jump ahead to the next iteration of a loop, regardless of the code below in the loop.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+<code>continue</code> is a special operator to jump ahead to the next iteration of a loop.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, in this loop, when <code>item == 2</code>, <code>continue</code> is encountered, so the code skips to the top of the for loop, ignoring the <code>print(item)</code> statement below. However, for all other values in the range (when <code>item</code> is anything <em>other</em> than '2', <code>item</code> gets printed.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">continue</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+3
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This concept applies across the varies types of collections we've talked about previously. For example, here we are looping through a string, and <code>continue</code>-ing on when <code>char</code> stores the letter 'p' or 'y'.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="s1">&#39;love python&#39;</span><span class="p">:</span> 
+    
+    <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;p&#39;</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+        <span class="k">continue</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>l
+o
+v
+e
+ 
+t
+h
+o
+n
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="break"><code>break</code><a class="anchor-link" href="#break"> </a></h2><p>Finally, <code>break</code> is a special operator that, when encountered will terminate the loop. Unlike <code>continue</code> which carries on immediately to the next iteration of the loop, <code>break</code>, when <code>break</code> is encountered, the whole loop terminates (stops executing)</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+<code>break</code> is a special operator to break out of a loop.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using the example we saw above with <code>continue</code> but replacing <code>continue</code> with <code>break</code>, we see that once <code>item == 2</code> is <code>True</code>, <code>break</code> is encountered and the loop terminates. <code>item</code> never reaches the end of the list (the value 3) and thus that value never gets printed.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">break</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The same concept applies for iterating through a string. Once <code>break</code> is encountered, the loop terminates immediately:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;love python&quot;</span>
+
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span> 
+    <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s2">&quot;p&quot;</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>l
+o
+v
+e
+ 
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Examples">Examples<a class="anchor-link" href="#Examples"> </a></h2><ol>
+<li><strong>How many values will be output from this <code>while</code> loop before "The tea is cool enough." is printed?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="mi">115</span>
+
+<span class="k">while</span> <span class="n">temperature</span> <span class="o">&gt;</span> <span class="mi">112</span><span class="p">:</span> 
+    <span class="k">print</span><span class="p">(</span><span class="n">temperature</span><span class="p">)</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;The tea is cool enough.&#39;</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li><strong>What will be the value of <code>counter</code> after this loop executes?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">keep_looping</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">keep_looping</span><span class="p">:</span>
+
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">counter</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="n">keep_looping</span> <span class="o">=</span> <span class="bp">False</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li><strong>What will the following loop print out?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">my_lst</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_lst</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">item</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li>*<em>How many values will be output from this <code>for</code> loop before it </em>first* prints "The tea is too hot!"?</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">temperatures</span> <span class="o">=</span> <span class="p">[</span><span class="mi">114</span><span class="p">,</span> <span class="mi">115</span><span class="p">,</span> <span class="mi">116</span><span class="p">,</span> <span class="mi">117</span><span class="p">,</span> <span class="mi">118</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="n">temperatures</span><span class="p">:</span> 
+    <span class="k">print</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">115</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;The tea is too hot!&#39;</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li><strong>How many values would this loop print and what would be the last value printed?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+</pre></div>
+<p>A) values printed: 3; last value: 7<br>
+B) values printed: 3; last value: 9<br>
+C) values printed: 4; last value: 9<br>
+D) values printed: 7; last value: 7<br>
+E) values printed: 7; last value: 9</p>
+<ol>
+<li><strong>What will be the value of <code>counter</code> after this code has executed?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">my_lst</span> <span class="o">=</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_lst</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_lst</span><span class="p">:</span>
+        <span class="k">continue</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+<ol>
+<li><strong>What will the following code print out</strong>?</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+
+    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+<p>A) 1 
+B) 1 2 
+C) 1 2 3
+D) Something else 
+E) This code prints forever</p>
+<ol>
+<li><strong>For how many <code>temp</code> will output be printed from this for loop? (In other words, how many times in this for loop will something be printed out?)</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">temp</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">114</span><span class="p">,</span> <span class="mi">119</span><span class="p">):</span> 
+
+    <span class="k">if</span><span class="p">(</span><span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">116</span><span class="p">):</span>
+        <span class="k">continue</span>
+    <span class="k">elif</span><span class="p">(</span><span class="n">temp</span> <span class="o">==</span> <span class="mi">116</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;The tea is too hot!&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">break</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

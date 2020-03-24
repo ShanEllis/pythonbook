@@ -1,0 +1,3037 @@
+---
+interact_link: content/02-basics/operators.ipynb
+kernel_name: python3
+kernel_path: content/02-basics
+has_widgets: false
+title: |-
+  Operators
+pagenum: 7
+prev_page:
+  url: /02-basics/basics.html
+next_page:
+  url: /02-basics/conditionals.html
+suffix: .ipynb
+search: python operators code value true false b operator not following hand left div alert expression here division booleans right equal strings string return evaluate same variables well boolean logic values using class math memory stored identical its success comparison evaluates variable only above whether identity uses addition however remainder types also integer returned rules example both c membership store weve used discuss assignment numbers floor returns note evaluation lets determine empty e things operations different carry logical youll returning into does parentheses after error short before means thus interned d computer youre already want subtraction fact important combine capitalization examples
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Operators</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Operators">Operators<a class="anchor-link" href="#Operators"> </a></h1><p>Very generally, programming with Python - at its core - is a way to ask computer to store values and do things with them. We've now discussed variable definition and a number of the types of  variables that exist in Python. But we haven't <em>really</em> started doing thins with them yet. Doing things with code requires carrying out <strong>operations</strong>. This is accomplished by using a number of types of <strong>operators</strong>. We'll introduce the different types of operators here and demonstrate how they're used when writing code.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+<b>Operators</b> are special symbols in Python that carry out arithmetic or logical computation.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We'll discuss assignment, math, comparison and identity operators here.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Assignment-Operator">Assignment Operator<a class="anchor-link" href="#Assignment-Operator"> </a></h2><p>You're already familiar with the Python operator you'll use most often - the <strong>assignment operator</strong>. The aassignment operator is what you've been using for assignment - the <code>=</code>. It allows you to store information in a variable!</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Python uses <code>=</code> for <b>assignment</b>.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># assignment operator</span>
+<span class="n">my_var</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Math-Operators">Math Operators<a class="anchor-link" href="#Math-Operators"> </a></h2><p>Beyond assignment, <strong>math operators</strong> will be very helpful whenever you want to carry out a calculation. At its simplest, Python is a calculator. It allows you to carry out calculations using these math operators.</p>
+<p>The first four math operators we'll introduce are <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>, which are used for addition, subtraction, multiplication, and division, respectively.</p>
+<p>These operators return <em>numbers</em>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Python uses the <b>mathematical operators</b> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> for 'sum', 'substract', 'multiply', and 'divide', repsectively.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Values can be added directly using the mathematical operators.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># addition</span>
+<span class="mi">8</span> <span class="o">+</span> <span class="mi">4</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>12</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, math operators can also be carried out using variables that store numbers. This is likely how you'll utilize math operators more often.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># addition using variables</span>
+<span class="n">var_a</span> <span class="o">=</span> <span class="mi">8</span> 
+<span class="n">var_b</span> <span class="o">=</span> <span class="mi">4</span>
+
+<span class="n">var_a</span> <span class="o">+</span> <span class="n">var_b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>12</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Once defined, these variables can be used for all types of calculations, such as for subtraction, multiplation, or division:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># subtraction</span>
+<span class="n">var_a</span> <span class="o">-</span> <span class="n">var_b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># multiplcation</span>
+<span class="n">var_a</span> <span class="o">*</span> <span class="n">var_b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>32</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># division</span>
+<span class="n">var_a</span> <span class="o">/</span> <span class="n">var_b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.0</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In addition to the four math operators introduced, Python also has math operators for exponentiation (<code>**</code>), floor division (<code>//</code>), and returning the remainder, using what is known as the modulus (<code>%</code>).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Python also has <code>**</code> for exponentiation,<code>%</code> for floor division (or integer division), and <code>%</code> for remainder (called modulus). These also return numbers.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To raise the number 2 to the power 3, carrying out the calculation that in mathematics would be denoted $2^3$, you would use the exponent operator (<code>**</code>):</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># exponentiation</span>
+<span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To carry out floor division, which returns only the integer value from dividing two numbers, you would use the floor division operator (<code>//</code>):</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># floor division </span>
+<span class="mi">17</span> <span class="o">//</span> <span class="mi">6</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Above you see that 6 goes into 17 twice. It ignores the fact that there's a remainder of 3, providing only the integer. Note that if we were to use the division operator (<code>/</code>), a float is returned and the value of 17 divided by 6 is approximately.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># division</span>
+<span class="mi">17</span> <span class="o">/</span> <span class="mi">6</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2.8333333333333335</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's important to keep in mind that floor division does <em>not</em> round. It only returns the integer from the division, which in this case is 2.</p>
+<p>If you want the remainder of 17 divided by 6, there's an operator for that - the modulo <code>%</code>. This operator divides 17 by 6 and returns only the remainder, which is the value 5.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># remainder of 17 divided by 6</span>
+<span class="mi">17</span> <span class="o">%</span> <span class="mi">6</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>5</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Order-of-Operations">Order of Operations<a class="anchor-link" href="#Order-of-Operations"> </a></h2><p>Mathematical operators follow the rules for order of operations you learned in mathematics class, learning PEMDAS or "Please Excuse My Dear Aunt Sally" to learn the following order of operations:</p>
+<ul>
+<li>Parentheses</li>
+<li>Exponents</li>
+<li>Multiplication &amp; Division</li>
+<li>Addition &amp; Subtraction</li>
+</ul>
+<p>In this first example, we see that <code>16 / 2</code> is calculated first, as it is division, followed by the addition of the value 3, ultimately returning the value '11.0' when executed.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># division before addition</span>
+<span class="n">order_operations</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">order_operations</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>11.0</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note, that if you wanted addition to occur first, you would use parentheses:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># use parentheses to specify addition first</span>
+<span class="n">specify_operations</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">16</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">specify_operations</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>9.5</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Recap:-Math-Operators">Recap: Math Operators<a class="anchor-link" href="#Recap:-Math-Operators"> </a></h2><ul>
+<li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> for addition, subtraction, multiplication, &amp; division</li>
+<li><code>**</code> for exponentiation &amp; <code>%</code> for modulus (remainder)</li>
+<li><code>//</code> for floor division (integer division)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Logical-(Boolean)-operators">Logical (Boolean) operators<a class="anchor-link" href="#Logical-(Boolean)-operators"> </a></h2><p>Logical or Boolean operators use what is known as <strong>Boolean logic</strong> to carry out logical operations on the computer. We'll review these rules and demonstrate how they operate in Python.</p>
+<p>The logical operators are <code>and</code>, <code>or</code>, and <code>not</code>.</p>
+<p>As mentioned previously, booleans are named after the British mathematician - George Boole. He first formulated Boolean algebra, which are a set of rules for how to reason with and combine these values. This is the basis of all modern computer logic.</p>
+<p>Unlike math operators, which return numbers, boolean operators return booleans.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Python has <code>and</code>, <code>or</code> and <code>not</code> for <b>boolean logic</b>. These operators return booleans.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Booleans adhere to the following logic:</p>
+<ul>
+<li><code>and</code> : True if both are true</li>
+<li><code>or</code> : True if at least one is true</li>
+<li><code>not</code> : True only if false</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Following this logic, all of the following return <code>True</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">True</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="kc">False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="ow">not</span> <span class="kc">False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># two nots cancel one another out</span>
+<span class="ow">not</span> <span class="p">(</span><span class="ow">not</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Capitalization-matters">Capitalization matters<a class="anchor-link" href="#Capitalization-matters"> </a></h3><p>As discussed previously, capitalization matters in programming. Booleans are specified with only the T in True and the F in False being capitalized. If you were to specify a different capitalization, you would get a <code>NameError</code>.</p>
+<p>In addition to the error, Jupyter provides you with a visual clue. Note that in the examples above, the Booleans and operators are all bold, green font. Below, <code>TRUE</code> is neither bold nor green, cluing you into the fact that these are not booleans.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># this will give you an error</span>
+<span class="c1"># &#39;TRUE&#39; is not a boolean</span>
+<span class="n">TRUE</span> <span class="ow">and</span> <span class="n">TRUE</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-19-0b4b31411033&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># this will give you an error</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-red-fg"># &#39;TRUE&#39; is not a boolean</span>
+<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>TRUE <span class="ansi-green-fg">and</span> TRUE
+
+<span class="ansi-red-fg">NameError</span>: name &#39;TRUE&#39; is not defined</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Short-circuit-evaluation">Short-circuit evaluation<a class="anchor-link" href="#Short-circuit-evaluation"> </a></h3><p>Before we move any further, let's discuss how Python interprets boolean operators. Python uses what is known as <strong>short-circut evaluation</strong>. This means that the second argument in the boolean expression is evaluated only if the first argument does not definitively determine the value of the expression. Let's look at an example:</p>
+<p>Here, Python looks at <code>False and</code> and determines that, when using <code>and</code> both sides have to be True for the expression to evaluate as True. Given that the left-hand side is False, Python <em>knows</em> that it can stop and does not even have to look at or evaluate the right-hand side. The expression thus evaluates as <code>False</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># python stops after False</span>
+<span class="c1"># no need to check second expression</span>
+<span class="c1"># since first is False</span>
+<span class="kc">False</span> <span class="ow">and</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Conversely, if Python encounters <code>True</code> on the left-hand side, when Python encounters the <code>and</code> operator it knows it still has an opportunity for both sides to evaluate as True. It thus continues on to evaluate the right-hand side and prints "Hi".</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Continues to evaluate the expression</span>
+<span class="kc">True</span> <span class="ow">and</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hi
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This leaves one final combination to discuss. Here, Python evaluates the left-hand side, printing "Hi" before it encounters the <code>and</code> operator. It continues on to encounter the <code>False</code> and finishes its evaluation of the code.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># evaluates print statement before and</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hi&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="kc">False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hi
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python behaves in this way, using short-circuit evaluation, to save itself time. If it knows an expression will evaluate as False by only evaluating the left-hand side of the expression, there is no need for it to continue on to look at and use computational power to evaluate the right-hand side of the expression. Overall, this makes Python more efficient.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Comparison-Operators">Comparison Operators<a class="anchor-link" href="#Comparison-Operators"> </a></h2><p>Comparison operators compare the values on either side of the operator, returning a boolean from the comparison.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python uses the following <strong>comparison operators</strong>:</p>
+<ul>
+<li><code>==</code> : values are equal</li>
+<li><code>!=</code> : values are not equal</li>
+<li><code>&lt;</code> : value on left is less than value or right</li>
+<li><code>&gt;</code> : value on left is greater than value on right</li>
+<li><code>&lt;=</code> : value on left is less than <em>or equal to</em> value on right</li>
+<li><code>&gt;=</code> : value on left is greater than or equal to value on the right</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Python has comparison operators <code>==</code>, <code>!=</code>, <code><</code>, <code>></code>, <code><=</code>, and <code>>=</code> for <b>value comparisons</b>. These operators return booleans.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We mentioned previously that <code>=</code> is used for assignment rather than equality. However, there is a way to test whether two values are equal. To test equality, you'll use the <code>==</code> comparison operator. This determines whether the left-hand side of the expression is equal to the right-hand side, returning hte boolean <code>True</code> if they are equal, and <code>False</code> otherwise.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># compare equality</span>
+<span class="kc">True</span> <span class="o">==</span> <span class="kc">True</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that you are not limited to comparing booleans with comparison operators. Here we determine whether two strings are equal.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;aa&#39;</span> <span class="o">==</span> <span class="s1">&#39;aa&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The same logic follows for the other comparison operators, which allow you to determine whether two things are <em>not</em> equal:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kc">True</span> <span class="o">!=</span> <span class="kc">False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>and whether a value is less than or equal to another value:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">12</span> <span class="o">&lt;=</span> <span class="mi">13</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Understanding-Boolean-logic">Understanding Boolean logic<a class="anchor-link" href="#Understanding-Boolean-logic"> </a></h2><p>When first learning booleans, we sometimes <em>think</em> we know what we're asking the computer to do, but our logic can be flawed.</p>
+<p>We present these details now so that you don't fall into a trap that many beginners make early on in their journey to understand Booleans.</p>
+<p>To do so, there are three rules you'll have to understand.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Rule #1</strong>: Python considers empty strings as having boolean value of <code>False</code>. Non-empty string as having boolean value of <code>True</code>.</p>
+<p>We see this play out in the examples here:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># empty string</span>
+<span class="n">empty_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="nb">bool</span><span class="p">(</span><span class="n">empty_string</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Above we see an empty string, created with two quotation marks, evaluates as False. We can determine how a variable will evaluate using <code>bool()</code> with the variable name of interest inside the parentheses.</p>
+<p>On the other hand, below, we see that a string with characters in it, will evaluate as <code>True</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nonempty_string</span> <span class="o">=</span> <span class="s1">&#39;string has something in it&#39;</span>
+<span class="nb">bool</span><span class="p">(</span><span class="n">nonempty_string</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">bool</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Rule #2</strong> For the <code>and</code> operator, if left value is <code>True</code>, then right value is checked and returned. If left value is <code>False</code>, then that left value is returned.</p>
+<p>This follows with the short-circuit evaluation we've already discussed. If the left-hand side of the expression is True and Python encounters an <code>and</code>, it continues on.</p>
+<p>We've seen this before when comparing booleans:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># left value True, returns right value</span>
+<span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But, the same logic holds when comparing strings, for example. Here we see a non-empty string (<code>'a'</code>) on the left-hand side. This evaluates as true. So, Python returns the right-hand side accordingly:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;b&#39;</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Taking this a step further, we can combine logic and comparison operators. So, let's think about the following expression:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># the left value in parentheses is True</span>
+<span class="s1">&#39;a&#39;</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span> <span class="ow">and</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you're new to programming you may see the line of code above and think it's asking if the string 'a' is equal to both 'b' and 'a'. You may <em>expect</em> this to return <code>False</code>; however, if you're following the rules we've been discussion, you'll know that this expression evaluates as <code>True</code>. Let's discuss why.</p>
+<p>Well, first things first, we know that parentheses are evaluated first, so Python first evaluates the following:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;b&#39;</span> <span class="ow">and</span> <span class="s1">&#39;a&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;a&#39;</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Thus, the expression above is really asking if the string 'a' is equal to the string 'a', which of course is <code>True</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Following that logic, we then know that the following evaluates as <code>False</code> because this line of code is asking whether the string <code>a</code> is equal to the string <code>b</code>, which is <code>False</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># evaluates if &#39;a&#39; is equal to &#39;b&#39;</span>
+<span class="s1">&#39;a&#39;</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span> <span class="ow">and</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Rule #3</strong>: For the <code>or</code> operator if left value is <code>True</code>, then it is returned, otherwise if left value is <code>False</code>, then right value is returned.</p>
+<p>Again, this makes sense when we think back to short-circuit evaluation. If the left-hand side is <code>True</code> and an <code>or</code> is encountered, there is no need for Python to evaluate the right-hand side, as at least one side is true. Accordingly, Python returns the left-hand value.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># left-hand is True and returned</span>
+<span class="s1">&#39;a&#39;</span> <span class="ow">or</span> <span class="s1">&#39;b&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;a&#39;</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, if the left hand evaluates as <code>False</code>, as is the case with an empty string, when the <code>or</code> is encountered, Python continues on and returns the right-hand side.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># empty string evaluates as False</span>
+<span class="s1">&#39;&#39;</span> <span class="ow">or</span> <span class="s1">&#39;b&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;b&#39;</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, when return back to where this thinking started, we understand why the following evaluates as <code>True</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span> <span class="ow">or</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we wanted to determine whether 'a' was equal to both 'a' and 'b' (a clearly False statement), we would do the following:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span> <span class="ow">and</span> <span class="s1">&#39;a&#39;</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the above example, we see that Python would evaluate the left-hand side of the expression (<code>'a' == 'a'</code>) as <code>True</code>, continuing on to the right-hand side of the <code>and</code>, evaluating the expression (<code>'a' == 'b'</code>) as False, and returning that.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Identity-Operators">Identity Operators<a class="anchor-link" href="#Identity-Operators"> </a></h2><p>Identity operators are used to check if two variables are located on the same part of the memory. This is what it means to <strong>compare identity</strong>. If two variables are stored in the same part of memory, the are idenetical.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Python uses <code>is</code> and <code>is not</code> to compare <b>identity</b>. These operators return booleans.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python uses the following <strong>identity operators</strong>:</p>
+<ul>
+<li><code>is</code> : True if both refer to the same object in memory</li>
+<li><code>is not</code> : True if they do not refer to the same object</li>
+</ul>
+<p>Let's see what that means with an example. Below we create three variables: <code>a</code>, <code>b</code>, and <code>c</code>. They all store the same <em>value</em> (927), but are they identical?</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">927</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">927</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Well, <code>a</code> and <code>b</code> are identical as determined here:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is because <code>b</code> is an <strong>alias</strong> or a copy of <code>a</code>. Python stores this alias in the same part of memory to save space. (We'll discuss aliases more later.)</p>
+<p>However, <code>c</code>, while storing the same <em>value</em> as <code>a</code> and <code>b</code> is <em>not</em> identical, as its values was defined independent of <code>a</code> and <code>b</code></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">c</span> <span class="ow">is</span> <span class="n">a</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's important to udnerstand that two variables that are <em>equal</em> does <strong>not</strong> imply that they are <em>identical</em>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Remember, if you want to test for <em>equality</em>, you would use the <code>==</code> operator:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># testing for value equality</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span> <span class="o">==</span> <span class="n">c</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Delving-Deeper:-Identity-Operators">Delving Deeper: Identity Operators<a class="anchor-link" href="#Delving-Deeper:-Identity-Operators"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>With basic understanding of identity operators under our belt, let's dig a little deeper in our understanding of how Python defines variables.</p>
+<p>We've noted before that a <strong>new object</strong> is created each time we have a variable that makes reference to it, but there are <em>few notable exceptions</em>:</p>
+<ul>
+<li>some simple strings</li>
+<li>Integers between -5 and 256 (inclusive)</li>
+<li>empty immutable containers (e.g. tuples) - we'll get to these later</li>
+</ul>
+<p>While these may <em>seem</em> random, they exist for memory optimization in Python implementation.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Shorter and less complex strings are <strong>interned</strong>. This means that they share the same space in memory, to maximize Python efficiency.</p>
+<p>The rules behind this are a bit fuzzy and not important for beginner-level understanding, so we'll just go through a few examples here. But, if you want to read more about string interning and how Python handles this, you can read more <a href="http://guilload.com/python-string-interning/">here</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, we define two variables. Following logic from above, you may expect these strings to <em>not</em> be identical. However, these are 'simple' strings in Python world. As such, they are in fact stored in the same place of memory (interned), and by definition, identical:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define two variables</span>
+<span class="n">simple_string</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
+<span class="n">simple_string2</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">simple_string</span> <span class="ow">is</span> <span class="n">simple_string2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To check where a variable is stored in memory, you can use the <code>id()</code> function. The variable of interest goes within the parentheses of the function. The two values returned are identical, so we know they're stored in the same place.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">simple_string</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">simple_string2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4394733952 4394733952
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Alternatively, longer strings are not interned and are thus stored separately within Python's memory:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">longer_string</span> <span class="o">=</span> <span class="s1">&#39;really long string that just keeps going&#39;</span>
+<span class="n">longer_string2</span> <span class="o">=</span> <span class="s1">&#39;really long string that just keeps going&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">longer_string</span> <span class="ow">is</span> <span class="n">longer_string2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">longer_string</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">longer_string2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4433049712 4433049616
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Above, we see that these are <em>not</em> identical.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Like simple strings, integers between -5 and 256 <em>are</em> interned and thus are stored in the same place in Python's memory.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">d</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>4391790128 4391790128
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="ow">is</span> <span class="n">e</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>True
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is because Python implementation front loads an array of integers between -5 to 256. This means these objects <em>already exist</em>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this first example, the integer '5' and simple string 'Hello' are both interned or already available. Accordingly, <code>j</code> and <code>k</code> are identical and <code>l</code> and <code>m</code> are identical.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Python doesn&#39;t create a new object here</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">l</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+<span class="n">m</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
+
+<span class="n">true_variable_integer</span> <span class="o">=</span> <span class="n">j</span> <span class="ow">is</span> <span class="n">k</span>
+<span class="n">true_variable_string</span> <span class="o">=</span> <span class="n">l</span> <span class="ow">is</span> <span class="n">m</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">true_variable_integer</span><span class="p">,</span> <span class="n">true_variable_string</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Conversely, here we have an integer greater than 256 and a complex string, due to the addition of an exclamation part. Here, <code>n</code> and <code>o</code> and <code>p</code> and <code>q</code> are <em>not</em> identical. Each of these values is held separately in memory.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Python DOES create a new object here</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">975</span> <span class="c1">#greater than 256</span>
+<span class="n">o</span> <span class="o">=</span> <span class="mi">975</span>
+<span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;Hello!&#39;</span> <span class="c1">#that exclamation point makes it more complex</span>
+<span class="n">q</span> <span class="o">=</span> <span class="s1">&#39;Hello!&#39;</span>
+
+<span class="n">false_variable_integer</span> <span class="o">=</span> <span class="n">n</span> <span class="ow">is</span> <span class="n">o</span>
+<span class="n">false_variable_string</span> <span class="o">=</span> <span class="n">p</span> <span class="ow">is</span> <span class="n">q</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">false_variable_integer</span><span class="p">,</span> <span class="n">false_variable_string</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Membership-Operators">Membership Operators<a class="anchor-link" href="#Membership-Operators"> </a></h2><p>The final Python operator we'll introduce is the <strong>membership operator</strong>. These are used to check whether a value or variable is found in a sequence. These operators also return booleans.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Python uses <code>in</code> and <code>not in</code> to compare <b>membership</b>. These operators return booleans.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, we'll just be checking for value membership in strings. But, we'll discuss lists, tuples, sets, and dictionaries soon.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python uses the following membership operators:</p>
+<ul>
+<li><code>in</code> : True if value is found in the sequence</li>
+<li><code>not in</code> : True if value is not found in the sequence</li>
+</ul>
+<p>For these examples, we'll refer to the following variable (<code>my_string</code>)</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;I love Python!&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you wanted to determine whether there was an <code>l</code> in <code>my_string</code>, you would use the membership operator <code>in</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># check if l in my_string</span>
+<span class="s1">&#39;l&#39;</span> <span class="ow">in</span> <span class="n">my_string</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As always, capitalization matters, so if you search for a capital L, the membership operator will return <code>False</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;L&#39;</span> <span class="ow">in</span> <span class="n">my_string</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, note that a series of characters can be tested for membership:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;Python&#39;</span> <span class="ow">in</span> <span class="n">my_string</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="String-Concatenation">String Concatenation<a class="anchor-link" href="#String-Concatenation"> </a></h2><p>Now that we know all about strings and mathematics operators, it's important to note that sometimes operators behave differently on different types of variables.</p>
+<p>Above, we saw that for numbers (integers, floats, etc.), the <code>+</code> operator will add the two values together and return the sum.</p>
+<p>For strings, however, this operator works to concatenate - meaning stick together - the two strings:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Operators sometimes do different things on different types of variables. For example, <code>+</code> on strings does concatenation.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, we see that the <code>+</code> operator concatenages the three strings together:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;a&#39;</span> <span class="o">+</span> <span class="s1">&#39;b&#39;</span> <span class="o">+</span> <span class="s1">&#39;c&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;abc&#39;</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Chaining-Operators">Chaining Operators<a class="anchor-link" href="#Chaining-Operators"> </a></h2><p>It's also possible to combine long phrases of multiple types of operators. The same logic and rules apply, and you are able to combine operators into very long and complex expression. This isn't always the <em>best</em> idea as they can be hard to intepret; however, it is programmatically possible.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Operators and variables can also be chained together into arbitrarily complex expressions.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, this expression evaluates as <code>False</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Note that you can use parentheses to chunk sections</span>
+<span class="p">(</span><span class="mi">13</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">&gt;=</span> <span class="mi">7</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s1">&#39;Python&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="s1">&#39;3.7&#39;</span> <span class="o">==</span> <span class="s1">&#39;Python 3.7&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Given all we've learned so far about operators, we know that the left-hand side before the <code>and</code> is False, so the left-hand side is returned,</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">13</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">&gt;=</span> <span class="mi">7</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>regardless of the fact that the right-hand side of the expression is <code>True</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="s1">&#39;Python&#39;</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="s1">&#39;3.7&#39;</span> <span class="o">==</span> <span class="s1">&#39;Python 3.7&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercies">Exercies<a class="anchor-link" href="#Exercies"> </a></h2><ol>
+<li><strong>What would be the value stored in <code>my_value</code> after executing the following?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">my_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">16</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>A) 0.218<br>
+B) 0.875<br>
+C) 5.25<br>
+D) 40<br>
+E) Produces an error</p>
+<ol>
+<li><strong>What would be the value stored in <code>remainder</code> after executing the following?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">remainder</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">%</span> <span class="mi">5</span>
+</pre></div>
+<p>A) 9<br>
+B) 1<br>
+C) 3<br>
+D) 3.2<br>
+E) Produces an error</p>
+<ol>
+<li><strong>What would be the value stored in <code>modulo_time</code> after executing the following?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">modulo_time</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">%</span> <span class="mi">5</span>
+</pre></div>
+<p>A) 0<br>
+B) 1<br>
+C) 3<br>
+D) 3.2<br>
+E) Produces an error</p>
+<p>4 <strong>What value is stored in <code>math_out</code> from the code below?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">math_out</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+</pre></div>
+<ol>
+<li><strong>How would each of the following boolean expressions evaluate?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="bp">True</span> <span class="ow">and</span> <span class="bp">False</span>
+<span class="bp">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">True</span> <span class="ow">or</span> <span class="bp">False</span>
+<span class="bp">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">False</span>
+</pre></div>
+<ol>
+<li><strong>Assume you're writing a videogame that will only slay the dragon if the magic lightsabre sword is charged to 90 or higher and has 100 or more energy units in its protective shield. Start with the code provided here. Replace <code>---</code> with values that will evaluate to <code>True</code> when the cell is run (and slay the dragon!).</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">sword_charge</span> <span class="o">=</span> <span class="o">---</span>
+<span class="n">shield_energy</span> <span class="o">=</span> <span class="o">---</span>
+
+<span class="p">(</span><span class="n">sword_charge</span> <span class="o">---</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">shield_energy</span> <span class="o">---</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li><strong>How would each of the following expressions evaluate?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="s1">&#39;a&#39;</span>
+<span class="s1">&#39;a&#39;</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="s1">&#39;a&#39;</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span> <span class="ow">and</span> <span class="s1">&#39;a&#39;</span> <span class="o">==</span> <span class="s1">&#39;b&#39;</span> 
+<span class="s1">&#39;a&#39;</span> <span class="o">==</span> <span class="p">(</span><span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li>**Using the variables provided, replace <code>---</code> with expression using identity operators such that <code>true_variable</code> will store <code>True</code> and <code>false_variable</code> will store <code>False</code>:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">b</span>
+<span class="n">d</span> <span class="o">=</span> <span class="s1">&#39;Hello!&#39;</span>
+<span class="n">e</span> <span class="o">=</span> <span class="s1">&#39;Hello!&#39;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">567</span>
+<span class="n">g</span> <span class="o">=</span> <span class="mi">567</span>
+
+<span class="n">true_variable</span> <span class="o">=</span> <span class="o">---</span>
+<span class="n">false_variable</span> <span class="o">=</span> <span class="o">---</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">true_variable</span><span class="p">,</span> <span class="n">false_variable</span><span class="p">)</span>
+</pre></div>
+<ol>
+<li><strong>What would be the value stored in <code>my_value</code> after executing the following?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">my_value</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">16</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+<p>A) 0.218<br>
+B) 5.25<br>
+C) 20<br>
+D) 40<br>
+E) Produces an error</p>
+<ol>
+<li><strong>How would each of the following expressions evaluate?</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><span class="mi">17</span> <span class="o">%</span> <span class="mi">7</span>
+<span class="mi">2</span><span class="o">**</span><span class="mi">2</span> <span class="o">&gt;=</span> <span class="mi">4</span> <span class="ow">and</span> <span class="mi">13</span><span class="o">%</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

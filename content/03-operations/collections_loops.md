@@ -1,0 +1,3 @@
+# Collections & Loops
+
+Now that we have a handle on basic Python types, operators, and conditionals, we can start investigating more complex programming structures. In this chapter, we'll introduce a few types of variables in Python that will allow you to to store collections of information. Once you have a handle on lists, tuples, and dictionaries, we'll introduce and cover the use of loops in programming.
