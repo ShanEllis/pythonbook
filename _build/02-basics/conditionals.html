@@ -1,0 +1,642 @@
+---
+interact_link: content/02-basics/conditionals.ipynb
+kernel_name: python3
+kernel_path: content/02-basics
+has_widgets: false
+title: |-
+  Conditionals
+pagenum: 9
+prev_page:
+  url: /02-basics/operators.html
+next_page:
+  url: /03-operations/collections_loops.html
+suffix: .ipynb
+search: code statement else elif condition print true conditional execute python within false evaluates not conditionals statements div alert example math only after q following lines evaluate below both conditions here value class success boolean optional s used any variable paul b c d good well check codeif syntax requires note executed run above evaluated printing end met thus expression yay snippet george ringo control whether line executes execution must indented beneath store output because statment storing before finally does string required nothing returned order always tested ever syntaxerror comparisons beyond operators chapter language stored less replace something myvalue john e
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Conditionals</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conditionals">Conditionals<a class="anchor-link" href="#Conditionals"> </a></h1><p>Conditionals are a code structure that help you control whether a certain line of code executes. We'll discuss three ways in which you can control code execution: <code>if</code>, <code>elif</code> (which stands for 'else if'), and <code>else</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="if-statements"><code>if</code> statements<a class="anchor-link" href="#if-statements"> </a></h2><p>Conditional statements begin with an <code>if</code> statement. They can optionall have <code>elif</code> and <code>else</code>, which we'll get to in just a second, but they <em>must</em> have an <code>if</code> statement and that <code>if</code> statement must come first. The code within an <code>if</code> statement will execute if the condition following <code>if</code> evaluates as True.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Conditionals are statements that check for a condition, using the <code>if</code> statement, and then only execute a set of code if the condition evaluates as <code>True</code>.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The general syntax for a conditional <code>if</code> statments requires an <code>if</code> followed by a condition and a <code>:</code>. Subsequent lines that you want to execute if the condition are true go on indented lines beneath the <code>if</code> conditional statement:</p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="c1"># execute this code</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, if we define <code>condition</code> to store the boolean <code>True</code>, the conditional <code>if</code> statement, will then execute the <code>print()</code> statement within the condition.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">condition</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if the condition evaluates as True.&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>This code executes if the condition evaluates as True.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that if condition were to store the Boolean <code>False</code>, this conditional statement would produce no output, as the conditional <code>if</code> statement did <em>not</em> evaluate as True. The code within the conditional is <em>only</em> executed if the condition evaluates as <code>True</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">condition</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if the condition evaluates as True.&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="else-statements"><code>else</code> statements<a class="anchor-link" href="#else-statements"> </a></h2><p>After an <code>if</code> statement you can add an optional <code>else</code> statement. The code within this conditional will execute if the <code>if</code> conditional statement did <em>not</em> evaluate as <code>True</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+After an <code>if</code>, you can use an <code>else</code> that will run if the conditional(s) above have not run.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, below we see that condition is defined as <code>False</code>. Therefore, the <code>if</code> condtional statement evaluates as False. The code within the <code>if</code> conditional is ignored, moving onto the <code>else</code> statement. The code within that statement is evaluated, printing the code within the <code>else</code> statement.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">condition</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if the condition evaluates as True.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if the condition evaluates as False&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>This code executes if the condition evaluates as False
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that the syntax for both the <code>if</code> and the <code>else</code> statements require a colon at the end of the line and the lines of code within the <code>if</code> or <code>else</code> statement to be indented. Python requires this because visually makes it clear to readers of your code which lines of code will be executed under which conditions.</p>
+<p>Futher, it's important to note that only one condition can be met, so either the code for the <code>if</code> statement <em>or</em> the code for the <code>else</code> statement will execute, but not both.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="elif-statements"><code>elif</code> statements<a class="anchor-link" href="#elif-statements"> </a></h2><p>The final type of conditional statement is the <code>elif</code> statement. These too are optional, and are read as "else if". After an <code>if</code> statment, an <code>elif</code> statement can be used to check additional conditions. As with <code>if</code> statements, the code within an <code>elif</code> statement will only execute if the condition specified evaluates as <code>True</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+After an <code>if</code> statement, you can have any number of <code>elif</code>`s (meaning 'else if') to check other conditions.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here, we have two variables <code>condition_1</code> storing <code>False</code> and <code>condition_2</code> storing <code>True</code>. We then see an <code>if</code>, <code>elif</code> and <code>else</code> statement. As before, the code for only one of these conditions will execute. If the <code>if</code> condition evaluates as <code>True</code>, the code within that statement will execute. Else, if (<code>elif</code>) the condition in the <code>elif</code> statement evaluates as <code>True</code>, the code within the <code>elif</code> statement will execute. Finally, if neither the <code>if</code> or <code>elif</code> evaluate as <code>True</code>, the code within the <code>else</code> statment will execute.</p>
+<p>As before, the syntax requires colons after each <code>if</code>, <code>elif</code>, and <code>else</code> statement and indentation for the lines of code within each statement.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">condition_1</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">condition_2</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">condition_1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if condition_1 evaluates as True.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">condition_2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if condition_1 did not evaluate as True, but condition_2 does.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if both condition_1 and condition_2 evaluate as False&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>This code executes if condition_1 did not evaluate as True, but condition_2 does.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the example above, as <code>condition_1</code> is <code>False</code>, the code beneath the <code>if</code> statement does not execute. However, the <code>elif</code> condition (<code>condition_2</code>) evaluates as <code>True</code>, printing the string within the <code>elif</code> statement.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="elif-without-an-else"><code>elif</code> without an <code>else</code><a class="anchor-link" href="#elif-without-an-else"> </a></h3><p>An <code>else</code> statement is <em>not</em> required, but if both the <code>if</code> and the <code>elif</code> condtions are not met (both evaluate as <code>False</code>), then nothing is returned.</p>
+<p>For example below both conditions evaluate as <code>False</code> and thus the code passes silently, returning nothing.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">condition_1</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">condition_2</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">condition_1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if condition_1 evaluates as True.&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">condition_2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if condition_1 did not evaluate as True, but condition_2 does.&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="elif-after-an-else-does-not-make-sense"><code>elif</code> <em>after</em> an <code>else</code> does not make sense<a class="anchor-link" href="#elif-after-an-else-does-not-make-sense"> </a></h3><p>Finally, the order will always be <code>if</code>-<code>elif</code>-<code>else</code>...with only the <code>if</code> being required. If the <code>elif</code> is at the end...it will never be tested, as the <code>else</code> will have already returned a value once reached (and thus Python will throw an error).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## THIS CODE WILL PRODUCE AN ERROR</span>
+<span class="n">condition_1</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">condition_2</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">condition_1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if condition_1 evaluates as True.&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if both condition_1 and condition_2 evaluate as False&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">condition_2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This code executes if condition_1 did not evaluate as True, but condition_2 does.&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-5-aedfc0cec5db&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">9</span>
+<span class="ansi-red-fg">    elif condition_2:</span>
+       ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the example above, there is an <code>elif</code> at the end. By definition, there is no way the <code>elif</code> will ever be tested. Accordingly, Python indicates that there is a <code>SyntaxError</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Conditionals-With-Value-Comparisons">Conditionals With Value Comparisons<a class="anchor-link" href="#Conditionals-With-Value-Comparisons"> </a></h2><p>Beyond providing Booleans directly, conditionals can be used with any expression that evaluates as a Boolean. The operators discussed in an earlier chapter can be used in your conditional statements.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Any expression that can be evaluated as a boolean, such as value comparisons, can be used with conditionals.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, below the condition <code>language == "Python"</code> evaluates as <code>True</code> because the string "Python" has been declared in the variable <code>language</code>. Thus, the code prints "Yay!"</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">language</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+
+<span class="k">if</span> <span class="n">language</span> <span class="o">==</span> <span class="s2">&quot;Python&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Yay!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">language</span> <span class="o">==</span> <span class="s2">&quot;English&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Not a programming language.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Get yourself a programming language!&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Yay!
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Beyond testing for variable equality, mathematical operators can be very helpful when working with condtionals. For example, you can have different code execute depending upon the value stored in a variable.</p>
+<p>Here we have an example where <code>number</code> stores the integer 4. The conditional tests whether the value stored in <code>number</code> is less than 5. As 4 is less than 5, the code within the <code>if</code> statement executes, printing 'if statement execution'.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">4</span>
+ 
+<span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;if statement execution&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;elif statement execution&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>if statement execution
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary"> </a></h2><p>To finish here, we'll summarize a number of the key points in this chapter:</p>
+<ul>
+<li>All conditionals start with an <code>if</code>, can have an optional and variable number of <code>elif</code>'s and an optional <code>else</code> statement</li>
+<li>Conditionals can take any expression that can be evaluated as <code>True</code> or <code>False</code>. </li>
+<li>At most one component (<code>if</code> / <code>elif</code> / <code>else</code>) of a conditional will run</li>
+<li>The order of conditional blocks is always <code>if</code> then <code>elif</code>(s) then <code>else</code></li>
+<li>Code is only ever executed if the condition is met</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises"> </a></h2><p>Q1. <strong>Replace <code>---</code> below with something that will print 'True'</strong></p>
+<div class="highlight"><pre><span></span><span class="n">math</span> <span class="o">=</span> <span class="o">---</span>
+
+<span class="k">if</span> <span class="n">math</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+</pre></div>
+<p>Q2. <strong>Replace <code>---</code> below with something that will print 'False'.</strong></p>
+<div class="highlight"><pre><span></span><span class="n">my_value</span> <span class="o">=</span> <span class="o">---</span>
+
+<span class="k">if</span> <span class="n">my_value</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;True&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;False&#39;</span><span class="p">)</span>
+</pre></div>
+<p>Q3. <strong>What will the following code snippet print out?</strong></p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="bp">False</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Paul&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;George&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Ringo&quot;</span><span class="p">)</span>
+</pre></div>
+<p>A) John<br>
+B) Paul, George, Ringo<br>
+C) Paul<br>
+D) Paul, George<br>
+E) Ringo</p>
+<p>Q4. <strong>What will the following code snippet print out?</strong></p>
+<div class="highlight"><pre><span></span><span class="k">if</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;I did Math&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="mi">1</span><span class="o">/</span><span class="mi">0</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;I broke Math&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;I didn&#39;t do math&quot;</span><span class="p">)</span>
+</pre></div>
+<p>A) I did Math<br>
+B) I broke Math<br>
+C) I didn't do math<br>
+D) This code won't execute.</p>
+<p>Q5. <strong>What will the following code snippet print out?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">conditional</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">python</span> <span class="o">=</span> <span class="s2">&quot;great&quot;</span>
+
+<span class="k">if</span> <span class="n">conditional</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">python</span> <span class="o">==</span> <span class="s2">&quot;great&quot;</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Yay Python!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Oh no.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;I&#39;m here.&quot;</span><span class="p">)</span>
+</pre></div>
+<p>A) Yay Python!<br>
+B) Oh no.<br>
+C) I'm here.<br>
+D) This code won't execute.</p>
+<p>Q6. <strong>What would be the output of running the following code?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">condition</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">7</span>
+
+<span class="k">if</span> <span class="n">condition</span><span class="p">:</span> 
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;SO GOOD!&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;NOT SO GOOD.&#39;</span><span class="p">)</span>
+</pre></div>
+<p>A) SO GOOD!<br>
+B) NOT SO GOOD.<br>
+C) True<br>
+D) False<br>
+E) SyntaxError</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

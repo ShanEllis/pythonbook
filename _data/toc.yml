@@ -1,0 +1,148 @@
+# This file contains the order and numbering for all sections in the book.
+#
+# It is a sample TOC file to help you get started. Fill it out with entries
+# for your own content.
+#
+# Each entry has the following schema:
+#
+# - title: mytitle   # Title of chapter or section
+#   url: /myurl  # URL of section relative to the /content/ folder.
+#   sections:  # Contains a list of more entries that make up the chapter's sections
+#   not_numbered: true  # if the section shouldn't have a number in the sidebar
+#     (e.g. Introduction or appendices)
+#   expand_sections: true  # if you'd like the sections of this chapter to always
+#     be expanded in the sidebar.
+#   external: true  # Whether the URL is an external link or points to content in the book
+#
+# Below are some special values that trigger specific behavior:
+# - search: true  # Will provide a link to a search page
+# - divider: true  # Will insert a divider in the sidebar
+# - header: My Header  # Will insert a header with no link in the sidebar
+#
+# See the links below for an example.
+
+# Top-level page
+# - title: Introduction
+#   url: /intro
+#   # not_numbered: true
+#   # external: false
+#   # expand_sections: false
+
+# # Adds a searchbar link
+# - title: Search
+#   search: true
+
+# # Divider for meta-pages and content page
+# - divider: true
+
+# Add a header and sample content section
+# - header: Introduction to Python
+
+# A chapter w/ a collection of sections beneath it
+- title: Introduction
+  url: /01-intro/intro
+  not_numbered: false
+  expand_sections: true
+  sections:
+  - title: Why This Book?
+    url: /01-intro/why
+    not_numbered: false
+  - title: Who is this for?
+    url: /01-intro/who
+    not_numbered: false
+  - title: Tools
+    url: /01-intro/tools
+    not_numbered: false
+  - title: Jupyter Notebooks
+    url: /01-intro/jupyter_notebooks
+    not_numbered: false
+- title: Python Basics
+  url: /02-basics/basics
+  not_numbered: false 
+  expand_sections: true
+  sections:
+   - title: Variables
+     url: /02-basics/variables
+     not_numbered: false
+   - title: Operators
+     url: /02-basics/operators
+     not_numbered: false
+   - title: Conditionals
+     url: /02-basics/conditionals
+     not_numbered: false
+- title: Collections & Loops
+  url: /03-operations/collections_loops
+  not_numbered: false
+  expand_sections: true
+  sections:
+   - title: Collections
+     url: /03-operations/collections
+     not_numbered: false      
+   - title: Loops
+     url: /03-operations/loops
+     not_numbered: false   
+- title: Functions
+  url: /04-functions/functions
+  not_numbered: false
+  expand_sections: true
+  sections:
+   - title: Functions
+     url: /04-functions/functions
+     not_numbered: false  
+   - title: Debugging & Errors
+     url: /04-functions/debugging_errors
+     not_numbered: false  
+#    - title: Namespaces & Scope
+#      url: /04-functions/namespaces_scope
+#      not_numbered: false  
+#    - title: Methods
+#     url: /04-functions/methods
+#     not_numbered: false
+# - title: Objects & Classes 
+#   url: /05-classes/classes_overview
+#   not_numbered: false
+#   expand_sections: true
+#   sections:
+#    - title: Object-Oriented Programming
+#     url: /05-classes/object
+#     not_numbered: false   
+#    - title: Classes
+#     url: /05-classes/classes
+#     not_numbered: false 
+#   - title: Namespaces
+#     url: /05-classes/namespaces
+#     not_numbered: false    
+# - title: Good Code
+#   url: /good_code
+#   not_numbered: false
+#   expand_sections: true
+#   sections:
+#    - title: APIs
+#     url: /apis
+#     not_numbered: false 
+#    - title: Documentation
+#     url: /documentation
+#     not_numbered: false   
+#    - title: Code Styles
+#     url: /code_style
+#     not_numbered: false
+#    - title: Code Testing
+#     url: /code_testing
+#     not_numbered: false   
+#    - title: Command Line
+#     url: /command_line
+#     not_numbered: false   
+
+
+# Divider for meta-pages and content page
+- divider: true
+
+# External link
+- title: GitHub repository
+  url: https://github.com/shanellis/pythonbook
+  external: true
+  not_numbered: true
+
+- title: Acknowlegements
+  url: /acknowledgements
+  not_numbered: true

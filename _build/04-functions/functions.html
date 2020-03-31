@@ -1,0 +1,1946 @@
+---
+interact_link: content/04-functions/functions.ipynb
+kernel_name: python3
+kernel_path: content/04-functions
+has_widgets: false
+title: |-
+  Functions
+pagenum: 14
+prev_page:
+  url: /04-functions/functions.html
+next_page:
+  url: /04-functions/debugging_errors.html
+suffix: .ipynb
+search: function input within code variable value functions return variables defined output parameter namespace not num exponent example its here python however only access myvar well parameters specified default using def keyword arguments define returns takes print above values weve div alert following provided stored store global exponentiate provide operations inputs called definition execute name available positional information same want take does previously currently passed into order q far important different type any programming pieces used printvalue line notice execution stores inside notebook outside am given documentation char specify separate class success set us operation remains discussed easier carry parentheses after
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Functions</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Functions">Functions<a class="anchor-link" href="#Functions"> </a></h1>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So far, we've introduced a number of data types (integers, floats, lists, dictionaries, etc) and code constructs (conditionals and loops). Here, we'll introduce <strong>functions</strong>, which provide your code with seemingly infinite flexibiltiy and reusability once mastered.</p>
+<p>We'll discuss how to define a function, using <code>def</code>, how to get that function to <code>return</code> important information, how to specify input parameters to the function you define, and discuss how functions have a special, separate namespace.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Functions">Functions<a class="anchor-link" href="#Functions"> </a></h2><p>Functions are a way to write a few lines of code to accomplish a goal that can be reused over and over again, carrying out the <em>same operations</em> on <em>different inputs</em>.</p>
+<div class="alert alert-success">
+A function is a re-usable piece of code that performs operations on a specified set of variables, and returns the result.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You've been <em>using</em> functions without us really discussing it. For example, <code>type()</code> is a function that takes an input (a variable whose type you want to know). The function always carries out the same operation - it determines the input variable's type, and returns that information to the viewer. <em>But</em>, it can take any variable as input. So, the inputs differ, but the procedure (what <code>type</code> does behind the scenes) remains the same.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you&#39;ve seen functions before</span>
+<span class="n">my_var</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>list</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As discussed previously, copy and pasting the same or very similar bits of code over and over again is to be avoided. <strong>Loops</strong> were introduced as one way to avoid this. <strong>Functions</strong> are another! Learning how and when to write functions will make your code easier to read, easier to bug, and easier to use.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Modular-Programming">Modular Programming<a class="anchor-link" href="#Modular-Programming"> </a></h2><p>Specifically, functions are helpful when programming modularly. <strong>Modular programming</strong> is an approach to programming that focuses on building programs from indendent modules ('pieces'). While these individual pieces can all fit together to accomplish a larger goal, each piece <em>can</em> operate independently.</p>
+<p>Functions facilitate this approach to programming in the following ways:</p>
+<ul>
+<li>Functions allow us to flexibly re-use pieces of code</li>
+<li>Each function is independent of every other function, and other pieces of code</li>
+<li>Functions are the building blocks of programs, and can be flexibly combined and executed in specified orders<ul>
+<li>This allows us to build up arbitrarily complex, well-organized programs</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="User-defined-Functions">User-defined Functions<a class="anchor-link" href="#User-defined-Functions"> </a></h2><p>While you've <em>used</em> other functions (<code>len()</code>, <code>type()</code>, <code>print()</code>) previously, we've yet to discuss the fact that you can write your <em>own</em> functions to carry out the procedures you want them to carry out.</p>
+<p>To define (create) a <strong>user-defined function</strong>, you'll use <code>def</code>.</p>
+<p>This will always take hte general form:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">input_parameters</span><span class="p">):</span>
+    <span class="c1"># code with function operation</span>
+</pre></div>
+<p>As the creator of the function, you'll specify the <code>function_name</code>, determine what variable names to use for your <code>input_parameters</code>, and write the code within your function to carry out the desired operations on your <code>input_parameters</code>.</p>
+<p>For example, the simplest function would be one that took an input and printed that input out. It's not a very <em>interesting</em> or <em>helpful</em> function, but it demonstrates the idea of how these work.</p>
+<p>Here, we define a function called <code>print_value</code> that takes <code>num</code> as an input parameter.</p>
+<p>Within the function definition we see the line of code: <code>print(num)</code>. Notice that <code>num</code> refers to the input parameter specified within the parentheses after <code>print_value</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define a function: print_value</span>
+<span class="c1"># num is a parameter for the function</span>
+<span class="k">def</span> <span class="nf">print_value</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    
+    <span class="c1"># do some operation</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All the code above has done is define (or create) the function. We haven't yet <em>used</em> the function.</p>
+<p>To use - or execute - this function, meaning, to get it to actually print out the <code>num</code> provided, we first call the function name <code>print_value()</code> and then provide a value to the parameter <code>num</code> within the parentheses.</p>
+<p>In the example below, we provide the value '6' as the input parameter <code>num</code>.</p>
+<p>This means that when the code executes, <code>num</code> refers to the value '6'. Accordingly, upon execution, the function prints the value stored in <code>num</code> - 6:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># excecute a function by calling function by name</span>
+<span class="c1"># adding input within parentheses</span>
+<span class="n">print_value</span><span class="p">(</span><span class="n">num</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>6
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that this function can be equivalently called without specifying <code>num =</code>. The function execution below is equivalent to the example above:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># equivalent function call</span>
+<span class="c1"># without specifying parameter</span>
+<span class="n">print_value</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>6
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="return-statements"><code>return</code> statements<a class="anchor-link" href="#return-statements"> </a></h2><p>When this function executes, the code within the function runs using the specified input. The code within this function says to <code>print()</code> the variable.</p>
+<p>However, what if we wanted to <em>store</em> that output for use later. What if we wanted to store the value '6'?</p>
+<p>Well, as the function is <em>currently</em> defined, we are unable to do that because currently the function <em>only</em> prints the value. It does not store and return it:</p>
+<p>If we try to store the output from the function in a new variable <code>new_var</code>. As the function is currently defined, nothing is stored and returned from the function. The first line of code <code>prints()</code> the input value 6. The second line of code (<code>print(new_var)</code>), returns 'None'.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## why is it printing None?</span>
+<span class="c1">## lets look at return below</span>
+<span class="n">new_var</span> <span class="o">=</span> <span class="n">print_value</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>6
+None
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All this function is doing currently is printing the input. It's not actually <em>storing</em> any new information. To do that, we need to use <code>return</code>.</p>
+<p>Here we define a function <code>return_value</code>. As with the previous <code>print_value()</code> function, it takes <code>num</code> as an input parameter.</p>
+<p>However, within the body of the function, we now store the input parameter <code>num</code> in the variable <code>output</code> and then <strong><code>return</code></strong> the variable <code>output</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># improving that function using return</span>
+<span class="k">def</span> <span class="nf">return_value</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    
+    <span class="c1"># do some operation</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">num</span>
+    
+    <span class="c1"># return an answer</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Remember that the code above defines the function. It does <em>not</em> execute it.</p>
+<p>To do that, we call the function name <code>return_value</code> and provide a value to the input parameter <code>num</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># excecute that function</span>
+<span class="n">return_value</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The output appears similar to what we saw with the <code>print_value()</code> function; however, we'll notice the difference with this new function when we try to assign the output to a variable:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># execute function but assign output </span>
+<span class="c1"># store that output in variable new_val</span>
+<span class="n">new_val</span> <span class="o">=</span> <span class="n">return_value</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">new_val</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>6
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, the output returned from the function <code>return_value(6)</code> can be stored in <code>new_val</code>. When we print the contents of this variable, it now stores the output, thanks to the use of <code>return</code> within the function!</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Multiple-Input-Parameters">Multiple Input Parameters<a class="anchor-link" href="#Multiple-Input-Parameters"> </a></h2><p>So far, the functions we've defined have only printed out the input provided to the function. That's not very practical. Typically functions carry out a meaningul operation. To demonstrate this, let's generate a function that takes two values as its input parameters, adds them together, and then returns the sum of the values as its output.</p>
+<p>We'll call this function <code>add_two_numbers</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># define function</span>
+<span class="k">def</span> <span class="nf">add_two_numbers</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+    
+    <span class="c1"># Do some operations on the input variables</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    
+    <span class="c1"># Return the answer</span>
+    <span class="k">return</span> <span class="n">answer</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notice in the function defined above that there are two input parameters specified within the function - <code>num1</code> and <code>num2</code>.</p>
+<p>Within the body of the function, we store the addition of these two parameters in <code>answer</code> and <code>return</code> that variable.</p>
+<p>With the code above, <code>add_two_numbers</code> has been defined.</p>
+<p>To execute that function, we will call the function and provide it with two input values, one for each of its required input parameters:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># execute function</span>
+<span class="n">add_two_numbers</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Since this function includes a <code>return</code> statement, we can store the output of that function in a variable (here: <code>output</code>), allowing us to use the output from the function elsewhere in our code.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Execute our function again, on some other inputs</span>
+<span class="n">output</span> <span class="o">=</span> <span class="n">add_two_numbers</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Multiple-Operations">Multiple Operations<a class="anchor-link" href="#Multiple-Operations"> </a></h2><p>Further, we aren't limited to a single operation within a user-defined function. We can use multiple operations and all of the concepts we've used previously (including, for example, loops and conditionals).</p>
+<p>For example, here we define a function called <code>even_odd</code>. It takes a single input parameter <code>value</code>.</p>
+<p>Within the body of the function we use conditionals to determine <code>if</code> the input parameter value is even (<code>value % 2 == 0</code>). If even, the function stores 'even' in the variable <code>out</code>. Otherwise (<code>else</code>) it stores 'odd' in the variable <code>out</code>.</p>
+<p>This variable <code>out</code> is <code>return</code>-ed.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># determine if a value is even or odd</span>
+<span class="c1"># and return that value</span>
+<span class="k">def</span> <span class="nf">even_odd</span><span class="p">(</span><span class="n">value</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> 
+        <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;even&#39;</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;odd&#39;</span>
+    
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Upon execution, the function determines whether the input variable (here, <code>value = -1</code>) is even or odd, <code>return</code>ing that information:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Execute our function</span>
+<span class="n">even_odd</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;odd&#39;</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Function-Properties">Function Properties<a class="anchor-link" href="#Function-Properties"> </a></h2><p>So far, we've discussed a few properties of functions:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Functions are defined using <code>def</code> followed by <code>:</code>, which opens a code-block that comprises the function<ul>
+<li>Running code with a <code>def</code> block <em>defines</em> the function (but does not <em>execute</em> it)</li>
+</ul>
+</li>
+<li>Functions are <em>executed</em> using parentheses - <code>()</code><ul>
+<li>This is when the code inside a function is actually run</li>
+</ul>
+</li>
+<li>Functions use the special operator <code>return</code> to exit the function, passing out any specified variables</li>
+<li>When you use a function, you can assign the output to a variable</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, there are additional important properties that we have have encountered, but have not yet explicitly discussed:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Functions have their own <strong>namespace</strong><ul>
+<li>They only have access to variables explicitly passed into them</li>
+</ul>
+</li>
+<li>Inside a function, there is code that performs operations on the available variables</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Function-Namespaces">Function Namespaces<a class="anchor-link" href="#Function-Namespaces"> </a></h2><p>We previously defined the namespace as follows:</p>
+<div class="alert alert-success">
+The <b>namespace</b> is the 'place' where all your currently defined code is declared - all the things you have stored in active memory. 
+</div><p>So, as you execute code in a notebook, you generate variables. These variables become available within the namespace.</p>
+<p>That is all true; however, importantly, functions have a <strong>separate namespace</strong>. The only variables available within a function are the variables assigned within it and those passed in as input parameters.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, with this <code>even_odd()</code> function we defined previoulsy, the only variables available within the function are <code>value</code> (which is passed in as an input parameter) and <code>out</code> (which is defined within the function itself).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">even_odd</span><span class="p">(</span><span class="n">value</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> 
+        <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;even&#39;</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="n">out</span> <span class="o">=</span> <span class="s1">&#39;odd&#39;</span>
+    
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This means that any variables created in a notebook outside of a function as you write code are <em>not</em> usable within the defined function.</p>
+<p>This is what allows functions to be indpendent and self-contained pieces of code. This means that if you created a variable called <code>my_fav_variable</code> outside of the function, you <em>cannot</em> use or refer to that variable within a function because <code>my_fav_variable</code> is in a <em>separate namespace</em>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Previously, we noted that within a Jupyter notebook, you can check the variables currently defined using <code>%whos</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Remember, you can check defined variables with `%whos`</span>
+<span class="o">%</span><span class="k">whos</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Variable          Type        Data/Info
+---------------------------------------
+add_two_numbers   function    &lt;function add_two_numbers at 0x10e0ee8c8&gt;
+even_odd          function    &lt;function even_odd at 0x10e0df598&gt;
+my_var            list        n=3
+new_val           int         6
+new_var           NoneType    None
+output            int         3
+print_value       function    &lt;function print_value at 0x10e0b1ae8&gt;
+return_value      function    &lt;function return_value at 0x10e0db7b8&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This returns all the variables created and stored in your <em>global</em> namespace. These are available for use in operations in your notebook.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, each function <em>only</em> has access to the variables defined within the function or passed in as variables.</p>
+<p>To determine what variables a function has access to, we'll create a function called <code>check_function_namespace()</code>. This takes an input and uses the  <code>locals()</code> function to return information about what variables the function has access to:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">check_function_namespace</span><span class="p">(</span><span class="n">function_input</span><span class="p">):</span>
+    <span class="c1"># Check what is defined and available inside the function</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When we provide <code>check_function_namespace()</code> with the value '1' as its input, it returns that the <em>only</em> variable it has access to is the input variable '1'.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Functions don&#39;t `see` everything</span>
+<span class="n">check_function_namespace</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;function_input&#39;: 1}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When we provide <code>check_function_namespace()</code> with the value <code>True</code> as its input, it returns that the <em>only</em> variable it has access to is the input variable <code>True</code>. Note that it no longer has access to the value '1', as that was <em>not</em> passed in as an input on this execution of hte function.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Functions don&#39;t `see` everything</span>
+<span class="n">check_function_namespace</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;function_input&#39;: True}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The logic follows that if you pass two inputs into the function, the function will have access to both inputs, but the fact remains that those are the <em>only</em> variables to which the function has access. It cannot access the other variables stored outside the function in the global namespace:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># using two different inputs to a function</span>
+<span class="k">def</span> <span class="nf">check_function_namespace2</span><span class="p">(</span><span class="n">function_input</span><span class="p">,</span> <span class="n">other_name</span><span class="p">):</span>
+    <span class="c1"># Check what is defined and available inside the function</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># returning what each input is storing</span>
+<span class="n">check_function_namespace2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;other_name&#39;: True, &#39;function_input&#39;: 1}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Names defined inside a function only exist within the function.</p>
+<p>For example, if we define a global variable <code>my_var</code> and store a string in that variable:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">my_var</span> <span class="o">=</span> <span class="s1">&#39;I am a variable&#39;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The above line of code creates the variable <code>my_var</code>, storing 'I am a variable' in that varaible in the global namespace.</p>
+<p>Now, if we run our check_function_namespace, and pass that variable into the function, the function will have access to that variable:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">check_function_namespace</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;function_input&#39;: &#39;I am a variable&#39;}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>But</em>, if we pass a different variable into that function, <code>my_var</code> is no longer available within the function, as it was not passed into the function upon execution.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">check_function_namespace</span><span class="p">(</span><span class="s1">&#39;new string&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;function_input&#39;: &#39;new string&#39;}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Regardless of whether or not the variable is available for use within the function, <code>my_var</code> still exists in the global namespace:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I am a variable
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Given all of the above discussion about namespaces, it logically follows that a variable of the same name can exist in the global namespace <em>and</em> within a function, with each storing different information.</p>
+<p>This can be confusing when reading code, so it's best to avoid these situations when writing code and choosing variable names, but it's important to understand that it is logically possible.</p>
+<p>To demonstrate this point, let's define a function called <code>change_var</code>. This function takes an input variable <code>my_var</code>. Within the function it stores 'I am something else' in <code>my_var</code> and prints 'Inside function:' and the value stored in <code>my_var</code> within the function:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">change_var</span><span class="p">(</span><span class="n">my_var</span><span class="p">):</span>
+    <span class="n">my_var</span> <span class="o">=</span> <span class="s1">&#39;I am something else&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Inside function: </span><span class="se">\t\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Remember, that we've already created <code>my_var</code> in the global namespace:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># my_var in the global namespace</span>
+<span class="n">my_var</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;I am a variable&#39;</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now, when we execute our <code>change_var()</code> function, we see that despite passing <code>my_var</code> (which stores 'I am a variable') into the function, within the function, <code>my_var</code> gets defined as the string 'I am something else':</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># my_var within the function</span>
+<span class="n">change_var</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Inside function: 		 I am something else
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>But, because the namespace within a function is separate, this change only occurs within the function. The value stored in <code>my_var</code> in the global namespace (outside the function) remains unchanged:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># my_var in the global namespace remains unchanged</span>
+<span class="n">my_var</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;I am a variable&#39;</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To summarize, <code>my_var</code> outside the function remains unchanged, only storing 'I am somthing else' within the<code>change_var()</code> function:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outside, before function: </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_var</span><span class="p">)</span>
+<span class="n">change_var</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outside, after function: </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_var</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Outside, before function: 	 I am a variable
+Inside function: 		 I am something else
+Outside, after function: 	 I am a variable
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Default-Values">Default Values<a class="anchor-link" href="#Default-Values"> </a></h2><p>So far, we've seen that functions can take inputs, but we haven't discussed how to set a default value for an input parameter. It's helpful to set default values for cases when there is a value your input parameter will take most of the time.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Function parameters can also take default values. This makes some parameters optional, as they take a default value if not otherwise specified.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, if you wrote a function called <code>exponentiate</code>, you may expect that <em>most</em> of the time, people will want to square a value. However, you want to leave users the <em>option</em> to be able to raise a value to a different power. This is a case where you would set the default parameter value to square the input. To do this, you assign a value within the parentheses after the function name (within the function definition).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a function, that has a default values for a parameter</span>
+<span class="k">def</span> <span class="nf">exponentiate</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">exponent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>    
+    <span class="k">return</span> <span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this function, we see there are two input parameters: <code>number</code> and <code>exponent</code>. <code>exponent</code> here takes the default value '2', as it is assigned within the function definition.</p>
+<p>Within the function, <code>number</code> is raised to the power <code>exponent</code>. This means, that under default conditions, the <code>number</code> provided will be squared and returned:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use the function, using default value</span>
+<span class="n">exponentiate</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As seen above, when we pass the value 2 to the <code>number</code> parameter, the function returns $2^2$, or 4. Notice that when a default value is specified, if you want the function to use that default value provided, you do not have to specify any inputs for that parameter.</p>
+<p>However, if you want to use a <em>different</em> value for your <code>exponent</code>, you still have that option. You could so so using the following:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Call the function, over-riding default value with something else</span>
+<span class="c1"># python assumes values are in order of parameters specified in definition</span>
+<span class="n">exponentiate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notice here that Python returns 8 as it has raised $2^3$. Python in this case assumes values are provided in the order of the parameters specified within the function definition, <code>number</code> then <code>exponent</code>.</p>
+<p>However, an equivalent function call would be as you see here:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can always state this explicitly</span>
+<span class="n">exponentiate</span><span class="p">(</span><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">exponent</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In each of the two previous function calls, Python uses the <code>exponent</code> value 3, specifed during the function call. This overrides the default value provided (2), using the exponent value provided instead (3).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Positional-vs.-Keyword-Arguments">Positional vs. Keyword Arguments<a class="anchor-link" href="#Positional-vs.-Keyword-Arguments"> </a></h2><p>In the previous example we demonstrated that it is possible to use positional arguments (<code>exponentiate(2, 3)</code>) or keyword arguments (<code>exponentiate(number = 2, exponent = 3)</code>)when calling a function without explicitly explaining what's going on.</p>
+<p>Here, we'll explain exactly what is meant by <strong>positional</strong> and <strong>keyword</strong> arguments.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Arguments to a function can be indicated by either position or keyword.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When we call a function and ask Python to use the position or order of the values provided, we're using <strong>positional arguments</strong>. Python will always use the inputs in the order specified in the function definition.</p>
+<p>As <code>exponentiate</code> was defined as follows:</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponentiate</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">exponent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>    
+    <span class="k">return</span> <span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span>
+</pre></div>
+<p>we know that in the following function call, '2' refers to the <code>number</code> (the first argument in the function definition) and '3' to the <code>exponent</code> (the second argument in the function definition).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Positional arguments use the position to </span>
+<span class="c1"># infer which argument each value relates to</span>
+<span class="n">exponentiate</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Equivalently and more explicitly, keywords can be used when calling a function by including the parameter, the assignment operator (<code>=</code>), and the value you'd like to use for your function call.</p>
+<p>As noted previously, this function call below is equivalent to <code>exponentiate(2, 3)</code>; however, you can see that it's clearer to readers of your code as to what's going on. It can be beneficial when writing code to use keyword arguments to make it crystal clear to those reading your code what's going on:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Keyword arguments are explicitly named as to </span>
+<span class="c1"># which argument each value relates to</span>
+<span class="n">exponentiate</span><span class="p">(</span><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">exponent</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>One important point about keyword arguments it that their order does <em>not</em> matter when calling the function. The following is equivalent to the example above.</p>
+<p>Now, again, to make it easier on readers, it's best to keep things in the order of the function documentation; however, know that Python will know how to handle the input if you change the order of your input variables when using keyword arguments:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">exponentiate</span><span class="p">(</span><span class="n">exponent</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">number</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>8</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally for now, we'll note that you <em>cannot</em> mix keyword and positional arguments. Once you specify a keyword or use a positional argument, you'll have to use that for the remainder of your function call.</p>
+<p>As such the following code would produce an error as a keyword (<code>number = 2</code>) and positional argument (<code>3</code>) are attempted to be used in the same function call:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Note: once you have a keyword argument, </span>
+<span class="c1"># you can&#39;t have other positional arguments afterwards</span>
+<span class="c1"># this cell will produce an error</span>
+<span class="n">exponentiate</span><span class="p">(</span><span class="n">number</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-cyan-fg">  File </span><span class="ansi-green-fg">&#34;&lt;ipython-input-24-82d192fd1eb1&gt;&#34;</span><span class="ansi-cyan-fg">, line </span><span class="ansi-green-fg">3</span>
+<span class="ansi-red-fg">    exponentiate(number = 2, 3)</span>
+                            ^
+<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> positional argument follows keyword argument
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Docstrings">Docstrings<a class="anchor-link" href="#Docstrings"> </a></h2><p>So far, we've mainly focused on writing code that will execute; however, it's important that your code executes <em>and</em> that other people know how to use it. We'll talk more extensively about documentation later, but we'll introduce one piece of documentation now: the <strong>docstring</strong>.</p>
+<p>Docstrings allow you to include documentation within the function itself informing others of what the function does.</p>
+<p>Docstrings are specified by text within triple quotes in the first line after your function is defined.</p>
+<p>For example, in the example here, <code>"""return list of dictionary values"""</code> is the docstring:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">list_dictionary</span><span class="p">(</span><span class="n">my_dictionary</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;return list of dictionary values&quot;&quot;&quot;</span>
+    
+    <span class="c1"># create empty list</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># loop through dictionary input</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_dictionary</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>
+        <span class="n">output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To access this documentation within a Jupyter notebook, you can now use the familiar help (<code>?</code>) after the name of the function: <code>list_dictionary?</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises"> </a></h2><p>Q1. <strong>Given the function here, what would <code>print(remainder(12, 5) + remainder(2, 2))</code> return?</strong></p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remainder</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">divider</span><span class="p">):</span>
+
+    <span class="n">r</span> <span class="o">=</span> <span class="n">number</span> <span class="o">%</span> <span class="n">divider</span>
+
+    <span class="k">return</span> <span class="n">r</span>
+</pre></div>
+<p>Q2. <strong>Write a function <code>greet</code> that takes the parameter <code>name</code>. Inside the function, concatenate 'Hello', the person's name, and 'Good morning!". Assign this to <code>output</code> and return <code>output</code>.</strong>
+<br></p>
+<p>Q3. <strong>Update your <code>greet</code> function to include an informative docstring</strong>.
+<br></p>
+<p>Q4. <strong>Given the following, what would <code>print_numbers(5, 12.2)</code> print?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">an_int</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a_float</span> <span class="o">=</span> <span class="mf">11.5</span>
+
+<span class="k">def</span> <span class="nf">print_numbers</span><span class="p">(</span><span class="n">an_int</span><span class="p">,</span> <span class="n">a_float</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">an_int</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">a_float</span><span class="p">)</span>
+</pre></div>
+<p>Q5. <strong>Given the following function, what would <code>string_manipulator('abcde')</code> return?</strong></p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">string_manipulator</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+
+    <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">string</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;a&#39;</span> <span class="ow">or</span> <span class="n">char</span> <span class="o">==</span> <span class="s1">&#39;e&#39;</span><span class="p">:</span>
+            <span class="n">char</span> <span class="o">=</span> <span class="s1">&#39;z&#39;</span> 
+        <span class="n">output</span> <span class="o">=</span> <span class="n">output</span> <span class="o">+</span> <span class="n">char</span>
+
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+<p>Q6. <strong>Given the following function, what would <code>exponentiate(exponent = 2, number = 4)</code> return</strong>?</p>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponentiate</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">exponent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>    
+    <span class="k">return</span> <span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

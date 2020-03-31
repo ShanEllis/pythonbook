@@ -1,0 +1,574 @@
+---
+redirect_from:
+  - "/01-intro/jupyter-notebooks"
+interact_link: content/01-intro/jupyter_notebooks.ipynb
+kernel_name: python3
+kernel_path: content/01-intro
+has_widgets: false
+title: |-
+  Jupyter Notebooks
+pagenum: 5
+prev_page:
+  url: /01-intro/tools.html
+next_page:
+  url: /02-basics/basics.html
+suffix: .ipynb
+search: code cell text jupyter alert markdown item div notebooks class run cells notebook example b header also specified pound following python menu click formatting bold c execute top executed q kernel success list different sign want information not value href shortcuts plain single images intro png line yet order well documentation get useful within asterisks using appear follows still note before lists youre here drop variables running stop output print format io en help keyboard shift enter any executing specify italicized headers signs its just followed second numbered helpful toolbar change computer does variable allow left brackets says stored add
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Jupyter Notebooks</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Jupyter-Notebooks">Jupyter Notebooks<a class="anchor-link" href="#Jupyter-Notebooks"> </a></h1><p>In this chapter, we'll cover Jupyter Notebooks, including how to write and execute code and how to write text in the <strong>Markdown</strong> format. We'll also discuss what the kernel is, so that you understand generally how Jupyter Notebooks work.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Jupyter notebooks are a way to combine executable code, code outputs, and text into one connected file.
+</div><div class="alert alert-info">
+The official documentation from project Jupyter is available 
+<a href="https://jupyter-notebook.readthedocs.io/en/stable/" class="alert-link">here</a>
+and they also have some example notebooks 
+<a href="https://github.com/jupyter/notebook/tree/master/docs/source/examples/Notebook" class="alert-link">here</a>
+.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Menu-Options-&amp;-Shortcuts">Menu Options &amp; Shortcuts<a class="anchor-link" href="#Menu-Options-&amp;-Shortcuts"> </a></h2><p>To get a quick tour of the Jupyter user-interface, click on the 'Help' menu, then click 'User Interface Tour'.</p>
+<p>There are also a large number of useful keyboard shortcuts. Click on the 'Help' menu, and then 'Keyboard Shortcuts' to see a list.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Cells">Cells<a class="anchor-link" href="#Cells"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+    The main organizational structure of the notebook are <b> cells </b>.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Cells</strong> are an independent 'unit'. When you click into a cell, you can 'run' it by clicking Shift + Enter, or by pressing the play (Run) button at the top of your notebook.</p>
+<p>Cells come in different types for writing different things - mainly, text or code.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Markdown-Cells">Markdown Cells<a class="anchor-link" href="#Markdown-Cells"> </a></h3><p>Cells, can be plain text. In this book, for chapters where code is included, any place you see text - meaning places were we aren'twriting and executing code  - will be written in <strong>Markdown</strong>.</p>
+<p>Markdown is a way to specify all the text formatting you see within the text itself.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Italics-&amp;-Bold"><em>Italics</em> &amp; <strong>Bold</strong><a class="anchor-link" href="#Italics-&amp;-Bold"> </a></h4><p>For example, <em>italicized text</em> can be specified with an _underscore_ or *single asterisks*. So, using markdown formatting, that text would appear as follows:</p>
+<p>For example, italicized text can be specified with an <em>underscore</em> or <em>single asterisks</em>.</p>
+<p><strong>Bold text</strong> requires __two underccores__ or **two asterisks** surrounding the text you would like to bold. Using Markdown formatting, that text would look like this:</p>
+<p><strong>Bold text</strong> requires <strong>two underccores</strong> or <strong>two asterisks</strong> surrounding the text you would like to bold.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Headers">Headers<a class="anchor-link" href="#Headers"> </a></h4><p>There are a number of different size header you can use with Markdown formatting. The number of pound signs preceeding the header specifies the size of the header.</p>
+<p>For example, the following:</p>
+
+<pre><code># Headers are specified with a pound sign
+## The more pound signs, the smaller the header
+#### But it's still larger
+than just plain text.</code></pre>
+<p>would appear as follows using Markdown formatting:</p>
+<h1 id="Headers-are-specified-with-a-pound-sign">Headers are specified with a pound sign<a class="anchor-link" href="#Headers-are-specified-with-a-pound-sign"> </a></h1><h2 id="The-more-pound-signs,-the-smaller-the-header">The more pound signs, the smaller the header<a class="anchor-link" href="#The-more-pound-signs,-the-smaller-the-header"> </a></h2><h4 id="But-it's-still-larger">But it's still larger<a class="anchor-link" href="#But-it's-still-larger"> </a></h4><p>than just plain text.</p>
+<hr>
+<p>Note that to specify text for a header. the pound sign is followed by a space before the text for the header. The largest header -- specified by 1 pound sign -- is referred to as an H1 header. The second largest, H2, and so on and so forth.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Lists">Lists<a class="anchor-link" href="#Lists"> </a></h4><p>Finally, <strong>lists</strong> are also possible with Markdown formatting. Ordered lists are specified with a number, followed by a decimal point, followed by a space and then the text for the list. For example, the following:</p>
+
+<pre><code>1. numbered item
+2. item 2
+3. item 3</code></pre>
+<p>would appear as follows with Markdown formatting:</p>
+<ol>
+<li>numbered item</li>
+<li>item 2</li>
+<li>item 3</li>
+</ol>
+<p>Bulleted or unordered lists are also possible. these are specified by either a dash (<code>-</code>) or an asterisk (<code>*</code>) instead of the number and decimal point.</p>
+<p>For example, either of the following:</p>
+
+<pre><code>- item 1
+- item 2
+- item 3</code></pre>
+<p>or</p>
+
+<pre><code>* item 1
+* item 2
+* item 3</code></pre>
+<p>would appear as follows with Markdown formatting:</p>
+<ul>
+<li>item 1</li>
+<li>item 2</li>
+<li>item 3</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Code-Cells">Code Cells<a class="anchor-link" href="#Code-Cells"> </a></h3><p>Markdown is really helpful when you want to share text within a Jupyter notebook; however, you're here to learn to program. So let's start talking about code! Whenever you're writing code, you'll want to be sure the cell is set to be a code cell. Within a Jupyter notebook, whenever a cell is selected, you can look at the menu across the top. The drop-down menu will specify what type of cell you're working with.</p>
+<p>Here, we see an example of what you would see for a Markdown cell.</p>
+<p><img src="../images/01-intro/markdown_cell.png" alt="Markdown cell specified along toolbar"></p>
+<p>To change this cell to a code cell, you would select "Code" from the drop-down menu. You'd then be able to write and execute code from the cell!</p>
+<p><img src="../images/01-intro/code_cell.png" alt="Code selected from drop-down menu"></p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The next cell is an example of a code cell. The first line in that cell is a <strong>comment</strong>. Comments are ignored by the computer and are there to help humans reading the code understand what's going on. Comments always start with a pound sign. Note that a pound sign in a Markdown cell indicates something different (a header) than it does in a code cell (a comment).</p>
+<p>The second and third line in the example below are lines of Python code! Here we're assigning information to two variables: <code>a</code> and <code>b</code>. We'll talk all about variable assignment in the next chapter.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Cell can also be code.</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Running-Code">Running Code<a class="anchor-link" href="#Running-Code"> </a></h4><p>What's important to know now is that Jupyter notebooks don't <em>just</em> allow you to write code. You can also <strong>execute the code</strong>. Nothing happens until you execute (or "run") code.</p>
+<p>For example, in the first cell above, that code was typed but never executed. We know that it wasn't executed because to the left of the cell we see <code>In [ ]:</code>.</p>
+<p><img src="../images/01-intro/not_executed.png" alt="Code cell not yet executed"></p>
+<p>The empty brackets suggested that this code has not yet been executed.</p>
+<p>Once executed, a number will show up within those brackets:</p>
+<p><img src="../images/01-intro/executed_code.png" alt="Code cell not yet executed"></p>
+<p>The first code cell you run in a Jupyter notebook will have a <code>[1]</code>. The second a <code>[2]</code> and so on and so forth.</p>
+<p>To execute a cell, you can click on the cell you'd like to run and click "Run" along the toolbar at the top. Or, more likely, you'll want to get in the habit of using hte keyboard shortcut <code>Shift + Enter</code> to run your cells. note that <code>Shift + Enter</code> will run code cells <em>and</em> format Markdown cells.</p>
+<p>One important caveat is that if you ever see a <code>[*]</code>. to to the left of your code cell, this indicates that the cell is still running. This cann happen if you write code that takes a while to run <em>or</em> if you've written code that will run forever (such as an infinite loop).</p>
+<p>If this happens and you do <em>not</em> want to allow the code to continue to execute (for example, you have an infinite loop and want the code to stop from running, you can click on the square stop icon from the toolbar at the top.</p>
+<p><img src="../images/01-intro/stop.png" alt="Stop code cell from executing"></p>
+<p>Upon executing the code in a cell, often, there will be some sort of output. The code below says subtract 2 (the value stored in <code>b</code>) from 1 (the value stored in <code>a</code>) and store that in the variable <code>c</code>. Then, the final line here says, print that value out to the screen.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Cells can also have output, that gets printed out below the cell.</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>-1
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What you see above is why notebooks are so great! They allow explanatory text, python code, <em>and</em> the outputs from that code to intermingle in a single document!</p>
+<p>Before we move on, one more piece of information about Jupyter notebooks in particular. If the last line of code in a code cell is a variable name, the Jupyter notebook, will print the contents of that varaible to your screen, without you having to put <code>print()</code> around it. We'll use this a bunch throughout the book, so it's worth noting now, even though we haven't <em>exactly</em> covered what variables are...yet!</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># if variable last thing in cell</span>
+<span class="c1"># output will be variable conents</span>
+<span class="n">c</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-1</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Cell-Order">Cell Order<a class="anchor-link" href="#Cell-Order"> </a></h4><p>Ok, so we've discussed that the numbers in the square brackets to the left of a cell show which cells have been run, and in what order and that an asterisk (<code>*</code>) means that the cell is currently running. What we haven't yet discussed is that the order in which the cells are run does <strong><em>not</em></strong> matter to Python or Jupyter notebooks.</p>
+<p>This allows you to flexibly test and develop code. For example, say you've run a few cells of code in order from top to bottom. Then, you realize you wanted a different value in that first code cell. You can go back to that first cell, change it to be the value you want, and then return back to a different cell. Python and Jupyter Notebooks will keep track of whatever was run most recently.</p>
+<p>For beginners and individuals less familiar with working in notebooks, this can sometimes take a bit to get used to, but the benefits of this flexibility outweigh the cognitive load it takes to remember that the order isn't set in stone to go from top to bottom.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Accessing-Documentation">Accessing Documentation<a class="anchor-link" href="#Accessing-Documentation"> </a></h2><p>When you're new to Python (or any programming language), knowing where to look for more information is critical. While Google and StackOverflow will likely be very helpful, Python and Jupyter Notebooks have built-in ways for you to access documentation that will provide you with helpful information.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Jupyter has useful shortcuts. Add a single '?' after a function or class get a window with the documentation, or a double '??' to pull up the source code. 
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># For example, execute this cell to see the documentation for the &#39;abs&#39;</span>
+abs<span class="o">?</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Autocomplete">Autocomplete<a class="anchor-link" href="#Autocomplete"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Jupyter also has 
+<a href="https://en.wikipedia.org/wiki/Command-line_completion" class="alert-link">tab complete</a>
+capacities, which can autocomplete what you are typing, and/or be used to explore what code is available.  
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Move your cursor to the end of the line, press tab, and a drop menu will appear showing all possible completions</span>
+<span class="n">ra</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># If there is only one option, tab-complete will auto-complete what you are typing</span>
+<span class="n">ran</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Web-Browser">Web Browser<a class="anchor-link" href="#Web-Browser"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Jupyter notebooks display in a web browser. They are not hosted on the web, everything is happening locally. 
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you click on the url in the browser, you will notice it says 'localhost'. This means it is connected to something locally, on your computer.</p>
+<p>That local connection is to the 'kernel'.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Kernels">Kernels<a class="anchor-link" href="#Kernels"> </a></h2>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+The 'kernel' is the thing that executes your code. It is what connects the notebook (as you see it) with the part of your computer that runs code. 
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Your kernel also stores your <strong>namespace</strong> - all the variables and code that you have declared (executed).</p>
+<p>It can be useful to clear and re-launch the kernel. You can do this from the 'kernel' drop down menu, at the top, optionally also clearing all ouputs. Note that this will erase any variables that are stored in memory.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-info">
+For more useful information, check out Jupyter Notebooks 
+<a href="https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/" class="alert-link">tips & tricks</a>
+, and more information on how 
+<a href="http://jupyter.readthedocs.io/en/latest/architecture/how_jupyter_ipython_work.html" class="alert-link">notebooks work</a>.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises"> </a></h2><p>Q1. <strong>What does three underscores around text accomplish?</strong></p>
+<p>A) bold<br>
+B) italicize<br>
+C) bold + italicize<br>
+D) plain text</p>
+<p>Q2. <strong>Add a cell to a notebook, change it to be a Markdown cell, and add your name as (1) plain text, (2) italicized text, and (3) bold text.</strong></p>
+<p>Q3. <strong>What would happen if I specified a numbered list but put the same number before each list item?</strong></p>
+<p>A) the list would have the same number before each item<br>
+B) markdown would still format it with sequential numbers<br>
+C) markdown wouldn't know it was a list<br>
+D) normal text with everything on a single line</p>
+<p>Q4. <strong>Write code in a code cell and execute it so that the value returned from the cell is '6'.</strong></p>
+<p>Q5. <strong>If the following were in a code cell, what would be the output of the following?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+<p>Q6. <strong>If the following were in a code cell, what would be the output of the following?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+</pre></div>
+<p>Q7. <strong>If the following were in a code cell, what would be the output of the following?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
