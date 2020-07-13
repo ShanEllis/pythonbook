@@ -1,0 +1,1077 @@
+---
+interact_link: content/03-operations/lists.ipynb
+kernel_name: python3
+kernel_path: content/03-operations
+has_widgets: false
+title: |-
+  Lists
+pagenum: 10
+prev_page:
+  url: /03-operations/collections_loops.html
+next_page:
+  url: /03-operations/tuples.html
+suffix: .ipynb
+search: list position item stop not return slice items using python b c students index start following counter lists div alert indexing qlst operator true step code q store information specific student name output d practicelst second want square brackets class string obtain value after element false lstupdate success collection variable specified included until include every membership bool thingsthataregood means third type mutable created boolean similarly returns example our specify julian negative also possible last slicing returned here operators change e cogs lines exlst common pieces ordered zeroth mixed around separated comma assign back assignment three integer previously print its well
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div id="page-info"><div id="page-title">Lists</div>
+</div>
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Lists">Lists<a class="anchor-link" href="#Lists"> </a></h1><p>One of the most common ways to store multiple pieces of information is in a <strong>list</strong>. Lists store items in an ordered fashion. This means that there is a zeroth, first, second, third, and so on item in your list. Additionally, lists can store information of mixed type - so if you want to store strings with integers or floats with booleans, you can do so using a list.</p>
+<p>Syntactically, lists are generated using square brackets around the items in your list, with each item separated by a comma.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+A list is a mutable collection of ordered items, that can be of mixed type. Lists are created using square brackets.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Defining-a-list">Defining a list<a class="anchor-link" href="#Defining-a-list"> </a></h2><p>To define a list, we will assign the information back to a variable (<code>my_list</code>) using the assignment operator (<code>=</code>), as we do for all variables. To the right of the assignment operator, the list is created using square brackets around the list items. Each item in the list is separated by a comma.</p>
+<p>In this first list, we have three items - an integer (<code>1</code>), a string (<code>a</code>), and a boolean (<code>True</code>).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define a list</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As we've seen previously, to inspect the items in a list, <code>print()</code> statements can be helpful. This reminds you what information is stored in a variable.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Print out the contents of a list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, &#39;a&#39;, True]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly, <code>type()</code>, when provided with a list as its input, will return <code>list</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check the type of a list</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>list</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To add to these common functions, we'll introduce <code>len()</code> which returns the number of items (elements) in the list specified within the parentheses:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get the length of the list, and print it out</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>3</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Indexing">Indexing<a class="anchor-link" href="#Indexing"> </a></h2><p>As we store more items (piecies of information) in a variable, we need a way to get specific pieces of information back out of that list. To obtain a specific item or specific set of items from a list, we will use the process of <strong>indexing</strong>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Indexing refers to selecting an item from within a collection. Indexing is done with square brackets.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, what if we had a class with 5 students in it. We could store their first names in a list called <code>students</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define a list </span>
+<span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Julian&#39;</span><span class="p">,</span> <span class="s1">&#39;Amal&#39;</span><span class="p">,</span> <span class="s1">&#39;Richard&#39;</span><span class="p">,</span> <span class="s1">&#39;Juan&#39;</span><span class="p">,</span> <span class="s1">&#39;Xuan&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we wanted to know who the first student in our list was, we could <strong>index</strong> that value from the list.</p>
+<p>To do so, we would use square brackets after the variable name and specify the position from the list that we want to index. If we want the first item in the list, we'll use the number '0'. This is because Python is zero-based. This means that counting starts with 0. The second item in the list could be accessed with the number '1'.</p>
+<p>Thus, to return the first student in the list ('Julian'), we would index <code>students[0]</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Indexing: Count forward, starting at 0, with positive numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Julian
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly, if we wanted the second student in the list, we would index with <code>students[1]</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Indexing second student in list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Amal
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Negative-Indexing">Negative Indexing<a class="anchor-link" href="#Negative-Indexing"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Negative indexing</strong> is also possible - you <em>can</em> count backward from the end of the list. In this case '-1' refers to the last item in the list and indexing counts from there. So, the second to last item in the list would be '-2'.</p>
+<p>Thus, to return the last student in the list, we would use <code>students[-1]</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Indexing: Count backward, starting at -1, with negative numbers</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Xuan
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Slicing">Slicing<a class="anchor-link" href="#Slicing"> </a></h3><p>It is also possible to obtain a portion or subset of the list, referred to as a <strong>slice</strong>.</p>
+<p>The syntax to obtain a slice of the list requires that you specify at what index (position) you want the slice to return and when the slice should stop using <code>[start:stop]</code>. Importantly, the <code>start</code> position is included in the output, but the <code>stop</code> position specified is <em>not</em> returned. Each item <em>up until</em> to <code>stop</code> position is returned.</p>
+<p>To return the third and fourth position in the list, you would then use <code>students[2:4]</code> as this would return the item in the '2' position and the '3' position, but would not include the '4' position, as the <code>stop</code> is not included in the output.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Indexing: Grab a group of adjacent items using `start:stop`, called a slice</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Richard&#39;, &#39;Juan&#39;]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For slicing, you often want to take a slice of the list starting with a certain position and continuing on until the end of the list. This can be accomplished by not specifying a stop position, using the syntax <code>[start:]</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># indexing from third position to end of list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Richard&#39;, &#39;Juan&#39;, &#39;Xuan&#39;]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly, to index from the beginning of the list until a stop position, you would exclude a start position and use <code>[:stop]</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Indexing from beginning of list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Julian&#39;, &#39;Amal&#39;, &#39;Richard&#39;, &#39;Juan&#39;]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note above that again, the stop position is <em>not</em> included in the slice that is output.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, it is also possible to obtain a slice using a specific pattern by specifying the <code>step</code> of the slice using <code>[start:stop:step]</code>. The default step is '1', returning each item in the slice. However, if the <code>step</code> is '2', the slice will include and return every other item in your list. If the <code>step</code> is 3, it will return every third item, and so on.</p>
+<p>Here, we <code>start</code> at 0 (the beginning of the list), <code>stop</code> at (and don't include) the 4th index and <code>step</code> to include every second student in the list:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># slicing by skipping a value [start:stop:step]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;Julian&#39;, &#39;Richard&#39;]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Summary:-Indexing">Summary: Indexing<a class="anchor-link" href="#Summary:-Indexing"> </a></h3>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Python is zero-based (The first index is '0')</li>
+<li>Negative indices index backwards through a collection</li>
+<li>A sequence of indices (called a slice) can be accessed using <code>start:stop</code><ul>
+<li>In this contstruction, <code>start</code> is included then every element until <code>stop</code>, not including <code>stop</code> itself</li>
+<li>To skip values in a sequence use <code>start:stop:step</code></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Operators-with-lists">Operators with lists<a class="anchor-link" href="#Operators-with-lists"> </a></h2><p>We previously introduced the <strong>membership</strong> operator, <code>in</code>. These operators work to identify whether a specific item exists in the specified list, returning the boolean <code>True</code> if it is a member of the list and <code>False</code> if it is not.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+The <code>in</code> operator asks whether an element is present inside a collection, and returns a boolean answer. 
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define a new list to work with</span>
+<span class="n">list_again</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;apples&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For example, 'Julian' is a student in our list of students, so the following returns <code>True</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># returns True if element in list</span>
+<span class="s1">&#39;Julian&#39;</span> <span class="ow">in</span> <span class="n">students</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When asked about a name that is <em>not</em> in our list of students, the <code>in</code> membership operator will return <code>False</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check if a particular element is present in the list of students</span>
+<span class="s1">&#39;Shannon&#39;</span> <span class="ow">in</span> <span class="n">students</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Of importance, it is searching for the entire element, so if we searched for 'Jul', which is part of the name Julian but not the whole name, the membership operator would accurately specify that 'Jul' is <em>not</em> and element in the list.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Jul is not an element in list</span>
+<span class="s1">&#39;Jul&#39;</span> <span class="ow">in</span> <span class="n">students</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As specified in an earlier chapter, the <code>not</code> operator can be combined with membership operators to evaluate the expression. For example, Shannon is <code>not in</code> the <code>students</code> list, so the following will return <code>True</code>, as this expression evaluates as <code>True</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The `in` operator can be combined with the `not` operator</span>
+<span class="s1">&#39;Shannon&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">students</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Mutating">Mutating<a class="anchor-link" href="#Mutating"> </a></h2><p>Beyond slicing to obtain a portion of the list, it's important to know that lists are <em>mutable</em>. This means that the elements of the list can be changed after the list is created. Updating or changing the contents of a list is referred to <strong>mutating</strong> the contents of the list.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="alert alert-success">
+Lists are mutable, meaning after definition, you can update and change things about the list.
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we create a list <code>udpates</code> which stores three integer values:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Define a list</span>
+<span class="n">updates</span> <span class="o">=</span> <span class="p">[</span><span class="mi">29</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check the contents of the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">updates</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[29, 2, 3]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can then mutate (change) an element of the list by assigning a new value to a specific indexed position in the list.</p>
+<p>Here, we assign the value '1' to the zeroth position in the list <code>updates</code>:</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Redefine a particular element of the list</span>
+<span class="n">updates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check the contents of the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">updates</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[1, 2, 3]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Exercises">Exercises<a class="anchor-link" href="#Exercises"> </a></h2><p>Q1. <strong>Which of the following specifies a list of 4 items?</strong></p>
+<p>A) <code>item_A = [0, 'string', 18]</code><br>
+B) <code>item_B = (0, 'string', 18, 'name')</code><br>
+C) <code>item_C = [0, 'string', 18, 'name']</code><br>
+D) <code>item_D = (0, 'string', 18)</code><br>
+E) <code>item_E = [1234]</code></p>
+<p>Q2. <strong>What will be the output of the following piece of code:</strong></p>
+<div class="highlight"><pre><span></span><span class="n">q2_lst</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">q2_lst</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+<p>A) ['a', 'b', 'c']<br>
+B) ['c', 'b', 'a']<br>
+C) ['c', 'b']<br>
+D) ['b', 'c', 'd']<br>
+E) ['b', 'c']</p>
+<p>Q3. <strong>Given the following list, what would be the appropriate line of code to return <code>['butter', '&amp;', 'jelly']</code>?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">q3_lst</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;peanut&#39;</span><span class="p">,</span> <span class="s1">&#39;butter&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;&#39;</span><span class="p">,</span><span class="s1">&#39;jelly&#39;</span><span class="p">]</span>
+</pre></div>
+<p>A) <code>q3_lst[2:4]</code><br>
+B) <code>q3_lst[1:3]</code><br>
+C) <code>q3_lst[:-2]</code><br>
+D) <code>q3_lst[-3:]</code><br>
+E) <code>q3_lst[1:4:2]</code></p>
+<p>Q4. <strong>Given the following list <code>practice_lst = [1, True, 'alpha', 13, 'cogs18']</code>, what would be returned from each of the following lines of code if executed?</strong></p>
+<div class="highlight"><pre><span></span><span class="mi">13</span> <span class="ow">in</span> <span class="n">practice_lst</span>
+<span class="bp">False</span> <span class="ow">in</span> <span class="n">practice_lst</span>
+<span class="s1">&#39;True&#39;</span> <span class="ow">in</span> <span class="n">practice_lst</span>
+<span class="s1">&#39;cogs&#39;</span> <span class="ow">in</span> <span class="n">practice_lst</span>
+<span class="s1">&#39;cogs18&#39;</span> <span class="ow">in</span> <span class="n">practice_lst</span>
+</pre></div>
+<p>Q5. <strong>After executing the following lines of code, what will be the value of output?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">ex2_lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="s1">&#39;ten&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">]</span>
+
+<span class="n">bool_1</span> <span class="o">=</span> <span class="bp">False</span> <span class="ow">in</span> <span class="n">ex2_lst</span>
+<span class="n">bool_2</span> <span class="o">=</span> <span class="mi">10</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ex2_lst</span>
+
+<span class="n">output</span> <span class="o">=</span> <span class="n">bool_1</span> <span class="ow">and</span> <span class="n">bool_2</span>
+</pre></div>
+<p>Q6. <strong>What would the following two lines of code accomplish?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">lst_update</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">lst_update</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+<p>A) replace 0 with 4 in <code>lst_update</code><br>
+B) replace 4 with 0 in <code>lst_update</code><br>
+C) no change to <code>lst_update</code><br>
+D) produces an error</p>
+<p>Q7. <strong>What will be the value of <code>counter</code> after this code is run?</strong></p>
+<div class="highlight"><pre><span></span><span class="n">things_that_are_good</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;python&#39;</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;science&#39;</span><span class="p">,</span> <span class="s1">&#39;tacos&#39;</span><span class="p">]</span>
+
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">if</span> <span class="s1">&#39;python&#39;</span> <span class="ow">in</span> <span class="n">things_that_are_good</span><span class="p">:</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">things_that_are_good</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="n">things_that_are_good</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span> 
+
+<span class="k">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

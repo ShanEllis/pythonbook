@@ -75,8 +75,14 @@
   not_numbered: false
   expand_sections: true
   sections:
-   - title: Collections
-     url: /03-operations/collections
+   - title: Lists
+     url: /03-operations/lists
+     not_numbered: false      
+   - title: Tuples
+     url: /03-operations/tuples
+     not_numbered: false      
+   - title: Dictionaries
+     url: /03-operations/dictionaries
      not_numbered: false      
    - title: Loops
      url: /03-operations/loops
