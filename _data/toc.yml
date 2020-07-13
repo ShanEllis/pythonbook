@@ -82,7 +82,7 @@
      url: /03-operations/loops
      not_numbered: false   
 - title: Functions
-  url: /04-functions/functions
+  url: /04-functions/functions_intro
   not_numbered: false
   expand_sections: true
   sections:
@@ -98,17 +98,17 @@
 #    - title: Methods
 #     url: /04-functions/methods
 #     not_numbered: false
-# - title: Objects & Classes 
-#   url: /05-classes/classes_overview
-#   not_numbered: false
-#   expand_sections: true
-#   sections:
-#    - title: Object-Oriented Programming
-#     url: /05-classes/object
-#     not_numbered: false   
-#    - title: Classes
-#     url: /05-classes/classes
-#     not_numbered: false 
+- title: Objects & Classes 
+  url: /05-classes/classes_intro
+  not_numbered: false
+  expand_sections: true
+  sections:
+  - title: Objects
+    url: /05-classes/objects
+    not_numbered: false   
+  - title: Classes
+    url: /05-classes/classes
+    not_numbered: false 
 #   - title: Namespaces
 #     url: /05-classes/namespaces
 #     not_numbered: false    
