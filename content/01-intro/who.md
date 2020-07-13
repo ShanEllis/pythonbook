@@ -1,5 +1,3 @@
-# Who Is This Book For?
-
 This book is written for individuals with no prior programming experience. It is meant to cover the basics and provide you with opportunities for practice. It is meant to move people who are complete novices when it comes to programming in the direction of being a beginner programmer. It is *not* meant to make anyone an expert programmer. That takes time and practice, but if you learn the basics up front, you'll be well on your way.
 
 Beyond being for beginners, this approach to learning programmers is designed for individuals who will go on to become end-user programmers (rather than say, software engineers). Software engineers are trained to build software. End-user programmers are people who use code to accomplish a task, such as a complicated analysis. End-user programmers tend to be scientists of all types, data scientists, economists, mathematicians, business analysts, among others. They generally use code as a means to an answer, rather than as part of a larger system, whereas software engineers use code to build products or parts of systems.

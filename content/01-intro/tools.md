@@ -1,4 +1,3 @@
-# Tools
 
 Before we go any further, let's briefly introduce the tools we'll be using throughout the book.
 
