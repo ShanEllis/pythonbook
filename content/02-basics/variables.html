@@ -1,0 +1,1044 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variables &#8212; Introduction to Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="content/content/02-basics/variables.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Operators" href="operators.html" />
+    <link rel="prev" title="The Basics" href="basics.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="content/content/02-basics/variables.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Variables" />
+<meta property="og:description" content="Variables  When programming in Python, you’ll become very comfortable with creating variables. This is because everything in Python is implemented as an object." />
+<meta property="og:image"       content="content/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introduction to Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro/intro.html">
+   Welcome!
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="basics.html">
+   The Basics
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="operators.html">
+     Operators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="conditionals.html">
+     Conditionals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-operations/collections_loops.html">
+   Collections &amp; Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04-functions/functions_intro.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-classes/classes_intro.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LICENSE.html">
+   License
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/02-basics/variables.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/shanellis/pythonbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/02-basics/variables.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/shanellis/pythonbook/edit/master/content/02-basics/variables.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/shanellis/pythonbook/master?urlpath=tree/content/02-basics/variables.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/02-basics/variables.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#defining-variables">
+   Defining Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-variables-math-variables">
+   Code Variables != Math Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reminders">
+     Reminders
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#naming-variables">
+   Naming Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#names-are-case-sensitive">
+     Names are case-sensitive
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables-must-start-with-letters">
+     Variables must start with letters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-doesn-t-care-what-you-name-your-variables">
+     Python doesn’t care what you name your variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#reserved-words">
+   Reserved Words
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-code-executes">
+   How Code Executes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kernel">
+     Kernel
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#namespace">
+     Namespace
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variable-types">
+   Variable Types
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#int">
+     Int
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#float">
+     Float
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#string">
+     String
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quotation-marks">
+       Quotation Marks
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-if-you-want-a-quotation-mark-within-your-string">
+       What if you
+       <em>
+        want
+       </em>
+       a quotation mark within your string?
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boolean">
+   Boolean
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#none">
+   None
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mutable-vs-immutable">
+     Mutable vs Immutable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aside-whitespace">
+   Aside: Whitespace
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
+<p>When programming in Python, you’ll become very comfortable with creating variables. This is because <em>everything</em> in Python is implemented as an <strong>object</strong>. This means that whether you’re working wither numbers, words, or booleans (we’ll talk about these soon!, you’re working with object.s These objects are stored in what we call <strong>variables</strong>.</p>
+<p>In this chapter, we’ll introduce how to define variables, a few different <em>types</em> of variables, and get you working with variables in Python.</p>
+<div class="section" id="defining-variables">
+<h2>Defining Variables<a class="headerlink" href="#defining-variables" title="Permalink to this headline">¶</a></h2>
+<p>Variables are defined with a single equals sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>). When variables are defined, we say that they are <strong>assigned</strong>. This is because, the information you want the variable to store (the information to the right of the <code class="docutils literal notranslate"><span class="pre">=</span></code>) is <em>assigned</em> to the variable (the thing on the left). This will always be true in Python - the variable will be to the left of the <code class="docutils literal notranslate"><span class="pre">=</span></code> and the information you want it to store on the right.</p>
+<p>You can think of variables like a container. Containers store things, the same way variables store information. The label on the container is similar to the <em>name</em> of the variable. For example, let’s define our first variable!</p>
+<div class="alert alert-success">
+In programming, variables are things that store values. <b>Variables</b> are defined with <code>name = value</code>.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the variable &#39;var_1&#39;</span>
+<span class="n">var_1</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>With our container analogy, the variable <code class="docutils literal notranslate"><span class="pre">var_1</span></code> is the container. Like containers, variables store some information. The information stored in <code class="docutils literal notranslate"><span class="pre">var_1</span></code> is, in this case, the number 6. So, the name of the variable is <code class="docutils literal notranslate"><span class="pre">var_1</span></code> and the information assigned to it (or stored in it) is the number 6. You can store lots of different <em>types</em> of inrormation in variables. We’ll discuss a few of them in this chapter and introduce even more later.</p>
+<p>For example, variables can store words or letters, as you see here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define the variable &#39;var_2&#39;</span>
+<span class="n">var_2</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This second variable - <code class="docutils literal notranslate"><span class="pre">var2</span></code> - has a different name than our first variable and stores different information. Here, it stores the word ‘string’. We’ll get to the different <em>types</em> of variables in just a second.</p>
+</div>
+<div class="section" id="code-variables-math-variables">
+<h2>Code Variables != Math Variables<a class="headerlink" href="#code-variables-math-variables" title="Permalink to this headline">¶</a></h2>
+<p>An important point to discuss is that many people are familiar with the word <strong>variable</strong> from mathematics. However, variables in <em>code</em> are not the same thing as variables in math.</p>
+<p>For example, in mathematics <code class="docutils literal notranslate"><span class="pre">=</span></code> refers to equality. It’s a <em>statement of truth</em>. It states that whatever is to the left of the <code class="docutils literal notranslate"><span class="pre">=</span></code> is equal to whatever is to the right of the <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
+<p>This is not the case when it comes to code. Instead, <code class="docutils literal notranslate"><span class="pre">=</span></code> refers to assignment. It states that whatever is to the right of the <code class="docutils literal notranslate"><span class="pre">=</span></code> should be assigned - <em>or stored in</em> the variable to the left.</p>
+<p>For example, when it comes to mathematics and algebra, we’re familiar with the concept of solving for x. If you were asked ‘What is <span class="math notranslate nohighlight">\(x\)</span>?’ and given the expression <span class="math notranslate nohighlight">\(y = x + 2\)</span>, you would subtract 2 from the right side so that <span class="math notranslate nohighlight">\(x = y -2\)</span>. The same logic does <em>not</em> follow in programming.</p>
+<p>For example, if you were asked ‘What is <code class="docutils literal notranslate"><span class="pre">x</span></code>?’ and given the following two lines of code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>you would tell me that <code class="docutils literal notranslate"><span class="pre">x</span></code> is 1 more than its previous value of 2, so <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">3</span></code>.</p>
+<p>That line of code there: <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">1</span></code> wouldn’t make sense in mathematics, but it makes perfect sense in code. This is because code variables use <code class="docutils literal notranslate"><span class="pre">=</span></code> for assignment, and not as a statement of truth and equality.</p>
+<div class="section" id="reminders">
+<h3>Reminders<a class="headerlink" href="#reminders" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>In programming <code class="docutils literal notranslate"><span class="pre">=</span></code> means assignment</p></li>
+<li><p>Anything to the right of the <code class="docutils literal notranslate"><span class="pre">=</span></code> is evaluated before assignment</p></li>
+<li><p>Names are always on the left of the <code class="docutils literal notranslate"><span class="pre">=</span></code>, values are always on the right</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="naming-variables">
+<h2>Naming Variables<a class="headerlink" href="#naming-variables" title="Permalink to this headline">¶</a></h2>
+<p>So far, we’ve only defined a few variables, and we haven’t yet specified the <em>rules</em> for variable assignment. There are a whole bunch of options for how you name your variables and only a few rules.</p>
+<p>The rules are:</p>
+<ol class="simple">
+<li><p>Names are case sensitive</p></li>
+<li><p>Variables must start with letters</p>
+<ul class="simple">
+<li><p>After that, they can include numbers, and underscores</p></li>
+<li><p>They cannot include special characters (like &amp;, *, #, etc)</p></li>
+</ul>
+</li>
+<li><p>Python doesn’t care what you name your variables</p>
+<ul class="simple">
+<li><p>Humans do care. Pick names that describe the data / value that they store</p></li>
+</ul>
+</li>
+</ol>
+<div class="section" id="names-are-case-sensitive">
+<h3>Names are case-sensitive<a class="headerlink" href="#names-are-case-sensitive" title="Permalink to this headline">¶</a></h3>
+<p>In programming, capitalization matters <em>a lot</em>. <code class="docutils literal notranslate"><span class="pre">VAR_1</span></code> and <code class="docutils literal notranslate"><span class="pre">var_1</span></code> are interpreted as two <em>different</em> variables when it comes to code. Be mindful of capitalization. Capital and lower-case letters are interpreted by the computer as two different characters.</p>
+</div>
+<div class="section" id="variables-must-start-with-letters">
+<h3>Variables must start with letters<a class="headerlink" href="#variables-must-start-with-letters" title="Permalink to this headline">¶</a></h3>
+<p>We saw that variables can contain numbers and underscores when we created <code class="docutils literal notranslate"><span class="pre">var_1</span></code> earlier, and while they can <em>contain</em> numbers or underscores, they cannot <em>begin</em> with anything other than a letter. So, <code class="docutils literal notranslate"><span class="pre">_var1</span></code> or <code class="docutils literal notranslate"><span class="pre">1_var</span></code> would not be acceptable variable names. If you try to create a variable that starts with anything other than a letter, Python will give you a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>.</p>
+<p>Additionally, Python does not allow variables names to contain a few special characters (ie. &amp;, *, #, etc). If you try to create a variable with a special character, Python will give you a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>. Thus, it’s best to limit variable names to include letters, underscores, and numbers.</p>
+</div>
+<div class="section" id="python-doesn-t-care-what-you-name-your-variables">
+<h3>Python doesn’t care what you name your variables<a class="headerlink" href="#python-doesn-t-care-what-you-name-your-variables" title="Permalink to this headline">¶</a></h3>
+<p>Python doesn’t care whether your variable name is <code class="docutils literal notranslate"><span class="pre">a</span></code> or <code class="docutils literal notranslate"><span class="pre">heights</span></code>; however, humans do. So, pick variable names that are informative about the information stored within the variable. For example, <code class="docutils literal notranslate"><span class="pre">a</span></code> doesn’t clue the human reader of the code into what information is stored in the variable. However, <code class="docutils literal notranslate"><span class="pre">heights</span></code> lets the person reading the code (which could be you in the future or someone else).</p>
+</div>
+</div>
+<div class="section" id="reserved-words">
+<h2>Reserved Words<a class="headerlink" href="#reserved-words" title="Permalink to this headline">¶</a></h2>
+<p>Beyond those three rules, here are 33 words that are not allowed to be used for variable assignment in Python. These are words that have a particular meaning in Python and thus you’re not allowed to use them for variable assignment. If you try to define a variable with one of these names, you’ll get a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>.</p>
+<table type="text/css">
+  <tr>
+      <td><code>False</code></td>
+      <td><code>None</code></td>
+      <td><code>True</code></td>
+      <td><code>and</code></td>
+      <td><code>as</code></td>
+      <td><code>assert</code></td>
+      <td><code>break</code></td>
+  </tr>
+  <tr>
+      <td><code>class</code></td>
+      <td><code>continue</code></td>
+      <td><code>def</code></td>
+      <td><code>del</code></td>
+      <td><code>elif</code></td>
+      <td><code>else</code></td>
+      <td><code>except</code></td>
+  </tr>
+  <tr>
+      <td><code>finally</code></td>
+      <td><code>for</code></td>
+      <td><code>from</code></td>
+      <td><code>global</code></td>
+      <td><code>if</code></td>
+      <td><code>import</code></td>
+      <td><code>in</code></td>
+  </tr>
+  <tr>
+      <td><code>is</code></td>
+      <td><code>lambda</code></td>
+      <td><code>nonlocal</code></td>
+      <td><code>not</code></td>
+      <td><code>or</code></td>
+      <td><code>pass</code></td>
+      <td><code>raise</code></td>
+  </tr>    
+  <tr>
+      <td><code>return</code></td>
+      <td><code>try</code></td>
+      <td><code>while</code></td>
+      <td><code>with</code></td>
+      <td><code>yield</code></td>
+  </tr>    
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># you will get an error if you try to assign a variable to one of these words</span>
+<span class="k">try</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-4-1c44ba76d8f9&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="k">try</span> <span class="o">=</span> <span class="mi">6</span>
+        <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="how-code-executes">
+<h2>How Code Executes<a class="headerlink" href="#how-code-executes" title="Permalink to this headline">¶</a></h2>
+<p>So far we’ve been writing and executing code within a Jupyter notebook. But, what does that mean? What is the notebook and how does it know that I want to execute code?</p>
+<div class="section" id="kernel">
+<h3>Kernel<a class="headerlink" href="#kernel" title="Permalink to this headline">¶</a></h3>
+<div class="alert alert-success">
+The <b>kernel</b> is the thing that executes your code. It is what connects the notebook (as you see it) with the part of your computer that runs code. 
+</div><p>Your kernel also stores your <strong>namespace</strong> - all the variables and code that you have declared (executed).</p>
+<p>It can be useful to clear and re-launch the kernel. You can do this from the ‘kernel’ drop down menu, at the top of your Jupyter notebook, optionally also clearing all outputs. Note that this will erase any variables that are stored in memory.</p>
+</div>
+<div class="section" id="namespace">
+<h3>Namespace<a class="headerlink" href="#namespace" title="Permalink to this headline">¶</a></h3>
+<div class="alert alert-success">
+The <b>namespace</b> is the 'place' where all your currently defined code is declared - all the things you have stored in active memory. 
+</div><p>For example, when code is typed, nothing happens and the variable does <em>not</em> exist <em>until</em> the code is executed. Once executed, the variable is stored in memory within your <strong>namespace</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># once you create a variable it&#39;s stored in your namespace</span>
+<span class="n">my_variable</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Within a Jupyter notebook, you can always use the <code class="docutils literal notranslate"><span class="pre">%whos</span></code> magic command to get information about what variables have been defined in your current Namespace. For example, here, you’ll see all the variables currently in our namespace. In other words, all the cells where we’ve run code and created variables in this Jupyter Notebook will show up when we execute <code class="docutils literal notranslate"><span class="pre">%whos</span></code>.</p>
+<p>Note that variables created in a <em>different</em> notebook are stored in their own, separate namespace. The variables created in this notebook are the only ones stored in its namespace.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can list everything declared in the namespace with &#39;%whos&#39;</span>
+<span class="o">%</span><span class="k">whos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable      Type    Data/Info
+-------------------------------
+a             int     6
+my_variable   int     6
+var_1         int     6
+var_2         str     string
+</pre></div>
+</div>
+</div>
+</div>
+<p>There are a number of <strong>magic commands</strong> available from within Jupyter notebooks that would not be avaialable in an interactive Python notebook. You’ll be able to identify these as they always start with <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p>
+</div>
+</div>
+<div class="section" id="variable-types">
+<h2>Variable Types<a class="headerlink" href="#variable-types" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+Every variable has a <b>type</b>, which refers to the kind of variable that it is, and how the computer stores that data.
+</div><p>To check what the type of any variable is, we’ll use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p>
+<p>This is the first Python function we’re using, but there will be many throughout this content. So, it’s best to get familiar with the syntax now. When running a function the syntax is: <code class="docutils literal notranslate"><span class="pre">function_name()</span></code> This means that the call begins with the function name, followed by parentheses. Within the parenthesis, you’ll provide information.</p>
+<p>Here, the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function requires a variable that you’ve defined. This code will return the <code class="docutils literal notranslate"><span class="pre">type</span></code> of the information stored within <code class="docutils literal notranslate"><span class="pre">variable_name</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declare a variable</span>
+<span class="n">variable_name</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="c1"># You can always ask Python &#39;what type is this variable&#39; using:</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">variable_name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, Python returns <code class="docutils literal notranslate"><span class="pre">int</span></code>. This means that the information stored in <code class="docutils literal notranslate"><span class="pre">variable_name</span></code>, the value 1, is an integer.</p>
+<div class="section" id="int">
+<h3>Int<a class="headerlink" href="#int" title="Permalink to this headline">¶</a></h3>
+<p>Int is the variable type for storing and working with integers. Here, your mathematics training will not steer you wrong.</p>
+<div class="alert alert-success">
+<b>Integers</b> store whole numbers.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_integer</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">another_integer</span> <span class="o">=</span> <span class="mi">321</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Integers can be positive or negative. Integers less than zero can be defined by putting a <code class="docutils literal notranslate"><span class="pre">-</span></code> before the integer during assignment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># integers can be signed</span>
+<span class="n">yet_another_integer</span> <span class="o">=</span> <span class="o">-</span><span class="mi">4</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">yet_another_integer</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a reminder, you can always check the type of an integer using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p>
+</div>
+<div class="section" id="float">
+<h3>Float<a class="headerlink" href="#float" title="Permalink to this headline">¶</a></h3>
+<p>Similar to integers, floats also store numeric information; however, floats store decimal-point numbers (rather than whole numbers).</p>
+<div class="alert alert-success">
+<b>Floats</b> store signed, decimal-point numbers.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_float</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">another_float</span> <span class="o">=</span> <span class="o">-</span><span class="mf">231.45</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Float type variables will return ‘float’ when using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">another_float</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="string">
+<h3>String<a class="headerlink" href="#string" title="Permalink to this headline">¶</a></h3>
+<p>Not all variable types require quantitative or numeric information. Character information are stored as strings.</p>
+<div class="alert alert-success">
+<b>Strings</b> store characters, as text. 
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># declare string variables</span>
+<span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;words, words, words&#39;</span>
+<span class="n">another_string</span> <span class="o">=</span> <span class="s1">&#39;more words&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that strings are declared by placing <em>quotation marks around the characters</em>. In Jupyter notebooks, strings are colored red to visually indicate that this information is a string. If you look above, numeric information is colored green, with negative signs being purple. These visual clues are meant to help you keep track of information when coding more easily.</p>
+<p>When declaring the first string variables above, we used single quotation marks. However, Python interprets single and double quotes the same way. So, you <em>could</em> define strings using double quotes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note that strings can be defined with either &#39;&#39; or &quot;&quot;</span>
+<span class="n">and_another</span> <span class="o">=</span> <span class="s2">&quot;and some more&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>String type variables will return ‘str’ when using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">and_another</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="quotation-marks">
+<h4>Quotation Marks<a class="headerlink" href="#quotation-marks" title="Permalink to this headline">¶</a></h4>
+<p>A quick note to further clarify about quotation marks and how they work within strings. Above, we saw that strings are declared by placing the characters of the string within single or double quotation marks.</p>
+<p>For example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;This is a single-quoted string.&#39;</span>
+<span class="n">my_string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This is a single-quoted string.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;This is a double-quoted string.&quot;</span>
+<span class="n">my_string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This is a double-quoted string.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that Jupyter will put single quotes around the string when printed, even if you specify double quotes in the output. This is because the quottaion marks are interpreted equivalently by Python.</p>
+<p>A general principle is to <em>pick something and be consistent</em>. This applies across all of programming. It’s best to be consistent in how you name your variables, how you assign your strings, how you align and comment your code, etc. Consistency makes your code easier to read.</p>
+<p>The best advice here is to pick something and stick to it.</p>
+</div>
+<div class="section" id="what-if-you-want-a-quotation-mark-within-your-string">
+<h4>What if you <em>want</em> a quotation mark within your string?<a class="headerlink" href="#what-if-you-want-a-quotation-mark-within-your-string" title="Permalink to this headline">¶</a></h4>
+<p>But, what if you <em>wanted</em> a quotation in the string you’re delcaring? For example, what if your string had a contraction like ‘don’t’ or ‘won’t’? What would you do then? Well, there are a few options:</p>
+<ul class="simple">
+<li><p>use double quotes outside with apostraphe inside quotes</p></li>
+<li><p>use an escape <code class="docutils literal notranslate"><span class="pre">\</span></code> (backslash) before charater</p></li>
+</ul>
+<p>Here is an example of what you can do to get your apostrophe to show up. If you declare your string with double quotes, Python will wait until it sees another set of double quotes to end your string. Thus, your apostrophe gets interpreted as an apostrophe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># double quotes on outside; single quote inside</span>
+<span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;I wan&#39;t to see a quote.&quot;</span>
+<span class="n">my_string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;I wan&#39;t to see a quote.&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively, whenever you want to specify for Python to interpret a special character (such as <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>) as a string literal, you can use the escape character <code class="docutils literal notranslate"><span class="pre">\</span></code> before the special character. This tells Python to interpret the character following the backslash as the character it is, not how Python would normally interpret it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># backslash to &quot;escape&quot; quotation mark</span>
+<span class="n">string_quote</span> <span class="o">=</span> <span class="s2">&quot;And she said, </span><span class="se">\&quot;</span><span class="s2">Please teach me Python!</span><span class="se">\&quot;</span><span class="s2">&quot;</span>
+<span class="n">string_quote</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;And she said, &quot;Please teach me Python!&quot;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="boolean">
+<h2>Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h2>
+<p>Booleans are a special type of variable used to help control the flow of your code. They can only store two different values: <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="alert alert-success">
+<b>Booleans</b> store only two values: <code>True</code> or <code>False</code>. 
+</div><p>While there are only two values this type of variable can take, they are very powerful! Specifically, booleans are named after the British mathematician - George Boole. He first formulated Boolean algebra, which are a set of rules for how to reason with and combine these values. This is the basis of all modern computer logic!</p>
+<p>To define a boolean, assign the value <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code> to your variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">another_bool</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Boolean type variables will return ‘bool’ when using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">another_bool</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="none">
+<h2>None<a class="headerlink" href="#none" title="Permalink to this headline">¶</a></h2>
+<p>Last but not least (for now!), <code class="docutils literal notranslate"><span class="pre">None</span></code> type variables are used to store the concept of nothing. This is the type of Python variable used to specify an empty or null value.</p>
+<div class="alert alert-success">
+<b>None</b> is a special type that stores the concept of nothing. It is used to denote a null or empty value.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">the_concept_of_nothing</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>None type variables will return ‘NoneType’ when using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">the_concept_of_nothing</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NoneType
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mutable-vs-immutable">
+<h3>Mutable vs Immutable<a class="headerlink" href="#mutable-vs-immutable" title="Permalink to this headline">¶</a></h3>
+<p>The variable types we’ve talked about so far are all <strong>immutable</strong>. This means they cannot be altered after they’re created.</p>
+<div class="alert alert-success">
+<b>Immutable</b> variable types cannot be altered once defined.
+</div><p>In this example here, we declare a string, calling it <code class="docutils literal notranslate"><span class="pre">immutable_string</span></code>. The second line of code looks unfamiliar. For now, know that <code class="docutils literal notranslate"><span class="pre">[4]</span></code> indicates that I want to know what the fifth character in the string is. So, <code class="docutils literal notranslate"><span class="pre">immutable_string[4]</span></code> returns the fifth character in the string - the <code class="docutils literal notranslate"><span class="pre">i</span></code> in ‘Pythin’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cannot change part of the string after creation</span>
+<span class="n">immutable_string</span> <span class="o">=</span> <span class="s1">&#39;Pythin is the best!&#39;</span>
+<span class="n">immutable_string</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;i&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>As strings are <em>immutable</em>, if we try to assign the letter ‘o’ to the fifth position in our string, we’ll get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. Python is letting us know that <code class="docutils literal notranslate"><span class="pre">str</span></code> type objects cannot be modified once created.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this will error</span>
+<span class="n">immutable_string</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-31-97c531a4a087&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">immutable_string</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span>
+
+<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>To change an immutable type variable, you would have to redefine the variable.</p>
+<p>For example, if we wanted to change the above string to read ‘Python is the best!’, we would have to re-define the variable <code class="docutils literal notranslate"><span class="pre">immutable_string</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># redefine variable</span>
+<span class="n">immutable_string</span> <span class="o">=</span> <span class="s1">&#39;Python is the best!&#39;</span>
+<span class="n">immutable_string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Python is the best!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Whatever variable was most recently defined is what will be stored in your namespace. This means that you <em>can</em> overwrite variables without even noticing. The best way to avoid overwriting variables is to use informative and memorable variable names that specify what information is stored in the variable.</p>
+<p>Note: Python does have <strong>mutable</strong> types. We’ll talk about these soon!</p>
+</div>
+</div>
+<div class="section" id="aside-whitespace">
+<h2>Aside: Whitespace<a class="headerlink" href="#aside-whitespace" title="Permalink to this headline">¶</a></h2>
+<p>Just a quick word on indentation before we get any deeper into Python</p>
+<p>Python <em>does</em> care about whitespace. This means that indentation matters. You <em>will</em> get an error if it Python runs into unanticipated whitespace.</p>
+<p>In the example here, there is an unexpected tab before <code class="docutils literal notranslate"><span class="pre">print(b)</span></code>. Python returns and <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> and points to this line of code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this will error</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-27-b7d7efbb406d&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: unexpected indent
+</pre></div>
+</div>
+</div>
+</div>
+<p>There <em>are</em> times when indentation will be required and expected. We’ll discuss these in detail soon.</p>
+<p>However, there are times when whitespace isn’t <em>required</em> but is <em>preferred</em>. Just like when it comes to writing, there are different <em>styles</em> of writing. Writing code has it’s own <em>style</em> too!</p>
+<p>For example, when assigning variables, we’ve been leaving a space on either side of the <code class="docutils literal notranslate"><span class="pre">=</span></code>. This is <em>not</em> required, but does make for easier reading on the viewer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># good style spacing</span>
+<span class="n">my_variable</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Python interprets the following <em>exactly</em> the same as the previous line of code. However, it’s harder for the humans to read.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># less ideal spacing</span>
+<span class="n">my_variable</span><span class="o">=</span><span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same goes for lines between code. Python doesn’t care if there are spaces between lines of code. However, it can be helpful to leave spaces between different “chunks” of code. This visually spaces things out for those reading you. code! You’ll see examples of this soon as we start writing longer bits of code.</p>
+<p>We encourage you to pay attention to the spacing used throughout this book and in others code. We’ll also try to be explicit about Python code style preferences throughout the book so you can learn good habits right off the bat!</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>Q1. <strong>What is the value of <code class="docutils literal notranslate"><span class="pre">a</span></code> after executing the following code?</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p>Q2. <strong>After executing the following code, what will be the value of <code class="docutils literal notranslate"><span class="pre">my_var</span></code>?</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_var</span> <span class="o">=</span> <span class="mi">2</span> 
+<span class="n">my_var</span> <span class="o">=</span> <span class="n">my_var</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Q3. <strong>What would be the value of <code class="docutils literal notranslate"><span class="pre">b</span></code> after running hte following code?</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s1">&#39;string&#39;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">72</span>
+<span class="n">my_variable</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A) ‘string’<br />
+B) 88<br />
+C) 72<br />
+D) This code will fail</p>
+<p>Q4. <strong>After executing the following code, what will be the value of <code class="docutils literal notranslate"><span class="pre">var_2</span></code>?</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var_2</span> <span class="o">=</span> <span class="n">var_1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">var_2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A) ‘var_1’<br />
+B) 1<br />
+C) 2<br />
+D) This code will fail</p>
+<p>Q5. <strong>For each of the following variables, identify what <code class="docutils literal notranslate"><span class="pre">type</span></code> of variable was defined.</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var_a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">17.5</span>
+<span class="n">var_b</span> <span class="o">=</span> <span class="s1">&#39;-17.5&#39;</span>
+<span class="n">var_c</span> <span class="o">=</span> <span class="s1">&#39;python&#39;</span>
+<span class="n">var_d</span> <span class="o">=</span> <span class="mi">29</span>
+<span class="n">var_e</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">var_f</span> <span class="o">=</span> <span class="s1">&#39;True&#39;</span>
+<span class="n">var_g</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<p>Q6. <strong>After executing the following code, what will the values stored in <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> be?</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A) <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> both store 1<br />
+B) <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> both store 2<br />
+C) <code class="docutils literal notranslate"><span class="pre">a</span></code> stores 2 <code class="docutils literal notranslate"><span class="pre">b</span></code> stores 1<br />
+D) <code class="docutils literal notranslate"><span class="pre">a</span></code> stores 1 <code class="docutils literal notranslate"><span class="pre">b</span></code> stores 2</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/02-basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="basics.html" title="previous page">The Basics</a>
+    <a class='right-next' id="next-link" href="operators.html" title="next page">Operators</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Shannon E. Ellis & Thomas Donoghue<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

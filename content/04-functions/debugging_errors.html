@@ -1,0 +1,1064 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debugging &amp; Errors &#8212; Introduction to Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="content/content/04-functions/debugging_errors.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Classes" href="../05-classes/classes_intro.html" />
+    <link rel="prev" title="Functions" href="functions.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="content/content/04-functions/debugging_errors.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Debugging &amp; Errors" />
+<meta property="og:description" content="Debugging &amp; Errors  While you’ve likely gotten an error or two in your programming journey thus far (we all have!), as you start writing functions, having stron" />
+<meta property="og:image"       content="content/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introduction to Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro/intro.html">
+   Welcome!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-basics/basics.html">
+   The Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-operations/collections_loops.html">
+   Collections &amp; Loops
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="functions_intro.html">
+   Functions
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Debugging &amp; Errors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-classes/classes_intro.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LICENSE.html">
+   License
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/04-functions/debugging_errors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/shanellis/pythonbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/04-functions/debugging_errors.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/shanellis/pythonbook/edit/master/content/04-functions/debugging_errors.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/shanellis/pythonbook/master?urlpath=tree/content/04-functions/debugging_errors.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/04-functions/debugging_errors.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivating-example-1">
+   Motivating Example #1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#errors">
+   Errors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#syntax-errors">
+     Syntax Errors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Syntax Errors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indentation-errors">
+     Indentation Errors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exceptions">
+   Exceptions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#zerodivisionerror">
+     ZeroDivisionError
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nameerror">
+     NameError
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indexerror">
+     IndexError
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valueerror">
+     ValueError
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#typeerror">
+     TypeError
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stack-trace">
+   Stack Trace
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#try-except">
+   Try / Except
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#try-except-block">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       try
+      </span>
+     </code>
+     /
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       except
+      </span>
+     </code>
+     Block
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-with-try-except">
+     Example with Try / Except
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#try-except-within-a-while-loop">
+       Try / Except within a While Loop
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-try-except">
+     More Try / Except
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#raising-errors">
+   Raising Errors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#raise-exception-examples">
+     Raise Exception Examples
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clicker-question-5">
+     Clicker Question #5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#debugging-process">
+   Debugging Process
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="debugging-errors">
+<h1>Debugging &amp; Errors<a class="headerlink" href="#debugging-errors" title="Permalink to this headline">¶</a></h1>
+<p>While you’ve likely gotten an error or two in your programming journey thus far (we all have!), as you start writing functions, having strong debugging skills and understanding the error messages you receive while debugging will be critical.</p>
+<p>In this chapter, we’ll discuss the various types of errors you’ll encounter in Python, introduce the idea of <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code> while debugging and work through an example of the thought process behind debugging upon ecountering an error.</p>
+<div class="alert alert-success">
+<b>Debugging</b> is the process of finding and fixing errors in a computer program.
+</div><div class="section" id="motivating-example-1">
+<h2>Motivating Example #1<a class="headerlink" href="#motivating-example-1" title="Permalink to this headline">¶</a></h2>
+<p>To start thinking about debugging, let’s consider an example. Here we have a function. The pieces of this function should all look familiar at this point. There’s variable assignment, a for loop, some use of the addition operator (<code class="docutils literal notranslate"><span class="pre">+</span></code>), indexing, and a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. Take a look at this code and ask yourself: Will I be able to define and execute this function?</p>
+<p>In other words, is this a valid function in Python?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">example_function</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
+    
+    <span class="n">running_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">:</span>
+        <span class="n">running_sum</span> <span class="o">=</span> <span class="n">running_sum</span> <span class="o">+</span> <span class="n">item</span>
+    
+    <span class="n">special_value</span> <span class="o">=</span> <span class="n">input_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">running_sum</span> <span class="o">+</span> <span class="n">special_value</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Well, to answer this question you could consider the following call of the function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_function</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above example of the function executes and returns the value 14, the sum of all the values in the input list plus the value stored in the fourth position of the input list.</p>
+<p>But, what about the following function call:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_function</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-3-b2899b84d137&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">example_function</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+
+<span class="nn">&lt;ipython-input-2-a4fb5262d9d1&gt;</span> in <span class="ni">example_function</span><span class="nt">(input_list)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="n">running_sum</span> <span class="o">=</span> <span class="n">running_sum</span> <span class="o">+</span> <span class="n">item</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="ne">----&gt; </span><span class="mi">7</span>     <span class="n">special_value</span> <span class="o">=</span> <span class="n">input_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="k">return</span> <span class="n">running_sum</span> <span class="o">+</span> <span class="n">special_value</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we get an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>, as there is no fourth index of the input list. Python runs into an error when trying to execute the following line of the function:  <code class="docutils literal notranslate"><span class="pre">special_value</span> <span class="pre">=</span> <span class="pre">input_list[3]</span></code></p>
+<p>So, the successful execute of the function is dependent upon the input provided.</p>
+<p>Let’s look at one more example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_function</span><span class="p">([</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-3-6a097b693a7c&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">example_function</span><span class="p">([</span><span class="s1">&#39;s&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="p">])</span>
+
+<span class="nn">&lt;ipython-input-1-a4fb5262d9d1&gt;</span> in <span class="ni">example_function</span><span class="nt">(input_list)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">running_sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>         <span class="n">running_sum</span> <span class="o">=</span> <span class="n">running_sum</span> <span class="o">+</span> <span class="n">item</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">special_value</span> <span class="o">=</span> <span class="n">input_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The following example will also error; however, this time it’s a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> rather than an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code>. This occurs when Python tries to execute the <code class="docutils literal notranslate"><span class="pre">running_sum</span> <span class="pre">=</span> <span class="pre">running_sum</span> <span class="pre">+</span> <span class="pre">item</span></code> line of the function. In this case, a string is attempted to be added to an integer, which is not something Python can do.</p>
+<p>Thus, another error.</p>
+<p>Being able to adapt your code so that it does what you want it to do requires that you both understand these errors <em>and</em> know how to fix it. So, let’s get started understanding what each of these errors means.</p>
+</div>
+<div class="section" id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
+<p>Errors are enountered when the code you’ve tried to execute is unable to run. These interruptions can occur for a number of different reasons. We’ll explore each of these now.</p>
+<div class="alert alert-success">
+<b>Errors</b> are problems with code definition or execution that interrupt running Python code.
+</div><div class="section" id="syntax-errors">
+<h3>Syntax Errors<a class="headerlink" href="#syntax-errors" title="Permalink to this headline">¶</a></h3>
+<p>Syntax errors occur when the code you’ve written fails to follow the rules of Python. It will fail under any and all circumstances. These include <code class="docutils literal notranslate"><span class="pre">SyntaxErrors</span></code> and <code class="docutils literal notranslate"><span class="pre">IndentationErrors</span></code>.</p>
+<div class="alert alert-success">
+Syntax & Indentation Errors reflect code that doesn't follow Python structure, and will necessarily fail. 
+</div></div>
+<div class="section" id="id1">
+<h3>Syntax Errors<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>For example, if you try to execute the following conditional statement, it will fail. This will happen regardless of the code you include within your conditional or what conditional you specify becuase a colon is missing after your <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
+<p>Notice in the output that Python does it’s best to point you in the right direction using a <code class="docutils literal notranslate"><span class="pre">^</span></code> to highlight where in your code Python encoungered an error. And, Python lets you know this is a <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>, so you’re clued into the fact that there’s something wrong with your code’s structure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># will produce a syntax error</span>
+<span class="k">if</span> <span class="kc">True</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Yep.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-5-a91490a26c37&gt;&quot;</span><span class="gt">, line </span><span class="mi">2</span>
+    <span class="k">if</span> <span class="kc">True</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indentation-errors">
+<h3>Indentation Errors<a class="headerlink" href="#indentation-errors" title="Permalink to this headline">¶</a></h3>
+<p>Indentation errors occur when Python was expecting something to be have a certain indentation level but instead encountered something different. Remember, Python cares about whitespace, so if you fail to adhere to what Python is expecting, you will get an <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># will produce a syntax error</span>
+<span class="c1"># and specifically an indentation error</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-6-45596487aa45&gt;&quot;</span><span class="gt">, line </span><span class="mi">5</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above example, Python again gives you a readout about what it was expecting and where you appear to have gone wrong, letting you know that it encountered an <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code> as it expected <code class="docutils literal notranslate"><span class="pre">print(value)</span></code> to be indented within your <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>s and <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>s, the rest of your code may very well be fine. Once you fix the structure or syntax of your code, the error will likely be resolved.</p>
+</div>
+</div>
+<div class="section" id="exceptions">
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
+<p>Unlike syntax errors, exceptions are errors that occur due to the specific code you tried to execute. In these cases, the syntax or structure of your code looks fine, but an error occurred when Python tried to execute your code, resulting in an error.</p>
+<div class="alert alert-success">
+Exceptions are errors that occur when a code is executed.
+</div><div class="section" id="zerodivisionerror">
+<h3>ZeroDivisionError<a class="headerlink" href="#zerodivisionerror" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> occurs when you try to divide by zero.</p>
+<p>Sometimes this will be very obvious, such as if you directly try to divide by zero, as Python does not know how to divide by zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># produces ZeroDivisionError</span>
+<span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-7-79e900a17bd3&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># produces ZeroDivisionError</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">0</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, more likely you’ll encounter a <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code> when looping through a list or using a conditional. In these cases, you’ll have to dig through your code and how you tried to execute that code to determine where your code tried to divide by zero.</p>
+<p>For example, in the following cell, you see code that is syntactically fine. However, when the loop gets to the third index in my_list, the <code class="docutils literal notranslate"><span class="pre">temp</span> <span class="pre">=</span> <span class="pre">val</span> <span class="pre">/</span> <span class="pre">(val</span> <span class="pre">-</span> <span class="pre">4)</span></code> attempts to divide by zero, leading Python to return a <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># produces a ZeroDivisionError</span>
+<span class="n">running_sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+    
+    <span class="k">if</span> <span class="n">val</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">val</span> <span class="o">/</span> <span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="n">running_sum</span> <span class="o">+=</span> <span class="n">temp</span> 
+        
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-5-67ebb73a2ad8&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="k">if</span> <span class="n">val</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">8</span>         <span class="n">temp</span> <span class="o">=</span> <span class="n">val</span> <span class="o">/</span> <span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="n">running_sum</span> <span class="o">+=</span> <span class="n">temp</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> 
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="nameerror">
+<h3>NameError<a class="headerlink" href="#nameerror" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">NameError</span></code> occurs when you try to access a name that Python does not know.</p>
+<p>For example, if you define a variable with the name <code class="docutils literal notranslate"><span class="pre">variable</span></code> and then try to access <code class="docutils literal notranslate"><span class="pre">varaible</span></code> (<code class="docutils literal notranslate"><span class="pre">variable</span></code> with a typo), you will receive a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a variable</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># If you typo a name, you will get a NameError</span>
+<span class="n">varaible</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-9-4acade15292f&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># If you typo a name, you will get a NameError</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">varaible</span>
+
+<span class="ne">NameError</span>: name &#39;varaible&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Whenever you see a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>, consider whether you’ve misspelled or mistyped something. Look through your code carefully as they can somteimes be hard to spot visually.</p>
+<p>And, while it’s annoying, it’s helpful that Python doesn’t just <em>guess</em> that you <em>meant</em> ‘variable’….because sometimes Python would guess wrong. It’s better for Python to just give us the error.</p>
+<p>Finally, you’ll also get a <code class="docutils literal notranslate"><span class="pre">NamerError</span></code> if you try to use the equality operator (<code class="docutils literal notranslate"><span class="pre">==</span></code>) when you meant to use the assignment operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>). Here, since <code class="docutils literal notranslate"><span class="pre">new_variable</span></code> hasn’t yet been defined, when Python tries to determine if it is equl to <code class="docutils literal notranslate"><span class="pre">1</span></code>, a <code class="docutils literal notranslate"><span class="pre">NameError</span></code> is returned, as <code class="docutils literal notranslate"><span class="pre">new_variable</span></code> does not exist.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You also get a name error if you try to use the wrong operator for assignment</span>
+<span class="n">new_variable</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-10-4f05423dede6&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># You also get a name error if you try to use the wrong operator for assignment</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">new_variable</span> <span class="o">==</span> <span class="mi">1</span>
+
+<span class="ne">NameError</span>: name &#39;new_variable&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexerror">
+<h3>IndexError<a class="headerlink" href="#indexerror" title="Permalink to this headline">¶</a></h3>
+<p>Similarly, an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> occurs when you try to access an index that doesn’t exist.</p>
+<p>For example, the following list has three elements, if you try to access the fourth element (index position 5), you’ll recieve an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> with a note that the index is out of range:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">my_list</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-11-2c2a83518cf2&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+
+<span class="ne">IndexError</span>: list index out of range
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that this applies to any collection where indexing applies, such as tuples, dictionaries, or strings.</p>
+<p>If you try to access the value for a key that does not exist in a dictionary, for example, you will again receive an Error. Here, it is specifically a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Relatedly, &#39;KeyError&#39; occurs if you ask for a dictionary key that doesn&#39;t exist</span>
+<span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name1&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name2&#39;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;name3&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-12-84a1c00e4833&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Relatedly, &#39;KeyError&#39; occurs if you ask for a dictionary key that doesn&#39;t exist</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name1&#39;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name2&#39;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">my_dictionary</span><span class="p">[</span><span class="s1">&#39;name3&#39;</span><span class="p">]</span>
+
+<span class="ne">KeyError</span>: &#39;name3&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="valueerror">
+<h3>ValueError<a class="headerlink" href="#valueerror" title="Permalink to this headline">¶</a></h3>
+<p>A <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> occurs when you try to use an illegal value for something.</p>
+<p>For example, if you try to make an integer out of a string, you’ll receive a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-13-1c6b28888bbe&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;cat&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="typeerror">
+<h3>TypeError<a class="headerlink" href="#typeerror" title="Permalink to this headline">¶</a></h3>
+<p>Finally, a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> occurs when you try to operate on a variable in a way that Python is unabe to interpret given its type.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">+</span></code> concatenates strings and adds integers. When you try to combine those two types of variables, Python is unable to determine whether it shoudl concatenate or add. As such, a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> is returned.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;a_string&#39;</span> <span class="o">+</span> <span class="mi">12</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-15-57c293ee5895&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;a_string&#39;</span> <span class="o">+</span> <span class="mi">12</span>
+
+<span class="ne">TypeError</span>: must be str, not int
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="stack-trace">
+<h2>Stack Trace<a class="headerlink" href="#stack-trace" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>stack trace</strong> is a log of what Python did as it went through your code. This ets printed out if Python runs into an error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">running_sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+    
+    <span class="k">if</span> <span class="n">val</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">val</span> <span class="o">/</span> <span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="c1">#+= allows you to add the value on the right to the variable on the left </span>
+        <span class="c1"># and assign it to the variable on the left</span>
+        <span class="n">running_sum</span> <span class="o">+=</span> <span class="n">temp</span> 
+        <span class="c1"># equivalent to:</span>
+        <span class="c1"># running_sum = running_sum + temp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-21-5d11a706076f&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">if</span> <span class="n">val</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">7</span>         <span class="n">temp</span> <span class="o">=</span> <span class="n">val</span> <span class="o">/</span> <span class="p">(</span><span class="n">val</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="c1">#+= allows you to add the value on the right to the variable on the left</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>         <span class="c1"># and assign it to the variable on the left</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes these get really complex. With practice, you’ll get better at interpreting these traces.</p>
+<p>As you’re learning, do your very best to read the message and try to understand it. It can be tempting to be overwhelmed and ignore these if you don’t understand the error at first glance. Spending a few secons longer to understand it can save you a lot of time in the long run.</p>
+</div>
+<div class="section" id="try-except">
+<h2>Try / Except<a class="headerlink" href="#try-except" title="Permalink to this headline">¶</a></h2>
+<p>While <em>syntax errors</em> will necessarily fail, <em>exceptions</em> do not necessarily have to lead to breaking the program - they can be programmatically dealt with, using <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">try</span></code>/<code class="docutils literal notranslate"><span class="pre">except</span></code> blog allows you to try some code. If in attempting to execute that code an exeption is encountered, Python will raise an exception.</p>
+<div class="section" id="try-except-block">
+<h3><code class="docutils literal notranslate"><span class="pre">try</span></code>/<code class="docutils literal notranslate"><span class="pre">except</span></code> Block<a class="headerlink" href="#try-except-block" title="Permalink to this headline">¶</a></h3>
+<p>The general structure of a <code class="docutils literal notranslate"><span class="pre">try</span></code>/<code class="docutils literal notranslate"><span class="pre">except</span></code> blog is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Tries to do this code</span>
+    <span class="k">pass</span> <span class="c1"># pass just says is not an operation; carry on</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="c1"># If there is an error (an exception), keep going and do this instead</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>For example, if</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: we want to get an input number from the user</span>
+
+<span class="n">my_num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please type a number: &quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">my_num is: &#39;</span><span class="p">,</span> <span class="n">my_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Please type a number: shannon
+
+my_num is:  shannon
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-with-try-except">
+<h3>Example with Try / Except<a class="headerlink" href="#example-with-try-except" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Number&#39;</span><span class="p">))</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nahhh&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Numbershannon
+nahhh
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="try-except-within-a-while-loop">
+<h4>Try / Except within a While Loop<a class="headerlink" href="#try-except-within-a-while-loop" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ask_for_num</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">while</span> <span class="n">ask_for_num</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">my_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Please enter a number: &quot;</span><span class="p">))</span>
+        <span class="n">ask_for_num</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Oops!  That was no valid number. Try again!&quot;</span><span class="p">)</span>
+        
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">my_num is: &#39;</span><span class="p">,</span> <span class="n">my_num</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Please enter a number: shannon
+Oops!  That was no valid number. Try again!
+Please enter a number: 29
+
+my_num is:  29
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="more-try-except">
+<h3>More Try / Except<a class="headerlink" href="#more-try-except" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a function divide</span>
+<span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">divide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-29-0cdf54a076ec&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">divide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+
+<span class="nn">&lt;ipython-input-28-62d4f4a69b89&gt;</span> in <span class="ni">divide</span><span class="nt">(num1, num2)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># define a function divide</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">return</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+
+<span class="ne">ZeroDivisionError</span>: division by zero
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a function safe_divide</span>
+<span class="k">def</span> <span class="nf">safe_divide</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">safe_divide</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="raising-errors">
+<h2>Raising Errors<a class="headerlink" href="#raising-errors" title="Permalink to this headline">¶</a></h2>
+<div class="alert alert-success">
+You can also write code to raise an Exception if something unexpected happens.
+</div><div class="section" id="raise-exception-examples">
+<h3>Raise Exception Examples<a class="headerlink" href="#raise-exception-examples" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">raise</span></code> is a keyword that tells Python you want to create your own error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_int</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;An integer please: &#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">my_int</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;I wanted a number! :(&#39;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My integer is: &#39;</span><span class="p">,</span> <span class="n">my_int</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>An integer please: shannon
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-33-bc64f24647db&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">my_int</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;An integer please: &#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">my_int</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;I wanted a number! :(&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;My integer is: &#39;</span><span class="p">,</span> <span class="n">my_int</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: I wanted a number! :(
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="clicker-question-5">
+<h3>Clicker Question #5<a class="headerlink" href="#clicker-question-5" title="Permalink to this headline">¶</a></h3>
+<p>Edit the code below (replacing <code class="docutils literal notranslate"><span class="pre">---</span></code> with either values or variable names) so that when executed, this cell returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num1</span>  <span class="o">=</span> <span class="mi">1</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="kc">None</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>A) I did it!</p></li>
+<li><p>B) I <em>think</em> I did it…</p></li>
+<li><p>C) I’m totally lost.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="debugging-process">
+<h2>Debugging Process<a class="headerlink" href="#debugging-process" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>Q1. <strong>What type of error would each of the following return?</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;six&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Greater than 0&quot;</span><span class="p">)</span>
+    
+<span class="k">if</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Greater than 0&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Q2. ****</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/04-functions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="functions.html" title="previous page">Functions</a>
+    <a class='right-next' id="next-link" href="../05-classes/classes_intro.html" title="next page">Classes</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Shannon E. Ellis & Thomas Donoghue<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>
