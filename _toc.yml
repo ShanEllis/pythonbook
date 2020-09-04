@@ -1,0 +1,43 @@
+file: content/intro
+sections:
+
+- file: content/01-intro/intro
+  sections:
+  - file: content/01-intro/why
+  - file: content/01-intro/who
+  - file: content/01-intro/tools
+  - file: content/01-intro/jupyter_notebooks
+
+- file: content/02-basics/basics
+  sections:
+  - file: content/02-basics/variables
+  - file: content/02-basics/operators
+  - file: content/02-basics/conditionals
+
+- file: content/03-operations/collections_loops
+  sections:
+  - file: content/03-operations/lists
+  - file: content/03-operations/tuples
+  - file: content/03-operations/dictionaries
+  - file: content/03-operations/loops
+
+- file: content/04-functions/functions_intro
+  sections:
+  - file: content/04-functions/functions
+  - file: content/04-functions/debugging_errors
+  # - file: 04-functions/namespaces_scope
+
+- file: content/05-classes/classes_intro
+  sections:
+  - file: content/05-classes/objects
+  - file: content/05-classes/classes
+
+# - file: Documentation
+# - file: Code Style
+# - file: Code Testing
+# - file: Command Line
+
+
+- file: content/acknowledgements
+- file: content/LICENSE
+

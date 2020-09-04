@@ -27,7 +27,7 @@ serve:
 	bundle exec guard
 
 build:
-	jupyter-book build ./ --overwrite
+	jupyter-book build ./
 
 site: build
 	bundle exec jekyll build
