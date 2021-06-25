@@ -1,0 +1,620 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice: Functions &#8212; Introduction to Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="content/content/04-functions/practice.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Classes" href="../05-classes/classes_intro.html" />
+    <link rel="prev" title="Debugging &amp; Errors" href="debugging_errors.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="content/content/04-functions/practice.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Practice: Functions" />
+<meta property="og:description" content="Practice: Functions  In this set of practice problems, it’s all about functions - how to execute them, how to write our own functions, and how to debug function" />
+<meta property="og:image"       content="content/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Introduction to Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01-intro/intro.html">
+   Welcome!
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-basics/basics.html">
+   The Basics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03-operations/collections_loops.html">
+   Collections &amp; Loops
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="functions_intro.html">
+   Functions
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="functions.html">
+     Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="debugging_errors.html">
+     Debugging &amp; Errors
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Practice: Functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-classes/classes_intro.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../0X-answers/answers_intro.html">
+   Answers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../LICENSE.html">
+   License
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/04-functions/practice.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/shanellis/pythonbook"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/04-functions/practice.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/shanellis/pythonbook/edit/master/content/04-functions/practice.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/login/hub/user-redirect/git-pull?repo=https://github.com/shanellis/pythonbook&urlpath=tree/pythonbook/content/04-functions/practice.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/04-functions/practice.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-execution">
+   Function Execution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#user-designed-functions-udfs">
+   User-Designed Functions (UDFs)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#debugging">
+   Debugging
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="practice-functions">
+<h1>Practice: Functions<a class="headerlink" href="#practice-functions" title="Permalink to this headline">¶</a></h1>
+<p>In this set of practice problems, it’s all about functions - how to execute them, how to write our own functions, and how to debug functions.</p>
+<p>As for all practice sectiosn, each question will include a handful of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements. After you write and execute the code to each question, each <code class="docutils literal notranslate"><span class="pre">assert</span></code> should “pass silently” (meaning: should give no output upon execution) indicating that you are on the right track. After you’ve written your code and run the <code class="docutils literal notranslate"><span class="pre">assert</span></code>s, you can always check your answers, as the answers to these questions are included in the “Answers” chapter of this book.</p>
+<div class="section" id="function-execution">
+<h2>Function Execution<a class="headerlink" href="#function-execution" title="Permalink to this headline">¶</a></h2>
+<p><strong>Function Execution 1</strong>. The function <code class="docutils literal notranslate"><span class="pre">square_default</span></code> has been provided for you. After defining the function, execute (use) this function to create the following variables under the specified conditions:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">square_default</span></code> | execute the <code class="docutils literal notranslate"><span class="pre">square_all</span></code> function using the default parameter such that the output will carry out the function on a list of input values containing the integers 2, 3, and 4.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">power_three</span></code> | Use the same input values as above, but this time, use the <code class="docutils literal notranslate"><span class="pre">square_all</span></code> function provided to raise all input values to the power 3</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">out_4</span></code> | Execute the <code class="docutils literal notranslate"><span class="pre">square_all</span></code> function such that <code class="docutils literal notranslate"><span class="pre">out_4</span></code> will store a list with 4 values, each of which is the integer 4.</p></li>
+</ol>
+<p>Function provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square_all</span><span class="p">(</span><span class="n">collection</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    
+    <span class="n">square_list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">collection</span><span class="p">:</span>
+        <span class="n">square_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">val</span><span class="o">**</span><span class="n">power</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">square_list</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span>  <span class="n">square_default</span> <span class="o">==</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">16</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">power_three</span>  <span class="o">==</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">64</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">out_4</span>  <span class="o">==</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Function Execution Q2</strong>. The function <code class="docutils literal notranslate"><span class="pre">convert_temp</span></code> has been provided for you. After understanding the code in the function, define the function. Then, execute (use) this function to create the following variables under the specified conditions:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tempA</span></code> | execute the <code class="docutils literal notranslate"><span class="pre">convert_temp</span></code> function to convert the temperature 95 degrees Fahrenheit into degrees Celsius</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tempB</span></code> | execute <code class="docutils literal notranslate"><span class="pre">convert_temp</span></code> to convert the temperature 17 degrees Celsius into degrees Fahrenheit</p></li>
+</ol>
+<p>Provided function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_temp</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">input_unit</span><span class="o">=</span><span class="s1">&#39;F&#39;</span><span class="p">):</span>
+    
+    <span class="k">if</span> <span class="n">input_unit</span> <span class="o">==</span> <span class="s1">&#39;F&#39;</span><span class="p">:</span>
+        <span class="n">out_temp</span> <span class="o">=</span> <span class="p">(</span><span class="n">temp</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span><span class="o">/</span><span class="mi">9</span>
+    <span class="k">elif</span> <span class="n">input_unit</span> <span class="o">==</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span>
+        <span class="n">out_temp</span> <span class="o">=</span> <span class="p">(</span><span class="n">temp</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Please specify either &#39;F&#39; or &#39;C&#39; for input_unit&quot;</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">out_temp</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">tempA</span> <span class="o">==</span> <span class="mf">35.0</span>
+<span class="k">assert</span> <span class="n">tempB</span> <span class="o">==</span> <span class="mf">62.6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Function Execution Q3</strong> The function <code class="docutils literal notranslate"><span class="pre">court_jester_jokes</span></code> that has been provided for you. After understanding the code in the function, run the cell below (to define this function). Then, execute (use) this function to create the following variables under the specified conditions:</p>
+<ol class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">joke_random</span></code> | execute the <code class="docutils literal notranslate"><span class="pre">court_jester_jokes</span></code> function to return a joke at random</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">joke_nonrandom</span></code> | execute <code class="docutils literal notranslate"><span class="pre">court_jester_jokes</span></code> to return the second joke in <code class="docutils literal notranslate"><span class="pre">joke_list</span></code></p></li>
+</ol>
+<p>Function provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">court_jester_jokes</span><span class="p">(</span><span class="n">random_joke</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">joke_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A clown held the door open for me yesterday. I thought it was a nice jester&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;How does the court jester address the King of Ducks? Mal’Lard&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;What did the court jester call the balding crown prince? The Heir Apparent with no Hair Apparent&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;What do you call a joke made by using sign language? A jester&#39;</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="n">random_joke</span><span class="p">:</span>
+        <span class="n">out_joke</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">joke_list</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">out_joke</span> <span class="o">=</span> <span class="n">joke_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">out_joke</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jokes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A clown held the door open for me yesterday. I thought it was a nice jester&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;How does the court jester address the King of Ducks? Mal’Lard&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;What did the court jester call the balding crown prince? The Heir Apparent with no Hair Apparent&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;What do you call a joke made by using sign language? A jester&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">joke_random</span> <span class="ow">in</span> <span class="n">jokes</span>
+<span class="k">assert</span> <span class="n">joke_nonrandom</span> <span class="o">==</span> <span class="s1">&#39;How does the court jester address the King of Ducks? Mal’Lard&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="user-designed-functions-udfs">
+<h2>User-Designed Functions (UDFs)<a class="headerlink" href="#user-designed-functions-udfs" title="Permalink to this headline">¶</a></h2>
+<p><strong>UDFs Q1</strong> Write a function <code class="docutils literal notranslate"><span class="pre">provide_info</span></code> that takes three parameters: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">year</span></code>, and <code class="docutils literal notranslate"><span class="pre">school</span></code>. Set the default value for <code class="docutils literal notranslate"><span class="pre">school</span></code> to be ‘UCSD’.</p>
+<p>This function should <code class="docutils literal notranslate"><span class="pre">return</span></code> the string “Hi! I’m <code class="docutils literal notranslate"><span class="pre">name</span></code>. I am a <code class="docutils literal notranslate"><span class="pre">year</span></code> at <code class="docutils literal notranslate"><span class="pre">school</span></code>.” (where the variable names are replaced by the values input to the function upon execution).</p>
+<p>For example, one possible execution of this function could return “Hi! I’m Shannon. I am a sophomore at UCSD.”</p>
+<p>Note: Be sure punctuation and spacing match that specified in the instructions.</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">provide_info</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Taylor&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s1">&#39;junior&#39;</span><span class="p">,</span> <span class="n">school</span><span class="o">=</span><span class="s1">&#39;UCLA&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Hi! I&#39;m Taylor. I am a junior at UCLA.&quot;</span> 
+<span class="k">assert</span> <span class="n">provide_info</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Shannon&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s1">&#39;junior&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;Hi! I&#39;m Shannon. I am a junior at UCSD.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q2</strong>. Write a function <code class="docutils literal notranslate"><span class="pre">count_int</span></code> that will take a tuple or list as the input and count the number (count) of integer values in that tuple/list, returning this value from the function.</p>
+<p>For example, if 3 of the values in the input list were integers, the function would return 3.</p>
+<p>Note: You can assume the input to this function will be a tuple or list and do <em>not</em> need to write code to check whether or not this is true.</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">count_int</span><span class="p">([</span><span class="s1">&#39;string&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">count_int</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;string&#39;</span><span class="p">,</span><span class="mf">4.4</span><span class="p">))</span> <span class="o">==</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q3</strong>. Define a function <code class="docutils literal notranslate"><span class="pre">modify_string</span></code> with a single parameter <code class="docutils literal notranslate"><span class="pre">input_string</span></code>. If any of the characters in the <code class="docutils literal notranslate"><span class="pre">input_string</span></code> to the function are keys in the dictionary <code class="docutils literal notranslate"><span class="pre">new_language</span></code> below, use that key’s value in that letter’s place. If the letter is not in <code class="docutils literal notranslate"><span class="pre">new_language</span></code>, the resulting string should store the same character.</p>
+<p>For example, if <code class="docutils literal notranslate"><span class="pre">my_name</span></code> stored ‘Shannon’, the output from this function would store ‘Shӓnnðn’ (the a and the o have the modified character from <code class="docutils literal notranslate"><span class="pre">new_language</span></code>)</p>
+<p>Variable provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_language</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;ӓ&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;e&#39;</span> <span class="p">:</span> <span class="s1">&#39;ɚ&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;i&#39;</span> <span class="p">:</span> <span class="s1">&#39;¡&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;o&#39;</span> <span class="p">:</span> <span class="s1">&#39;ð&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;u&#39;</span> <span class="p">:</span> <span class="s1">&#39;û&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;A&#39;</span> <span class="p">:</span> <span class="s1">&#39;Ӓ&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;E&#39;</span> <span class="p">:</span> <span class="s1">&#39;ɛ&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;O&#39;</span> <span class="p">:</span> <span class="s1">&#39;Ó&#39;</span><span class="p">,</span> 
+                <span class="s1">&#39;U&#39;</span> <span class="p">:</span> <span class="s1">&#39;Ü&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">modify_string</span><span class="p">(</span><span class="s1">&#39;AaEe&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Ӓӓɛɚ&#39;</span>
+<span class="k">assert</span> <span class="n">modify_string</span><span class="p">(</span><span class="s1">&#39;BbCc&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;BbCc&#39;</span>
+<span class="k">assert</span> <span class="n">modify_string</span><span class="p">(</span><span class="s1">&#39;Taylor&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;Tӓylðr&#39;</span>
+<span class="k">assert</span> <span class="n">modify_string</span><span class="p">(</span><span class="s1">&#39;AaBbCcEe&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;ӒӓBbCcɛɚ&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q4</strong> Write a function <code class="docutils literal notranslate"><span class="pre">calculate_points</span></code> that has a single input parameter: <code class="docutils literal notranslate"><span class="pre">hand</span></code>. <code class="docutils literal notranslate"><span class="pre">hand</span></code> can be assumed to be a list of string values, where each string corresponds to a value in a deck of cards (2-10, J, Q, K, or A)</p>
+<p>This function should calculate the total number of “pointer” cars in your hand, where <em><strong>a “pointer” is either a 10, J, Q, K, or A</strong></em>. Each “pointer” is worth one point. All other cards are worth zero points. The function should <code class="docutils literal notranslate"><span class="pre">return</span></code> the total number of points in the <code class="docutils literal notranslate"><span class="pre">hand</span></code> as an integer.</p>
+<p>For example, if your <code class="docutils literal notranslate"><span class="pre">hand</span></code> input was:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>executing the <code class="docutils literal notranslate"><span class="pre">calculate_points()</span></code> function with the above list as the input to the <code class="docutils literal notranslate"><span class="pre">hand</span></code> parameter, the function would <code class="docutils literal notranslate"><span class="pre">return</span></code> the integer 3 (one point each for the <code class="docutils literal notranslate"><span class="pre">'J'</span></code>, <code class="docutils literal notranslate"><span class="pre">'10'</span></code>, and <code class="docutils literal notranslate"><span class="pre">'K'</span></code>.</p>
+<p>If there are no pointers in the input <code class="docutils literal notranslate"><span class="pre">hand</span></code>, the function should return 0.</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">calculate_points</span><span class="p">([</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;7&#39;</span><span class="p">,</span> <span class="s1">&#39;9&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">calculate_points</span><span class="p">([</span><span class="s1">&#39;K&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="k">assert</span> <span class="n">calculate_points</span><span class="p">([</span><span class="s1">&#39;J&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;5&#39;</span><span class="p">,</span> <span class="s1">&#39;K&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q5</strong>. Recently, the company you work at (‘cogs co.’) realized that too many employees have problematic usernames. You’re going to write a function (<code class="docutils literal notranslate"><span class="pre">change_username()</span></code>) that takes a single parameter <code class="docutils literal notranslate"><span class="pre">username</span></code> as input.</p>
+<p>This function will check if the <code class="docutils literal notranslate"><span class="pre">username</span></code> meets the following specifications:</p>
+<ul class="simple">
+<li><p>contains more than four characters</p></li>
+<li><p>includes only letters (A-Z; a-z) and/or numbers (0-9); in other words: is alphanumeric</p></li>
+<li><p>does NOT include the string ‘cogs’</p></li>
+</ul>
+<p>If the <code class="docutils literal notranslate"><span class="pre">username</span></code> meets the above specifications, the function will <code class="docutils literal notranslate"><span class="pre">return</span></code> <code class="docutils literal notranslate"><span class="pre">False</span></code> (indicating the username does <em>not</em> have to be changed. If any one of the above specifications is not met, the function will <code class="docutils literal notranslate"><span class="pre">return</span></code> <code class="docutils literal notranslate"><span class="pre">True</span></code> (indicating that the <code class="docutils literal notranslate"><span class="pre">username</span></code> does <em>not</em> meet at least one of the above specifications).</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">change_username(username='cogs')</span></code> would <code class="docutils literal notranslate"><span class="pre">return</span></code> <code class="docutils literal notranslate"><span class="pre">True</span></code> because it does not contain more than four letters <em>and</em> because it includes the string <code class="docutils literal notranslate"><span class="pre">'cogs'</span></code> in its name, while <code class="docutils literal notranslate"><span class="pre">change_username(username='Shannon')</span></code> would return <code class="docutils literal notranslate"><span class="pre">False</span></code>, as this meets all three specifications above.</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">change_username</span><span class="p">(</span><span class="s1">&#39;aaaaa&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+<span class="k">assert</span> <span class="n">change_username</span><span class="p">(</span><span class="s1">&#39;aaaa&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
+<span class="k">assert</span> <span class="n">change_username</span><span class="p">(</span><span class="s1">&#39;AAAAA&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+<span class="k">assert</span> <span class="n">change_username</span><span class="p">(</span><span class="s1">&#39;12345&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
+<span class="k">assert</span> <span class="n">change_username</span><span class="p">(</span><span class="s1">&#39;cogs123&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">Trueb</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q6</strong>. Write a function that, given a salary as input, will <code class="docutils literal notranslate"><span class="pre">return</span></code> how much of that person’s salary is going toward taxes.</p>
+<p>To accomplish this, write a function <code class="docutils literal notranslate"><span class="pre">to_taxes()</span></code> that takes two parameters as input: <code class="docutils literal notranslate"><span class="pre">salary</span></code> and <code class="docutils literal notranslate"><span class="pre">tax_brackets</span></code>. The default value for the <code class="docutils literal notranslate"><span class="pre">tax_brackets</span></code> parameter should be the <code class="docutils literal notranslate"><span class="pre">default_brackets</span></code> dictionary provided below. Then, use code constructs discussed in class to accomplish the above goal.</p>
+<p>Note that the dictionary <code class="docutils literal notranslate"><span class="pre">default_brackets</span></code> provided will have to be used to accomplish this goal. The keys in <code class="docutils literal notranslate"><span class="pre">default_brackets</span></code> are the proportion of an individual’s salary that will go toward taxes if their salary is within the range in a given key’s value (tuple). For example, an individual who makes $10,000 would contribute 12% of their salary in taxes, given the information in <code class="docutils literal notranslate"><span class="pre">tax_brackets</span></code> (specifically becasue 10000 falls between 9876 and 40125).</p>
+<p>Accordingly, <code class="docutils literal notranslate"><span class="pre">to_taxes(salary=10000)</span></code> should <code class="docutils literal notranslate"><span class="pre">return</span></code> 1200.0 (which corresponds to 12% of the input $10,000 salary).</p>
+<p>Variable provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">default_brackets</span> <span class="o">=</span> <span class="p">{</span><span class="mf">0.10</span> <span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9875</span><span class="p">),</span>
+                    <span class="mf">0.12</span> <span class="p">:</span> <span class="p">(</span><span class="mi">9876</span><span class="p">,</span> <span class="mi">40125</span><span class="p">),</span>
+                    <span class="mf">0.22</span> <span class="p">:</span> <span class="p">(</span><span class="mi">40126</span><span class="p">,</span> <span class="mi">85525</span><span class="p">),</span>
+                    <span class="mf">0.24</span> <span class="p">:</span> <span class="p">(</span><span class="mi">85526</span><span class="p">,</span> <span class="mi">163300</span><span class="p">),</span>
+                    <span class="mf">0.32</span> <span class="p">:</span> <span class="p">(</span><span class="mi">163301</span><span class="p">,</span> <span class="mi">207350</span><span class="p">),</span>
+                    <span class="mf">0.35</span> <span class="p">:</span> <span class="p">(</span><span class="mi">207351</span><span class="p">,</span> <span class="mi">518400</span><span class="p">)</span>
+                   <span class="p">}</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">to_taxes</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span> <span class="o">==</span> <span class="mf">1200.0</span>
+<span class="k">assert</span> <span class="n">to_taxes</span><span class="p">(</span><span class="mi">207355</span><span class="p">)</span> <span class="o">==</span> <span class="mf">72574.25</span>
+<span class="k">assert</span> <span class="n">to_taxes</span><span class="p">(</span><span class="mi">40126</span><span class="p">)</span> <span class="o">==</span> <span class="mf">8827.72</span>
+<span class="k">assert</span> <span class="n">to_taxes</span><span class="p">(</span><span class="mi">85525</span><span class="p">)</span> <span class="o">==</span> <span class="mf">18815.5</span>
+<span class="k">assert</span> <span class="n">to_taxes</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="n">tax_brackets</span><span class="o">=</span><span class="p">{</span><span class="mf">0.5</span><span class="p">:</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1000</span><span class="p">)})</span> <span class="o">==</span> <span class="mf">50.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Permalink to this headline">¶</a></h2>
+<p><strong>Debugging Q1</strong> The function <code class="docutils literal notranslate"><span class="pre">count_consonants</span></code> is provided, but it is not operating as anticipated.</p>
+<p><code class="docutils literal notranslate"><span class="pre">count_consonants</span></code> is <em>supposed</em> to take a string as input and count the number of each consonant in the <code class="docutils literal notranslate"><span class="pre">input_string</span></code> (input parameter), storing the output in a dictionary where the key is the consonant and the value is the number of times it appears in the input.</p>
+<p>Note that we want capitalization to be considered such that the capital and lower case letters are counted together, and the lower case letter is used as the key (i.e. ‘A’ and ‘a’ would both be counted under the key ‘a’)</p>
+<p>Specifically, if the <code class="docutils literal notranslate"><span class="pre">input_string</span></code> were “Mohammed”, the function ould return: <code class="docutils literal notranslate"><span class="pre">{'m':</span> <span class="pre">3,</span> <span class="pre">'h':</span> <span class="pre">1,</span> <span class="pre">'d':</span> <span class="pre">1}</span></code></p>
+<p>Debug, edit, and test the function provided so that it accomplishes the intended goal.</p>
+<p>Function provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_consonants</span><span class="p">():</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">vowels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">input_string</span><span class="p">:</span>
+        
+        <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">out</span><span class="p">:</span>
+                <span class="n">out</span><span class="p">[</span><span class="n">char</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">count_consonants</span><span class="p">(</span><span class="s1">&#39;Taylor&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;l&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="k">assert</span> <span class="n">count_consonants</span><span class="p">(</span><span class="s1">&#39;AaBbCc&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Debugging Q2</strong> The provided <code class="docutils literal notranslate"><span class="pre">new_encrypt</span></code> function is not operating as anticipated.</p>
+<p><code class="docutils literal notranslate"><span class="pre">new_encrypt</span></code> is <em>supposed</em> to take a string as input and return the reverse alphabetical string as output, meaning, given a character, return the capitalized character in the reverse position within the alphabet.</p>
+<p>For example, if the input character is ‘B’ or ‘b’, the function would store ‘Y’ in the output string. If the character is ‘A’ or ‘a’, the function would store ‘Z’. (and vice versa: the input ‘Z’ or ‘z’ would store ‘A’).</p>
+<p>Specifically, if the <code class="docutils literal notranslate"><span class="pre">input_string</span></code> were “ABc”, the function would <code class="docutils literal notranslate"><span class="pre">return</span></code>: ‘ZYX’</p>
+<p>Debug, edit, and test the function provided below so that it accomplishes the intended goal.</p>
+<p>Provided function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">new_encrypt</span><span class="p">():</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="s1">&#39;ABCDEFGHIJKLMNOPQRSTUVWXYZ&#39;</span>
+    <span class="n">reverse_alpha</span> <span class="o">=</span> <span class="s1">&#39;ZYXWVUTSRQPONMLKJIHGFEDCBA&#39;</span>
+
+    <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">input_string</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">alpha</span><span class="p">:</span>
+            <span class="n">position</span> <span class="o">=</span> <span class="n">alpha</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">char</span><span class="p">)</span>
+            <span class="n">output_string</span> <span class="o">+=</span> <span class="n">reverse_alpha</span><span class="p">[</span><span class="n">position</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">output_string</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">break</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">new_encrypt</span><span class="p">(</span><span class="s1">&#39;mohammed&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;NLSZNNVW&#39;</span>
+<span class="k">assert</span> <span class="n">new_encrypt</span><span class="p">(</span><span class="n">input_string</span><span class="o">=</span><span class="s1">&#39;ABC&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;ZYX&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Debugging Q3</strong> The not-totally-functioning <code class="docutils literal notranslate"><span class="pre">growth_rate()</span></code> function is provided for you. The <em>goal</em> of this function, is given two population inputs: <code class="docutils literal notranslate"><span class="pre">last_year</span></code>, <code class="docutils literal notranslate"><span class="pre">this_year</span></code>, the function should return the population growth rate for that country.</p>
+<p>For example, in 2020, China’s population was <code class="docutils literal notranslate"><span class="pre">1439323776</span></code>. This year, its population is <code class="docutils literal notranslate"><span class="pre">1444216107</span></code>.</p>
+<p>Population growth rate is calculated by taking the difference between this year’s population minus last year’s population, dividng that difference by last year’s population, and multiplying the entire quantity by 100.</p>
+<p>Given China’s numbers above and this calculation, we know that this function should return <code class="docutils literal notranslate"><span class="pre">0.34</span></code>…but it’s not at this point.</p>
+<p>Consider the function currently and then debug (you can edit the code provided directly or copy and paste below so you still have the original if needed) to accomplish the task specified above.</p>
+<p>Note: Do not change the name of the function (<code class="docutils literal notranslate"><span class="pre">growth_rate</span></code>), and the parameter names provided in the instructions (<code class="docutils literal notranslate"><span class="pre">last_year</span></code>, <code class="docutils literal notranslate"><span class="pre">this_year</span></code>) must be used.</p>
+<p>Function provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">growth_rate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">this_year</span><span class="p">,</span> <span class="n">last_year</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">this_year</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">last_year</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">last_year</span> <span class="o">*</span> <span class="mi">100</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">growth_rate</span><span class="p">(</span><span class="n">last_year</span><span class="o">=</span><span class="mi">331002651</span><span class="p">,</span>
+                       <span class="n">this_year</span><span class="o">=</span><span class="mi">332915073</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/04-functions"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="debugging_errors.html" title="previous page">Debugging &amp; Errors</a>
+    <a class='right-next' id="next-link" href="../05-classes/classes_intro.html" title="next page">Classes</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Shannon E. Ellis & Thomas Donoghue<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

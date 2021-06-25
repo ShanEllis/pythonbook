@@ -1,0 +1,3 @@
+# Answers
+
+This chapter includes answers to the Practice sections throughout the book. Note that for many of the practice questions provided there are multiple *possible* correct answers. When that is the case, a comment will be provided with the answer indicating that your correct answer may look different than what you see in the answer key. So, if you understand the concept and the code you've written, your answer is very likely correct. However, if you got stuck, hopefully the answers provided here can help you work to understanding.

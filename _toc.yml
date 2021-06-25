@@ -13,6 +13,7 @@ sections:
   - file: content/02-basics/variables
   - file: content/02-basics/operators
   - file: content/02-basics/conditionals
+  - file: content/02-basics/practice
 
 - file: content/03-operations/collections_loops
   sections:
@@ -20,22 +21,33 @@ sections:
   - file: content/03-operations/tuples
   - file: content/03-operations/dictionaries
   - file: content/03-operations/loops
+  - file: content/03-operations/practice
 
 - file: content/04-functions/functions_intro
   sections:
   - file: content/04-functions/functions
   - file: content/04-functions/debugging_errors
+  # - file: content/04-functions/methods
   # - file: 04-functions/namespaces_scope
+  - file: content/04-functions/practice
 
 - file: content/05-classes/classes_intro
   sections:
   - file: content/05-classes/objects
   - file: content/05-classes/classes
+  - file: content/05-classes/practice
 
 # - file: Documentation
 # - file: Code Style
 # - file: Code Testing
 # - file: Command Line
+
+- file: content/0X-answers/answers_intro
+  sections:
+  - file: content/0X-answers/02-answers
+  - file: content/0X-answers/03-answers
+  - file: content/0X-answers/04-answers
+  - file: content/0X-answers/05-answers
 
 
 - file: content/acknowledgements

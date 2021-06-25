@@ -14,6 +14,16 @@ repository:
 execute:
   execute_notebooks: off
 
+
+# Launch button settings
+launch_buttons:
+  notebook_interface: classic  # The interface interactive links will activate ["classic", "jupyterlab"]
+  binderhub_url: ""  # The URL of the BinderHub (e.g., https://mybinder.org)
+  jupyterhub_url: "https://datahub.ucsd.edu/hub/login"  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
+  thebe: false  # Add a thebe button to pages (requires the repository to run on Binder)
+  colab_url: https://colab.research.google.com # The URL of Google Colab (e.g., https://colab.research.google.com)
+#######################################################################################
+
 #######################################################################################
 # HTML-specific settings
 html:
@@ -143,6 +153,3 @@ html:
 # plugins:
 # - jekyll-redirect-from
 # - jekyll-scholar
-
-# Jupyter Book version - DO NOT CHANGE THIS. It is generated when a new book is created
-jupyter_book_version: 0.6.4
