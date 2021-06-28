@@ -20,6 +20,9 @@ book:
 runall:
 	jupyter-book run ./content
 
+publish: 
+	ghp-import -n -p -f ./_build/html
+
 clean:
 	python scripts/clean.py
 

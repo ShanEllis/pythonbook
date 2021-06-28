@@ -34,6 +34,7 @@ sections:
 - file: content/05-classes/classes_intro
   sections:
   - file: content/05-classes/objects
+  - file: content/05-classes/modules
   - file: content/05-classes/classes
   - file: content/05-classes/practice
 

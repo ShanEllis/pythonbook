@@ -51,7 +51,7 @@
 <meta property="og:url"         content="content/content/0X-answers/05-answers.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Answers: Classes" />
-<meta property="og:description" content="Answers: Classes  Provided here are answers to the practice questions at the end of “Classes”." />
+<meta property="og:description" content="Answers: Classes  Provided here are answers to the practice questions at the end of “Classes”.  Objects  Objects Q1.  # specific strings will differ true_var = " />
 <meta property="og:image"       content="content/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -255,7 +255,19 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objects">
+   Objects
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classes">
+   Classes
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -267,6 +279,169 @@
   <div class="section" id="answers-classes">
 <h1>Answers: Classes<a class="headerlink" href="#answers-classes" title="Permalink to this headline">¶</a></h1>
 <p>Provided here are answers to the practice questions at the end of “Classes”.</p>
+<div class="section" id="objects">
+<h2>Objects<a class="headerlink" href="#objects" title="Permalink to this headline">¶</a></h2>
+<p><strong>Objects Q1</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># specific strings will differ</span>
+<span class="n">true_var</span> <span class="o">=</span> <span class="s1">&#39;asdf123&#39;</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span>
+<span class="n">false_var</span> <span class="o">=</span> <span class="s1">&#39;!!!!&#39;</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Objects Q2</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">days_summary</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">day</span> <span class="ow">in</span> <span class="n">days_of_week</span><span class="p">:</span>
+    <span class="n">days_summary</span><span class="p">[</span><span class="n">day</span><span class="p">]</span> <span class="o">=</span> <span class="n">site_days</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Objects Q3</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+<span class="n">rand_int</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<p><strong>Classes Q1</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassRoster</span><span class="p">():</span>
+        
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">course</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">students</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">course</span> <span class="o">=</span> <span class="n">course</span>
+        
+    <span class="k">def</span> <span class="nf">add_student</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">students</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">pid</span><span class="p">:</span> <span class="n">name</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Classes Q2</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ToDo</span><span class="p">():</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">to_do</span> <span class="o">=</span> <span class="p">[]</span>
+        
+    <span class="k">def</span> <span class="nf">add_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">top</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">to_do</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="bp">self</span><span class="o">.</span><span class="n">to_do</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">remove_item</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">to_do</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Classes Q3</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">NewYear</span><span class="p">():</span>
+    
+    <span class="n">zodiac_signs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Ox&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1937</span><span class="p">,</span> <span class="mi">1949</span><span class="p">,</span> <span class="mi">1961</span><span class="p">,</span> <span class="mi">1973</span><span class="p">,</span> <span class="mi">1985</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="mi">2009</span><span class="p">,</span> <span class="mi">2021</span><span class="p">],</span>
+    <span class="s1">&#39;Tiger&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1938</span><span class="p">,</span> <span class="mi">1950</span><span class="p">,</span> <span class="mi">1962</span><span class="p">,</span> <span class="mi">1974</span><span class="p">,</span> <span class="mi">1986</span><span class="p">,</span> <span class="mi">1998</span><span class="p">,</span> <span class="mi">2010</span><span class="p">],</span> 
+    <span class="s1">&#39;Rabbit&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1939</span><span class="p">,</span> <span class="mi">1951</span><span class="p">,</span> <span class="mi">1963</span><span class="p">,</span> <span class="mi">1975</span><span class="p">,</span> <span class="mi">1987</span><span class="p">,</span> <span class="mi">1999</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2023</span><span class="p">],</span> 
+    <span class="s1">&#39;Dragon&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1940</span><span class="p">,</span> <span class="mi">1952</span><span class="p">,</span> <span class="mi">1964</span><span class="p">,</span> <span class="mi">1976</span><span class="p">,</span> <span class="mi">1988</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2024</span><span class="p">],</span> 
+    <span class="s1">&#39;Snake&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1941</span><span class="p">,</span> <span class="mi">1953</span><span class="p">,</span> <span class="mi">1965</span><span class="p">,</span> <span class="mi">1977</span><span class="p">,</span> <span class="mi">1989</span><span class="p">,</span> <span class="mi">2001</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2025</span><span class="p">],</span> 
+    <span class="s1">&#39;Horse&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1942</span><span class="p">,</span> <span class="mi">1954</span><span class="p">,</span> <span class="mi">1966</span><span class="p">,</span> <span class="mi">1978</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2026</span><span class="p">],</span> 
+    <span class="s1">&#39;Goat/Sheep&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1943</span><span class="p">,</span> <span class="mi">1955</span><span class="p">,</span> <span class="mi">1967</span><span class="p">,</span> <span class="mi">1979</span><span class="p">,</span> <span class="mi">1991</span><span class="p">,</span> <span class="mi">2003</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2027</span><span class="p">],</span> 
+    <span class="s1">&#39;Monkey&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1944</span><span class="p">,</span> <span class="mi">1956</span><span class="p">,</span> <span class="mi">1968</span><span class="p">,</span> <span class="mi">1980</span><span class="p">,</span> <span class="mi">1992</span><span class="p">,</span> <span class="mi">2004</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2028</span><span class="p">],</span> 
+    <span class="s1">&#39;Rooster&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1945</span><span class="p">,</span> <span class="mi">1957</span><span class="p">,</span> <span class="mi">1969</span><span class="p">,</span> <span class="mi">1981</span><span class="p">,</span> <span class="mi">1993</span><span class="p">,</span> <span class="mi">2005</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2029</span><span class="p">],</span> 
+    <span class="s1">&#39;Dog&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1946</span><span class="p">,</span> <span class="mi">1958</span><span class="p">,</span> <span class="mi">1970</span><span class="p">,</span> <span class="mi">1982</span><span class="p">,</span> <span class="mi">1994</span><span class="p">,</span> <span class="mi">2006</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2030</span><span class="p">],</span> 
+    <span class="s1">&#39;Pig&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1947</span><span class="p">,</span> <span class="mi">1959</span><span class="p">,</span> <span class="mi">1971</span><span class="p">,</span> <span class="mi">1983</span><span class="p">,</span> <span class="mi">1995</span><span class="p">,</span> <span class="mi">2007</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2031</span><span class="p">],</span> 
+    <span class="s1">&#39;Rat&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1936</span><span class="p">,</span> <span class="mi">1948</span><span class="p">,</span> <span class="mi">1960</span><span class="p">,</span> <span class="mi">1972</span><span class="p">,</span> <span class="mi">1984</span><span class="p">,</span> <span class="mi">1996</span><span class="p">,</span> <span class="mi">2008</span><span class="p">,</span> <span class="mi">2020</span><span class="p">]</span>
+    <span class="p">}</span> 
+    
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">year</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+    
+    <span class="k">def</span> <span class="nf">return_sign</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zodiac_signs</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">zodiac_signs</span><span class="p">[</span><span class="n">key</span><span class="p">]:</span>
+                <span class="n">out</span> <span class="o">=</span> <span class="n">key</span>
+                <span class="k">break</span> <span class="c1"># answer would be fine without break here</span>
+                
+        <span class="k">return</span> <span class="s1">&#39;You were born in the year of the &#39;</span> <span class="o">+</span> <span class="n">out</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Classes Q4</strong>.</p>
+<p>Part I.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kingdom</span><span class="p">():</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+    
+    <span class="k">def</span> <span class="nf">introduce</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Hello, my name is &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">+</span> <span class="s1">&#39;, and I am a &#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Part II.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">class</span> <span class="nc">CourtJester</span><span class="p">(</span><span class="n">Kingdom</span><span class="p">):</span>
+
+    <span class="n">headwear</span> <span class="o">=</span> <span class="s2">&quot;fool&#39;s cap&quot;</span>
+        
+    <span class="k">def</span> <span class="nf">tell_a_joke</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">joke_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A clown held the door open for me yesterday. I thought it was a nice jester&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;How does the court jester address the King of Ducks? Mal’Lard&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;What did the court jester call the balding crown prince? The Heir Apparent with no Hair Apparent&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;What do you call a joke made by using sign language? A jester&#39;</span><span class="p">]</span>
+        <span class="n">out_joke</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">joke_list</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">out_joke</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Classes Q5</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">StudentInfo</span><span class="p">():</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">school</span><span class="p">,</span> <span class="n">proj_grade</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">school</span> <span class="o">=</span> <span class="n">school</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">proj_grade</span> <span class="o">=</span> <span class="n">proj_grade</span>
+        
+    <span class="k">def</span> <span class="nf">follow_up</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">proj_grade</span> <span class="o">&lt;=</span> <span class="mi">65</span><span class="p">:</span>
+            <span class="n">out</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">proj_grade</span>
+        <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">

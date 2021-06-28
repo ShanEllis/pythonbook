@@ -328,6 +328,207 @@ my_instance = MyClass()
 print(isinstance(MyClass, object))
 print(isinstance(my_instance, object))
 
+## `class`: `ProfCourses`
+
+With the basic explanations of concepts and provided examples thus far, you should have a sense that new objects can be created to store information (in the form of attributes) that are *attached* or *belong* to the object type *and* that methods are functions that are *attached* or *operate on* the object type directly. However, to this point, the examples have been somewhat contribed. Let's work through an example that incorporates concepts discussed up to this point to get a sense for how object-oriented programming and creating new objects can be beneficial.
+
+For this example, envision that you're a professor who teaches a handful of different courses each year. And, you want to be able to keep track of these courses and carry out a handful of operations on these courses. For this example, we'll build the code as we go, adding on additional pieces throughout this section, explaining each as we add it on. To get started, let's focus on a few instance attributes.
+
+class ProfCourses():
+    
+    # create three instance attributes
+    def __init__(self, prof):
+        self.n_classes = 0
+        self.classes = []
+        self.prof = prof
+
+In the example provided above we three instance attributes, two of which (`n_classes` and `classes`) are initialized with values, and one (`prof`) which requires definition upon creation of an instance of a `ProfCourses` object. If we think about these variables, when we first initalize an instance of a `ProfCourses` object, it makes good sense that `n_class` (standing in for number of classes) should be zero and the list of those `classes` should be an empty list. Eventually, we'll write a method that will add to and update these attributes. On the contrary, `prof` has to be specified upon initialization, so we know which prof's courses we're talking about.
+
+Let's do that now, and create an instance of our `ProfCourses` object!
+
+ellis_courses = ProfCourses('Ellis')
+print(ellis_courses.n_classes)
+print(ellis_courses.classes)
+print(ellis_courses.prof)
+
+Above, the output `print`ed matches our expectation. The `n_classes` and `classes` attributes are zero and an empty list, respectively, while the `prof` attribute stores 'Ellis', which was the value provided when the `ProfCourses` object was initialized. So, we've got some attributes, but now let's add a method to actually add classes to this object!
+
+While the example will get more and more involved, at each step only a handful of lines will change, adding to what was in the previous step. Here, we add the `add_class` method.
+
+class ProfCourses():
+    
+    def __init__(self, prof):
+        self.n_classes = 0
+        self.classes = []
+        self.prof = prof
+    
+    # add method that will add classes as a dictionary
+    # to our attribute (classes)...which is a list
+    def add_class(self, course_name, quarter, n_students):
+        
+        self.classes.append({'course_name': course_name,
+                             'quarter' : quarter,
+                             'n_students': n_students})
+        # increase value store in n_classes
+        # by 1 any time a class is added
+        self.n_classes += 1
+
+The `add_class` method has three parameters: `course_name`, `quarter`, and `n_students`, none of which takes a default value. 
+
+Within the function, we see that when the `add_class` method is executed, the values for each of the three input parameters will be stored in a dictionary. This dictionary will be appended to the `classes` attribute. We also see the value stored in `n_classes` will increment by 1.
+
+After defining the above `class`, we can create an instance of this object, call the `add_class` method on that object and take a look at the attributes of that ojbect:
+
+# create ellis_courses
+ellis_courses = ProfCourses('Ellis')
+
+# add a class
+ellis_courses.add_class('COGS18', 'fa20', 363)
+
+# see output
+print(ellis_courses.n_classes)
+ellis_courses.classes
+
+After calling the `add_class()` method, we see that, as we would expected `n_classes` increases to 1 and `classes` is a list that now stores a single dictionary, including the information about the course, as specified when `add_class()` was executed.
+
+From here, we can add an additional method `compare`. This will function to compare values within the `classes` object, allowing us to return, for example, the class with the most students...or the fewest students.
+
+class ProfCourses():
+    
+    def __init__(self, prof):
+        self.n_classes = 0
+        self.classes = []
+        self.prof = prof
+    
+    def add_class(self, course_name, quarter, n_students):
+        
+        self.classes.append({'course_name': course_name,
+                             'quarter' : quarter,
+                             'n_students': n_students})
+        self.n_classes += 1
+        
+     
+    # add method to compare values in classes
+    def compare(self, attribute, direction='most'):
+    
+        fewest = self.classes[0]
+        most = self.classes[0] 
+        
+        for my_class in self.classes:
+            if my_class[attribute] <= fewest[attribute]:
+                fewest = my_class
+            elif my_class[attribute] >= most[attribute]:
+                most = my_class
+                
+        if direction == 'most':
+            output = most
+        elif direction == 'fewest':
+            output = fewest
+
+        return output
+
+While we won't walk through every line of code above, what you'll want to keep in mind is that `fewest` and `most` are both dictionaries. Before the `for` loop, they are initialized with the first dictionary in `classes`. From there, the value (dictionary) in each is updated, only if the value stored in the `attribute` (key specified) is lower (for `fewest`) or higher (for `most`) than the value in the previous iteration of the loop. At the end of the loop, a conditional is used to determine what should `return`ed from the loop by considering what the input to `direction` (method parameter) is.
+
+Here, we'll create an instance of the `ProfCourses` object and call the `add_class` method a number of times to add multiple classes to the `classes` attribute of our object:
+
+# create ellis_courses
+ellis_courses = ProfCourses('Ellis')
+
+# add a bunch of classes
+ellis_courses.add_class('COGS18', 'fa20', 363)
+ellis_courses.add_class('COGS108', 'fa20', 447)
+ellis_courses.add_class('COGS18', 'su20', 88)
+ellis_courses.add_class('COGS108', 'sp20', 469)
+ellis_courses.add_class('COGS108', 'sp19', 825)
+
+# see the courses
+print(ellis_courses.n_classes)
+ellis_courses.classes
+
+Above we see that `ellis_courses` now stores information about 5 different courses, each of which is stored as a dictionary in the list `classes`, which is an attribute of the `ProfCourses` class. 
+
+With this, we can now use our `compare` method:
+
+# make comparison among all courses
+# returns the class with the most students
+ellis_courses.compare('n_students')
+
+Given the code, and as we see above, if the attribute is `n_students`, the dictionary corresponding to the quarter with the 'most' students will be returned by default. 
+
+Of course, if we wanted it to return the `'fewest'`, we could specify that in the `direction` parameter: 
+
+# return the class with the fewest students
+ellis_courses.compare('n_students', 'fewest')
+
+Given our current setup, the only attribute that could be used for meaningful comparison is `n_students`, but, what if for each class there were additional `'attribute`s?  
+
+In this final iteration of `ProfCourses`, the instance attributes and `compare` methods remain unchanged. The only difference is that `add_class` has additional paramters, `n_exams` and `n_assigments`, for example.
+
+class ProfCourses():
+    
+    def __init__(self, prof):
+        self.n_classes = 0
+        self.classes = []
+        self.prof = prof
+    
+    def add_class(self, course_name, quarter, 
+                  n_students, n_exams, n_assignments):
+        
+        # add in additional key-value pairs
+        self.classes.append({'course_name': course_name,
+                             'quarter' : quarter,
+                             'n_students': n_students,
+                             'n_exams' : n_exams,
+                             'n_assignments' : n_assignments})
+        self.n_classes += 1
+        
+     
+    def compare(self, attribute, direction='most'):
+    
+        fewest = self.classes[0]
+        most = self.classes[0] 
+        
+        for my_class in self.classes:
+            if my_class[attribute] <= fewest[attribute]:
+                fewest = my_class
+            elif my_class[attribute] >= most[attribute]:
+                most = my_class
+                
+        if direction == 'most':
+            output = most
+        elif direction == 'fewest':
+            output = fewest
+
+        return output
+
+When we go to add classes to a `ProfCourses` object now, additional arguments are required for these additional parameters:
+
+# create ellis_courses
+ellis_courses = ProfCourses('Ellis')
+
+# add a bunch of classes
+ellis_courses.add_class('COGS18', 'fa20', 363, 2, 5)
+ellis_courses.add_class('COGS108', 'fa20', 447, 0, 6)
+ellis_courses.add_class('COGS18', 'su20', 88, 3, 5)
+ellis_courses.add_class('COGS108', 'sp20', 469, 0, 6)
+ellis_courses.add_class('COGS108', 'sp19', 825, 0, 5)
+ellis_courses.add_class('COGS18', 'fa19', 301, 2, 4)
+
+# see the courses
+print(ellis_courses.n_classes)
+
+However, with this additional functionality we can do comparisons on additional arguments now, for example the class with the most exams:
+
+# return the class with the most exams
+ellis_courses.compare('n_exams', 'most')
+
+...or the fewest assignments:
+
+# return the class with the fewest assignments
+ellis_courses.compare('n_assignments', 'fewest')
+
+At this point, hopefully you have a sense for how it can be helpful to organize code into objects whenenver you have information (attributes) and operations (methods) that work together. However, this class is not perfect. See the exercises below for considerations to add additional functionality and improve this class!
+
 ## Exercises
 
 Q1. **Which of the following is true about the following `Dog` class?**
@@ -346,7 +547,7 @@ B) `Dog` is a function, `sound` is an attribute, and `speak` is a method.
 C) `Dog` is a class, `sound` is a method, and `speak` is an attribute.  
 D) `Dog` is a function, `sound` is an method, and `speak` is an attribute.  
 
-Q2. Using the definition in the previous question, how many instances of `Dog()` are created below and how many times does the `speak()` method execute if the following code were to execute:
+Q2. **Using the definition in the previous question, how many instances of `Dog()` are created below and how many times does the `speak()` method execute if the following code were to execute**:
 
 ```python
 pack_of_dogs = [Dog(), Dog(), Dog(), Dog()]
@@ -439,3 +640,12 @@ A) True
 B) False  
 C) None  
 D) AssertionError  
+
+Q7. **This question builds on `ProfCourses` from above. If you haven't worked through that example, do so first and then return here. How would you improve the `ProfCourses` class in this chapter to accomplish each of the following**:
+
+1) account for ties when using the `compare` method?
+2) refactor (meaning improve and simplify) the `compare()` method to reduce the need for creating two different objects, only one of which gets `return`ed from the method?
+3) add a method to put the dictionary in time order?
+
+
+**Give any/all of these a try to solidify your `class` understanding!**
