@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Classes &#8212; Introduction to Python</title>
+    <title>Strong Code &#8212; Introduction to Python</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -36,22 +36,22 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="content/content/05-classes/classes_intro.html" />
+    <link rel="canonical" href="content/content/06-good-code/good_code_intro.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Objects" href="objects.html" />
-    <link rel="prev" title="Practice: Functions" href="../04-functions/practice.html" />
+    <link rel="next" title="Code Style" href="code_style.html" />
+    <link rel="prev" title="Practice: Classes" href="../05-classes/practice.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="content/content/05-classes/classes_intro.html" />
+<meta property="og:url"         content="content/content/06-good-code/good_code_intro.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Classes" />
-<meta property="og:description" content="Classes  While functions provide users with the ability to write code that can be executed on different outputs, class objects take this a step further. In this" />
+<meta property="og:title"       content="Strong Code" />
+<meta property="og:description" content="Strong Code  To this point, this book has focused on teaching beginners the basic building blocks necessary to write code in Python. However, beyond understandi" />
 <meta property="og:image"       content="content/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -104,37 +104,32 @@
    Functions
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05-classes/classes_intro.html">
+   Classes
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Classes
+   Strong Code
   </a>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="objects.html">
-     Objects
+    <a class="reference internal" href="code_style.html">
+     Code Style
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="modules.html">
-     Modules
+    <a class="reference internal" href="documentation.html">
+     Documentation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="classes.html">
-     Classes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="practice.html">
-     Practice: Classes
+    <a class="reference internal" href="testing.html">
+     Code Testing
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../06-good-code/good_code_intro.html">
-   Good Code
-  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../0X-answers/answers_intro.html">
@@ -193,7 +188,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/05-classes/classes_intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/content/06-good-code/good_code_intro.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -213,10 +208,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/05-classes/classes_intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/06-good-code/good_code_intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/shanellis/pythonbook/edit/master/content/05-classes/classes_intro.md"><button
+        <a class="edit-button" href="https://github.com/shanellis/pythonbook/edit/master/content/06-good-code/good_code_intro.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -247,9 +242,9 @@
         
               <div>
                 
-  <div class="section" id="classes">
-<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
-<p>While functions provide users with the ability to write code that can be executed on different outputs, <code class="docutils literal notranslate"><span class="pre">class</span></code> objects take this a step further. In this section, we’ll introduce the concept of <code class="docutils literal notranslate"><span class="pre">class</span></code> objects and then walk through how to write code to create your own. With the understanding provided here for <code class="docutils literal notranslate"><span class="pre">class</span></code> objects, attributes, methods, and inheritance, you’ll be able to create <code class="docutils literal notranslate"><span class="pre">class</span></code> objects of your own and write well-organized code that limits the need for repetition.</p>
+  <div class="section" id="strong-code">
+<h1>Strong Code<a class="headerlink" href="#strong-code" title="Permalink to this headline">¶</a></h1>
+<p>To this point, this book has focused on teaching beginners the basic building blocks necessary to write code in Python. However, beyond understanding these concepts and getting code to execute without error, there are a number of considerations one should make when taking their code from functional (it executes!) to strong, clear, well-documented code. In this section, we’ll cover code style, code documentation, and code testing. Together these concepts will take your code to the next level, making your code stronger, easier to read, and easier to maintain over time.</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -267,7 +262,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/05-classes"
+            path: "./content/06-good-code"
         },
         predefinedOutput: true
     }
@@ -282,8 +277,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../04-functions/practice.html" title="previous page">Practice: Functions</a>
-    <a class='right-next' id="next-link" href="objects.html" title="next page">Objects</a>
+    <a class='left-prev' id="prev-link" href="../05-classes/practice.html" title="previous page">Practice: Classes</a>
+    <a class='right-next' id="next-link" href="code_style.html" title="next page">Code Style</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
