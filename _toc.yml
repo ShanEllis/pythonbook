@@ -6,7 +6,7 @@ sections:
   - file: content/01-intro/why
   - file: content/01-intro/who
   - file: content/01-intro/tools
-  # - file: content/01-intro/installation
+  - file: content/01-intro/installation
   - file: content/01-intro/jupyter_notebooks
 
 - file: content/02-basics/basics
