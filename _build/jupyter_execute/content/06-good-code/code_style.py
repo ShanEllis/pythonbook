@@ -251,7 +251,7 @@ While documentation (including how to write docstrings and when, how and where t
 
 First, out-of-date comments are worse than no comments at all. Keep your comments up-to-date. While we encourage writing comments to explain your thinking as you're writing the code, you want to be sure to re-visit your code comments during your "editing" and "improving code style" sessions to ensure that what is stated in the comments matches what is done in your code to avoid confusion for any readers of your code.
 
-#### Block comments
+**Block comments**
 
 Block comments are comments that are on their own line and come before the code they intend to describe. They follow the following conventions:
 
@@ -279,7 +279,6 @@ Intead, here, we see improved code comment style by 1) having the block comment 
 
 The code style is also further improved by considering spacing within the `statements` list *and* considering line spacing throughout the function.
 
-# Goodness
 def encourage():
     
     # Randomly pick from list of de-stressing statements
@@ -296,7 +295,7 @@ def encourage():
 
 encourage()
 
-#### Inline comments
+**Inline comments**
 
 Inline comments are those comments on the same line as the code they're describing. These are:
 
@@ -401,4 +400,13 @@ def MyFunction(input_num):
     for i in my_list [ind:]:
         qq.append(input_num/i)
     return qq
+```
+
+Q7. **Identify and improve all of the PEP8/Code Style violations found in the following code**:
+
+```python
+def ff(jj):
+    oo = list(); jj = list(jj) 
+    for ii in jj: oo.append(str(ord(ii)))
+    return '+'.join(oo)
 ```

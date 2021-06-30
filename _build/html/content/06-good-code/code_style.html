@@ -41,7 +41,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Documentation" href="documentation.html" />
-    <link rel="prev" title="Good Code" href="good_code_intro.html" />
+    <link rel="prev" title="Strong Code" href="good_code_intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -111,7 +111,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="reference internal" href="good_code_intro.html">
-   Good Code
+   Strong Code
   </a>
   <ul class="current">
    <li class="toctree-l2 current active">
@@ -328,18 +328,6 @@
          PEP8: Comments
         </a>
        </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#block-comments">
-       Block comments
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#inline-comments">
-       Inline comments
-      </a>
-      <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#id1">
          PEP8: Documentation
@@ -720,10 +708,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <div class="section" id="pep8-comments">
 <h5>PEP8: Comments<a class="headerlink" href="#pep8-comments" title="Permalink to this headline">¶</a></h5>
 <p>First, out-of-date comments are worse than no comments at all. Keep your comments up-to-date. While we encourage writing comments to explain your thinking as you’re writing the code, you want to be sure to re-visit your code comments during your “editing” and “improving code style” sessions to ensure that what is stated in the comments matches what is done in your code to avoid confusion for any readers of your code.</p>
-</div>
-</div>
-<div class="section" id="block-comments">
-<h4>Block comments<a class="headerlink" href="#block-comments" title="Permalink to this headline">¶</a></h4>
+<p><strong>Block comments</strong></p>
 <p>Block comments are comments that are on their own line and come before the code they intend to describe. They follow the following conventions:</p>
 <ul class="simple">
 <li><p>apply to some (or all) code that follows them</p></li>
@@ -757,8 +742,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <p>The code style is also further improved by considering spacing within the <code class="docutils literal notranslate"><span class="pre">statements</span></code> list <em>and</em> considering line spacing throughout the function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Goodness</span>
-<span class="k">def</span> <span class="nf">encourage</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encourage</span><span class="p">():</span>
     
     <span class="c1"># Randomly pick from list of de-stressing statements</span>
     <span class="c1"># to help students as they finish the quarter.</span>
@@ -782,9 +766,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="inline-comments">
-<h4>Inline comments<a class="headerlink" href="#inline-comments" title="Permalink to this headline">¶</a></h4>
+<p><strong>Inline comments</strong></p>
 <p>Inline comments are those comments on the same line as the code they’re describing. These are:</p>
 <ul class="simple">
 <li><p>to be used sparingly</p></li>
@@ -816,6 +798,7 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;You&#39;re going to do great!&quot;
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -893,6 +876,13 @@ E) <code class="docutils literal notranslate"><span class="pre">my_string</span>
     <span class="k">return</span> <span class="n">qq</span>
 </pre></div>
 </div>
+<p>Q7. <strong>Identify and improve all of the PEP8/Code Style violations found in the following code</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ff</span><span class="p">(</span><span class="n">jj</span><span class="p">):</span>
+    <span class="n">oo</span> <span class="o">=</span> <span class="nb">list</span><span class="p">();</span> <span class="n">jj</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span> 
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">jj</span><span class="p">:</span> <span class="n">oo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">ii</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">oo</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -924,7 +914,7 @@ E) <code class="docutils literal notranslate"><span class="pre">my_string</span>
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="good_code_intro.html" title="previous page">Good Code</a>
+    <a class='left-prev' id="prev-link" href="good_code_intro.html" title="previous page">Strong Code</a>
     <a class='right-next' id="next-link" href="documentation.html" title="next page">Documentation</a>
 
     </div>

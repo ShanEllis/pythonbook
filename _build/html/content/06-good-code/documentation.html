@@ -51,7 +51,7 @@
 <meta property="og:url"         content="content/content/06-good-code/documentation.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Documentation" />
-<meta property="og:description" content="Documentation  Coming Soon." />
+<meta property="og:description" content="Documentation  Documentation is a second piece on your path to writing strong code. Code style is the first, and code testing - to be discussed in the next chap" />
 <meta property="og:image"       content="content/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -255,7 +255,58 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments">
+   Comments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docstrings">
+   Docstrings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#numpy-style-docsstrings">
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       numpy
+      </span>
+     </code>
+     -style docsstrings
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#docstring-add">
+       Docstring:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         add()
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accessing-docstrings">
+       Accessing Docstrings.
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-documentation">
+   Additional Documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercises">
+   Exercises
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -266,7 +317,207 @@
                 
   <div class="section" id="documentation">
 <h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
-<p>Coming Soon.</p>
+<p>Documentation is a second piece on your path to writing strong code. Code style is the first, and code testing - to be discussed in the next chapter is the third. Together, these make up the strong code trifecta.</p>
+<p>In this chapter we’ll discuss how to move beyond having good code style (which is important!) to have well-documented and well-commented code.</p>
+<div class="alert alert-success">
+Code documentation is text that accompanies and/or is embedded within a software project, that explains what the code is and how to use it. 
+</div>
+<p>Documentation is text that accompanies and/or is embedded within a software project that explains what the code is and how to use it. While there are many levels of documentations beyond what we’ll discuss here, we’ll focus on adding docstrings and code comments to your code. Documenting your code by including helpful comments and docstrings will take your code to the next level. As a rule, good code has good documentation - but code documentation should <em>not</em> be used to try and fix unclear names, or bad structure, so we can’t forget about code style and everything discussed in the last chapter. Specifically, <em>comments</em> should add any additional context and information that helps explain what the code is, how it works, and why it works that way to developers, whereas <em>docstrings</em> should make how to use the code clear to users. In this chapter we’ll discuss both docstrings and comments, which together lead to well-documented code.</p>
+<p>Most simply, documentation is incredibly important, undervalued, and underrated. Documentation is stuff written for humans in human language to help the humans. It does not affect the functionality of the code, but it does help the humans reading and using the code.</p>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Comments are string literals written directly in the code, typically directed at developers - people reading and potentially writing or editing the code.</p>
+<p>As noted in the code style chapter, code comments should use <code class="docutils literal notranslate"><span class="pre">#</span></code>, followed by a space before the comment, and be written at the same indentation level of the code it describes.</p>
+<p>But, when exactly should you include comments in yoru code? Well, generally it’s best for comments to focus on the <em>how</em> and <em>why</em>, over literally explaining what the code does. This is because you can expect individuals reading your code to have an understnding of the basic code constructs in Python. As such a comment that reads “<code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">this</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">for</span> <span class="pre">loop</span></code>” will be distracting and uniformative.</p>
+<p>Instead, good code comments should explain any context needed to understand the task at hand, give a broad overview of what approach you are taking to perform the task, and, if you’re using any unusual approaches, explain what they are, and why you’re using them.</p>
+<p>As noted previously, comments <em>must</em> be maintained. Be sure to keep them up-to-date, meaning the comments included should apply to the code that is actually there. Out-of-date comments are worse than no comments at all.</p>
+<p>Note that people new to writing code comments and documentation generally sometimes get hung up on questions like “How many comments do I need?” and “Should I comment every line?” Rather than ask these questions, we encourage you to keep in mind that comments should add context without being distracting. Typically, commenting every line makes your code <em>harder</em> to read and understand, which is to be avoided. Similarly, having <em>no comments</em> across all code in a project should also typically be avoided, as some explanation or context to those reading your code (including future you) would likely be beneficial.</p>
+<p><strong>What to avoid</strong></p>
+<p>Specifically, comments that explain what the code construct does literally, should be avoided.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a loop that iterates over elements in a list</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_of_elements</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to improve</strong></p>
+<p>Intead, you’d want to explain your thinking, along the general lines of what you see here (where X, Y, and Z would be replaced with specifics applicable to your project):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Because of X, we will use approach Y to do Z</span>
+<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">list_of_elements</span><span class="p">:</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="docstrings">
+<h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">¶</a></h2>
+<p>Unlike comments, which are intermingled among the code directly and included for developers (people reading the code), docstrings are descriptions and guides written alongside the code itself for code <em>users</em>.</p>
+<p><strong>Docstrings</strong> are used to describe how to use the code stored in modules, classes and/or functions. Specifically, they describe the <em>operation</em> of the code.</p>
+<div class="alert alert-success">
+<b>Docstrings</b> describe modules, classes and functions. They describe the operation of the code.
+</div>
+<div class="section" id="numpy-style-docsstrings">
+<h3><code class="docutils literal notranslate"><span class="pre">numpy</span></code>-style docsstrings<a class="headerlink" href="#numpy-style-docsstrings" title="Permalink to this headline">¶</a></h3>
+<p>While there are a handful of different common approaches to writing docstrings in Python, we’ll focus on writing <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-style docstrings.</p>
+<p><a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html">Numpy style docs</a> are a particular specification for docstrings. The documentation is extensive, so for more detail we encourage you to delve into their documentation…about docstrings. Here, we’ll only ocver the basics.</p>
+<div class="section" id="docstring-add">
+<h4>Docstring: <code class="docutils literal notranslate"><span class="pre">add()</span></code><a class="headerlink" href="#docstring-add" title="Permalink to this headline">¶</a></h4>
+<p>To introduce the syntax and formatting for a <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-style docstring, we’ll document a <em>very</em> simple function <code class="docutils literal notranslate"><span class="pre">add</span></code>. You’ll notice a few things in the docstring below:</p>
+<ol class="simple">
+<li><p>Docstrings begin and end with triple quotes.</p></li>
+<li><p>Docstrings are added write beneath the line of code defining the function or class they’re describing.</p></li>
+<li><p>Jupyter notebooks will format docstrings using a red color.</p></li>
+<li><p>The docstring below includes three parts: 1) a string describing what the function accomplishes, 2) the inputs (Parameters) to the function, and 3) the outputs (Returns) from the function.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Add two numbers together. </span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    num1 : int or float</span>
+<span class="sd">        The first number, to be added. </span>
+<span class="sd">    num2 : int or float</span>
+<span class="sd">        The second number, to be added.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    answer : int or float</span>
+<span class="sd">        The result of the addition. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+    
+    <span class="k">return</span> <span class="n">answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the example above, we’ll describe each of these three components above in a bit more details</p>
+<p><strong>General Description</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;Add</span> <span class="pre">two</span> <span class="pre">numbers</span> <span class="pre">together.&quot;&quot;&quot;</span></code> provides the user with a general description of what the function does. This can be a multi-line string and should describe generally the task accomplished by or goals of the function.</p>
+<p><strong>Parameters</strong></p>
+<p>The parameters section opens with “Parameters’ with a line of dashes on the following line. Within this section, each input/argument to the fucntion, its corresponding type, and a description of the input is included.</p>
+<p>For example <code class="docutils literal notranslate"><span class="pre">num1</span></code> is the parameter name. Separated by a colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>), the type of that parameter is described (<code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">or</span> <span class="pre">float</span></code>). On the following line and indented, a short description of that parameter is included. The same pieces of information are included for the second parameter <code class="docutils literal notranslate"><span class="pre">num2</span></code>)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="sd">&quot;&quot;&quot;    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    num1 : int or float</span>
+<span class="sd">        The first number, to be added. </span>
+<span class="sd">    num2 : int or float</span>
+<span class="sd">        The second number, to be added.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p><strong>Returns</strong></p>
+<p>The formatting for the returns section mirrors that of the Parameters section; however, the information included reflects the variable or variables <code class="docutils literal notranslate"><span class="pre">return</span></code>ed from the function (or method).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    answer : int or float</span>
+<span class="sd">        The result of the addition. </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>In the <code class="docutils literal notranslate"><span class="pre">add()</span></code> function, there is a single output <code class="docutils literal notranslate"><span class="pre">answer</span></code>, which will be either an <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">or</span> <span class="pre">float</span></code>, and can be described as “The result of the addition.”</p>
+<p>As a reminder, complete docstrings can and should include even more information than what is described here. However, to get in the practice of documenting your code, including these three aspects is a great place to start. But, we encourage you to dig into the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> docstring documentation to expand on your docuementation understanding. For one example of a complete docstring, you can check out the information included in the docstring for <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html"><code class="docutils literal notranslate"><span class="pre">numpy.array</span></code></a>.</p>
+</div>
+<div class="section" id="accessing-docstrings">
+<h4>Accessing Docstrings.<a class="headerlink" href="#accessing-docstrings" title="Permalink to this headline">¶</a></h4>
+<p>Importantly, <strong>docstrings</strong> are available to you <em>outside</em> of the source code in a number of ways.</p>
+<p><strong>Aproach #1: <code class="docutils literal notranslate"><span class="pre">?</span></code></strong></p>
+<p>In a Jupyter notebook, documentation for an object can be accessed by adding a quesiton mark (<code class="docutils literal notranslate"><span class="pre">?</span></code>) after the object name: <code class="docutils literal notranslate"><span class="pre">add?</span></code>. This would pull the documentation up as a pop-up at the bottom of a Jupyter notebook.</p>
+<p><strong>Aproach #2: <code class="docutils literal notranslate"><span class="pre">help()</span></code></strong></p>
+<p>The <code class="docutils literal notranslate"><span class="pre">help()</span></code> function can be used to pull up the documentation in-line for any object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">add</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function add in module __main__:
+
+add(num1, num2)
+    Add two numbers together. 
+    
+    Parameters
+    ----------
+    num1 : int or float
+        The first number, to be added. 
+    num2 : int or float
+        The second number, to be added.
+    
+    Returns
+    -------
+    answer : int or float
+        The result of the addition.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Aproach #3: <code class="docutils literal notranslate"><span class="pre">__doc__</span></code></strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">__doc__</span></code> is also an attribute stored in an ocject. As with all attributes, the information stored can be accessed using <code class="docutils literal notranslate"><span class="pre">obj.__doc__</span></code>. Note that <code class="docutils literal notranslate"><span class="pre">__</span></code> is a dunder, or a double underscore. There are two leading and two trailing underscores around <code class="docutils literal notranslate"><span class="pre">doc</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Add two numbers together. 
+    
+    Parameters
+    ----------
+    num1 : int or float
+        The first number, to be added. 
+    num2 : int or float
+        The second number, to be added.
+    
+    Returns
+    -------
+    answer : int or float
+        The result of the addition. 
+    
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="additional-documentation">
+<h2>Additional Documentation<a class="headerlink" href="#additional-documentation" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned above, a complete software project will have documentation beyond code comments and docstrings. While we won’t go into details here, we’ll describe a few of the most common additional components of a well-documented software project briefly here:</p>
+<ul class="simple">
+<li><p>A <code class="docutils literal notranslate"><span class="pre">README</span></code> is a file that provides an overview of the project to potential users and developers</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">LICENSE</span></code> file specifies the license under which the code is available (the terms of use)</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">API</span> <span class="pre">Reference</span></code> is a collection of the docstrings, listing public interfaces, parameters and return values</p></li>
+<li><p>Tutorials and/or Examples show examples and tutorials for using the codebase</p></li>
+</ul>
+<p>Full project documentation are often included on documentation sites, which host all of this information online, in a format accessible to and searchable by code users. An example of a well-documented code project is <strong>scikit learn</strong>, or as it’s often abbreviated <a class="reference external" href="https://scikit-learn.org/stable/index.html"><code class="docutils literal notranslate"><span class="pre">sklearn</span></code></a>.</p>
+</div>
+<div class="section" id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+<p>Q1. <strong>Docstrings are…</strong></p>
+<p>A) written for code users<br />
+B) written for developers<br />
+C) to be read only by the author of the code<br />
+D) essential for code execution</p>
+<p>Q2. <strong>Comments are…</strong></p>
+<p>A) written for code users<br />
+B) written for developers<br />
+C) to be read only by the author of the code<br />
+D) essential for code execution</p>
+<p>Q3. <strong>What is the difference between code comments and docstrings?</strong></p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
