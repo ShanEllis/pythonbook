@@ -6,6 +6,7 @@ sections:
   - file: content/01-intro/why
   - file: content/01-intro/who
   - file: content/01-intro/tools
+  # - file: content/01-intro/installation
   - file: content/01-intro/jupyter_notebooks
 
 - file: content/02-basics/basics
@@ -27,7 +28,6 @@ sections:
   sections:
   - file: content/04-functions/functions
   - file: content/04-functions/debugging_errors
-  # - file: content/04-functions/methods
   # - file: 04-functions/namespaces_scope
   - file: content/04-functions/practice
 
@@ -38,10 +38,14 @@ sections:
   - file: content/05-classes/classes
   - file: content/05-classes/practice
 
-# - file: Documentation
-# - file: Code Style
-# - file: Code Testing
-# - file: Command Line
+- file: content/06-good-code/good_code_intro
+  sections:
+  - file: content/06-good-code/code_style
+  - file: content/06-good-code/documentation
+  - file: content/06-good-code/testing
+
+# - file: content/07-scipy/
+
 
 - file: content/0X-answers/answers_intro
   sections:
