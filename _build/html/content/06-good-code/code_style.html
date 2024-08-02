@@ -1,371 +1,549 @@
 
-
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Code Style &#8212; Introduction to Python</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-dropdown.css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/sphinx-book-theme.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/06-good-code/code_style';</script>
     <link rel="canonical" href="content/content/06-good-code/code_style.html" />
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Documentation" href="documentation.html" />
     <link rel="prev" title="Strong Code" href="good_code_intro.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="content/content/06-good-code/code_style.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Code Style" />
-<meta property="og:description" content="Code Style  In this chapter, we’ll discuss a number of important considerations to make when styling your code. If you think of writing code like writing an ess" />
-<meta property="og:image"       content="content/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../index.html">
+    
+    
+    
+  </div>
   
-  <img src="../../_static/logo.png" class="logo" alt="logo">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
   
   
-  <h1 class="site-logo" id="site-title">Introduction to Python</h1>
   
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/why.html">Why this book?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/who.html">Who is this for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/installation.html">Installing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/jupyter_notebooks.html">Jupyter Notebooks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/basics.html">The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/conditionals.html">Conditionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/practice.html">Practice: The Basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions_intro.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/debugging_errors.html">Debugging &amp; Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/practice.html">Practice: Functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Loops</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/collections_loops.html">Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/tuples.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/practice.html">Practice: Collections &amp; Loops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-classes/classes_intro.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-classes/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-classes/modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-classes/classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-classes/practice.html">Practice: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Computing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/scientific_computing.html">Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/numpy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/pandas.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/next_steps.html">Next Steps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Strong Code</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="good_code_intro.html">Strong Code</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Code Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/02-answers.html">Answers: The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/03-answers.html">Answers: Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/04-answers.html">Answers: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/05-answers.html">Answers: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements &amp; License</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://datahub.ucsd.edu/hub/login/hub/user-redirect/git-pull?repo=https%3A//github.com/shanellis/pythonbook&urlpath=tree/pythonbook/content/06-good-code/code_style.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
 </a>
-</div>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/06-good-code/code_style.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro/intro.html">
-   Welcome!
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-basics/basics.html">
-   The Basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-operations/collections_loops.html">
-   Collections &amp; Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04-functions/functions_intro.html">
-   Functions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../05-classes/classes_intro.html">
-   Classes
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="good_code_intro.html">
-   Strong Code
-  </a>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Code Style
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="documentation.html">
-     Documentation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="testing.html">
-     Code Testing
-    </a>
-   </li>
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../0X-answers/answers_intro.html">
-   Answers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../acknowledgements.html">
-   Acknowledgements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../LICENSE.html">
-   License
-  </a>
- </li>
-</ul>
-
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
 </div>
 
 
-          
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/06-good-code/code_style.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
-</div>
-        <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/shanellis/pythonbook"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/06-good-code/code_style.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/shanellis/pythonbook/edit/master/content/06-good-code/code_style.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-        <!-- Launch buttons -->
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/06-good-code/code_style.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/login/hub/user-redirect/git-pull?repo=https://github.com/shanellis/pythonbook&urlpath=tree/pythonbook/content/06-good-code/code_style.ipynb&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/06-good-code/code_style.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/06-good-code/code_style.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-    </div>
 
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/06-good-code/code_style.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Code Style</h1>
     <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#style-guides">
-   Style Guides
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-zen-of-python">
-     The Zen of Python
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-consistency">
-     Code Consistency
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pep8">
-     PEP8
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pep8-structure">
-       PEP8: Structure
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#blank-lines">
-         Blank Lines
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pep8-indentation">
-         PEP8: Indentation
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pep8-spacing">
-         PEP8: Spacing
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pep8-line-length">
-         PEP8: Line Length
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pep8-imports">
-         PEP8: Imports
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pep8-naming">
-         PEP8: Naming
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#string-quotes">
-         String Quotes
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pep8-documentation">
-       PEP8: Documentation
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#pep8-comments">
-         PEP8: Comments
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#id1">
-         PEP8: Documentation
-        </a>
-       </li>
-      </ul>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
- </li>
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style-guides">Style Guides</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-zen-of-python">The Zen of Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-consistency">Code Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8">PEP8</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-structure">PEP8: Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#blank-lines">Blank Lines</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-indentation">PEP8: Indentation</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-spacing">PEP8: Spacing</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-line-length">PEP8: Line Length</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-imports">PEP8: Imports</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-naming">PEP8: Naming</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-quotes">String Quotes</a></li>
 </ul>
-
-        </nav>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-documentation">PEP8: Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-comments">PEP8: Comments</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PEP8: Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="code-style">
-<h1>Code Style<a class="headerlink" href="#code-style" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="code-style">
+<h1>Code Style<a class="headerlink" href="#code-style" title="Link to this heading">#</a></h1>
 <p>In this chapter, we’ll discuss a number of important considerations to make when styling your code. If you think of writing code like writing an essay, considering code style improves your code the same way editing an essay improves your essay. Often, considering code style is referred to as making our code <em>pythonic</em>, meaning that it adheres to the foundational principles of the Python programming language.</p>
 <p>Learning how to consider and improve your code style up front has a number of benefits. First, your code will be more user-friendly for anyone reading your code. This includes you, who will come back to and edit your code over time. Second, while considering code style and being pythonic is a bit more work up-front on developers (the people writing the code), it pays off on the long run by making your code easier to maintai. Third, by learning this now, early on in your Python journey, you avoid falling into bad habits. It’s much easier to learn something and implement it than it is to unlearn bad habits.</p>
 <p>Note that what we’re discussing here will not affect the functionality of your code. Unlike <em>programmatic errors</em> (i.e. errors and exceptions that require debugging for your code to execute properly), <em>stylistic errors</em> do not affect the functionality of your code. However, <em>stylistic errors</em> are considered bad style and are to be avoided, as they make your code harder to understand.</p>
-<div class="section" id="style-guides">
-<h2>Style Guides<a class="headerlink" href="#style-guides" title="Permalink to this headline">¶</a></h2>
+<section id="style-guides">
+<h2>Style Guides<a class="headerlink" href="#style-guides" title="Link to this heading">#</a></h2>
 <p>Programming lanugages often have style guides, which include a set of conventions for how to write good code. While many of the concepts we’ll cover here are applicable for other programming languages (i.e. being consistent), some of the specifics (i.e. variable naming conventions) are more specific to programming in Python.</p>
 <div class="alert alert-success">
 Coding style refers to a set of conventions for how to write good code. 
-</div><div class="section" id="the-zen-of-python">
-<h3>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Permalink to this headline">¶</a></h3>
+</div><section id="the-zen-of-python">
+<h3>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Link to this heading">#</a></h3>
 <p>To explain the programming philosophy in Python, we’ll first introduce what’s known as <em>The Zen of Python</em>, which lays out the design principles of the individuals who developed the Python programming language. <em>The Zen of Python</em> is included as an easter egg in Python, so if you <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">this</span></code> you’re able to read its contents:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -400,13 +578,13 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 <p>While we won’t discuss each of these above we’ll highlight two of these tenantsthat are particularly pertinent to the considerations in this chapter. Specifically, <strong>beautiful is better than ugly</strong> and <strong>readability counts</strong> together indicate that how one’s code looks matters. Python prioritizes readability in its syntax (relative to other programming languages) and adheres to the idea that “code is more often read than it is written.” As such, those who program in Python are encouraged to consider the beauty and readability of their code. To do so, we’ll cover a handful of considerations here.</p>
-</div>
-<div class="section" id="code-consistency">
-<h3>Code Consistency<a class="headerlink" href="#code-consistency" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="code-consistency">
+<h3>Code Consistency<a class="headerlink" href="#code-consistency" title="Link to this heading">#</a></h3>
 <p>For very understandable and good reasons, beginner programmers often focus on getting their code to execute without throwing an error. In this process, however, they often forget about code style. While we’ll discuss specific considerations to write well-styled python code in this chapter, the most important overarching concept is that <strong>consistency is the goal</strong>. Rules help us achieve consistency, and so we’ll discuss a handful of rules and guidelines to help you write easy-to-read code with consistent code style. However, in doing so, we want you to keep the idea of consistency in mind, as programming is (at least partly) subjective. Since it’s easier to recognize &amp; read consistent style, do your best to follow the style guidelines presented in this chapter and once you pick a way to style your code, it’s best to use that consistently across your code.</p>
-</div>
-<div class="section" id="pep8">
-<h3>PEP8<a class="headerlink" href="#pep8" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pep8">
+<h3>PEP8<a class="headerlink" href="#pep8" title="Link to this heading">#</a></h3>
 <p>Python Enhancement Proposals (PEPs) are proposals for how something should be or how something shoudl work in the Python programming language. These are written by the people responsible for writing and maintaining the Python programming language. And, PEPs are voted on before incorporation. <strong><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a></strong>, specfiically, is an accepted proposal that outlines the style guidelines for the Python programming language.</p>
 <div class="alert alert-info">
 <b><a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a></b> is an accepted proposal that outlines the style guide for Python.
@@ -417,11 +595,11 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 <li><p>There should be a <em>specific, standard way to do things</em>: use them</p></li>
 <li><p>Coding Style are <em>guidelines</em>: They are designed to help the code, but are not laws</p></li>
 </ul>
-<div class="section" id="pep8-structure">
-<h4>PEP8: Structure<a class="headerlink" href="#pep8-structure" title="Permalink to this headline">¶</a></h4>
+<section id="pep8-structure">
+<h4>PEP8: Structure<a class="headerlink" href="#pep8-structure" title="Link to this heading">#</a></h4>
 <p>Throughout this section we’ll highlight the PEP8 guideline, provide an example of what to avoid and hten demonstrate an improvement on the error. Note that for each “what to avoid” the code <em>will</em> execute without error. This is because we’re discussing <em>stylistic</em> rather than <em>programmatic</em> errors here.</p>
-<div class="section" id="blank-lines">
-<h5>Blank Lines<a class="headerlink" href="#blank-lines" title="Permalink to this headline">¶</a></h5>
+<section id="blank-lines">
+<h5>Blank Lines<a class="headerlink" href="#blank-lines" title="Link to this heading">#</a></h5>
 <ul class="simple">
 <li><p>Use 2 blank lines between functions &amp; classes and 1 between methods</p></li>
 <li><p>Use 1 blank line between segments to indicate logical structure</p></li>
@@ -459,9 +637,9 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="pep8-indentation">
-<h5>PEP8: Indentation<a class="headerlink" href="#pep8-indentation" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="pep8-indentation">
+<h5>PEP8: Indentation<a class="headerlink" href="#pep8-indentation" title="Link to this heading">#</a></h5>
 <p>Use spaces to indicate indentation levels, with each level defined as 4 spaces. Programming languages differ on the speicfics of what constitutes a “tab,” but Python has settled on a tab being equivalent to 4 spaces. When you hit “tab” on your keyboard within a Jupyter notebook, for example, the 4 spaces convention is implemented for you automatically, so you may not have even realized this convention before now!</p>
 <p><strong>What to avoid</strong></p>
 <p>Here, you’ll note that, while the <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement is indented, only <em>two</em> spaces are used. Jupyter will alert you to this by making the word <code class="docutils literal notranslate"><span class="pre">print</span></code> red, rather than its typical green.</p>
@@ -493,9 +671,9 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="pep8-spacing">
-<h5>PEP8: Spacing<a class="headerlink" href="#pep8-spacing" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="pep8-spacing">
+<h5>PEP8: Spacing<a class="headerlink" href="#pep8-spacing" title="Link to this heading">#</a></h5>
 <ul class="simple">
 <li><p>Put one (and only one) space between each element</p></li>
 <li><p>Index and assignment don’t have a space between opening &amp; closing ‘()’ or ‘[]’</p></li>
@@ -522,9 +700,9 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="pep8-line-length">
-<h5>PEP8: Line Length<a class="headerlink" href="#pep8-line-length" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="pep8-line-length">
+<h5>PEP8: Line Length<a class="headerlink" href="#pep8-line-length" title="Link to this heading">#</a></h5>
 <ul class="simple">
 <li><p>PEP8 recommends that each line be at most 79 characters long</p></li>
 </ul>
@@ -583,9 +761,9 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="pep8-imports">
-<h5>PEP8: Imports<a class="headerlink" href="#pep8-imports" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="pep8-imports">
+<h5>PEP8: Imports<a class="headerlink" href="#pep8-imports" title="Link to this heading">#</a></h5>
 <ul class="simple">
 <li><p>Import one module per line</p></li>
 <li><p>Avoid <code class="docutils literal notranslate"><span class="pre">*</span></code> imports</p></li>
@@ -615,9 +793,9 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="pep8-naming">
-<h5>PEP8: Naming<a class="headerlink" href="#pep8-naming" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="pep8-naming">
+<h5>PEP8: Naming<a class="headerlink" href="#pep8-naming" title="Link to this heading">#</a></h5>
 <ul class="simple">
 <li><p>Use descriptive names for all modules, variables, functions and classes, that are longer than 1 character</p></li>
 </ul>
@@ -677,9 +855,9 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="string-quotes">
-<h5>String Quotes<a class="headerlink" href="#string-quotes" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="string-quotes">
+<h5>String Quotes<a class="headerlink" href="#string-quotes" title="Link to this heading">#</a></h5>
 <p>In Python, single-quoted strings and double-quoted strings are the same. Note that <em>PEP8 does not make a recommendation for this</em>. Rather, you are encouraged to be consistent: <strong>pick a rule and stick to it.</strong> (The author of this books is <em>exceptionally</em> bad at following this advice.)</p>
 <p>One place, however, to choose one approach over another is when a string contains single or double quote character string literal. In this case, use the other one that’s not included in the string to avoid backslashes in the string, as this improves readability. For example…</p>
 <p><strong>What to avoid</strong></p>
@@ -700,13 +878,13 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="pep8-documentation">
-<h4>PEP8: Documentation<a class="headerlink" href="#pep8-documentation" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="pep8-documentation">
+<h4>PEP8: Documentation<a class="headerlink" href="#pep8-documentation" title="Link to this heading">#</a></h4>
 <p>While documentation (including how to write docstrings and when, how and where to include code comments) will be covered more explicitly in the next chapter, we’ll discuss the style considerations for including code comments and docstrins at this point.</p>
-<div class="section" id="pep8-comments">
-<h5>PEP8: Comments<a class="headerlink" href="#pep8-comments" title="Permalink to this headline">¶</a></h5>
+<section id="pep8-comments">
+<h5>PEP8: Comments<a class="headerlink" href="#pep8-comments" title="Link to this heading">#</a></h5>
 <p>First, out-of-date comments are worse than no comments at all. Keep your comments up-to-date. While we encourage writing comments to explain your thinking as you’re writing the code, you want to be sure to re-visit your code comments during your “editing” and “improving code style” sessions to ensure that what is stated in the comments matches what is done in your code to avoid confusion for any readers of your code.</p>
 <p><strong>Block comments</strong></p>
 <p>Block comments are comments that are on their own line and come before the code they intend to describe. They follow the following conventions:</p>
@@ -801,16 +979,16 @@ Namespaces are one honking great idea -- let&#39;s do more of those!
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="id1">
-<h5>PEP8: Documentation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+</section>
+<section id="id1">
+<h5>PEP8: Documentation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
 <p>We’ll cover docstrings in the following chapter, so for now we’ll just specify that PEP8 specifies that a descriptive docstring should be written and included for all functions &amp; classes. We’ll discuss how to approach this shortly!</p>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+</section>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <p>Q1. <strong>Considering code style, which of these is best - A, B, or C?</strong></p>
 <p>A)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squared</span><span class="p">(</span><span class="n">input_number</span><span class="p">):</span>
@@ -883,8 +1061,8 @@ E) <code class="docutils literal notranslate"><span class="pre">my_string</span>
     <span class="k">return</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">oo</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -898,7 +1076,7 @@ E) <code class="docutils literal notranslate"><span class="pre">my_string</span>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content/06-good-code"
         },
         predefinedOutput: true
@@ -906,35 +1084,126 @@ E) <code class="docutils literal notranslate"><span class="pre">my_string</span>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="good_code_intro.html" title="previous page">Strong Code</a>
-    <a class='right-next' id="next-link" href="documentation.html" title="next page">Documentation</a>
 
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Shannon E. Ellis & Thomas Donoghue<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="good_code_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Strong Code</p>
       </div>
-    </div>
+    </a>
+    <a class="right-next"
+       href="documentation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-    <script src="../../_static/js/index.js"></script>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style-guides">Style Guides</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-zen-of-python">The Zen of Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-consistency">Code Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8">PEP8</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-structure">PEP8: Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#blank-lines">Blank Lines</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-indentation">PEP8: Indentation</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-spacing">PEP8: Spacing</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-line-length">PEP8: Line Length</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-imports">PEP8: Imports</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-naming">PEP8: Naming</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-quotes">String Quotes</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-documentation">PEP8: Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-comments">PEP8: Comments</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PEP8: Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon E. Ellis, Karan Narula, & Thomas Donoghue
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

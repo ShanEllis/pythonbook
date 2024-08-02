@@ -1,0 +1,1795 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>pandas &#8212; Introduction to Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/07-scientific-computing/pandas';</script>
+    <link rel="canonical" href="content/content/07-scientific-computing/pandas.html" />
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Next Steps" href="next_steps.html" />
+    <link rel="prev" title="NumPy" href="numpy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/why.html">Why this book?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/who.html">Who is this for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/installation.html">Installing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/jupyter_notebooks.html">Jupyter Notebooks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/basics.html">The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/conditionals.html">Conditionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/practice.html">Practice: The Basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions_intro.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/debugging_errors.html">Debugging &amp; Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/practice.html">Practice: Functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Loops</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/collections_loops.html">Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/tuples.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/practice.html">Practice: Collections &amp; Loops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-classes/classes_intro.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-classes/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-classes/modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-classes/classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-classes/practice.html">Practice: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Computing</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="scientific_computing.html">Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="next_steps.html">Next Steps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Strong Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06-good-code/good_code_intro.html">Strong Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-good-code/code_style.html">Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-good-code/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-good-code/testing.html">Code Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/02-answers.html">Answers: The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/03-answers.html">Answers: Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/04-answers.html">Answers: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/05-answers.html">Answers: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements &amp; License</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://datahub.ucsd.edu/hub/login/hub/user-redirect/git-pull?repo=https%3A//github.com/shanellis/pythonbook&urlpath=tree/pythonbook/content/07-scientific-computing/pandas.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/07-scientific-computing/pandas.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/07-scientific-computing/pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/07-scientific-computing/pandas.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/07-scientific-computing/pandas.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>pandas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneous-data">Heterogeneous Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe"><code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">DataFrame</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shape"><code class="docutils literal notranslate"><span class="pre">shape</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#columns-index"><code class="docutils literal notranslate"><span class="pre">columns</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">index</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtypes"><code class="docutils literal notranslate"><span class="pre">dtypes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#head">head</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-slicing">Indexing &amp; Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loc"><code class="docutils literal notranslate"><span class="pre">.loc</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describe"><code class="docutils literal notranslate"><span class="pre">describe()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astype"><code class="docutils literal notranslate"><span class="pre">astype()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#value-counts"><code class="docutils literal notranslate"><span class="pre">value_counts()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-nunique"><code class="docutils literal notranslate"><span class="pre">unique</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">nunique</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-chaining">Method Chaining</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read"><code class="docutils literal notranslate"><span class="pre">read_*</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pandas">
+<h1><code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#pandas" title="Link to this heading">#</a></h1>
+<p>Now that we’ve discussed Scientific Computing generally and introduced <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, we’re ready to learn the basics of <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, the most popular python package for working with data. Similar to what we saw with <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, we’ll first introduce the core object at the heart of <code class="docutils literal notranslate"><span class="pre">pandas</span></code> – the DataFrame. From there, we’ll introduce some of the attributes and most common methods for working with <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s. And, we’ll finish discussing additional functions within <code class="docutils literal notranslate"><span class="pre">pandas</span></code> that make working with data more straightforward.</p>
+<p>As with <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, you’ll need to first <code class="docutils literal notranslate"><span class="pre">import</span></code> <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Convention is to import: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">padas</span> <span class="pre">as</span> <span class="pre">pd</span></code>, so we’ll encourage that here. Using this import statement, any time you want to reference <code class="docutils literal notranslate"><span class="pre">pandas</span></code> functionality, you can do so with just the two letters <code class="docutils literal notranslate"><span class="pre">pd</span></code>.</p>
+<div class="alert alert-info">
+Be sure to import <code>pandas</code> using <code>import pandas as pd</code> before attempting to run any of the included code in this section.
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="heterogeneous-data">
+<h2>Heterogeneous Data<a class="headerlink" href="#heterogeneous-data" title="Link to this heading">#</a></h2>
+<p>While <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> arrays make working with homogenous data (data that are all of one type, typically numbers), <code class="docutils literal notranslate"><span class="pre">pandas</span></code> adds functionality for working with heterogeneous data. What if you have information about individual’s heights (floats) but also the color of their eyes (strings)? This would be an example of heterogeneous data and is precisely what <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is designed to handle.</p>
+<p>More specifically, a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> can store multiple types of data; however, each individual column will store a single type of data.</p>
+</section>
+<section id="pandas-dataframe">
+<h2><code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">DataFrame</span></code><a class="headerlink" href="#pandas-dataframe" title="Link to this heading">#</a></h2>
+<p>Enter, the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> - the central object within <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s are a 2-dimensional data structure that store data in a table/array, but that enable continous (numeric) and categorical (discrete and text-based) data to be stored in a single object. <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s enable information to be stored in rows and columns (like an array); however, columns can be of mixed type and both rows and columns can have labels. If you’re envisioning data stored in a spreadsheet-like object, you’ve got the right idea. For example, a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> could be used to store the following information:</p>
+<table>
+    <tr>
+        <th>Participant ID</th>
+        <th>Height (cm)</th>
+        <th>Eye Color</th>
+    </tr>
+    <tr>
+        <td >01</td>
+        <td>170</td>
+        <td>Blue</td>
+    </tr>
+    <tr>
+        <td>02</td>
+        <td>165</td>
+        <td>Green</td>
+    </tr>
+    <tr>
+        <td>03</td>
+        <td>180</td>
+        <td>Brown</td>
+    </tr>
+    <tr>
+        <td>04</td>
+        <td>175</td>
+        <td>Hazel</td>
+    </tr>
+    <tr>
+        <td>05</td>
+        <td>160</td>
+        <td>Brown</td>
+    </tr>
+</table>
+<p>In fact, we can store that very information in a pandas DataFrame using <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> and passing in the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Participant ID&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;01&#39;</span><span class="p">,</span> <span class="s1">&#39;02&#39;</span><span class="p">,</span> <span class="s1">&#39;03&#39;</span><span class="p">,</span> <span class="s1">&#39;04&#39;</span><span class="p">,</span> <span class="s1">&#39;05&#39;</span><span class="p">],</span>
+                   <span class="s1">&#39;Height (cm)&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">170</span><span class="p">,</span> <span class="mi">165</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">175</span><span class="p">,</span> <span class="mi">160</span><span class="p">],</span>
+                   <span class="s1">&#39;Eye Color&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Blue&#39;</span><span class="p">,</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">,</span> <span class="s1">&#39;Hazel&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">]</span>
+                  <span class="p">})</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Participant ID</th>
+      <th>Height (cm)</th>
+      <th>Eye Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>01</td>
+      <td>170</td>
+      <td>Blue</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>02</td>
+      <td>165</td>
+      <td>Green</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>03</td>
+      <td>180</td>
+      <td>Brown</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>04</td>
+      <td>175</td>
+      <td>Hazel</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>05</td>
+      <td>160</td>
+      <td>Brown</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We’ll note a few things about this <code class="docutils literal notranslate"><span class="pre">df</span></code> object:</p>
+<ol class="arabic simple">
+<li><p>We’ve called the object <code class="docutils literal notranslate"><span class="pre">df</span></code>. This is a convention you’ll often see when people are working with <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s with <code class="docutils literal notranslate"><span class="pre">df</span></code> being short for <code class="docutils literal notranslate"><span class="pre">df</span></code>. We’ll use this convention frequently, but you could give your <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s more informative names (i.e. <code class="docutils literal notranslate"><span class="pre">df_participants</span></code>).</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">df</span></code> you’ll notice that there are three column names at top.</p></li>
+<li><p>You’ll also notice there are indices off to the left for each row. By default, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> will assign each row an index starting with zero.</p></li>
+</ol>
+</section>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h2>
+<p>As with arrays, when working with <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> objects, it’s often helpful to be able to access information about the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> by accessing attributes.</p>
+<section id="shape">
+<h3><code class="docutils literal notranslate"><span class="pre">shape</span></code><a class="headerlink" href="#shape" title="Link to this heading">#</a></h3>
+<p>To get the dimensions of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>, the attribute is the same as in <code class="docutils literal notranslate"><span class="pre">Numpy</span></code>: <code class="docutils literal notranslate"><span class="pre">shape</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Again, similar to arrays, the output specifies the number of rows first (5) and the number of columns second (3).</p>
+</section>
+<section id="columns-index">
+<h3><code class="docutils literal notranslate"><span class="pre">columns</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">index</span></code><a class="headerlink" href="#columns-index" title="Link to this heading">#</a></h3>
+<p>If you ever need to access the names of the columns in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> it can be helpful to know that the column names can be extracted from the <code class="docutils literal notranslate"><span class="pre">columns</span></code> attribute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;Participant ID&#39;, &#39;Height (cm)&#39;, &#39;Eye Color&#39;], dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same goes for extracting the indices (row names). This can be accessed through <code class="docutils literal notranslate"><span class="pre">index</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RangeIndex(start=0, stop=5, step=1)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dtypes">
+<h3><code class="docutils literal notranslate"><span class="pre">dtypes</span></code><a class="headerlink" href="#dtypes" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">dtypes</span></code> can also be helpful to determine <em>how</em> the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is storing your data. This is particularly important in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> due to the fact that DataFrames can store heterogenous data…and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> makes its best guess as to the information stored in the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. This process is not perfect. If you’re working with a very large dataset and you expect all of the values in a given column to be numbers, you may <em>assume</em> that the column stores numbers. However, what if one of the values in your large dataset was actually the word “nine feet”? In that case, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> would convert everything to strings in that column as it doesn’t know how to handle “nine feet” as a number (even if we humans may!). This is why it’s good practice to just double check that each of your columns is of the expected type using the <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> attribute:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Participant ID    object
+Height (cm)        int64
+Eye Color         object
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above, you may have assumed that Participant ID would be an integer; however, despite appearing as numbers these IDs were entered as strings, making them <code class="docutils literal notranslate"><span class="pre">object</span></code> type variables.</p>
+</section>
+<section id="head">
+<h3>head<a class="headerlink" href="#head" title="Link to this heading">#</a></h3>
+<p>Also note that <code class="docutils literal notranslate"><span class="pre">head</span></code> returns the first five rows of a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. This can be helpful when working with larger <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s just to get a sene of the data.</p>
+<p>Note that there is both a <code class="docutils literal notranslate"><span class="pre">head</span></code> <em>attribute</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;bound method NDFrame.head of   Participant ID  Height (cm) Eye Color
+0             01          170      Blue
+1             02          165     Green
+2             03          180     Brown
+3             04          175     Hazel
+4             05          160     Brown&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>…and a <code class="docutils literal notranslate"><span class="pre">head()</span></code> <em>method</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Participant ID</th>
+      <th>Height (cm)</th>
+      <th>Eye Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>01</td>
+      <td>170</td>
+      <td>Blue</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>02</td>
+      <td>165</td>
+      <td>Green</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>03</td>
+      <td>180</td>
+      <td>Brown</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>04</td>
+      <td>175</td>
+      <td>Hazel</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>05</td>
+      <td>160</td>
+      <td>Brown</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The difference is in how the data are displayed, with the method displaying the data in a slightly more reader-friendly fasion.</p>
+</section>
+</section>
+<section id="indexing-slicing">
+<h2>Indexing &amp; Slicing<a class="headerlink" href="#indexing-slicing" title="Link to this heading">#</a></h2>
+<p>So far we’ve introduced the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> as a way to store heterogenous data in rows and columns. But, I haven’t mentioned exactly how <code class="docutils literal notranslate"><span class="pre">pandas</span></code> accomplishes that. While the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is the core object, it’s also important to be aware that <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s are comprised of <strong><code class="docutils literal notranslate"><span class="pre">Series</span></code></strong>, which are a 1-dimensional labeled array storing data. Each column in <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is a <code class="docutils literal notranslate"><span class="pre">Series</span></code> object and can be accessed using the column name and indexing. For example, if we wanted to extract the <code class="docutils literal notranslate"><span class="pre">'Height'</span></code> column from our <code class="docutils literal notranslate"><span class="pre">df</span></code> we could do so using:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Height (cm)&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    170
+1    165
+2    180
+3    175
+4    160
+Name: Height (cm), dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above, we can see that indexing into a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> by specifying the column name, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> will return all values in that column, along with their corresponding indices. It also reports the type of the variable and the name of the column.</p>
+<p>Specifically, the way <code class="docutils literal notranslate"><span class="pre">pandas</span></code> stores each column is as a <code class="docutils literal notranslate"><span class="pre">pd.Series</span></code> type object. We can see this explicitly by checking the <code class="docutils literal notranslate"><span class="pre">type</span></code> of the above output:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Height (cm)&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.series.Series
+</pre></div>
+</div>
+</div>
+</div>
+<p>Thus, conceptually, every <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> is comprised of <code class="docutils literal notranslate"><span class="pre">Series</span></code> of the same length stacked next to one another.</p>
+<p>We’re also able to access information stored in rows; however, the syntax has to differ a little bit. <code class="docutils literal notranslate"><span class="pre">df[0]</span></code> will not work here, as <code class="docutils literal notranslate"><span class="pre">pandas</span></code> would be looking for a <em>column</em> with the label <code class="docutils literal notranslate"><span class="pre">0</span></code>. Rather, when we want to access data in a row, we have to return to our familiar slicing syntax, first specifing the row(s) we want to return using <code class="docutils literal notranslate"><span class="pre">start:stop</span></code> notation.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">df[:1]</span></code> will return from the beginning of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> up to but not including the row with the index <code class="docutils literal notranslate"><span class="pre">1</span></code> (using our familiar slicing approach):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[:</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Participant ID</th>
+      <th>Height (cm)</th>
+      <th>Eye Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>01</td>
+      <td>170</td>
+      <td>Blue</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>However, we will highlight here that what is being returned here is a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> (a slice of the original) and not a <code class="docutils literal notranslate"><span class="pre">Series</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">[:</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>pandas.core.frame.DataFrame
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pd.Series</span></code> objects are specifically for data for a single variable in a <em>column</em>…and not for returning subsets of a larger <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> across columns. If multiple columns are involved, then it’s a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> object.</p>
+<p>If you wanted to extract the information as a series, you would need to use <code class="docutils literal notranslate"><span class="pre">loc</span></code>…</p>
+<section id="loc">
+<h3><code class="docutils literal notranslate"><span class="pre">.loc</span></code><a class="headerlink" href="#loc" title="Link to this heading">#</a></h3>
+<p>But, what if you want to combine these two ideas? What if you want to specify a few rows and a few columns? This is where <code class="docutils literal notranslate"><span class="pre">loc</span></code> comes in. <code class="docutils literal notranslate"><span class="pre">loc</span></code> (standing for loccation) allows users to control which part of the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> they want to return.</p>
+<p>For example, if we wanted the second and third rows and only the <code class="docutils literal notranslate"><span class="pre">Eye</span> <span class="pre">Color</span></code> column from <code class="docutils literal notranslate"><span class="pre">df</span></code> we could use the following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Eye Color&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1    Green
+2    Brown
+Name: Eye Color, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above syntax, notice that the convention of <code class="docutils literal notranslate"><span class="pre">[row,</span> <span class="pre">column]</span></code> is still followed. However, the <code class="docutils literal notranslate"><span class="pre">start:stop</span></code> for <code class="docutils literal notranslate"><span class="pre">loc</span></code> <em>is</em> inclusive of the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value (unlike everywhere else in <code class="docutils literal notranslate"><span class="pre">Python</span></code>). Thus, to return the second and third rows, you specify that you want to start at index <code class="docutils literal notranslate"><span class="pre">1</span></code> and stop at (<em>and include</em>) index <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+<p>Returning to our goal of extracting the data in the first row from above, if we wanted to extract just the values in a given rows as a <code class="docutils literal notranslate"><span class="pre">Series</span></code>, we could use <code class="docutils literal notranslate"><span class="pre">loc</span></code> to do so, first specifiying the index and then to extract all columns:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Participant ID      01
+Height (cm)        170
+Eye Color         Blue
+Name: 0, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, putting all of this together, <code class="docutils literal notranslate"><span class="pre">loc</span></code> can also be used to extract singular values, by specifying a single location within the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Eye Color&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Blue&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that the above returns a value of the type of data directly, and not a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> or <code class="docutils literal notranslate"><span class="pre">Series</span></code>. Thus, ‘Blue’ here is a string.</p>
+</section>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<p>There are <a class="reference external" href="https://pandas.pydata.org/docs/reference/frame.html"><em>many, many</em> methods</a> available for <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> objects. This section will only cover a few of the most commonly used, but will give you a sense of the <em>types</em> of things one can do with a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.</p>
+<section id="describe">
+<h3><code class="docutils literal notranslate"><span class="pre">describe()</span></code><a class="headerlink" href="#describe" title="Link to this heading">#</a></h3>
+<p>One powerful method is the <code class="docutils literal notranslate"><span class="pre">describe()</span></code> method, which will calculate and provide a number of descriptive statistics for all numeric variables in your dataset. In <code class="docutils literal notranslate"><span class="pre">df</span></code>, we have a single numeric varaible (<code class="docutils literal notranslate"><span class="pre">Height</span> <span class="pre">(cm)</span></code>), which is summarized below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Height (cm)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>5.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>170.000000</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>7.905694</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>160.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>165.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>170.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>175.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>180.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="replace">
+<h3><code class="docutils literal notranslate"><span class="pre">replace()</span></code><a class="headerlink" href="#replace" title="Link to this heading">#</a></h3>
+<p>Of course, <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s are mutable, with the ability to change or update values after creation, using <code class="docutils literal notranslate"><span class="pre">replace</span></code>:</p>
+<p>For example, what if I realized that the participant IDs should be zero padded with <em>two</em> zeroes instead of one. To accomplish this, we can use the <code class="docutils literal notranslate"><span class="pre">replace</span></code> method to change each <code class="docutils literal notranslate"><span class="pre">'0'</span></code> into <code class="docutils literal notranslate"><span class="pre">'00'</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Participant ID&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Participant ID&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s1">&#39;00&#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Participant ID</th>
+      <th>Height (cm)</th>
+      <th>Eye Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>001</td>
+      <td>170</td>
+      <td>Blue</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>002</td>
+      <td>165</td>
+      <td>Green</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>003</td>
+      <td>180</td>
+      <td>Brown</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>004</td>
+      <td>175</td>
+      <td>Hazel</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>005</td>
+      <td>160</td>
+      <td>Brown</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Notice in the syntax above a few things:</p>
+<ol class="arabic simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">replace</span></code> method is operating on the <code class="docutils literal notranslate"><span class="pre">Series</span></code> <code class="docutils literal notranslate"><span class="pre">'Partcipant</span> <span class="pre">ID'</span></code>. Thus, when we assign the new values, they are assigned back to that specific series. The rest of <code class="docutils literal notranslate"><span class="pre">df</span></code> remains unchanged.</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">replace</span></code> the first argument is what is to be replaced, the second is what to replace it with. <code class="docutils literal notranslate"><span class="pre">regex=True</span></code> specifies to use regular expression to evaluate the change (rather than string literals). Without <code class="docutils literal notranslate"><span class="pre">regex=True</span></code>, <code class="docutils literal notranslate"><span class="pre">replace</span></code> would only change a cell with the exact value ‘0’ to ‘00’…instead of changing every case where it finds a zero.</p></li>
+</ol>
+<p>We’ll also note that it <em>is</em> possible to directly assign a new value to a given location within a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> directly using indexing/slicing and assignment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;Height (cm)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">173</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Participant ID</th>
+      <th>Height (cm)</th>
+      <th>Eye Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>001</td>
+      <td>173</td>
+      <td>Blue</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>002</td>
+      <td>165</td>
+      <td>Green</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>003</td>
+      <td>180</td>
+      <td>Brown</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>004</td>
+      <td>175</td>
+      <td>Hazel</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>005</td>
+      <td>160</td>
+      <td>Brown</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="astype">
+<h3><code class="docutils literal notranslate"><span class="pre">astype()</span></code><a class="headerlink" href="#astype" title="Link to this heading">#</a></h3>
+<p>We mentioned <code class="docutils literal notranslate"><span class="pre">dtypes</span></code> is helpful for knowing what your value type is. But, what if you <em>want</em> to change it to another type. <code class="docutils literal notranslate"><span class="pre">astype()</span></code> allows you to typecast (meaning specify the type) for a variable. If we wanted <code class="docutils literal notranslate"><span class="pre">'Height</span> <span class="pre">(cm)'</span></code> to be a float instead of an integer, for example, we could accomplish that using <code class="docutils literal notranslate"><span class="pre">astype</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Height (cm)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Height (cm)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Participant ID</th>
+      <th>Height (cm)</th>
+      <th>Eye Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>001</td>
+      <td>173.0</td>
+      <td>Blue</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>002</td>
+      <td>165.0</td>
+      <td>Green</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>003</td>
+      <td>180.0</td>
+      <td>Brown</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>004</td>
+      <td>175.0</td>
+      <td>Hazel</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>005</td>
+      <td>160.0</td>
+      <td>Brown</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now instead of integers, the heights are floats.</p>
+<p>We’ll note here that there are additional methods that help with typecasting, and we’ll mention two here:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">convert_dtypes</span></code> | will convert columns to the best possible <code class="docutils literal notranslate"><span class="pre">dtypes</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">to_numpy</span></code> | will convert a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> to a <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> array</p></li>
+</ol>
+</section>
+<section id="value-counts">
+<h3><code class="docutils literal notranslate"><span class="pre">value_counts()</span></code><a class="headerlink" href="#value-counts" title="Link to this heading">#</a></h3>
+<p>Often when working with data (particularly categorical data), we’re interest in how many different values there are. For example, how many different eye colors are in our dataset? And how many individuals are there with each eye color? While we can easily determine this for our limited dataset here, as datasets grow in size, it’s less easy to determine at a glance. Instead, we can use <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> to answer this question:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Eye Color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eye Color
+Brown    2
+Blue     1
+Green    1
+Hazel    1
+Name: count, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above output, each unique eye color is at left and the corresponding number of how many times each shows up is at right. Eye colors are sorted by frequency of appearance, with most frequent first. For categories with ties, labels are sorted alphanumerically.</p>
+</section>
+<section id="unique-nunique">
+<h3><code class="docutils literal notranslate"><span class="pre">unique</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">nunique</span></code><a class="headerlink" href="#unique-nunique" title="Link to this heading">#</a></h3>
+<p>Similarly, if you don’t want <em>all</em> of the information above, but want pieces of information about uniqueness, there are additional helpful methods.</p>
+<p>For example <code class="docutils literal notranslate"><span class="pre">unique</span></code> returns all the unique values (as an array):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Eye Color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Blue&#39;, &#39;Green&#39;, &#39;Brown&#39;, &#39;Hazel&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>…and <code class="docutils literal notranslate"><span class="pre">nunique()</span></code> returns how many unique values there are (in our case, 4):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Eye Color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="method-chaining">
+<h3>Method Chaining<a class="headerlink" href="#method-chaining" title="Link to this heading">#</a></h3>
+<p>Building on the above, one key important features within <code class="docutils literal notranslate"><span class="pre">pandas</span></code> is the ability to chain methods together using the general syntax <code class="docutils literal notranslate"><span class="pre">df.method1().method2()</span></code>. In this, <code class="docutils literal notranslate"><span class="pre">method1</span></code> would be applied to <code class="docutils literal notranslate"><span class="pre">df</span></code> <em>and then</em> <code class="docutils literal notranslate"><span class="pre">method2()</span></code> would be appled to the output of <code class="docutils literal notranslate"><span class="pre">method1()</span></code>.</p>
+<p>For example, what if you didn’t want the unique eye colors as an array…but rather as a list. You can do that with method chaining:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Eye Color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Blue&#39;, &#39;Green&#39;, &#39;Brown&#39;, &#39;Hazel&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>…and what if you didn’t want <em>all</em> of the <code class="docutils literal notranslate"><span class="pre">value_counts</span></code> output…but just the category that shows up the most? You can use <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code> chained with <code class="docutils literal notranslate"><span class="pre">max()</span></code>, the output of which lets you know of all the eye colors, the one that shows up the most shows up twice:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Eye Color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>…but what if you didn’t want to know how many times the most common eye color showed up, but just what that eye color that showed up the most was. There’s <code class="docutils literal notranslate"><span class="pre">idxmax()</span></code> for that, which can be chained with <code class="docutils literal notranslate"><span class="pre">value_counts()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Eye Color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Brown&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that method chaining is <em>not</em> limited to two methods. Many methods can be chained together the output of each subsequent method becoming the input for the next. The reason this is possible is because most <code class="docutils literal notranslate"><span class="pre">pandas</span></code> methods return a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>…enabling the next method to operate on that returned DataFrame.</p>
+<p>While we won’t walk through examples of all of the existing methods in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, we’ll summarize a few additional common ones here:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Purpose</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">fillna()</span></code></p></td>
+<td><p>Fill in missing data</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">groupby()</span></code></p></td>
+<td><p>Group data by a variable prior to carrying out some operation within group</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">concat</span>&#160;&#160; <span class="pre">()</span></code></p></td>
+<td><p>Combine (concatenate) <code class="docutils literal notranslate"><span class="pre">Series</span></code>/<code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s together</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">merge()</span></code></p></td>
+<td><p>Enable SQL-like joins across <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">assign()</span></code></p></td>
+<td><p>Create new columns</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">query()</span></code></p></td>
+<td><p>Filter rows using Boolean logic</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">isin()</span></code></p></td>
+<td><p>Returns rows with match</p></td>
+</tr>
+</tbody>
+</table>
+<p>Additional methods are summarized in the <a class="reference external" href="https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf"><code class="docutils literal notranslate"><span class="pre">pandas</span></code> Cheat Sheet</a>.</p>
+</section>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<p>While the <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> and <code class="docutils literal notranslate"><span class="pre">Series</span></code> objects are at the center of the <code class="docutils literal notranslate"><span class="pre">pandas</span></code> package, there are additional functions within <code class="docutils literal notranslate"><span class="pre">pandas</span></code> that support working with data in Python.</p>
+<section id="read">
+<h3><code class="docutils literal notranslate"><span class="pre">read_*</span></code><a class="headerlink" href="#read" title="Link to this heading">#</a></h3>
+<p>In this chapter so far, we’ve worked with data that we generated directly and stored in a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>. However, typically data live elsewhere and individuals want to read it into python for data analysis. This is where the suite of <code class="docutils literal notranslate"><span class="pre">read_*</span></code> functions come into play. There are a number of them, the most common of which is likely <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>, which reads data from CSV (comma-separated value files) into python. Files read in can be either filepaths or URLs.</p>
+<p>For example, the following reads in data from a CSV stored on GitHub (passing in the URL of the file as a string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_msleep</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/ShanEllis/datasets/master/msleep.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_msleep</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>genus</th>
+      <th>vore</th>
+      <th>order</th>
+      <th>conservation</th>
+      <th>sleep_total</th>
+      <th>sleep_rem</th>
+      <th>sleep_cycle</th>
+      <th>awake</th>
+      <th>brainwt</th>
+      <th>bodywt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Cheetah</td>
+      <td>Acinonyx</td>
+      <td>carni</td>
+      <td>Carnivora</td>
+      <td>lc</td>
+      <td>12.1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>11.9</td>
+      <td>NaN</td>
+      <td>50.000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Owl monkey</td>
+      <td>Aotus</td>
+      <td>omni</td>
+      <td>Primates</td>
+      <td>NaN</td>
+      <td>17.0</td>
+      <td>1.8</td>
+      <td>NaN</td>
+      <td>7.0</td>
+      <td>0.01550</td>
+      <td>0.480</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Mountain beaver</td>
+      <td>Aplodontia</td>
+      <td>herbi</td>
+      <td>Rodentia</td>
+      <td>nt</td>
+      <td>14.4</td>
+      <td>2.4</td>
+      <td>NaN</td>
+      <td>9.6</td>
+      <td>NaN</td>
+      <td>1.350</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Greater short-tailed shrew</td>
+      <td>Blarina</td>
+      <td>omni</td>
+      <td>Soricomorpha</td>
+      <td>lc</td>
+      <td>14.9</td>
+      <td>2.3</td>
+      <td>0.133333</td>
+      <td>9.1</td>
+      <td>0.00029</td>
+      <td>0.019</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Cow</td>
+      <td>Bos</td>
+      <td>herbi</td>
+      <td>Artiodactyla</td>
+      <td>domesticated</td>
+      <td>4.0</td>
+      <td>0.7</td>
+      <td>0.666667</td>
+      <td>20.0</td>
+      <td>0.42300</td>
+      <td>600.000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>Tree shrew</td>
+      <td>Tupaia</td>
+      <td>omni</td>
+      <td>Scandentia</td>
+      <td>NaN</td>
+      <td>8.9</td>
+      <td>2.6</td>
+      <td>0.233333</td>
+      <td>15.1</td>
+      <td>0.00250</td>
+      <td>0.104</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>Bottle-nosed dolphin</td>
+      <td>Tursiops</td>
+      <td>carni</td>
+      <td>Cetacea</td>
+      <td>NaN</td>
+      <td>5.2</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>18.8</td>
+      <td>NaN</td>
+      <td>173.330</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>Genet</td>
+      <td>Genetta</td>
+      <td>carni</td>
+      <td>Carnivora</td>
+      <td>NaN</td>
+      <td>6.3</td>
+      <td>1.3</td>
+      <td>NaN</td>
+      <td>17.7</td>
+      <td>0.01750</td>
+      <td>2.000</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>Arctic fox</td>
+      <td>Vulpes</td>
+      <td>carni</td>
+      <td>Carnivora</td>
+      <td>NaN</td>
+      <td>12.5</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>11.5</td>
+      <td>0.04450</td>
+      <td>3.380</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>Red fox</td>
+      <td>Vulpes</td>
+      <td>carni</td>
+      <td>Carnivora</td>
+      <td>NaN</td>
+      <td>9.8</td>
+      <td>2.4</td>
+      <td>0.350000</td>
+      <td>14.2</td>
+      <td>0.05040</td>
+      <td>4.230</td>
+    </tr>
+  </tbody>
+</table>
+<p>83 rows × 11 columns</p>
+</div></div></div>
+</div>
+<p>In addition to reading in CSV files, there are <code class="docutils literal notranslate"><span class="pre">pd.read_*</span></code> functions for reading in JSON, XML, HTML, and excel datasets (among others).</p>
+<p>Similarly there are corresponding <code class="docutils literal notranslate"><span class="pre">to_*</span></code> methods that allow for <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code> to be written out to files of various types (i.e. CSV, JSON, etc.)</p>
+</section>
+<section id="plotting">
+<h3>Plotting<a class="headerlink" href="#plotting" title="Link to this heading">#</a></h3>
+<p>While there are many ways to generate plots in python, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> does have the ability to generate plots via the <code class="docutils literal notranslate"><span class="pre">plotting</span></code> module in <code class="docutils literal notranslate"><span class="pre">pandas</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">df_msleep</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;sleep_total&#39;</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s1">&#39;vore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: title={&#39;center&#39;: &#39;sleep_total&#39;}, xlabel=&#39;vore&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/5126cf0e7ab2491de3359d02493715cd14a9f562b560299acc0a9f9313739b26.png" src="../../_images/5126cf0e7ab2491de3359d02493715cd14a9f562b560299acc0a9f9313739b26.png" />
+</div>
+</div>
+<p>While we won’t be discussing the full capabilities here (partially because it’s beyond the scope and partially because many people use other approaches for plotting in python), we did at least want to introduce this as a general capability within <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+</section>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>Q1. <strong>Comparing them to standard library Python types, which is the best mapping for <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> arrays and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> <code class="docutils literal notranslate"><span class="pre">DataFrames</span></code>?</strong></p>
+<p>A) DataFrames are like lists, arrays are like tuples<br />
+B) DataFrames and arrays are like lists<br />
+C) DataFrames are like tuples, arrays are like lists<br />
+D) DataFrames and arrays are like dictionaries<br />
+E) Dataframes are like dictionaries, arrays are like lists</p>
+<p>Q2. <strong>If a <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> contained only numeric values, how would it differ from a <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> array?</strong></p>
+<p>A) The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> would additionally have indices and column names<br />
+B) They would be exactly the same<br />
+C) <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>s cannot store homogenous data<br />
+D) The <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> would convert all of the numeric values to strings<br />
+E) <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> arrays cannot store numeric values</p>
+<p>Q3. <strong>Read in the <code class="docutils literal notranslate"><span class="pre">df_msleep</span></code> DataFrame provided above. Use <code class="docutils literal notranslate"><span class="pre">pandas</span></code> attributes to determine the dimensions and types of information stored in <code class="docutils literal notranslate"><span class="pre">df_msleep</span></code></strong></p>
+<p>Q4. <strong>Again using <code class="docutils literal notranslate"><span class="pre">df_msleep</span></code>, use a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> method to determine the average amount of total sleep the animals in this dataset get.</strong></p>
+<p>Q5. <strong>Again using <code class="docutils literal notranslate"><span class="pre">df_msleep</span></code>, use a <code class="docutils literal notranslate"><span class="pre">pandas</span></code> method to determine which <code class="docutils literal notranslate"><span class="pre">'vore'</span></code> is most common in this dataset, as well as how many animals there are of that <code class="docutils literal notranslate"><span class="pre">'vore'</span></code>.</strong></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/07-scientific-computing"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="numpy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="next_steps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Next Steps</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#heterogeneous-data">Heterogeneous Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas-dataframe"><code class="docutils literal notranslate"><span class="pre">pandas</span> <span class="pre">DataFrame</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shape"><code class="docutils literal notranslate"><span class="pre">shape</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#columns-index"><code class="docutils literal notranslate"><span class="pre">columns</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">index</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dtypes"><code class="docutils literal notranslate"><span class="pre">dtypes</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#head">head</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-slicing">Indexing &amp; Slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loc"><code class="docutils literal notranslate"><span class="pre">.loc</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#describe"><code class="docutils literal notranslate"><span class="pre">describe()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#replace"><code class="docutils literal notranslate"><span class="pre">replace()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#astype"><code class="docutils literal notranslate"><span class="pre">astype()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#value-counts"><code class="docutils literal notranslate"><span class="pre">value_counts()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unique-nunique"><code class="docutils literal notranslate"><span class="pre">unique</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">nunique</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-chaining">Method Chaining</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read"><code class="docutils literal notranslate"><span class="pre">read_*</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting">Plotting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shannon E. Ellis, Karan Narula, & Thomas Donoghue
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

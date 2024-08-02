@@ -1,420 +1,550 @@
 
-
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Classes &#8212; Introduction to Python</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-dropdown.css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/sphinx-book-theme.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/05-classes/classes';</script>
     <link rel="canonical" href="content/content/05-classes/classes.html" />
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Practice: Classes" href="practice.html" />
     <link rel="prev" title="Modules" href="modules.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="content/content/05-classes/classes.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Classes" />
-<meta property="og:description" content="Classes  Similar to functions where we introduced functions like len() and type() before discussing how to define your own functions, there are many available o" />
-<meta property="og:image"       content="content/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../index.html">
+    
+    
+    
+  </div>
   
-  <img src="../../_static/logo.png" class="logo" alt="logo">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
   
   
-  <h1 class="site-logo" id="site-title">Introduction to Python</h1>
   
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/why.html">Why this book?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/who.html">Who is this for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/installation.html">Installing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-intro/jupyter_notebooks.html">Jupyter Notebooks</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/basics.html">The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/conditionals.html">Conditionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-basics/practice.html">Practice: The Basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions_intro.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/debugging_errors.html">Debugging &amp; Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/practice.html">Practice: Functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Loops</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/collections_loops.html">Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/tuples.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-operations/practice.html">Practice: Collections &amp; Loops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classes_intro.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice.html">Practice: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Computing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/scientific_computing.html">Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/numpy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/pandas.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/next_steps.html">Next Steps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Strong Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06-good-code/good_code_intro.html">Strong Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-good-code/code_style.html">Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-good-code/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-good-code/testing.html">Code Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/02-answers.html">Answers: The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/03-answers.html">Answers: Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/04-answers.html">Answers: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/05-answers.html">Answers: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements &amp; License</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://datahub.ucsd.edu/hub/login/hub/user-redirect/git-pull?repo=https%3A//github.com/shanellis/pythonbook&urlpath=tree/pythonbook/content/05-classes/classes.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
 </a>
-</div>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/05-classes/classes.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../01-intro/intro.html">
-   Welcome!
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../02-basics/basics.html">
-   The Basics
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../03-operations/collections_loops.html">
-   Collections &amp; Loops
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../04-functions/functions_intro.html">
-   Functions
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="classes_intro.html">
-   Classes
-  </a>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="objects.html">
-     Objects
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="modules.html">
-     Modules
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Classes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="practice.html">
-     Practice: Classes
-    </a>
-   </li>
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../06-good-code/good_code_intro.html">
-   Strong Code
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../0X-answers/answers_intro.html">
-   Answers
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../acknowledgements.html">
-   Acknowledgements
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../LICENSE.html">
-   License
-  </a>
- </li>
-</ul>
-
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
 </div>
 
 
-          
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/05-classes/classes.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
-</div>
-        <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/shanellis/pythonbook"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/05-classes/classes.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/shanellis/pythonbook/edit/master/content/05-classes/classes.ipynb"><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
-    </div>
-</div>
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-        <!-- Launch buttons -->
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/05-classes/classes.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        
-        <a class="jupyterhub-button" href="https://datahub.ucsd.edu/hub/login/hub/user-redirect/git-pull?repo=https://github.com/shanellis/pythonbook&urlpath=tree/pythonbook/content/05-classes/classes.ipynb&branch=master"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
-                data-placement="left"><img class="jupyterhub-button-logo"
-                    src="../../_static/images/logo_jupyterhub.svg"
-                    alt="Interact on JupyterHub">JupyterHub</button></a>
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/05-classes/classes.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/05-classes/classes.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
 </div>
 
-    </div>
 
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/05-classes/classes.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Classes</h1>
     <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#class-defintion">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     class
-    </span>
-   </code>
-   defintion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#class-dog">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     class
-    </span>
-   </code>
-   : Dog
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#class-summary">
-     <strong>
-      <code class="docutils literal notranslate">
-       <span class="pre">
-        class
-       </span>
-      </code>
-     </strong>
-     Summary:
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-our-dog-object">
-     Using our
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       Dog
-      </span>
-     </code>
-     Object
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instances-self">
-   Instances &amp;
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     self
-    </span>
-   </code>
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#instance-attributes">
-     Instance Attributes
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#class-inheritance">
-   Class Inheritance
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#super">
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       super()
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     class
-    </span>
-   </code>
-   : Summary
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#everything-in-python-is-an-object">
-   Everything in Python is an Object!
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-variables-are-objects">
-     Data variables are objects
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions-are-objects">
-     Functions are objects
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#class-definitions-instances-are-objects">
-     Class definitions &amp; instances are objects
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#class-profcourses">
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     class
-    </span>
-   </code>
-   :
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     ProfCourses
-    </span>
-   </code>
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercises">
-   Exercises
-  </a>
- </li>
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-defintion"><code class="docutils literal notranslate"><span class="pre">class</span></code> defintion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-dog"><code class="docutils literal notranslate"><span class="pre">class</span></code>: Dog</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-summary"><strong><code class="docutils literal notranslate"><span class="pre">class</span></code></strong> Summary:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-our-dog-object">Using our <code class="docutils literal notranslate"><span class="pre">Dog</span></code> Object</a></li>
 </ul>
-
-        </nav>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instances-self">Instances &amp; <code class="docutils literal notranslate"><span class="pre">self</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-attributes">Instance Attributes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-inheritance">Class Inheritance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#super"><code class="docutils literal notranslate"><span class="pre">super()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">class</span></code>: Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everything-in-python-is-an-object">Everything in Python is an Object!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-variables-are-objects">Data variables are objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-are-objects">Functions are objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-definitions-instances-are-objects">Class definitions &amp; instances are objects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-profcourses"><code class="docutils literal notranslate"><span class="pre">class</span></code>: <code class="docutils literal notranslate"><span class="pre">ProfCourses</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="classes">
-<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h1>
 <p>Similar to functions where we introduced functions like <code class="docutils literal notranslate"><span class="pre">len()</span></code> and <code class="docutils literal notranslate"><span class="pre">type()</span></code> before discussing how to define your own functions, there are many available object types (either in the standard library or that can be imported - like <code class="docutils literal notranslate"><span class="pre">date</span></code>-type objects) <em>and</em> you can define your own objects and their associated attributes and methods. Just as we used <code class="docutils literal notranslate"><span class="pre">def</span></code> to define functions, in this chapter we’ll discuss <code class="docutils literal notranslate"><span class="pre">class</span></code> to create your own classes of objects.</p>
 <p>We’ll also introduce the concept of instances and return to the concept of object-oriented programming and what that means in python.</p>
 <p>As discussed earlier, objects are a way to combine associated data (attributes) and procedures (methods) that can be carried out on that data in a systematized and organized manner.</p>
-<div class="section" id="class-defintion">
-<h2><code class="docutils literal notranslate"><span class="pre">class</span></code> defintion<a class="headerlink" href="#class-defintion" title="Permalink to this headline">¶</a></h2>
+<section id="class-defintion">
+<h2><code class="docutils literal notranslate"><span class="pre">class</span></code> defintion<a class="headerlink" href="#class-defintion" title="Link to this heading">#</a></h2>
 <p>With the definition of objects fresh in our mind, we can delve into how to create our own object types. To do this, we  use the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword. This opens a code block within which we can specify the instructions to create objects of our specified type.</p>
 <div class="alert alert-success">
 <b>Classes</b> define objects. The <code>class</code> keyword opens a code block for instructions on how to create objects of a particular type.
 </div><p>A helpful analogy is to think of classes as the <em>blueprint</em> for creating and defining objects and their properties (methods, attributes, etc.). They specify the plan, explain how each component fits together, and keeps everything organized.</p>
-</div>
-<div class="section" id="class-dog">
-<h2><code class="docutils literal notranslate"><span class="pre">class</span></code>: Dog<a class="headerlink" href="#class-dog" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="class-dog">
+<h2><code class="docutils literal notranslate"><span class="pre">class</span></code>: Dog<a class="headerlink" href="#class-dog" title="Link to this heading">#</a></h2>
 <p>Here, we introduce our first object type. We use <code class="docutils literal notranslate"><span class="pre">class</span></code> to define a <code class="docutils literal notranslate"><span class="pre">Dog</span></code>-type object.</p>
 <p>Note that, unlike variables and functions (where we use snake_case), for <code class="docutils literal notranslate"><span class="pre">class</span></code>es, we’ll use CapWords to specify class names.</p>
 <p>Here, the <code class="docutils literal notranslate"><span class="pre">class</span></code> keyword indicates that we’re defining a new <code class="docutils literal notranslate"><span class="pre">class</span></code> of objects that we’re going to call <code class="docutils literal notranslate"><span class="pre">Dog</span></code>. The colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) opens up the code block.</p>
@@ -477,8 +607,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="class-summary">
-<h3><strong><code class="docutils literal notranslate"><span class="pre">class</span></code></strong> Summary:<a class="headerlink" href="#class-summary" title="Permalink to this headline">¶</a></h3>
+<section id="class-summary">
+<h3><strong><code class="docutils literal notranslate"><span class="pre">class</span></code></strong> Summary:<a class="headerlink" href="#class-summary" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>classes tend to use <strong>CapWords</strong> convention</p>
 <ul>
@@ -498,9 +628,9 @@
 </li>
 <li><p>like functions, a new namespace is created within a Class</p></li>
 </ul>
-</div>
-<div class="section" id="using-our-dog-object">
-<h3>Using our <code class="docutils literal notranslate"><span class="pre">Dog</span></code> Object<a class="headerlink" href="#using-our-dog-object" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="using-our-dog-object">
+<h3>Using our <code class="docutils literal notranslate"><span class="pre">Dog</span></code> Object<a class="headerlink" href="#using-our-dog-object" title="Link to this heading">#</a></h3>
 <p>Now that we’ve defined a <code class="docutils literal notranslate"><span class="pre">Dog</span></code>-type object, we can create multiple <code class="docutils literal notranslate"><span class="pre">Dog</span></code>s.</p>
 <p>For example, we could create a list of four different <code class="docutils literal notranslate"><span class="pre">Dog</span></code> type objects. Note that every time <code class="docutils literal notranslate"><span class="pre">Dog()</span></code> is called, a new <code class="docutils literal notranslate"><span class="pre">Dog</span></code>-type object is created. This is what we refer to as an <strong>instance</strong> of an object. When you call <code class="docutils literal notranslate"><span class="pre">Dog()</span></code> here, you are creating another <strong>instance</strong> of a <code class="docutils literal notranslate"><span class="pre">Dog()</span></code>-type object.</p>
 <div class="cell docutils container">
@@ -546,10 +676,10 @@ Woof
 </div>
 </div>
 <p>We demonstrate this here for two reasons: 1) to indicate that all of the code constructs previously introduced (loops, conditionals, etc.) are still available when working with classes and 2) to demonstrate that methods operate directoy on their associated objects using the syntax <code class="docutils literal notranslate"><span class="pre">object.method()</span></code>.</p>
-</div>
-</div>
-<div class="section" id="instances-self">
-<h2>Instances &amp; <code class="docutils literal notranslate"><span class="pre">self</span></code><a class="headerlink" href="#instances-self" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="instances-self">
+<h2>Instances &amp; <code class="docutils literal notranslate"><span class="pre">self</span></code><a class="headerlink" href="#instances-self" title="Link to this heading">#</a></h2>
 <p>While referenced above, we’ve yet to formally define what an <strong>instance</strong> is. An <strong>instance</strong> refers to a particular instantiation of a <code class="docutils literal notranslate"><span class="pre">class</span></code> object. Every time a <code class="docutils literal notranslate"><span class="pre">class</span></code> object is executed (created), a new <strong>instance</strong> of that <code class="docutils literal notranslate"><span class="pre">class</span></code> object is created.</p>
 <p>To refer to the <em>current</em> instance, we use the word <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 <div class="alert alert-success">
@@ -568,8 +698,8 @@ An <b>instance</b> is particular instantiation of a class object. <code>self</co
 <li><p><code class="docutils literal notranslate"><span class="pre">lexi</span></code> was an <em>instance</em> of that class</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> refers to whatever the <em>current</em> instance is</p></li>
 </ul>
-<div class="section" id="instance-attributes">
-<h3>Instance Attributes<a class="headerlink" href="#instance-attributes" title="Permalink to this headline">¶</a></h3>
+<section id="instance-attributes">
+<h3>Instance Attributes<a class="headerlink" href="#instance-attributes" title="Link to this heading">#</a></h3>
 <p>With this concept of instances now made a little more clear, we can introduce the concept of <strong>instance attributes</strong>. So far, we have only demonstrated how to define a <strong>class attribute</strong>. A <strong>class attribute</strong> is an attribute that <em>all</em> objects of this <code class="docutils literal notranslate"><span class="pre">class</span></code> will share. For our <code class="docutils literal notranslate"><span class="pre">Dog</span></code> example, all <code class="docutils literal notranslate"><span class="pre">Dog</span></code>-type objects shared the class attribute ‘sound’. Every dog stored ‘Woof’ in the attribute <code class="docutils literal notranslate"><span class="pre">sound</span></code>.</p>
 <p>Alternatively, an instance attribute specific to the current instance of the <code class="docutils literal notranslate"><span class="pre">class</span></code> object. This allows for different instances of the <code class="docutils literal notranslate"><span class="pre">class</span></code> object to store different data in an instance attribute.</p>
 <p>To do use we use the special <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method when defining instance attributes. (Note that those are two leading and two trailing underscores around the word ‘init’.)</p>
@@ -635,10 +765,10 @@ Gary
 </div>
 <p><strong>A word of caution about <code class="docutils literal notranslate"><span class="pre">self</span></code></strong></p>
 <p>The use of <code class="docutils literal notranslate"><span class="pre">self</span></code> as the first parameter in instance attribute definition is a frequent criticism of the Python programming language. This is partially because <code class="docutils literal notranslate"><span class="pre">self</span></code> is what Pythonistas have agreed to use as the first parameter passed during instance attribute definition - it is <em>not</em> a keyword. In theory, you could use any word to refer to the current instance of a <code class="docutils literal notranslate"><span class="pre">class</span></code> object; however, you (and others reading your code) will have to remember later on what you used to refer to the current instance. As such, we tacitly agree that we’ll use <code class="docutils literal notranslate"><span class="pre">self</span></code> as the first parameter in instance attribute definition to refer to the current instance of a <code class="docutils literal notranslate"><span class="pre">class</span></code> object.</p>
-</div>
-</div>
-<div class="section" id="class-inheritance">
-<h2>Class Inheritance<a class="headerlink" href="#class-inheritance" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="class-inheritance">
+<h2>Class Inheritance<a class="headerlink" href="#class-inheritance" title="Link to this heading">#</a></h2>
 <p>With an understanding of <code class="docutils literal notranslate"><span class="pre">class</span></code> definition and instance attributes, we can now introduce the concept of <code class="docutils literal notranslate"><span class="pre">class</span></code> inheritance. The concept here is taht objects can be built from other objects, inheriting the other objects’ properties and building off of them. This allows for <code class="docutils literal notranslate"><span class="pre">class</span></code> objects to be related in a hierarchical order.</p>
 <p>For examplle, with our <code class="docutils literal notranslate"><span class="pre">Dog()</span></code> example above, we could also create a <code class="docutils literal notranslate"><span class="pre">Cat</span></code> object. If we then wanted to create a general <code class="docutils literal notranslate"><span class="pre">Animal</span></code> class, we could then have <code class="docutils literal notranslate"><span class="pre">Dog</span></code> and <code class="docutils literal notranslate"><span class="pre">Cat</span></code> inherit any general animal properties from <code class="docutils literal notranslate"><span class="pre">Animal()</span></code>.</p>
 <p>To look at a specific example, let’s consider the general class <code class="docutils literal notranslate"><span class="pre">Tool</span></code> and how what the syntax would look like if we wanted to inherit <code class="docutils literal notranslate"><span class="pre">Tool</span></code>’s properties in the more specific class <code class="docutils literal notranslate"><span class="pre">Hammer</span></code>:</p>
@@ -790,8 +920,8 @@ Gary
 </div>
 </div>
 <p>Note in the example above that <code class="docutils literal notranslate"><span class="pre">tool_type</span></code> of <code class="docutils literal notranslate"><span class="pre">Hammer</span></code> class overrides the <code class="docutils literal notranslate"><span class="pre">tool_type</span></code> specified in the <code class="docutils literal notranslate"><span class="pre">Tool</span></code> class that it inherits. The <code class="docutils literal notranslate"><span class="pre">class</span></code> definition can and will override attributes and methods defined in the Parent class.</p>
-<div class="section" id="super">
-<h3><code class="docutils literal notranslate"><span class="pre">super()</span></code><a class="headerlink" href="#super" title="Permalink to this headline">¶</a></h3>
+<section id="super">
+<h3><code class="docutils literal notranslate"><span class="pre">super()</span></code><a class="headerlink" href="#super" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">super()</span></code> allows you to refer to the inherited, parent class, without naming it specifically.</p>
 <p>This is particularly helpful when you want to extend the functionality of a class from which you are inheriting.</p>
 <p>In the example above, we inherited from <code class="docutils literal notranslate"><span class="pre">Tool</span></code> in our <code class="docutils literal notranslate"><span class="pre">Hammer</span></code> definition and saw that while the <code class="docutils literal notranslate"><span class="pre">Tool</span></code> method were availalbe, the <code class="docutils literal notranslate"><span class="pre">Tool</span></code> instance attraibutes were <em>not</em>, due to the fact that our <code class="docutils literal notranslate"><span class="pre">Hammer</span></code> definition had overridden the <code class="docutils literal notranslate"><span class="pre">Tool</span></code> instance attribute definition.</p>
@@ -835,10 +965,10 @@ Gary
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="id1">
-<h2><code class="docutils literal notranslate"><span class="pre">class</span></code>: Summary<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="id1">
+<h2><code class="docutils literal notranslate"><span class="pre">class</span></code>: Summary<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span></code> creates a new class type</p>
 <ul>
@@ -866,9 +996,9 @@ Gary
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="everything-in-python-is-an-object">
-<h2>Everything in Python is an Object!<a class="headerlink" href="#everything-in-python-is-an-object" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="everything-in-python-is-an-object">
+<h2>Everything in Python is an Object!<a class="headerlink" href="#everything-in-python-is-an-object" title="Link to this heading">#</a></h2>
 <p>We mentioned the fact that Python is an object-oriented programming (OOP) language before without providing a formal definition or discussing it in much detail. OOP is a programming paradigm in which code is organized around objects. Now that we have a better undersatnding of what <code class="docutils literal notranslate"><span class="pre">class</span></code> objects are, we can better understand why this is a helpful paradigm.</p>
 <div class="alert alert-success">
 <b>Object-oriented programming (OOP)</b> is a programming paradigm in which code is organized around objects. Python is an OOP programming langauge. 
@@ -899,8 +1029,8 @@ Gary
 </div>
 </div>
 <p>With this logic we can see that everything we’ve discussed thus far in this textbook is an <code class="docutils literal notranslate"><span class="pre">object</span></code>, as every <code class="docutils literal notranslate"><span class="pre">isinstanc()</span></code> statement below demonstrates that everything is in fact an object in Python:</p>
-<div class="section" id="data-variables-are-objects">
-<h3>Data variables are objects<a class="headerlink" href="#data-variables-are-objects" title="Permalink to this headline">¶</a></h3>
+<section id="data-variables-are-objects">
+<h3>Data variables are objects<a class="headerlink" href="#data-variables-are-objects" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
@@ -923,9 +1053,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="functions-are-objects">
-<h3>Functions are objects<a class="headerlink" href="#functions-are-objects" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="functions-are-objects">
+<h3>Functions are objects<a class="headerlink" href="#functions-are-objects" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="nb">sum</span><span class="p">,</span> <span class="nb">object</span><span class="p">))</span>
@@ -956,9 +1086,9 @@ True
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="class-definitions-instances-are-objects">
-<h3>Class definitions &amp; instances are objects<a class="headerlink" href="#class-definitions-instances-are-objects" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="class-definitions-instances-are-objects">
+<h3>Class definitions &amp; instances are objects<a class="headerlink" href="#class-definitions-instances-are-objects" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">():</span>
@@ -979,10 +1109,10 @@ True
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="class-profcourses">
-<h2><code class="docutils literal notranslate"><span class="pre">class</span></code>: <code class="docutils literal notranslate"><span class="pre">ProfCourses</span></code><a class="headerlink" href="#class-profcourses" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="class-profcourses">
+<h2><code class="docutils literal notranslate"><span class="pre">class</span></code>: <code class="docutils literal notranslate"><span class="pre">ProfCourses</span></code><a class="headerlink" href="#class-profcourses" title="Link to this heading">#</a></h2>
 <p>With the basic explanations of concepts and provided examples thus far, you should have a sense that new objects can be created to store information (in the form of attributes) that are <em>attached</em> or <em>belong</em> to the object type <em>and</em> that methods are functions that are <em>attached</em> or <em>operate on</em> the object type directly. However, to this point, the examples have been somewhat contribed. Let’s work through an example that incorporates concepts discussed up to this point to get a sense for how object-oriented programming and creating new objects can be beneficial.</p>
 <p>For this example, envision that you’re a professor who teaches a handful of different courses each year. And, you want to be able to keep track of these courses and carry out a handful of operations on these courses. For this example, we’ll build the code as we go, adding on additional pieces throughout this section, explaining each as we add it on. To get started, let’s focus on a few instance attributes.</p>
 <div class="cell docutils container">
@@ -1270,9 +1400,9 @@ Ellis
 </div>
 </div>
 <p>At this point, hopefully you have a sense for how it can be helpful to organize code into objects whenenver you have information (attributes) and operations (methods) that work together. However, this class is not perfect. See the exercises below for considerations to add additional functionality and improve this class!</p>
-</div>
-<div class="section" id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
 <p>Q1. <strong>Which of the following is true about the following <code class="docutils literal notranslate"><span class="pre">Dog</span></code> class?</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">():</span>
     
@@ -1368,14 +1498,14 @@ B) False<br />
 C) None<br />
 D) AssertionError</p>
 <p>Q7. <strong>This question builds on <code class="docutils literal notranslate"><span class="pre">ProfCourses</span></code> from above. If you haven’t worked through that example, do so first and then return here. How would you improve the <code class="docutils literal notranslate"><span class="pre">ProfCourses</span></code> class in this chapter to accomplish each of the following</strong>:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>account for ties when using the <code class="docutils literal notranslate"><span class="pre">compare</span></code> method?</p></li>
 <li><p>refactor (meaning improve and simplify) the <code class="docutils literal notranslate"><span class="pre">compare()</span></code> method to reduce the need for creating two different objects, only one of which gets <code class="docutils literal notranslate"><span class="pre">return</span></code>ed from the method?</p></li>
 <li><p>add a method to put the dictionary in time order?</p></li>
 </ol>
 <p><strong>Give any/all of these a try to solidify your <code class="docutils literal notranslate"><span class="pre">class</span></code> understanding!</strong></p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1389,7 +1519,7 @@ D) AssertionError</p>
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content/05-classes"
         },
         predefinedOutput: true
@@ -1397,35 +1527,125 @@ D) AssertionError</p>
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="modules.html" title="previous page">Modules</a>
-    <a class='right-next' id="next-link" href="practice.html" title="next page">Practice: Classes</a>
 
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Shannon E. Ellis & Thomas Donoghue<br/>
-        
-            &copy; Copyright 2020.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="modules.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Modules</p>
       </div>
-    </div>
+    </a>
+    <a class="right-next"
+       href="practice.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Practice: Classes</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
-    <script src="../../_static/js/index.js"></script>
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-defintion"><code class="docutils literal notranslate"><span class="pre">class</span></code> defintion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-dog"><code class="docutils literal notranslate"><span class="pre">class</span></code>: Dog</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-summary"><strong><code class="docutils literal notranslate"><span class="pre">class</span></code></strong> Summary:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-our-dog-object">Using our <code class="docutils literal notranslate"><span class="pre">Dog</span></code> Object</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instances-self">Instances &amp; <code class="docutils literal notranslate"><span class="pre">self</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instance-attributes">Instance Attributes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-inheritance">Class Inheritance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#super"><code class="docutils literal notranslate"><span class="pre">super()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">class</span></code>: Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#everything-in-python-is-an-object">Everything in Python is an Object!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-variables-are-objects">Data variables are objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-are-objects">Functions are objects</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-definitions-instances-are-objects">Class definitions &amp; instances are objects</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-profcourses"><code class="docutils literal notranslate"><span class="pre">class</span></code>: <code class="docutils literal notranslate"><span class="pre">ProfCourses</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
     
+<p class="component-author">
+By Shannon E. Ellis, Karan Narula, & Thomas Donoghue
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
