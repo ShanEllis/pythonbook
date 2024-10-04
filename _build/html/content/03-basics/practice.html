@@ -1,0 +1,932 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Practice: The Basics &#8212; Introduction to Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/03-basics/practice';</script>
+    <link rel="canonical" href="content/content/03-basics/practice.html" />
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Functions" href="../04-functions/functions_intro.html" />
+    <link rel="prev" title="Conditionals" href="conditionals.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/who.html">Who is this for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/why.html">Why this book?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/commandline.html">Command Line Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/installation.html">Installing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/jupyter_notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/python-scripts.html">Writing and Running Python Scripts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basics.html">The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conditionals.html">Conditionals</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Practice: The Basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions_intro.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/debugging_errors.html">Debugging &amp; Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/practice.html">Practice: Functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Collections</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/collections_loops.html">Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/tuples.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/practice.html">Practice: Collections &amp; Loops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/classes_intro.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/practice.html">Practice: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Computing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/scientific_computing.html">Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/numpy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/pandas.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/next_steps.html">Next Steps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Strong Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/good_code_intro.html">Strong Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/code_style.html">Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/testing.html">Code Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/answers_intro.html">Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/02-answers.html">Answers: The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/03-answers.html">Answers: Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/04-answers.html">Answers: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/05-answers.html">Answers: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements &amp; License</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://datahub.ucsd.edu/hub/login/hub/user-redirect/git-pull?repo=https%3A//github.com/shanellis/pythonbook&urlpath=tree/pythonbook/content/03-basics/practice.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/03-basics/practice.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/03-basics/practice.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/03-basics/practice.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/03-basics/practice.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Practice: The Basics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-synthesis">Topics Synthesis</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="practice-the-basics">
+<h1>Practice: The Basics<a class="headerlink" href="#practice-the-basics" title="Link to this heading">#</a></h1>
+<p>With variables, conditionals and operators under your belt, this chapter is meant to give you additional practice. Note that each question will include a handful of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements. After you write and execute the code to each question, each <code class="docutils literal notranslate"><span class="pre">assert</span></code> should “pass silently” (meaning: should give no output upon execution) indicating that you are on the right track. After you’ve written your code and run the <code class="docutils literal notranslate"><span class="pre">assert</span></code>s, you can always check your answers, as the answers to these questions are included in the “Answers” chapter of this book.</p>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<p><strong>Variables Q1</strong>. Write five lines of code that define five different variables named <code class="docutils literal notranslate"><span class="pre">var_float</span></code>, <code class="docutils literal notranslate"><span class="pre">var_str</span></code>, and <code class="docutils literal notranslate"><span class="pre">var_bool</span></code>, <code class="docutils literal notranslate"><span class="pre">var_tuple</span></code>, and <code class="docutils literal notranslate"><span class="pre">var_dict</span></code>, storing a float, a string, and a boolean, a tuple, and a dictionary, respectively. (You get to choose the specific float, string, boolean, tuple, or dictionary each variable stores.)</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_float</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_str</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_bool</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_tuple</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_dict</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Variables Q2</strong>. Consider each of the following scenarios and determine what type of collection (list, tuple, dictionary) would be best to use. For each scenario, store ‘list’, ‘tuple’ or ‘dictionary’ in the variable specified, depending upon which is best for the given scnenario. (Note: Capitalization and spelling matter.)</p>
+<p>For example, for <code class="docutils literal notranslate"><span class="pre">scenario_A</span></code>, if you thought the correct answer were ‘list’ your answer in the answer cell would be:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scenario_A</span> <span class="o">=</span> <span class="s1">&#39;list&#39;</span>
+</pre></div>
+</div>
+<p>Scenarios:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scenario_A</span></code> | You want to store all of the names of the films that won an Academy Award last year.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scenario_B</span></code> | You want to keep a record of all the email addresses (and only the email addresses) of all of Directors working in Hollywood, so that you can email them your brilliant ideas whenever you have them.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scenario_C</span></code> | You want to store the names <em>and</em> email addresses of all of the Directors working in Hollywood, so that you can email them your brilliant ideas whenever you have them <em>and</em> address the email to the right name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">scenario_D</span></code> | You want to keep a record of all of the films that have ever won an Academy award and the year in which that award was won.</p></li>
+</ul>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">scenario_A</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tuple&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionary&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">scenario_B</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tuple&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionary&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">scenario_C</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tuple&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionary&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">scenario_D</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tuple&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionary&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operators">
+<h2>Operators<a class="headerlink" href="#operators" title="Link to this heading">#</a></h2>
+<p><strong>Operators Q1</strong> Use the variables provided below (<code class="docutils literal notranslate"><span class="pre">var_low</span></code>, <code class="docutils literal notranslate"><span class="pre">var_mid</span></code> and <code class="docutils literal notranslate"><span class="pre">var_high</span></code>) to generate the variables: <code class="docutils literal notranslate"><span class="pre">var_even</span></code> and <code class="docutils literal notranslate"><span class="pre">var_odd</span></code> according to the following specifications:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">var_even</span></code> | use the 3 variables provided once each and <em>at least two</em> of the math operators (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>) to store the value 12</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_odd</span></code> | use the 3 variables provided once each and <em>at least two</em> of the math operators (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>) to store the value 13</p></li>
+</ul>
+<p>Variables provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var_low</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">var_mid</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">var_high</span> <span class="o">=</span> <span class="mi">30</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">var_even</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">var_even</span> <span class="o">==</span> <span class="mi">12</span>
+<span class="k">assert</span> <span class="n">var_odd</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="n">var_odd</span> <span class="o">==</span> <span class="mi">13</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Operators Q2</strong>. First, define two variables below: <code class="docutils literal notranslate"><span class="pre">my_age</span></code> and <code class="docutils literal notranslate"><span class="pre">pres_age</span></code>. Store your age (as an integer) in <code class="docutils literal notranslate"><span class="pre">my_age</span></code> and store the current US President’s age (as an integer) in <code class="docutils literal notranslate"><span class="pre">pres_age</span></code>.</p>
+<p>Then, use (refer to) <code class="docutils literal notranslate"><span class="pre">my_age</span></code> and <code class="docutils literal notranslate"><span class="pre">pres_age</span></code> to define define two variables: <code class="docutils literal notranslate"><span class="pre">true_compar</span></code> and <code class="docutils literal notranslate"><span class="pre">false_compar</span></code>.</p>
+<p>These variables must satisfy the following requirements:</p>
+<ol class="arabic simple">
+<li><p>Each variable must be defined using one comparison operator (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">!=</span></code>,<code class="docutils literal notranslate"><span class="pre">==</span></code>).</p></li>
+<li><p>Each variable must use and refer to <code class="docutils literal notranslate"><span class="pre">my_age</span></code> and <code class="docutils literal notranslate"><span class="pre">pres_age</span></code> (and no other values or variables)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">true_compar</span></code> should evaluate as the boolean <code class="docutils literal notranslate"><span class="pre">True</span></code>; <code class="docutils literal notranslate"><span class="pre">false_compar</span></code> should evaluate as the boolean <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ol>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">my_age</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">my_age</span> <span class="o">&lt;</span> <span class="mi">150</span>
+<span class="k">assert</span> <span class="n">pres_age</span> <span class="o">&lt;</span><span class="mi">150</span>
+<span class="k">assert</span> <span class="n">true_compar</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">false_compar</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Operators Q3</strong>. Two variables (<code class="docutils literal notranslate"><span class="pre">spring_holidays</span></code> and <code class="docutils literal notranslate"><span class="pre">current_holidays</span></code>) have been created for you below. Using <strong>only these two variables and membership operators</strong>, define the following two variables below (<code class="docutils literal notranslate"><span class="pre">yes_member</span></code> and <code class="docutils literal notranslate"><span class="pre">no_member</span></code>), such that they meet the following specifications:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">yes_member</span></code> | stores the boolean <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">no_member</span></code> | stores the boolean <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+<p>Variables provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">spring_holidays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;César Chávez&#39;</span><span class="p">,</span> <span class="s1">&#39;Passover&#39;</span><span class="p">,</span> <span class="s1">&#39;Easter&#39;</span><span class="p">,</span> 
+                   <span class="s1">&#39;Ramadan&#39;</span><span class="p">,</span> <span class="s1">&#39;Shavout&#39;</span><span class="p">,</span> <span class="s1">&#39;Memorial Day&#39;</span><span class="p">]</span>
+<span class="n">current_holiday</span> <span class="o">=</span> <span class="s1">&#39;Ramadan&#39;</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">yes_member</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">no_member</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Operators Q4</strong>. Create three variables: <code class="docutils literal notranslate"><span class="pre">var_even</span></code>, <code class="docutils literal notranslate"><span class="pre">var_odd</span></code>, and <code class="docutils literal notranslate"><span class="pre">var_operator</span></code>.</p>
+<p>Across these three variables:</p>
+<ul class="simple">
+<li><p>all seven math operators (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>) must be used <em>at least once</em></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_even</span></code> must store an even number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_odd</span></code> must store an odd number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_operator</span></code> can include other variables/numbers but must use (refer to) the variables <code class="docutils literal notranslate"><span class="pre">var_even</span></code> <em>and</em> <code class="docutils literal notranslate"><span class="pre">var_odd</span></code> during assignment and must store (have the value) 6 (or 6.0)</p></li>
+</ul>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">var_odd</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">var_even</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_operator</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_operator</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">var_operator</span> <span class="o">==</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Operators Q5</strong>. Your answer will define two variables: <code class="docutils literal notranslate"><span class="pre">true_var</span></code> and <code class="docutils literal notranslate"><span class="pre">false_var</span></code>.</p>
+<p>These variables must satisfy the following requirements:</p>
+<ol class="arabic simple">
+<li><p>Each variable must be defined using <em>at least one</em> comparison operator (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">!=</span></code>,<code class="docutils literal notranslate"><span class="pre">==</span></code>).</p></li>
+<li><p>Each variable must use and refer to at least one variables defined below (<code class="docutils literal notranslate"><span class="pre">var_low</span></code>, <code class="docutils literal notranslate"><span class="pre">var_mid</span></code>, <code class="docutils literal notranslate"><span class="pre">var_high</span></code>)</p></li>
+<li><p>Additional values and/or operators may also be used, but <code class="docutils literal notranslate"><span class="pre">true_var</span></code> must use the <code class="docutils literal notranslate"><span class="pre">or</span></code> operator; <code class="docutils literal notranslate"><span class="pre">false_var</span></code> must use the <code class="docutils literal notranslate"><span class="pre">and</span></code> operator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">true_var</span></code> should evaluate as the boolean <code class="docutils literal notranslate"><span class="pre">True</span></code>; <code class="docutils literal notranslate"><span class="pre">false_var</span></code> should evaluate as the boolean <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ol>
+<p>Variables provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var_low</span> <span class="o">=</span> <span class="mi">35</span> <span class="o">%</span> <span class="mi">11</span>
+<span class="n">var_mid</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">var_high</span> <span class="o">=</span> <span class="p">(</span><span class="mi">14</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">true_var</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">false_var</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Operators Q6</strong> Create three variables: <code class="docutils literal notranslate"><span class="pre">comp_a</span></code>, <code class="docutils literal notranslate"><span class="pre">comp_b</span></code>, and <code class="docutils literal notranslate"><span class="pre">comp_c</span></code>.</p>
+<p>These variables must satisfy the following requirements:</p>
+<ol class="arabic simple">
+<li><p>Each variable must store (aka return) the Boolean <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>Additional operators may also be used, but <code class="docutils literal notranslate"><span class="pre">comp_a</span></code> must use the <code class="docutils literal notranslate"><span class="pre">and</span></code> operator; <code class="docutils literal notranslate"><span class="pre">comp_b</span></code> must use the <code class="docutils literal notranslate"><span class="pre">or</span></code> operator, and <code class="docutils literal notranslate"><span class="pre">comp_c</span></code> must use the <code class="docutils literal notranslate"><span class="pre">not</span></code> operator.</p></li>
+<li><p>Each variable must be created using <em>at least two</em> of the comparison operators (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">!=</span></code>,<code class="docutils literal notranslate"><span class="pre">==</span></code>).</p></li>
+<li><p>All six comparison operators must show up in the cell below <em>at least once</em>.</p></li>
+</ol>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">comp_a</span>
+<span class="k">assert</span> <span class="n">comp_b</span>
+<span class="k">assert</span> <span class="n">comp_c</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Operators Q7</strong>. Using the following string and list provided below, create two variables <code class="docutils literal notranslate"><span class="pre">memb_a</span></code> and <code class="docutils literal notranslate"><span class="pre">memb_b</span></code> that satisfy the following conditions:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">memb_a</span></code> must use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to check membership in <code class="docutils literal notranslate"><span class="pre">my_string</span></code>. It should store (return) <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">memb_b</span></code> must use the <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operator to check membership in <code class="docutils literal notranslate"><span class="pre">my_list</span></code>. It should store (return) <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">memb_a</span></code> must refer to the <code class="docutils literal notranslate"><span class="pre">my_string</span></code> variable defined for you below. <code class="docutils literal notranslate"><span class="pre">memb_b</span></code> must refer to the <code class="docutils literal notranslate"><span class="pre">my_list</span></code> variable defined for you below.</p></li>
+</ol>
+<p>Variables provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;I love Python!&#39;</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Chapters&#39;</span><span class="p">,</span> <span class="s1">&#39;Exercises&#39;</span><span class="p">,</span> <span class="s1">&#39;Practice&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">memb_a</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">memb_b</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conditionals">
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Link to this heading">#</a></h2>
+<p><strong>Conditionals Q1</strong>. Store your first name as a string in the variable <code class="docutils literal notranslate"><span class="pre">my_name</span></code>.</p>
+<p>Write a conditional that will determine if there are more letters in your name (<code class="docutils literal notranslate"><span class="pre">my_name</span></code>) relative to the number of letters in the <code class="docutils literal notranslate"><span class="pre">comparison_name</span></code> (provided below, and storing the string ‘Shannon’).</p>
+<p>If your name is:</p>
+<ul class="simple">
+<li><p>shorter than the <code class="docutils literal notranslate"><span class="pre">comparison_name</span></code>, store the string ‘shorter’ in the variable <code class="docutils literal notranslate"><span class="pre">output</span></code></p></li>
+<li><p>longer than the <code class="docutils literal notranslate"><span class="pre">comparison_name</span></code>, store the string ‘longer’ in the variable <code class="docutils literal notranslate"><span class="pre">output</span></code></p></li>
+<li><p>the same length as <code class="docutils literal notranslate"><span class="pre">comparison_name</span></code>, store the string ‘same length’ in the variable <code class="docutils literal notranslate"><span class="pre">output</span></code></p></li>
+</ul>
+<p>Note: Do not hard-code. This means your code should work (store the correct string in <code class="docutils literal notranslate"><span class="pre">output</span></code>) regardless of the specific strings stored in <code class="docutils literal notranslate"><span class="pre">comparison_name</span></code> or <code class="docutils literal notranslate"><span class="pre">my_name</span></code>.</p>
+<p>Variable provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">comparison_name</span> <span class="o">=</span> <span class="s1">&#39;Shannon&#39;</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">my_name</span>
+<span class="k">assert</span> <span class="n">output</span>
+<span class="k">assert</span> <span class="n">output</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;shorter&#39;</span><span class="p">,</span> <span class="s1">&#39;longer&#39;</span><span class="p">,</span> <span class="s1">&#39;same length&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="topics-synthesis">
+<h2>Topics Synthesis<a class="headerlink" href="#topics-synthesis" title="Link to this heading">#</a></h2>
+<p><strong>Synthesis Q1</strong>. Create two variables: <code class="docutils literal notranslate"><span class="pre">var_cat</span></code> and <code class="docutils literal notranslate"><span class="pre">var_sum</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">var_cat</span></code> should store a string created (assigned) by concatenating two strings together</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_sum</span></code> should store a numeric variable (float or int) created (assigned) by adding two numeric values together</p></li>
+</ul>
+<p>The specific values you use to generate <code class="docutils literal notranslate"><span class="pre">var_cat</span></code> and <code class="docutils literal notranslate"><span class="pre">var_sum</span></code> are up to you, as long as they fulfull the criteria specified.</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_cat</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_sum</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_sum</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Synthesis Q2</strong>. Create three variables: <code class="docutils literal notranslate"><span class="pre">var_int</span></code>, <code class="docutils literal notranslate"><span class="pre">var_float</span></code>, and <code class="docutils literal notranslate"><span class="pre">var_combined</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">var_int</span></code> should store an integer</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_float</span></code> should store a float</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_combined</span></code> should use a math operator to add <code class="docutils literal notranslate"><span class="pre">var_int</span></code> and <code class="docutils literal notranslate"><span class="pre">var_float</span></code> together</p></li>
+</ul>
+<p>The specific values you use to generate <code class="docutils literal notranslate"><span class="pre">var_int</span></code> and <code class="docutils literal notranslate"><span class="pre">var_float</span></code> are up to you, as long as they fulfull the criteria specified.</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_int</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_float</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">var_combined</span> <span class="o">==</span> <span class="n">var_int</span> <span class="o">+</span> <span class="n">var_float</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Synthesis Q3</strong>. create three variables: <code class="docutils literal notranslate"><span class="pre">var_a</span></code>, <code class="docutils literal notranslate"><span class="pre">var_b</span></code>, and <code class="docutils literal notranslate"><span class="pre">var_c</span></code>.</p>
+<p>These variables must satisfy the following requirements:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">var_a</span></code> must store a float (you get to choose the specific float)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_b</span></code> must use <em>at least two</em> of the comparison operators (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">!=</span></code>,<code class="docutils literal notranslate"><span class="pre">==</span></code>) and store (return) the value <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_c</span></code> must use <em>at least two</em> of the math operators (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>) and store the value 36</p></li>
+</ol>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_a</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">var_b</span> 
+<span class="k">assert</span> <span class="n">var_c</span> <span class="o">==</span> <span class="mi">36</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Synthesis Q4</strong>. create three variables: <code class="docutils literal notranslate"><span class="pre">var_a</span></code>, <code class="docutils literal notranslate"><span class="pre">var_b</span></code>, and <code class="docutils literal notranslate"><span class="pre">var_c</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">var_a</span></code> should store four characters in an immutable variable type that is only able to store one piece of information</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_b</span></code> should be a single value that, when added to itself returns a whole number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var_c</span></code> should be an immutable variable storing three different values</p></li>
+</ul>
+<p>The specific values you use to generate the variables are up to you, as long as they fulfull the criteria specified.</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_a</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">var_a</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>
+<span class="k">assert</span> <span class="n">var_b</span> <span class="o">%</span> <span class="mi">1</span> <span class="o">==</span> <span class="mi">0</span> 
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_c</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">var_c</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/03-basics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="conditionals.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Conditionals</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../04-functions/functions_intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">Conditionals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#topics-synthesis">Topics Synthesis</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shannon E. Ellis, Karan Narula, & Thomas Donoghue
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

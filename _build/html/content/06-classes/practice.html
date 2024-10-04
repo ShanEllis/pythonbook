@@ -1,0 +1,886 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Practice: Classes &#8212; Introduction to Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/06-classes/practice';</script>
+    <link rel="canonical" href="content/content/06-classes/practice.html" />
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Scientific Computing" href="../07-scientific-computing/scientific_computing.html" />
+    <link rel="prev" title="Classes" href="classes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/who.html">Who is this for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/why.html">Why this book?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/commandline.html">Command Line Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/installation.html">Installing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/jupyter_notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/python-scripts.html">Writing and Running Python Scripts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/basics.html">The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/conditionals.html">Conditionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/practice.html">Practice: The Basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions_intro.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/debugging_errors.html">Debugging &amp; Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/practice.html">Practice: Functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Collections</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/collections_loops.html">Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/tuples.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/practice.html">Practice: Collections &amp; Loops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classes_intro.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Classes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Practice: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Computing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/scientific_computing.html">Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/numpy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/pandas.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/next_steps.html">Next Steps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Strong Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/good_code_intro.html">Strong Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/code_style.html">Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/testing.html">Code Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/answers_intro.html">Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/02-answers.html">Answers: The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/03-answers.html">Answers: Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/04-answers.html">Answers: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/05-answers.html">Answers: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements &amp; License</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://datahub.ucsd.edu/hub/login/hub/user-redirect/git-pull?repo=https%3A//github.com/shanellis/pythonbook&urlpath=tree/pythonbook/content/06-classes/practice.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/06-classes/practice.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/06-classes/practice.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/06-classes/practice.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/06-classes/practice.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Practice: Classes</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects">Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="practice-classes">
+<h1>Practice: Classes<a class="headerlink" href="#practice-classes" title="Link to this heading">#</a></h1>
+<p>In this set of practice problems, it’s all about classes, really putting together everything discussed up to this point, including how to create our own classes of objects, with their own associated attributes and methods.</p>
+<p>As for all practice sections, each question will include a handful of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements. After you write and execute the code to each question, each <code class="docutils literal notranslate"><span class="pre">assert</span></code> should “pass silently” (meaning: should give no output upon execution) indicating that you are on the right track. After you’ve written your code and run the <code class="docutils literal notranslate"><span class="pre">assert</span></code>s, you can always check your answers, as the answers to these questions are included in the “Answers” chapter of this book.</p>
+<section id="objects">
+<h2>Objects<a class="headerlink" href="#objects" title="Link to this heading">#</a></h2>
+<p><strong>Objects Q1</strong>. <code class="docutils literal notranslate"><span class="pre">isalnum()</span></code> is a string method that determines if all the characters in a string are alphanumeric (meaning letters or numbers: A-Z, a-z, 0-9).</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">isalnum()</span></code> method on two strings (of your choosing) below to create two variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">true_var</span></code> | should store the value <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">false_var</span></code> | should store the value <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">true_var</span>
+<span class="k">assert</span> <span class="ow">not</span> <span class="n">false_var</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Objects Q2</strong>. Here, <code class="docutils literal notranslate"><span class="pre">site_days</span></code> and <code class="docutils literal notranslate"><span class="pre">days_of_week</span></code> have been provided for you.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">site_days</span></code>: is a (totally made up) list of days on which people received their vaccinations</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">days_of_week</span></code>: a tuple containing the days of the week</p></li>
+</ul>
+<p>Note: <code class="docutils literal notranslate"><span class="pre">count()</span></code> is a list method that counts the number of appearances of a specified element in a list.</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">count()</span></code> method, code constructs discussed in class, and referencing the two variables provided, generate a dictionary:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">days_summary</span></code>  | whose keys are each of the days of the week in <code class="docutils literal notranslate"><span class="pre">days_of_week</span></code> and whose corresponding values are the number of times each day shows up in <code class="docutils literal notranslate"><span class="pre">site_days</span></code>.</p></li>
+</ul>
+<p>Variables provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">site_days</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">]</span>
+<span class="n">days_of_week</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;Tu&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;Th&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;Su&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">list</span><span class="p">(</span><span class="n">days_summary</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;Tu&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;Th&#39;</span><span class="p">,</span>
+                                     <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;Su&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="nb">list</span><span class="p">(</span><span class="n">days_summary</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">==</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Objects Q3</strong>. Here, import the <code class="docutils literal notranslate"><span class="pre">random</span></code> module so that you can use the <code class="docutils literal notranslate"><span class="pre">choice</span></code> function from the module. (Note: the <code class="docutils literal notranslate"><span class="pre">choice</span></code> function from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module returns a single value from a collection at random.)</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">choice</span></code> function from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module to randomly choose a value from <code class="docutils literal notranslate"><span class="pre">range(0,10)</span></code>.</p>
+<p>Store the output from this operation in the variable <code class="docutils literal notranslate"><span class="pre">rand_int</span></code>.</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rand_int</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">rand_int</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading">#</a></h2>
+<p><strong>Classes Q1</strong>. Define a class <code class="docutils literal notranslate"><span class="pre">ClassRoster()</span></code> that meets the following specifications:</p>
+<ul class="simple">
+<li><p>has two instance attributes:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">students</span></code>; initialized as an empty list</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">course</span></code>; which the user specifies when creating a <code class="docutils literal notranslate"><span class="pre">ClassRoster()</span></code> object</p></li>
+</ul>
+</li>
+<li><p>a single method <code class="docutils literal notranslate"><span class="pre">add_student()</span></code>, which will have <code class="docutils literal notranslate"><span class="pre">pid</span></code> and <code class="docutils literal notranslate"><span class="pre">name</span></code> as arguments, and will add these two inputs as a dictionary with <code class="docutils literal notranslate"><span class="pre">pid</span></code> as the key and the student’s <code class="docutils literal notranslate"><span class="pre">name</span></code> as the value to the <code class="docutils literal notranslate"><span class="pre">students</span></code> list each time the method is called</p></li>
+</ul>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">my_course</span><span class="o">.</span><span class="n">course</span> <span class="o">==</span> <span class="s1">&#39;COGS 18&#39;</span>
+<span class="k">assert</span> <span class="n">my_course</span><span class="o">.</span><span class="n">students</span> <span class="o">==</span> <span class="p">[]</span>
+
+<span class="n">my_course</span><span class="o">.</span><span class="n">add_student</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="s1">&#39;A12345&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Shannon&#39;</span><span class="p">)</span>
+<span class="n">my_course</span><span class="o">.</span><span class="n">add_student</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="s1">&#39;A56789&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Josh&#39;</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">my_course</span><span class="o">.</span><span class="n">students</span> <span class="o">==</span> <span class="p">[{</span><span class="s1">&#39;A12345&#39;</span><span class="p">:</span><span class="s1">&#39;Shannon&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;A56789&#39;</span><span class="p">:</span> <span class="s1">&#39;Josh&#39;</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Classes Q2</strong>. Define a class <code class="docutils literal notranslate"><span class="pre">ToDo()</span></code> to keep track of your to do list.</p>
+<p>This should have a single instance attribute: <code class="docutils literal notranslate"><span class="pre">to_do</span></code>, which is initialized as an empty list.</p>
+<p>It will then have two methods: <code class="docutils literal notranslate"><span class="pre">add_item</span></code> and <code class="docutils literal notranslate"><span class="pre">remove_item</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">add_item()</span></code>:</p>
+<ul class="simple">
+<li><p>will have two parameters <code class="docutils literal notranslate"><span class="pre">item</span></code>, and <code class="docutils literal notranslate"><span class="pre">top</span></code> (<code class="docutils literal notranslate"><span class="pre">top</span></code> takes the default value <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">top</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>:
+the string in <code class="docutils literal notranslate"><span class="pre">item</span></code> will be added to the top of <code class="docutils literal notranslate"><span class="pre">to_do</span></code>:</p></li>
+<li><p>if <code class="docutils literal notranslate"><span class="pre">top</span></code> is not true:
+the string it <code class="docutils literal notranslate"><span class="pre">item</span></code> will be added to the end of <code class="docutils literal notranslate"><span class="pre">to_do</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">remove_item()</span></code>:</p>
+<ul class="simple">
+<li><p>will have a single parameter <code class="docutils literal notranslate"><span class="pre">item</span></code></p></li>
+<li><p>will remove the item specified from <code class="docutils literal notranslate"><span class="pre">to_do</span></code></p></li>
+</ul>
+<p>Note: there is a list method <code class="docutils literal notranslate"><span class="pre">insert()</span></code>, which operates in place to add a value to a list at the index specified with the general syntax <code class="docutils literal notranslate"><span class="pre">my_list.insert(index,</span> <span class="pre">item_to_add)</span></code>.</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_todo_list</span> <span class="o">=</span> <span class="n">ToDo</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">my_todo_list</span><span class="o">.</span><span class="n">to_do</span> <span class="o">==</span> <span class="p">[]</span>
+
+<span class="n">my_todo_list</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="n">my_todo_list</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">my_todo_list</span><span class="o">.</span><span class="n">to_do</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
+
+<span class="n">my_todo_list</span><span class="o">.</span><span class="n">add_item</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">my_todo_list</span><span class="o">.</span><span class="n">to_do</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
+
+<span class="n">my_todo_list</span><span class="o">.</span><span class="n">remove_item</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">my_todo_list</span><span class="o">.</span><span class="n">to_do</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Classes Q3</strong>. For this question, let’s create a class to celebrate the Lunar New Year!</p>
+<p>Here, define a class <code class="docutils literal notranslate"><span class="pre">NewYear()</span></code>.</p>
+<p>This class should have:</p>
+<ul class="simple">
+<li><p><strong>one class attribute</strong>: <code class="docutils literal notranslate"><span class="pre">zodiac_signs</span></code> that stores the dictionary <code class="docutils literal notranslate"><span class="pre">zodiac_signs</span></code> specified below. This dictionary contains the zodiac sign as the key and the birth years that correspond to that sign.</p></li>
+<li><p><strong>one instance attribute</strong>:  <code class="docutils literal notranslate"><span class="pre">year</span></code> that takes the birth <code class="docutils literal notranslate"><span class="pre">year</span></code> as input from the user upon creation of a <code class="docutils literal notranslate"><span class="pre">NewYear</span></code> type object.</p></li>
+</ul>
+<p>This class will also have a method <code class="docutils literal notranslate"><span class="pre">return_sign()</span></code>. This method should <code class="docutils literal notranslate"><span class="pre">return</span></code> (<em>not</em> just <code class="docutils literal notranslate"><span class="pre">print</span></code>) a string, similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;You were born in the year of the Dragon!&#39;</span> 
+</pre></div>
+</div>
+<p>…where ‘Dragon’ corresponds to the key from the <code class="docutils literal notranslate"><span class="pre">zodiac_signs</span></code> corresponding to the value stored in the <code class="docutils literal notranslate"><span class="pre">year</span></code> attribute. (Be sure captitalization and punctuation match the string specified here. The only thing that should change is the last word in the string.)</p>
+<p>For example <code class="docutils literal notranslate"><span class="pre">NewYear(year=2021).return_sign()</span></code> should return ‘You were born in the year of the Ox!’, since 2021 is a value in the <code class="docutils literal notranslate"><span class="pre">zodiac_signs</span></code> dictionary for the key ‘Ox’.</p>
+<p>Variable provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">zodiac_signs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;Ox&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1937</span><span class="p">,</span> <span class="mi">1949</span><span class="p">,</span> <span class="mi">1961</span><span class="p">,</span> <span class="mi">1973</span><span class="p">,</span> <span class="mi">1985</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="mi">2009</span><span class="p">,</span> <span class="mi">2021</span><span class="p">],</span>
+    <span class="s1">&#39;Tiger&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1938</span><span class="p">,</span> <span class="mi">1950</span><span class="p">,</span> <span class="mi">1962</span><span class="p">,</span> <span class="mi">1974</span><span class="p">,</span> <span class="mi">1986</span><span class="p">,</span> <span class="mi">1998</span><span class="p">,</span> <span class="mi">2010</span><span class="p">,</span> <span class="mi">2022</span><span class="p">],</span> 
+    <span class="s1">&#39;Rabbit&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1939</span><span class="p">,</span> <span class="mi">1951</span><span class="p">,</span> <span class="mi">1963</span><span class="p">,</span> <span class="mi">1975</span><span class="p">,</span> <span class="mi">1987</span><span class="p">,</span> <span class="mi">1999</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span> <span class="mi">2023</span><span class="p">],</span> 
+    <span class="s1">&#39;Dragon&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1940</span><span class="p">,</span> <span class="mi">1952</span><span class="p">,</span> <span class="mi">1964</span><span class="p">,</span> <span class="mi">1976</span><span class="p">,</span> <span class="mi">1988</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2012</span><span class="p">,</span> <span class="mi">2024</span><span class="p">],</span> 
+    <span class="s1">&#39;Snake&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1941</span><span class="p">,</span> <span class="mi">1953</span><span class="p">,</span> <span class="mi">1965</span><span class="p">,</span> <span class="mi">1977</span><span class="p">,</span> <span class="mi">1989</span><span class="p">,</span> <span class="mi">2001</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2025</span><span class="p">],</span> 
+    <span class="s1">&#39;Horse&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1942</span><span class="p">,</span> <span class="mi">1954</span><span class="p">,</span> <span class="mi">1966</span><span class="p">,</span> <span class="mi">1978</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2026</span><span class="p">],</span> 
+    <span class="s1">&#39;Goat/Sheep&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1943</span><span class="p">,</span> <span class="mi">1955</span><span class="p">,</span> <span class="mi">1967</span><span class="p">,</span> <span class="mi">1979</span><span class="p">,</span> <span class="mi">1991</span><span class="p">,</span> <span class="mi">2003</span><span class="p">,</span> <span class="mi">2015</span><span class="p">,</span> <span class="mi">2027</span><span class="p">],</span> 
+    <span class="s1">&#39;Monkey&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1944</span><span class="p">,</span> <span class="mi">1956</span><span class="p">,</span> <span class="mi">1968</span><span class="p">,</span> <span class="mi">1980</span><span class="p">,</span> <span class="mi">1992</span><span class="p">,</span> <span class="mi">2004</span><span class="p">,</span> <span class="mi">2016</span><span class="p">,</span> <span class="mi">2028</span><span class="p">],</span> 
+    <span class="s1">&#39;Rooster&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1945</span><span class="p">,</span> <span class="mi">1957</span><span class="p">,</span> <span class="mi">1969</span><span class="p">,</span> <span class="mi">1981</span><span class="p">,</span> <span class="mi">1993</span><span class="p">,</span> <span class="mi">2005</span><span class="p">,</span> <span class="mi">2017</span><span class="p">,</span> <span class="mi">2029</span><span class="p">],</span> 
+    <span class="s1">&#39;Dog&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1946</span><span class="p">,</span> <span class="mi">1958</span><span class="p">,</span> <span class="mi">1970</span><span class="p">,</span> <span class="mi">1982</span><span class="p">,</span> <span class="mi">1994</span><span class="p">,</span> <span class="mi">2006</span><span class="p">,</span> <span class="mi">2018</span><span class="p">,</span> <span class="mi">2030</span><span class="p">],</span> 
+    <span class="s1">&#39;Pig&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1947</span><span class="p">,</span> <span class="mi">1959</span><span class="p">,</span> <span class="mi">1971</span><span class="p">,</span> <span class="mi">1983</span><span class="p">,</span> <span class="mi">1995</span><span class="p">,</span> <span class="mi">2007</span><span class="p">,</span> <span class="mi">2019</span><span class="p">,</span> <span class="mi">2031</span><span class="p">],</span> 
+    <span class="s1">&#39;Rat&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">1936</span><span class="p">,</span> <span class="mi">1948</span><span class="p">,</span> <span class="mi">1960</span><span class="p">,</span> <span class="mi">1972</span><span class="p">,</span> <span class="mi">1984</span><span class="p">,</span> <span class="mi">1996</span><span class="p">,</span> <span class="mi">2008</span><span class="p">,</span> <span class="mi">2020</span><span class="p">]</span>
+<span class="p">}</span> 
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dragon</span> <span class="o">=</span> <span class="n">NewYear</span><span class="p">(</span><span class="mi">1988</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dragon</span><span class="p">,</span> <span class="n">NewYear</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">dragon</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span>  <span class="mi">1988</span>
+<span class="k">assert</span> <span class="n">dragon</span><span class="o">.</span><span class="n">return_sign</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;You were born in the year of the Dragon!&#39;</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dragon</span><span class="o">.</span><span class="n">zodiac_signs</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+<span class="k">assert</span> <span class="s1">&#39;Ox&#39;</span> <span class="ow">in</span> <span class="n">dragon</span><span class="o">.</span><span class="n">zodiac_signs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Classes Q4</strong>.</p>
+<p>Part I.</p>
+<p>For this question, imagine you want to create a video game with a handful of characters. You want this game to have a royal kingdom theme.</p>
+<p>Here, define a class <code class="docutils literal notranslate"><span class="pre">Kingdom()</span></code>.</p>
+<p>This class should have two instance attributes: <code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">title</span></code>, which will be strings specifying the name and title of the character (in that order).</p>
+<p>This class will also have a method <code class="docutils literal notranslate"><span class="pre">introduce()</span></code>. This method should <code class="docutils literal notranslate"><span class="pre">return</span></code> (<em>not</em> just <code class="docutils literal notranslate"><span class="pre">print</span></code>) a string, similar to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hello, my name is Ferdinand, and I am a King.&#39;</span> 
+</pre></div>
+</div>
+<p>…where ‘Ferdinand’ corresponds to whatever is stored in <code class="docutils literal notranslate"><span class="pre">Kingdom()</span></code> object’s <code class="docutils literal notranslate"><span class="pre">name</span></code> attribute is and ‘King’ corresponds to whatever is stored in the <code class="docutils literal notranslate"><span class="pre">Kingdom()</span></code> object’s <code class="docutils literal notranslate"><span class="pre">title</span></code> attribute.</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queen</span> <span class="o">=</span> <span class="n">Kingdom</span><span class="p">(</span><span class="s1">&#39;Elizabeth&#39;</span><span class="p">,</span> <span class="s1">&#39;Queen&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">queen</span><span class="p">,</span> <span class="n">Kingdom</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">queen</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Elizabeth&#39;</span>
+<span class="k">assert</span> <span class="n">queen</span><span class="o">.</span><span class="n">title</span> <span class="o">==</span> <span class="s1">&#39;Queen&#39;</span>
+
+<span class="k">assert</span> <span class="nb">callable</span><span class="p">(</span><span class="n">queen</span><span class="o">.</span><span class="n">introduce</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">queen</span><span class="o">.</span><span class="n">introduce</span><span class="p">(),</span> <span class="nb">str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Part II.</p>
+<p>Generate a class called <code class="docutils literal notranslate"><span class="pre">CourtJester()</span></code>.</p>
+<p>This object should inherit all attributes and methods from <code class="docutils literal notranslate"><span class="pre">Kingdom()</span></code>.</p>
+<p>Additionally, the <code class="docutils literal notranslate"><span class="pre">CourtJester()</span></code> object should have:</p>
+<ul class="simple">
+<li><p>a class attribute <code class="docutils literal notranslate"><span class="pre">headwear</span></code>, storing the value <code class="docutils literal notranslate"><span class="pre">'fool's</span> <span class="pre">cap'</span></code></p></li>
+<li><p>a method <code class="docutils literal notranslate"><span class="pre">tell_a_joke()</span></code> that should <code class="docutils literal notranslate"><span class="pre">return</span></code> a joke at random from the list provided below</p></li>
+</ul>
+<p>(Note: You’ll likely want to import from the <code class="docutils literal notranslate"><span class="pre">random</span></code> module here. Use of a function from that module will likely be helpful in <code class="docutils literal notranslate"><span class="pre">tell_a_joke()</span></code>.)</p>
+<p>Variable provided:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">joke_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A clown held the door open for me yesterday. I thought it was a nice jester&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;How does the court jester address the King of Ducks? Mal’Lard&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;What did the court jester call the balding crown prince? The Heir Apparent with no Hair Apparent&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;What do you call a joke made by using sign language? A jester&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jester</span> <span class="o">=</span> <span class="n">CourtJester</span><span class="p">(</span><span class="s1">&#39;Barney&#39;</span><span class="p">,</span> <span class="s1">&#39;Jester&#39;</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">jester</span><span class="o">.</span><span class="n">headwear</span> <span class="o">==</span> <span class="s2">&quot;fool&#39;s cap&quot;</span>
+<span class="k">assert</span> <span class="n">jester</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Barney&#39;</span>
+<span class="k">assert</span> <span class="n">jester</span><span class="o">.</span><span class="n">title</span> <span class="o">==</span> <span class="s1">&#39;Jester&#39;</span>
+
+<span class="n">joke_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A clown held the door open for me yesterday. I thought it was a nice jester&#39;</span><span class="p">,</span>
+<span class="s1">&#39;How does the court jester address the King of Ducks? Mal’Lard&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;What did the court jester call the balding crown prince? The Heir Apparent with no Hair Apparent&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;What do you call a joke made by using sign language? A jester&#39;</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">jester</span><span class="o">.</span><span class="n">tell_a_joke</span><span class="p">()</span> <span class="ow">in</span> <span class="n">joke_list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Classes Q5</strong>. Generate a class called <code class="docutils literal notranslate"><span class="pre">StudentInfo</span></code>.</p>
+<p>This class should have four <em>instance attributes</em>: <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">school</span></code>, and <code class="docutils literal notranslate"><span class="pre">proj_grade</span></code>.</p>
+<p>This class must also have a single method: <code class="docutils literal notranslate"><span class="pre">follow_up</span></code>. This method should determine if <code class="docutils literal notranslate"><span class="pre">proj_grade</span></code> is 65 or below. If <code class="docutils literal notranslate"><span class="pre">proj_grade</span></code> is 65 or below, the method should return the name of the student as the key and their proj_grade as the value in a dictionary. (If the student has a grade above 65, this method should return an empty dictionary.)</p>
+<p>Checks you can use to see if you’re on the right track:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student1</span> <span class="o">=</span> <span class="n">StudentInfo</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Shannon&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s1">&#39;sophomore&#39;</span><span class="p">,</span> <span class="n">school</span><span class="o">=</span><span class="s1">&#39;UCSD&#39;</span><span class="p">,</span> <span class="n">proj_grade</span><span class="o">=</span><span class="mi">63</span><span class="p">)</span>
+<span class="n">student2</span> <span class="o">=</span> <span class="n">StudentInfo</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Josh&#39;</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s1">&#39;senior&#39;</span><span class="p">,</span> <span class="n">school</span><span class="o">=</span><span class="s1">&#39;UCSD&#39;</span><span class="p">,</span> <span class="n">proj_grade</span><span class="o">=</span><span class="mi">88</span><span class="p">)</span>
+
+<span class="c1"># test attributes</span>
+<span class="k">assert</span> <span class="n">student1</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;Shannon&#39;</span>
+<span class="k">assert</span> <span class="n">student1</span><span class="o">.</span><span class="n">school</span> <span class="o">==</span> <span class="s1">&#39;UCSD&#39;</span>
+<span class="k">assert</span> <span class="n">student2</span><span class="o">.</span><span class="n">year</span> <span class="o">==</span> <span class="s1">&#39;senior&#39;</span>
+<span class="k">assert</span> <span class="n">student2</span><span class="o">.</span><span class="n">proj_grade</span> <span class="o">==</span> <span class="mi">88</span>
+
+<span class="k">assert</span> <span class="n">student1</span><span class="o">.</span><span class="n">follow_up</span><span class="p">()</span> <span class="o">==</span> <span class="p">{</span><span class="s1">&#39;Shannon&#39;</span><span class="p">:</span> <span class="mi">63</span><span class="p">}</span>
+<span class="k">assert</span> <span class="n">student2</span><span class="o">.</span><span class="n">follow_up</span><span class="p">()</span> <span class="o">==</span> <span class="p">{}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/06-classes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="classes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Classes</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../07-scientific-computing/scientific_computing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Scientific Computing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects">Objects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classes">Classes</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shannon E. Ellis, Karan Narula, & Thomas Donoghue
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

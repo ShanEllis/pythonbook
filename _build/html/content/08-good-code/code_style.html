@@ -1,0 +1,1218 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Code Style &#8212; Introduction to Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/08-good-code/code_style';</script>
+    <link rel="canonical" href="content/content/08-good-code/code_style.html" />
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Documentation" href="documentation.html" />
+    <link rel="prev" title="Strong Code" href="good_code_intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/intro.html">Welcome!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/who.html">Who is this for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/why.html">Why this book?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/commandline.html">Command Line Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/installation.html">Installing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/jupyter_notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/python-scripts.html">Writing and Running Python Scripts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/basics.html">The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/conditionals.html">Conditionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/practice.html">Practice: The Basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions_intro.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/debugging_errors.html">Debugging &amp; Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/practice.html">Practice: Functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Collections</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/collections_loops.html">Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/tuples.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/practice.html">Practice: Collections &amp; Loops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/classes_intro.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/practice.html">Practice: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Computing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/scientific_computing.html">Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/numpy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/pandas.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/next_steps.html">Next Steps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Strong Code</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="good_code_intro.html">Strong Code</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Code Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/answers_intro.html">Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/02-answers.html">Answers: The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/03-answers.html">Answers: Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/04-answers.html">Answers: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/05-answers.html">Answers: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements &amp; License</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://datahub.ucsd.edu/hub/login/hub/user-redirect/git-pull?repo=https%3A//github.com/shanellis/pythonbook&urlpath=tree/pythonbook/content/08-good-code/code_style.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/08-good-code/code_style.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/08-good-code/code_style.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/08-good-code/code_style.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/08-good-code/code_style.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Code Style</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style-guides">Style Guides</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-zen-of-python">The Zen of Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-consistency">Code Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8">PEP8</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-structure">PEP8: Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#blank-lines">Blank Lines</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-indentation">PEP8: Indentation</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-spacing">PEP8: Spacing</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-line-length">PEP8: Line Length</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-imports">PEP8: Imports</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-naming">PEP8: Naming</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-quotes">String Quotes</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-documentation">PEP8: Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-comments">PEP8: Comments</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PEP8: Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="code-style">
+<h1>Code Style<a class="headerlink" href="#code-style" title="Link to this heading">#</a></h1>
+<p>In this chapter, we’ll discuss a number of important considerations to make when styling your code. If you think of writing code like writing an essay, considering code style improves your code the same way editing an essay improves your essay. Often, considering code style is referred to as making our code <em>pythonic</em>, meaning that it adheres to the foundational principles of the Python programming language.</p>
+<p>Learning how to consider and improve your code style up front has a number of benefits. First, your code will be more user-friendly for anyone reading your code. This includes you, who will come back to and edit your code over time. Second, while considering code style and being pythonic is a bit more work up-front on developers (the people writing the code), it pays off on the long run by making your code easier to maintai. Third, by learning this now, early on in your Python journey, you avoid falling into bad habits. It’s much easier to learn something and implement it than it is to unlearn bad habits.</p>
+<p>Note that what we’re discussing here will not affect the functionality of your code. Unlike <em>programmatic errors</em> (i.e. errors and exceptions that require debugging for your code to execute properly), <em>stylistic errors</em> do not affect the functionality of your code. However, <em>stylistic errors</em> are considered bad style and are to be avoided, as they make your code harder to understand.</p>
+<section id="style-guides">
+<h2>Style Guides<a class="headerlink" href="#style-guides" title="Link to this heading">#</a></h2>
+<p>Programming lanugages often have style guides, which include a set of conventions for how to write good code. While many of the concepts we’ll cover here are applicable for other programming languages (i.e. being consistent), some of the specifics (i.e. variable naming conventions) are more specific to programming in Python.</p>
+<div class="alert alert-success">
+Coding style refers to a set of conventions for how to write good code. 
+</div><section id="the-zen-of-python">
+<h3>The Zen of Python<a class="headerlink" href="#the-zen-of-python" title="Link to this heading">#</a></h3>
+<p>To explain the programming philosophy in Python, we’ll first introduce what’s known as <em>The Zen of Python</em>, which lays out the design principles of the individuals who developed the Python programming language. <em>The Zen of Python</em> is included as an easter egg in Python, so if you <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">this</span></code> you’re able to read its contents:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">this</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Zen of Python, by Tim Peters
+
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren&#39;t special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one-- and preferably only one --obvious way to do it.
+Although that way may not be obvious at first unless you&#39;re Dutch.
+Now is better than never.
+Although never is often better than *right* now.
+If the implementation is hard to explain, it&#39;s a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea -- let&#39;s do more of those!
+</pre></div>
+</div>
+</div>
+</div>
+<p>While we won’t discuss each of these above we’ll highlight two of these tenantsthat are particularly pertinent to the considerations in this chapter. Specifically, <strong>beautiful is better than ugly</strong> and <strong>readability counts</strong> together indicate that how one’s code looks matters. Python prioritizes readability in its syntax (relative to other programming languages) and adheres to the idea that “code is more often read than it is written.” As such, those who program in Python are encouraged to consider the beauty and readability of their code. To do so, we’ll cover a handful of considerations here.</p>
+</section>
+<section id="code-consistency">
+<h3>Code Consistency<a class="headerlink" href="#code-consistency" title="Link to this heading">#</a></h3>
+<p>For very understandable and good reasons, beginner programmers often focus on getting their code to execute without throwing an error. In this process, however, they often forget about code style. While we’ll discuss specific considerations to write well-styled python code in this chapter, the most important overarching concept is that <strong>consistency is the goal</strong>. Rules help us achieve consistency, and so we’ll discuss a handful of rules and guidelines to help you write easy-to-read code with consistent code style. However, in doing so, we want you to keep the idea of consistency in mind, as programming is (at least partly) subjective. Since it’s easier to recognize &amp; read consistent style, do your best to follow the style guidelines presented in this chapter and once you pick a way to style your code, it’s best to use that consistently across your code.</p>
+</section>
+<section id="pep8">
+<h3>PEP8<a class="headerlink" href="#pep8" title="Link to this heading">#</a></h3>
+<p>Python Enhancement Proposals (PEPs) are proposals for how something should be or how something shoudl work in the Python programming language. These are written by the people responsible for writing and maintaining the Python programming language. And, PEPs are voted on before incorporation. <strong><a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a></strong>, specfiically, is an accepted proposal that outlines the style guidelines for the Python programming language.</p>
+<div class="alert alert-info">
+<b><a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a></b> is an accepted proposal that outlines the style guide for Python.
+</div>
+<p>The general concepts laid out in PEP8 (and in <em>The Zen of Python</em>) are as follows:</p>
+<ul class="simple">
+<li><p>Be <em>explicit &amp; clear</em>: prioritize readability over cleerness</p></li>
+<li><p>There should be a <em>specific, standard way to do things</em>: use them</p></li>
+<li><p>Coding Style are <em>guidelines</em>: They are designed to help the code, but are not laws</p></li>
+</ul>
+<section id="pep8-structure">
+<h4>PEP8: Structure<a class="headerlink" href="#pep8-structure" title="Link to this heading">#</a></h4>
+<p>Throughout this section we’ll highlight the PEP8 guideline, provide an example of what to avoid and hten demonstrate an improvement on the error. Note that for each “what to avoid” the code <em>will</em> execute without error. This is because we’re discussing <em>stylistic</em> rather than <em>programmatic</em> errors here.</p>
+<section id="blank-lines">
+<h5>Blank Lines<a class="headerlink" href="#blank-lines" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Use 2 blank lines between functions &amp; classes and 1 between methods</p></li>
+<li><p>Use 1 blank line between segments to indicate logical structure</p></li>
+</ul>
+<p>This allows you to, at a glance, identify what pieces of code are there. Using blank lines to separate out components in your code and your code’s overall structure improves its readability.</p>
+<p><strong>What to avoid</strong></p>
+<p>In this example of what to avoid, there are no blank lines between segments within your code, making it more difficult to read. Note that if two functions were provided here, there would be 2 blank lines between the different function definitions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="n">my_nums</span> <span class="o">=</span> <span class="s1">&#39;123&#39;</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">my_nums</span><span class="p">:</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to improve</strong></p>
+<p>To improve the above example, we can use what you see here, with variable definition being separated out from the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, being separated from the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. This code helps separate out the logical structures within a function. Note that we do <em>not</em> add a blank line between each line of code, as that would <em>decrease</em> the readability of the code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Goodness</span>
+<span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    
+    <span class="n">my_nums</span> <span class="o">=</span> <span class="s1">&#39;123&#39;</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">my_nums</span><span class="p">:</span> 
+        <span class="n">output</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pep8-indentation">
+<h5>PEP8: Indentation<a class="headerlink" href="#pep8-indentation" title="Link to this heading">#</a></h5>
+<p>Use spaces to indicate indentation levels, with each level defined as 4 spaces. Programming languages differ on the speicfics of what constitutes a “tab,” but Python has settled on a tab being equivalent to 4 spaces. When you hit “tab” on your keyboard within a Jupyter notebook, for example, the 4 spaces convention is implemented for you automatically, so you may not have even realized this convention before now!</p>
+<p><strong>What to avoid</strong></p>
+<p>Here, you’ll note that, while the <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement is indented, only <em>two</em> spaces are used. Jupyter will alert you to this by making the word <code class="docutils literal notranslate"><span class="pre">print</span></code> red, rather than its typical green.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Words.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Words.
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to improve</strong></p>
+<p>Conversely, here we see the accepted four spaces for a tab/indentation being utilized. Again, remember that the functionality of the code in this example is equivalent to that above; only the style has changed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Words.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Words.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pep8-spacing">
+<h5>PEP8: Spacing<a class="headerlink" href="#pep8-spacing" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Put one (and only one) space between each element</p></li>
+<li><p>Index and assignment don’t have a space between opening &amp; closing ‘()’ or ‘[]’</p></li>
+</ul>
+<p><strong>What to avoid</strong></p>
+<p>Building on the above, spacing within and surrounding your code should be considered. Here, we see that spaces are missing around operators in the first line of code, whereas the second line has too many spaces around the assignment operator. We also see that there are unecessary spaces around the square brackets the list in line two and spaces after each comma missin in that same line of code. Finaly, in the third line of code there is an unecessary space between <code class="docutils literal notranslate"><span class="pre">my_list</span></code> and the square bracket being used for indexing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_var</span><span class="o">=</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">==</span><span class="mi">3</span>
+<span class="n">my_list</span>  <span class="o">=</span>  <span class="p">[</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span> <span class="p">]</span>
+<span class="n">el</span> <span class="o">=</span> <span class="n">my_list</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to improve</strong></p>
+<p>The above spacingissues have all been resolved below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_var</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">3</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">el</span> <span class="o">=</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pep8-line-length">
+<h5>PEP8: Line Length<a class="headerlink" href="#pep8-line-length" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>PEP8 recommends that each line be at most 79 characters long</p></li>
+</ul>
+<p>Note that this specification is somewhat historical, as computers used to require this. As such, there are tools and development environments that will help ensure that no single line of code exceeds 79 characters. However, in Jupyter notebooks, the general guideline “avoid lengthy lines of code or comments” can be used, as super long lines are hard to read at a glance.</p>
+<p><strong>Multi-line</strong></p>
+<p>To achieve this, know that you can always separate lines of code easily after a comma. In Jupyter notebooks, if you hit return/enter on your keyboard after a comma, your code will be aligned appropriately. For example below you see that after the comma in the first line of code, the <code class="docutils literal notranslate"><span class="pre">6</span></code> is automatically aligned with the <code class="docutils literal notranslate"><span class="pre">1</span></code> from the line above. This visually makes it clear that all of the integers are part of the same list <code class="docutils literal notranslate"><span class="pre">my_long_list</span></code>. Using multiple lines to make your code easier to read is a great habit to get into.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_long_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> 
+                <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Further, note that you can explicitly state that the code on the following line is a continuation of the first line of code with a backlash (<code class="docutils literal notranslate"><span class="pre">\</span></code>) at the end of a line, as you see exemplified here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;Python is &#39;</span> <span class="o">+</span> \
+            <span class="s1">&#39;a pretty great language.&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>One Statement Per Line</strong></p>
+<p>While on the topic of line length and readable code, note that while you <em>can</em> often condense multiple statements into one line of code, you usually shouldn’t, as it makes it harder to read.</p>
+<p><strong>What to avoid</strong></p>
+<p>For example, for loops <em>can</em> syntactically be specified on a single line, as you see here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span> <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+10
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to Improve</strong></p>
+<p>However, in he code above, it’s harder to read at a glance. Instead, what is being looped over should go on the first line with what code is being executed contained in an indented code block on lines underneat the <code class="docutils literal notranslate"><span class="pre">for</span></code> statement, as this is easier to read than the above example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+10
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pep8-imports">
+<h5>PEP8: Imports<a class="headerlink" href="#pep8-imports" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Import one module per line</p></li>
+<li><p>Avoid <code class="docutils literal notranslate"><span class="pre">*</span></code> imports</p></li>
+<li><p>Use the import order: standard library; 3rd party packages; local/custom code</p></li>
+</ul>
+<p><strong>What to avoid</strong></p>
+<p>While you may still be learning which packages are part of the standard library and which are third party packages, this will become more second nature over time. And, we haven’t yet discussed local or custom code, but this includes functions/classes/code you’ve written and stored in <code class="docutils literal notranslate"><span class="pre">.py</span></code> files. This should be imported last.</p>
+<p>In this example here, there are a number of issues! First, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> is a third party package, while <code class="docutils literal notranslate"><span class="pre">os</span></code> and <code class="docutils literal notranslate"><span class="pre">sys</span></code> are part of the standard library, so the order should be flipped. Second <code class="docutils literal notranslate"><span class="pre">*</span></code> imports are to be avoided, as it would be unclear in any resultant code which functionality came from the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> package. Third, <code class="docutils literal notranslate"><span class="pre">os</span></code> and <code class="docutils literal notranslate"><span class="pre">sys</span></code> should be imported on separate lines to be most clear.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to Improve</strong></p>
+<p>The above issues have been resolved in this set of imports:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pep8-naming">
+<h5>PEP8: Naming<a class="headerlink" href="#pep8-naming" title="Link to this heading">#</a></h5>
+<ul class="simple">
+<li><p>Use descriptive names for all modules, variables, functions and classes, that are longer than 1 character</p></li>
+</ul>
+<p><strong>What to avoid</strong></p>
+<p>Here, single character, non-descriptive names are used.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">24</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to Improve</strong></p>
+<p>Instead, python encourages object names that describe what is stored in the object or what the object is or does.</p>
+<p>This is also important when you want to change an object name after the fact. If you were to “Find + Replace All” on the letter <code class="docutils literal notranslate"><span class="pre">a</span></code> that would change every single a in your code. However, if you “Find + Replace All” for <code class="docutils literal notranslate"><span class="pre">n_filters</span></code>, this would likely only change the places in your code you actually intended to replace.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n_filters</span> <span class="o">=</span> <span class="mi">12</span>
+<span class="n">n_freqs</span> <span class="o">=</span> <span class="mi">24</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Naming Style</strong></p>
+<ul class="simple">
+<li><p>CapWords (leading capitals, no separation) for Classes</p></li>
+<li><p>snake_case (all lowercase, underscore separator) for variables, functions, and modules</p></li>
+</ul>
+<p>Note: snake_case is easier to read than CapWords, so we use snake_case for the things (variables, functions) that we name more frequently.</p>
+<p><strong>What to avoid</strong></p>
+<p>While we’ve been using this convention, it’s important to state it explicitly here. Pythonistas (those who program in python) expect the above conventions to be used within their code. Thus, if they see a function <code class="docutils literal notranslate"><span class="pre">MyFunc</span></code>, there will be cognitive dissonance, as CapWords is to be used for classes, not functions. The same for <code class="docutils literal notranslate"><span class="pre">my_class</span></code>; this would require the reader of this code to work harder than necessary, as snake_case is to be used for functions, variables, and modules, not classes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MyFunc</span><span class="p">():</span>
+    <span class="k">pass</span>
+    
+<span class="k">class</span> <span class="nc">my_class</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">():</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to Improve</strong></p>
+<p>Intead, follow the guideline above. Also, note that we’ve added two lines between the function and class definitions (to follow the guideline earlier in this chapter).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">MyClass</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">():</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="string-quotes">
+<h5>String Quotes<a class="headerlink" href="#string-quotes" title="Link to this heading">#</a></h5>
+<p>In Python, single-quoted strings and double-quoted strings are the same. Note that <em>PEP8 does not make a recommendation for this</em>. Rather, you are encouraged to be consistent: <strong>pick a rule and stick to it.</strong> (The author of this books is <em>exceptionally</em> bad at following this advice.)</p>
+<p>One place, however, to choose one approach over another is when a string contains single or double quote character string literal. In this case, use the other one that’s not included in the string to avoid backslashes in the string, as this improves readability. For example…</p>
+<p><strong>What to avoid</strong></p>
+<p>As you see below, you <em>could</em> use a backslash to “escape” the apostraphe within the string; however, this makes the string harder to read.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;Prof</span><span class="se">\&#39;</span><span class="s1">s Project&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to Improve</strong></p>
+<p>Instead, using double quotes to specify the string with the apostraphe (single quote) inside the string leads to more readable code, and is thus preferable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Prof&#39;s Project&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="pep8-documentation">
+<h4>PEP8: Documentation<a class="headerlink" href="#pep8-documentation" title="Link to this heading">#</a></h4>
+<p>While documentation (including how to write docstrings and when, how and where to include code comments) will be covered more explicitly in the next chapter, we’ll discuss the style considerations for including code comments and docstrins at this point.</p>
+<section id="pep8-comments">
+<h5>PEP8: Comments<a class="headerlink" href="#pep8-comments" title="Link to this heading">#</a></h5>
+<p>First, out-of-date comments are worse than no comments at all. Keep your comments up-to-date. While we encourage writing comments to explain your thinking as you’re writing the code, you want to be sure to re-visit your code comments during your “editing” and “improving code style” sessions to ensure that what is stated in the comments matches what is done in your code to avoid confusion for any readers of your code.</p>
+<p><strong>Block comments</strong></p>
+<p>Block comments are comments that are on their own line and come before the code they intend to describe. They follow the following conventions:</p>
+<ul class="simple">
+<li><p>apply to some (or all) code that follows them</p></li>
+<li><p>are indented to the same level as that code</p></li>
+<li><p>each line of a block comment starts with a # and a single space</p></li>
+</ul>
+<p><strong>What to avoid</strong></p>
+<p>In the function below, while the code comment does come before the code it describes (good!), it is not at the same level of indentation of the code it describes (not good!) <em>and</em> there is no space between the pound sign/hashtag and the code comment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">encourage</span><span class="p">():</span>
+<span class="c1">#help try to destress students by picking one thing from the following list using random</span>
+    <span class="n">statements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;You&#39;ve totally got this!&quot;</span><span class="p">,</span><span class="s2">&quot;You&#39;re so close!&quot;</span><span class="p">,</span><span class="s2">&quot;You&#39;re going to do great!&quot;</span><span class="p">,</span><span class="s2">&quot;Remember to take breaks!&quot;</span><span class="p">,</span><span class="s2">&quot;Sleep, water, and food are really important!&quot;</span><span class="p">]</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">statements</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="n">encourage</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;You&#39;re going to do great!&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to Improve</strong></p>
+<p>Intead, here, we see improved code comment style by 1) having the block comment at the same level of indentation as the code it describes, 2) having a space in between the <code class="docutils literal notranslate"><span class="pre">#</span></code> and the comment, and 3) breaking up the comment onto two separate lines to avoid having a too-long comment.</p>
+<p>The code style is also further improved by considering spacing within the <code class="docutils literal notranslate"><span class="pre">statements</span></code> list <em>and</em> considering line spacing throughout the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">encourage</span><span class="p">():</span>
+    
+    <span class="c1"># Randomly pick from list of de-stressing statements</span>
+    <span class="c1"># to help students as they finish the quarter.</span>
+    <span class="n">statements</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;You&#39;ve totally got this!&quot;</span><span class="p">,</span> 
+                  <span class="s2">&quot;You&#39;re so close!&quot;</span><span class="p">,</span> 
+                  <span class="s2">&quot;You&#39;re going to do great!&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;Remember to take breaks!&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;Sleep, water, and food are really important!&quot;</span><span class="p">]</span>
+    
+    <span class="n">out</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">statements</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">out</span>
+
+<span class="n">encourage</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;You&#39;re so close!&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Inline comments</strong></p>
+<p>Inline comments are those comments on the same line as the code they’re describing. These are:</p>
+<ul class="simple">
+<li><p>to be used sparingly</p></li>
+<li><p>to be separated by at least two spaces from the statement</p></li>
+<li><p>start with a # and a single space</p></li>
+</ul>
+<p><strong>What to avoid</strong></p>
+<p>For example, we’ll avoid inline comments that 1) are right up against the code they describe and 2) that fail to have a space after the <code class="docutils literal notranslate"><span class="pre">#</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encourage</span><span class="p">()</span><span class="c1">#words of encouragement</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Sleep, water, and food are really important!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How to Improve</strong></p>
+<p>Instead, we’ll have two spaces after the code, and a space after the <code class="docutils literal notranslate"><span class="pre">#</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encourage</span><span class="p">()</span>  <span class="c1"># words of encouragement</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;You&#39;re going to do great!&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h5>PEP8: Documentation<a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
+<p>We’ll cover docstrings in the following chapter, so for now we’ll just specify that PEP8 specifies that a descriptive docstring should be written and included for all functions &amp; classes. We’ll discuss how to approach this shortly!</p>
+</section>
+</section>
+</section>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>Q1. <strong>Considering code style, which of these is best - A, B, or C?</strong></p>
+<p>A)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squared</span><span class="p">(</span><span class="n">input_number</span><span class="p">):</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="n">input_number</span>
+    <span class="n">power</span> <span class="o">=</span> <span class="mi">2</span>    
+    <span class="n">output</span> <span class="o">=</span> <span class="n">val</span> <span class="o">**</span> <span class="n">power</span>
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<p>B)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squared</span><span class="p">(</span><span class="n">input_number</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    
+    <span class="n">output</span> <span class="o">=</span> <span class="n">input_number</span> <span class="o">**</span> <span class="n">power</span>
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<p>C)</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">squared</span><span class="p">(</span><span class="n">input_number</span><span class="p">):</span>
+    
+    <span class="n">val</span> <span class="o">=</span> <span class="n">input_number</span>
+    <span class="n">power</span> <span class="o">=</span> <span class="mi">2</span>
+    
+    <span class="n">output</span> <span class="o">=</span> <span class="n">val</span> <span class="o">**</span> <span class="n">power</span>
+    
+    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<p>Q2. <strong>Which of the following uses PEP-approved spacing?</strong></p>
+<p>A) <code class="docutils literal notranslate"><span class="pre">my_list=[1,2,3,4,5]</span></code><br />
+B) <code class="docutils literal notranslate"><span class="pre">my_list</span> <span class="pre">=</span> <span class="pre">[1,2,3,4,5]</span></code><br />
+C) <code class="docutils literal notranslate"><span class="pre">my_list</span>&#160; <span class="pre">=</span>&#160; <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code><br />
+D) <code class="docutils literal notranslate"><span class="pre">my_list=[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code><br />
+E) <code class="docutils literal notranslate"><span class="pre">my_list</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code></p>
+<p>Q3. <strong>If you were reading code and came cross the following, which of the following would you expect to be a class?</strong></p>
+<p>A) <code class="docutils literal notranslate"><span class="pre">Phillies_Game</span></code><br />
+B) <code class="docutils literal notranslate"><span class="pre">PhilliesGame</span></code><br />
+C) <code class="docutils literal notranslate"><span class="pre">phillies_game</span></code><br />
+D) <code class="docutils literal notranslate"><span class="pre">philliesgame</span></code><br />
+E) <code class="docutils literal notranslate"><span class="pre">PhIlLiEsGaMe</span></code></p>
+<p>Q4. <strong>If you were reading code and came cross the following, which of the following would you expect to be a function or variable name?</strong></p>
+<p>A) <code class="docutils literal notranslate"><span class="pre">Phillies_Game</span></code><br />
+B) <code class="docutils literal notranslate"><span class="pre">PhilliesGame</span></code><br />
+C) <code class="docutils literal notranslate"><span class="pre">phillies_game</span></code><br />
+D) <code class="docutils literal notranslate"><span class="pre">philliesgame</span></code><br />
+E) <code class="docutils literal notranslate"><span class="pre">PhIlLiEsGaMe</span></code></p>
+<p>Q5. <strong>Which of the following would not cause an error in Python and would store the string <em>You’re so close!</em> ?</strong></p>
+<p>A) <code class="docutils literal notranslate"><span class="pre">my_string</span> <span class="pre">=</span> <span class="pre">&quot;You're</span> <span class="pre">so</span> <span class="pre">close!&quot;</span></code><br />
+B) <code class="docutils literal notranslate"><span class="pre">my_string</span> <span class="pre">=</span> <span class="pre">&quot;You&quot;re</span> <span class="pre">so</span> <span class="pre">close!&quot;</span></code><br />
+C) <code class="docutils literal notranslate"><span class="pre">my_string</span> <span class="pre">=</span> <span class="pre">'You''re</span> <span class="pre">so</span> <span class="pre">close!'</span></code><br />
+D) <code class="docutils literal notranslate"><span class="pre">my_string</span> <span class="pre">=</span> <span class="pre">&quot;You\\'re</span> <span class="pre">so</span> <span class="pre">close&quot;</span></code><br />
+E) <code class="docutils literal notranslate"><span class="pre">my_string</span> <span class="pre">=</span> <span class="pre">'You're</span> <span class="pre">so</span> <span class="pre">close!'</span></code></p>
+<p>Q6. <strong>Identify and improve all of the PEP8/Code Style violations found in the following code</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MyFunction</span><span class="p">(</span><span class="n">input_num</span><span class="p">):</span>
+    
+    <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+    <span class="k">if</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span> <span class="n">ind</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="n">ind</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">qq</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">my_list</span> <span class="p">[</span><span class="n">ind</span><span class="p">:]:</span>
+        <span class="n">qq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">input_num</span><span class="o">/</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">qq</span>
+</pre></div>
+</div>
+<p>Q7. <strong>Identify and improve all of the PEP8/Code Style violations found in the following code</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ff</span><span class="p">(</span><span class="n">jj</span><span class="p">):</span>
+    <span class="n">oo</span> <span class="o">=</span> <span class="nb">list</span><span class="p">();</span> <span class="n">jj</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">jj</span><span class="p">)</span> 
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">jj</span><span class="p">:</span> <span class="n">oo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">ii</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="s1">&#39;+&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">oo</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/08-good-code"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="good_code_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Strong Code</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="documentation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Documentation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#style-guides">Style Guides</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-zen-of-python">The Zen of Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-consistency">Code Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8">PEP8</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-structure">PEP8: Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#blank-lines">Blank Lines</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-indentation">PEP8: Indentation</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-spacing">PEP8: Spacing</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-line-length">PEP8: Line Length</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-imports">PEP8: Imports</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-naming">PEP8: Naming</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#string-quotes">String Quotes</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-documentation">PEP8: Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#pep8-comments">PEP8: Comments</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">PEP8: Documentation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shannon E. Ellis, Karan Narula, & Thomas Donoghue
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
