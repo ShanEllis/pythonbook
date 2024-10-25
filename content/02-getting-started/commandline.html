@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Command Line Basics &#8212; Introduction to Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/02-getting-started/commandline';</script>
+    <link rel="canonical" href="content/content/02-getting-started/commandline.html" />
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Installing Python" href="installation.html" />
+    <link rel="prev" title="Why this book?" href="../01-welcome/why.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/who.html">Who is this for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/why.html">Why this book?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Command Line Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jupyter_notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python-scripts.html">Writing and Running Python Scripts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/conditionals.html">Conditionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/practice.html">Practice: The Basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/debugging_errors.html">Debugging &amp; Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/practice.html">Practice: Functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Collections</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/tuples.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/practice.html">Practice: Collections &amp; Loops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/practice.html">Practice: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Computing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/scientific_computing.html">Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/numpy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/pandas.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/next_steps.html">Next Steps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Strong Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/good_code_intro.html">Strong Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/code_style.html">Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/testing.html">Code Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/answers_intro.html">Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/02-answers.html">Answers: The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/03-answers.html">Answers: Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/04-answers.html">Answers: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/05-answers.html">Answers: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements &amp; License</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/02-getting-started/commandline.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/02-getting-started/commandline.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/02-getting-started/commandline.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Command Line Basics</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-command-line">What is the command line?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-why-should-i-learn-the-command-line">But why should I learn the command line?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-command-line">Opening the command line</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mac-os">Mac OS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-command-line">Navigating the command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-commands">Basic Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pwd"><code class="docutils literal notranslate"><span class="pre">pwd</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ls"><code class="docutils literal notranslate"><span class="pre">ls</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cd"><code class="docutils literal notranslate"><span class="pre">cd</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mkdir"><code class="docutils literal notranslate"><span class="pre">mkdir</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#touch"><code class="docutils literal notranslate"><span class="pre">touch</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rm"><code class="docutils literal notranslate"><span class="pre">rm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rmdir"><code class="docutils literal notranslate"><span class="pre">rmdir</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clear"><code class="docutils literal notranslate"><span class="pre">clear</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-for-python">Command line for python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-python-interpreter">Opening a python interpreter</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="command-line-basics">
+<h1>Command Line Basics<a class="headerlink" href="#command-line-basics" title="Link to this heading">#</a></h1>
+<p><strong>Pre-requisite</strong>: You should have finished the <a class="reference internal" href="#/02-getting-started/installation.md"><span class="xref myst">installation</span></a> guide.</p>
+<section id="what-is-the-command-line">
+<h2>What is the command line?<a class="headerlink" href="#what-is-the-command-line" title="Link to this heading">#</a></h2>
+<p>The command line is a text interface for your computer. It’s a program that takes in commands, which it passes on to the computer’s operating system to run. From the command line, you can navigate through files and folders on your computer, just as you would with Windows Explorer on Windows or Finder on Mac OS. You can also run programs from the command line, which <strong>can</strong> be much faster than clicking around in a graphical interface.</p>
+</section>
+<section id="but-why-should-i-learn-the-command-line">
+<h2>But why should I learn the command line?<a class="headerlink" href="#but-why-should-i-learn-the-command-line" title="Link to this heading">#</a></h2>
+<p>Well firstly, it looks cool! I mean imagine yourself sitting in middle of a coffee shop
+with your laptop and you are typing some commands in a black window with green text. It looks like you are hacking into some top secret government server. But that’s not the only reason. Here are some more reasons:</p>
+<ul class="simple">
+<li><p><strong>Speed</strong>: You can do things much faster using the command line. For example, you can navigate to a folder using a single command, instead of clicking through a series of folders in a graphical interface.</p></li>
+<li><p><strong>Power</strong>: You can do things with the command line that you can’t do with a graphical interface. For example, you can search for files that contain a specific word, or replace all instances of a word in a file.</p></li>
+<li><p><strong>Scripting</strong>: You can write scripts to automate tasks using the command line. For example, you could write a script that backs up all of your files to an external hard drive.</p></li>
+<li><p><strong>Remote Access</strong>: You can use the command line to connect to other computers over a network, and run commands on them. This can be useful for managing servers, or for working on a computer that doesn’t have a graphical interface.</p></li>
+<li><p><strong>Learning</strong>: If you want to learn more about how computers work, the command line is a good place to start. It gives you a better understanding of how the computer’s operating system works, and how programs interact with it.</p></li>
+</ul>
+<p>These are just a few reasons to learn the command line. If you want to get more inspiration, check out this awesome <a class="reference external" href="https://github.com/agarrharr/awesome-cli-apps">list of Command Line Interface(CLI) applications</a>. A cool one that I found is <a class="reference external" href="https://github.com/Rigellute/spotify-tui?tab=readme-ov-file#windows-10">spotify-tui</a> which provides a spotify client in the terminal!</p>
+<p>![insert images of spotify TUI]</p>
+<p>Let’s get started with the command line!</p>
+</section>
+<section id="opening-the-command-line">
+<h2>Opening the command line<a class="headerlink" href="#opening-the-command-line" title="Link to this heading">#</a></h2>
+<section id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
+<p>If you are using Windows 10/11, we will be using a tool called Windows Powershell.</p>
+<ul class="simple">
+<li><p>Open your start menu (click the windows button) and search for <code class="docutils literal notranslate"><span class="pre">Powershell</span></code>. Click on the <code class="docutils literal notranslate"><span class="pre">Windows</span> <span class="pre">Powershell</span></code> app to open it.</p>
+<ul>
+<li><p>Windows Powershell should come preinstalled with all modern versions of windows. If you can’t find it, you can download it from <a class="reference external" href="https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.4">here</a>.</p></li>
+</ul>
+</li>
+<li><p>Once you open the app, you should see a black window with white text. This is the command line!</p></li>
+</ul>
+<p><img alt="Windows Powershell" src="../../_images/windows-powershell.png" /></p>
+</section>
+<section id="mac-os">
+<h3>Mac OS<a class="headerlink" href="#mac-os" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Open your <code class="docutils literal notranslate"><span class="pre">Finder</span></code> and navigate to <code class="docutils literal notranslate"><span class="pre">Applications</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Utilities</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>. Click on the <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> app to open it.</p>
+<ul>
+<li><p>You can also use the <code class="docutils literal notranslate"><span class="pre">Spotlight</span> <span class="pre">Search</span></code> by pressing <code class="docutils literal notranslate"><span class="pre">Cmd</span> <span class="pre">+</span> <span class="pre">Space</span></code> and typing <code class="docutils literal notranslate"><span class="pre">Terminal</span></code>.</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="Mac Terminal" src="content/images/02-getting-started/mac-terminal.png" /></p>
+</section>
+<section id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Most Linux distributions come with a terminal pre-installed. You can open it by searching for <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> in your application menu.</p></li>
+</ul>
+<p><img alt="Linux Terminal" src="../../_images/linux-terminal.png" /></p>
+</section>
+</section>
+<section id="navigating-the-command-line">
+<h2>Navigating the command line<a class="headerlink" href="#navigating-the-command-line" title="Link to this heading">#</a></h2>
+<p>Once you have opened the command line, you should see a small prompt at the start, just like in the images above. This is called the command prompt and is where you can enter commands.</p>
+<p>The command prompt usually shows the current directory that you are in. For example, in the image above, the command prompt shows <code class="docutils literal notranslate"><span class="pre">C:\Users\username&gt;</span></code> in Windows Powershell, which means that the current directory is <code class="docutils literal notranslate"><span class="pre">C:\Users\username</span></code>. Similarly in the Mac and linux terminal, the command prompt shows <code class="docutils literal notranslate"><span class="pre">username&#64;hostname</span> <span class="pre">~</span> <span class="pre">%</span></code>, which means that the current directory is <code class="docutils literal notranslate"><span class="pre">~</span></code> (the home directory of the user). A directory is exactly like a folder on your computer. Lets get started with some basic commands:</p>
+</section>
+<section id="basic-commands">
+<h2>Basic Commands<a class="headerlink" href="#basic-commands" title="Link to this heading">#</a></h2>
+<section id="pwd">
+<h3><code class="docutils literal notranslate"><span class="pre">pwd</span></code><a class="headerlink" href="#pwd" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">pwd</span></code> stands for <code class="docutils literal notranslate"><span class="pre">Print</span> <span class="pre">Working</span> <span class="pre">Directory</span></code>. It shows the current directory that you are in. This is useful when you are not sure where you are in the file system.</p>
+<p>Go ahead and in your command line, type <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>. You should see the current directory that you are in. This becomes useful when you are navigating through the file system.</p>
+</section>
+<section id="ls">
+<h3><code class="docutils literal notranslate"><span class="pre">ls</span></code><a class="headerlink" href="#ls" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ls</span></code> stands for <code class="docutils literal notranslate"><span class="pre">List</span></code>. It lists all the files and folders in the current directory. Go ahead and type <code class="docutils literal notranslate"><span class="pre">ls</span></code> in your command line and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code>. You should see a list of files and folders in the current directory.</p>
+<p>A fun exercise to understand what your terminal is doing would be to do the following:</p>
+<ol class="arabic simple">
+<li><p>open your terminal and get your current working directory by ysing the <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command.</p></li>
+<li><p>Open your file explorer and navigate to the same directory.</p></li>
+<li><p>Compare the files and folders listed in the terminal with the ones in the file explorer. You can do this by using the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command in the terminal and visually comparing the files and folders in the file explorer.</p></li>
+</ol>
+<p>The ls command is a very useful command and you will be using it a lot to navigate through the file system.</p>
+</section>
+<section id="cd">
+<h3><code class="docutils literal notranslate"><span class="pre">cd</span></code><a class="headerlink" href="#cd" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">cd</span></code> stands for <code class="docutils literal notranslate"><span class="pre">Change</span> <span class="pre">Directory</span></code>. It is used to navigate through the file system. You can use it to move to a different directory.</p>
+<p>To move to a directory, you need to provide the path to the directory. There are two types of paths that you can provide:</p>
+<ol class="arabic simple">
+<li><p><strong>Absolute Path</strong>: An absolute path is the full path to a directory. For example, <code class="docutils literal notranslate"><span class="pre">C:\Users\username\Documents</span></code> is an absolute path to the <code class="docutils literal notranslate"><span class="pre">Documents</span></code> directory in Windows. You can use an absolute path to move to any directory on your computer.</p></li>
+<li><p><strong>Relative Path</strong>: A relative path is the path to a directory relative to the current directory. For example, if you are in the <code class="docutils literal notranslate"><span class="pre">C:\Users\username</span></code> directory in Windows, the relative path to the <code class="docutils literal notranslate"><span class="pre">Documents</span></code> directory would be <code class="docutils literal notranslate"><span class="pre">Documents</span></code>. You can use a relative path to move to directories that are nearby.</p></li>
+</ol>
+<p>To move to a directory, you need to provide the path to the directory. For example, to move to the <code class="docutils literal notranslate"><span class="pre">Documents</span></code> directory in Windows, you can use the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Documents</span>
+</pre></div>
+</div>
+<p>Go ahead and try it out in your command line. first run the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to see the files and folders in the current directory. Then choose a directory and run the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command to move to that directory. Run the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command again to see the files and folders in the new directory.</p>
+</section>
+<section id="mkdir">
+<h3><code class="docutils literal notranslate"><span class="pre">mkdir</span></code><a class="headerlink" href="#mkdir" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> stands for <code class="docutils literal notranslate"><span class="pre">Make</span> <span class="pre">Directory</span></code>. It is used to create a new directory. You need to provide the name of the directory that you want to create. For example, to create a directory called <code class="docutils literal notranslate"><span class="pre">test</span></code>, you can use the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="n">test</span>
+</pre></div>
+</div>
+<p>Go ahead and try it out in your command line. Run the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to see the files and folders in the current directory. Then run the <code class="docutils literal notranslate"><span class="pre">mkdir</span></code> command to create a new directory. Run the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command again to see the files and folders in the current directory. You should see the new directory that you created.</p>
+</section>
+<section id="touch">
+<h3><code class="docutils literal notranslate"><span class="pre">touch</span></code><a class="headerlink" href="#touch" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">touch</span></code> is used to create a new file. You need to provide the name of the file that you want to create. For example, to create a file called <code class="docutils literal notranslate"><span class="pre">test.txt</span></code>, you can use the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">touch</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>Go ahead and try it out in your command line. Run the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command to see the files and folders in the current directory. Then run the <code class="docutils literal notranslate"><span class="pre">touch</span></code> command to create a new file. Run the <code class="docutils literal notranslate"><span class="pre">ls</span></code> command again to see the files and folders in the current directory. You should see the new file that you created.</p>
+</section>
+<section id="rm">
+<h3><code class="docutils literal notranslate"><span class="pre">rm</span></code><a class="headerlink" href="#rm" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">rm</span></code> stands for <code class="docutils literal notranslate"><span class="pre">Remove</span></code>. It is used to delete files and directories. You need to provide the name of the file or directory that you want to delete. For example, to delete a file called <code class="docutils literal notranslate"><span class="pre">test.txt</span></code>, you can use the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rm</span> <span class="n">test</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>You can now remove/delete a file you’ve created.</p>
+</section>
+<section id="rmdir">
+<h3><code class="docutils literal notranslate"><span class="pre">rmdir</span></code><a class="headerlink" href="#rmdir" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">rmdir</span></code> stands for <code class="docutils literal notranslate"><span class="pre">Remove</span> <span class="pre">Directory</span></code>. It is used to delete directories. You need to provide the name of the directory that you want to delete. For example, to delete a directory called <code class="docutils literal notranslate"><span class="pre">test</span></code>, you can use the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rmdir</span> <span class="n">test</span>
+</pre></div>
+</div>
+<p>You can now remove/delete a directory you’ve created.</p>
+</section>
+<section id="clear">
+<h3><code class="docutils literal notranslate"><span class="pre">clear</span></code><a class="headerlink" href="#clear" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">clear</span></code> is used to clear the terminal screen. It is useful when the terminal screen is cluttered with a lot of text and you want to start fresh.</p>
+</section>
+</section>
+<section id="command-line-for-python">
+<h2>Command line for python<a class="headerlink" href="#command-line-for-python" title="Link to this heading">#</a></h2>
+<p>Now that you have learned the basics of the command line, let’s see how you can use it to run python programs.</p>
+<section id="opening-a-python-interpreter">
+<h3>Opening a python interpreter<a class="headerlink" href="#opening-a-python-interpreter" title="Link to this heading">#</a></h3>
+<p>You can open a python interpreter in the command line by typing <code class="docutils literal notranslate"><span class="pre">python</span></code> and pressing <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p>
+<p><img alt="Python Interpreter" src="../../_images/python-interpreter.png" /></p>
+<p>Now you can type python commands directly into the command line and see the output. For example, you can type <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">World!&quot;)</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to see the output.</p>
+<p>You can also use the python interpreter as a calculator. For example, you can type <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">2</span></code> and press <code class="docutils literal notranslate"><span class="pre">Enter</span></code> to see the output.</p>
+<p>In the next section we will learn how to write and run python programs from the command line.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/02-getting-started"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../01-welcome/why.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Why this book?</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="installation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Installing Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-command-line">What is the command line?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#but-why-should-i-learn-the-command-line">But why should I learn the command line?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-the-command-line">Opening the command line</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mac-os">Mac OS</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-command-line">Navigating the command line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-commands">Basic Commands</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pwd"><code class="docutils literal notranslate"><span class="pre">pwd</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ls"><code class="docutils literal notranslate"><span class="pre">ls</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cd"><code class="docutils literal notranslate"><span class="pre">cd</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mkdir"><code class="docutils literal notranslate"><span class="pre">mkdir</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#touch"><code class="docutils literal notranslate"><span class="pre">touch</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rm"><code class="docutils literal notranslate"><span class="pre">rm</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rmdir"><code class="docutils literal notranslate"><span class="pre">rmdir</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clear"><code class="docutils literal notranslate"><span class="pre">clear</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-for-python">Command line for python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opening-a-python-interpreter">Opening a python interpreter</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shannon E. Ellis, Karan Narula, & Thomas Donoghue
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,950 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Objects &#8212; Introduction to Python</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/06-classes/objects';</script>
+    <link rel="canonical" href="content/content/06-classes/objects.html" />
+    <link rel="icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Modules" href="modules.html" />
+    <link rel="prev" title="Practice: Collections &amp; Loops" href="../05-collections/practice.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Introduction to Python - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Introduction to Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/who.html">Who is this for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/why.html">Why this book?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/commandline.html">Command Line Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/installation.html">Installing Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/jupyter_notebooks.html">Jupyter Notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-getting-started/python-scripts.html">Writing and Running Python Scripts</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/variables.html">Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/operators.html">Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/conditionals.html">Conditionals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-basics/practice.html">Practice: The Basics</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/debugging_errors.html">Debugging &amp; Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-functions/practice.html">Practice: Functions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Collections</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/tuples.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/practice.html">Practice: Collections &amp; Loops</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice.html">Practice: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Computing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/scientific_computing.html">Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/numpy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/pandas.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/next_steps.html">Next Steps</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Strong Code</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/good_code_intro.html">Strong Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/code_style.html">Code Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-good-code/testing.html">Code Testing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Answers</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/answers_intro.html">Answers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/02-answers.html">Answers: The Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/03-answers.html">Answers: Collections &amp; Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/04-answers.html">Answers: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/05-answers.html">Answers: Classes</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements &amp; License</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../acknowledgements.html">Acknowledgements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LICENSE.html">License</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://datahub.ucsd.edu/hub/login/hub/user-redirect/git-pull?repo=https%3A//github.com/shanellis/pythonbook&urlpath=tree/pythonbook/content/06-classes/objects.ipynb&branch=master" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onJupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/06-classes/objects.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/06-classes/objects.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/06-classes/objects.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/06-classes/objects.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objects</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-motivation-storing-dates">Object Motivation: Storing Dates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-object-date">Example Object: Date</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes-methods">Attributes &amp; Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-attributes"><code class="docutils literal notranslate"><span class="pre">date</span></code> Attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-methods"><code class="docutils literal notranslate"><span class="pre">date</span></code> Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-summary">Objects: Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="objects">
+<h1>Objects<a class="headerlink" href="#objects" title="Link to this heading">#</a></h1>
+<p>We’ll get to <em>fully</em> understanding what this means, but, for now, take my word for it: <strong>Everything in Python is an object</strong>. There are objects we’ve covered so far, like integer-type objects and list-type objects. <em>But</em>, there are countless other types of objects in Python, with each object having special <em>attributes</em> and <em>methods</em> that make operationg on an object simpler.</p>
+<p>In this chapter, we’ll work with <code class="docutils literal notranslate"><span class="pre">date</span></code> and <code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects to introduce the concepts of objects, object-oriented programming (OOP), and methods/attributes before we discuss how you can create your own object types in the next chapter.</p>
+<section id="object-motivation-storing-dates">
+<h2>Object Motivation: Storing Dates<a class="headerlink" href="#object-motivation-storing-dates" title="Link to this heading">#</a></h2>
+<p>To motivate our thinking, consider how you might go about storing a date using the variable types we’ve discussed so far. You can likely think about a few possible approaches. Maybe you’d want to store the date as a string. And, while that is possible, you wouldn’t be able to <em>operate</em> on that string. More specifically, if you tried to determine how many days there were between two dates stored as strings, you wouldn’t be able to do it. That’s not a property of strings.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A date, stored as a string</span>
+<span class="n">date_string</span> <span class="o">=</span> <span class="s1">&#39;29/09/1988&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">date_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29/09/1988
+</pre></div>
+</div>
+</div>
+</div>
+<p>In a similar vein, you could consider storing each compenent of your date as a separate element in a list. If stored as integers, you could slice this list and carry out operators on each integer, but the approach to determine the number of days between two lists of dates is not straightforward.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A date, stored as a list of numbers</span>
+<span class="n">date_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">29</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1988</span><span class="p">]</span>
+<span class="n">date_list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[29, 9, 1988]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similar logic follows for other variable types we’ve discussed so far. It’s <em>possible</em> to <em>store</em> the information using the variable types we’ve discussed thus far…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A date, stored as a series of numbers</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">29</span>
+<span class="n">month</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">1988</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">day</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A date, stored as a dictionary</span>
+<span class="n">date_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;day&#39;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="mi">1988</span><span class="p">}</span>
+<span class="n">date_dictionary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;day&#39;: 29, &#39;month&#39;: 9, &#39;year&#39;: 1988}
+</pre></div>
+</div>
+</div>
+</div>
+<p>But, carrying out meaningful operations on a date with any of these variable types is <em>difficult</em>. This is where objects become very helpful!</p>
+<p>To formally define what an object is in Python. Objects are an organization of data (called <strong>attributes</strong>) and associated code that operates on taht data (which are specific functions defined on the objects directly, called <strong>methods</strong>).</p>
+<p>Objects allow for information to be stored and operations to be carried out on them.</p>
+<div class="alert alert-success">
+<b>Objects</b> are an organization of data (called <b>attributes</b>), with associated code to operate on that data (functions defined on the objects, called <b>methods</b>).
+</div></section>
+<section id="example-object-date">
+<h2>Example Object: Date<a class="headerlink" href="#example-object-date" title="Link to this heading">#</a></h2>
+<p>While the standard library makes certain object types available to you, there are many other object types that exist within the Python ecosystem. To utilize these other object types, they must first be imported. We’ll discuss the syntax for doing so in more detail shortly; however, for now, we’ll just share how to do so for this example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import a date object</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’ll now work create our first date type object! We’ll do so by very explicitly first creating three variables, each of which stores an integer: <code class="docutils literal notranslate"><span class="pre">day</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, and <code class="docutils literal notranslate"><span class="pre">year</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the data we want to store in our date object</span>
+<span class="n">day</span> <span class="o">=</span> <span class="mi">29</span>
+<span class="n">month</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="n">year</span> <span class="o">=</span> <span class="mi">1988</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We’re now ready to define our first <code class="docutils literal notranslate"><span class="pre">date</span></code>-type object.</p>
+<p>We do this using the following syntax:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a date object</span>
+<span class="n">my_date</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1988-09-29
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above we see that we call the object type <code class="docutils literal notranslate"><span class="pre">date(</span></code> and pass in the <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, and <code class="docutils literal notranslate"><span class="pre">day</span></code> to create a <code class="docutils literal notranslate"><span class="pre">date</span></code>-type object, storing it in the variable <code class="docutils literal notranslate"><span class="pre">my_date</span></code>.</p>
+<p>If we were to print the contents of the <code class="docutils literal notranslate"><span class="pre">date</span></code> type object, we would see that it stores the date ‘1988-09-29’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1988-09-29
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also see what the <code class="docutils literal notranslate"><span class="pre">type</span></code> of this variable is. Below, we see that <code class="docutils literal notranslate"><span class="pre">my_date</span></code> is a <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code> object. We’ll see now what <em>exactly</em> that means!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check what type of thing `my_date` is</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">my_date</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.date
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="attributes-methods">
+<h2>Attributes &amp; Methods<a class="headerlink" href="#attributes-methods" title="Link to this heading">#</a></h2>
+<div class="alert alert-success">
+Attributes and methods are accessed with a <code>.</code>, followed by the attribute/method name on the object. 
+</div><section id="date-attributes">
+<h3><code class="docutils literal notranslate"><span class="pre">date</span></code> Attributes<a class="headerlink" href="#date-attributes" title="Link to this heading">#</a></h3>
+<p>Now that we’ve created a <code class="docutils literal notranslate"><span class="pre">date</span></code>-type object, we can delve into discussing exactly what that means.</p>
+<p>First, <code class="docutils literal notranslate"><span class="pre">objects</span></code> have attributes. This allows for a particular object to store data, or information. When you access a particular attribute, you are specifying that you want to look up &amp; return information about the object.</p>
+<p>When you access an attribute for a particular object, you specify the object/variable name, followed by a <code class="docutils literal notranslate"><span class="pre">.</span></code> and then the name of the attribute you want to be returned.</p>
+<p>In doing so, you are only asking Python to return the information to you. It is only returning information stored within the object. We say that attributes “maintain the object’s state” because no <em>operations</em> are being carried out. The information is just looked up and returned. (This is in contrast to methods, which we’ll discuss in just a second.)</p>
+<p>In this first example, we’re accessing the <code class="docutils literal notranslate"><span class="pre">day</span></code> attribute from the <code class="docutils literal notranslate"><span class="pre">my_date</span></code> object. Notice that the information is looked up and returned.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the day attribute</span>
+<span class="n">my_date</span><span class="o">.</span><span class="n">day</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>29
+</pre></div>
+</div>
+</div>
+</div>
+<p>The same syntax can be used for other pieces of information (attributes) stored in the <code class="docutils literal notranslate"><span class="pre">my_date</span></code> object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the month attribute</span>
+<span class="n">my_date</span><span class="o">.</span><span class="n">month</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the year attribute</span>
+<span class="n">my_date</span><span class="o">.</span><span class="n">year</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1988
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="date-methods">
+<h3><code class="docutils literal notranslate"><span class="pre">date</span></code> Methods<a class="headerlink" href="#date-methods" title="Link to this heading">#</a></h3>
+<p>Beyond the ability to look up information stored within an object, we have the ability to carry out operations directly on objects. This is where object definitions really shine! <strong>methods</strong> are <em>functions</em> that <em>belong</em> to and operate on an object directly.</p>
+<p>Methods are what are going to allow us to operate on <code class="docutils literal notranslate"><span class="pre">date</span></code>-type objects in a meaningul way, which is something that is just not straightforward with any of the variable types we discussed prior to this chapter.</p>
+<p>In contrast to attributes (which simply look up and return information already stored in the ojbect), methods modify the object’s state. This means that there are operations carried out when a method is executed.</p>
+<p>In this first example, we’ll use the <code class="docutils literal notranslate"><span class="pre">weekday()</span></code> method. This is a method that takes the information stored in the <code class="docutils literal notranslate"><span class="pre">attributes</span></code> for a given <code class="docutils literal notranslate"><span class="pre">date</span></code>-type object, and determines the day of the week.</p>
+<p>Note that the syntax is similar to an attribute in that there is the object, followed by a <code class="docutils literal notranslate"><span class="pre">.</span></code> and then the method name. However, methods are executable functions that operate directly on an object. As such, there are parentheses after the method is called, indicating that it is executable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Method to return what day of the week the date is</span>
+<span class="n">my_date</span><span class="o">.</span><span class="n">weekday</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">weekday()</span></code> method returns a 0 for Mondays ….and a 6 for Sundays (with all of the other days returning integers between those two values, so, by using the <code class="docutils literal notranslate"><span class="pre">weekday()</span></code> method on our specified date, we determine that September 29th, 1988 was a Thursday.</p>
+<p>While <code class="docutils literal notranslate"><span class="pre">weekday()</span></code> is a good method for introducing what a method is and what its syntax is, when working with dates, we ultimately really want to be able to operate across different <code class="docutils literal notranslate"><span class="pre">date</span></code>-type objects.</p>
+<p>Here, we will define a second date. Note here that rather than defining three variables and passing them into our <code class="docutils literal notranslate"><span class="pre">date()</span></code> call, we’re just passing in the year, month, and day directly. We’re storing this date in the object <code class="docutils literal notranslate"><span class="pre">my_date2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a second date</span>
+<span class="n">my_date2</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">1980</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">29</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_date</span><span class="p">,</span> <span class="n">my_date2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1988-09-29 1980-07-29
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have two dates defined, we can determine the difference between these two dates, using the <code class="docutils literal notranslate"><span class="pre">-</span></code> operator. Here, we’re storing that information in the variable <code class="docutils literal notranslate"><span class="pre">time_diff</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the difference between times</span>
+<span class="n">time_diff</span> <span class="o">=</span> <span class="n">my_date</span> <span class="o">-</span> <span class="n">my_date2</span>
+<span class="n">time_diff</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.timedelta(days=2984)
+</pre></div>
+</div>
+</div>
+</div>
+<p>When we return the contents of <code class="docutils literal notranslate"><span class="pre">time_diff</span></code>, a <code class="docutils literal notranslate"><span class="pre">datetime.timedelta</span></code> type object is returned. This object has its own associated attributes, one of which is <code class="docutils literal notranslate"><span class="pre">days</span></code>. To access the number of days between these two dates, we can access that attribute from <code class="docutils literal notranslate"><span class="pre">time_diff</span></code>, using the same sytax as we specified previously:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># access days attribute</span>
+<span class="n">time_diff</span><span class="o">.</span><span class="n">days</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2984
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here we introduce <code class="docutils literal notranslate"><span class="pre">date</span></code> and <code class="docutils literal notranslate"><span class="pre">datetime</span></code> objects to demonstrate what attribute are and how methods operate on an object directly. We are intentionally not delving into all of the capabilities of these object types at this point; however, feel free to use <code class="docutils literal notranslate"><span class="pre">dir()</span></code> to access the attributes and methods of these object types to gain familiarity with reading documentation and working with new object types.</p>
+</section>
+</section>
+<section id="objects-summary">
+<h2>Objects: Summary<a class="headerlink" href="#objects-summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Objects allow for data (attributes) and functions (methods) to be organized together</p>
+<ul>
+<li><p>methods operate on the object type (modify state)</p></li>
+<li><p>attributes store and return information (data) about the object (maintain state)</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dir()</span></code> returns methods &amp; attributes for an object</p></li>
+<li><p>Syntax:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">obj.method()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">obj.attribute</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date</span></code> and <code class="docutils literal notranslate"><span class="pre">datetime</span></code> are two types of objects in Python</p></li>
+</ul>
+<p>Now, with an understanding of why it can be helpful to have additional object types and a basic understanding of attributes and methods, we can discuss how you can define your own object types!</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>Q1. <strong>Given the following code <code class="docutils literal notranslate"><span class="pre">my_date</span> <span class="pre">=</span> <span class="pre">date(year</span> <span class="pre">=</span> <span class="pre">1050,</span> <span class="pre">month</span> <span class="pre">=</span> <span class="pre">12,</span> <span class="pre">day</span> <span class="pre">=</span> <span class="pre">12)</span></code>, which of the following is the best description?</strong></p>
+<p>A) <code class="docutils literal notranslate"><span class="pre">my_date</span></code> is an object, with methods that store data, and attributes that store procedures<br />
+B) <code class="docutils literal notranslate"><span class="pre">my_date</span></code> is variable, and can be used with functions<br />
+C) <code class="docutils literal notranslate"><span class="pre">my_date</span></code> is an attribute, with methods attached to it<br />
+D) <code class="docutils literal notranslate"><span class="pre">my_date</span></code> is a method, and also has attributes<br />
+E) <code class="docutils literal notranslate"><span class="pre">my_date</span></code> is an object, with attributes that store data, and methods that store procedures</p>
+<p>Q2. <strong>For an object <code class="docutils literal notranslate"><span class="pre">lets</span></code> with a method <code class="docutils literal notranslate"><span class="pre">do_something</span></code>, how would you execute that method?</strong></p>
+<p>A) <code class="docutils literal notranslate"><span class="pre">do_something(lets)</span></code><br />
+B) <code class="docutils literal notranslate"><span class="pre">lets.do_something</span></code><br />
+C) <code class="docutils literal notranslate"><span class="pre">lets.do_something()</span></code><br />
+D) <code class="docutils literal notranslate"><span class="pre">lets.do.something()</span></code></p>
+<p>Q3. <strong>For an object <code class="docutils literal notranslate"><span class="pre">lets</span></code> with an attribute <code class="docutils literal notranslate"><span class="pre">name</span></code>, how would you return the information stored in <code class="docutils literal notranslate"><span class="pre">name</span></code> for the object <code class="docutils literal notranslate"><span class="pre">lets</span></code>?</strong></p>
+<p>A) <code class="docutils literal notranslate"><span class="pre">name(lets)</span></code><br />
+B) <code class="docutils literal notranslate"><span class="pre">lets.name</span></code><br />
+C) <code class="docutils literal notranslate"><span class="pre">lets.name()</span></code><br />
+D) <a class="reference external" href="http://lets.get.name">lets.get.name</a>()</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/06-classes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../05-collections/practice.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Practice: Collections &amp; Loops</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="modules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Modules</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-motivation-storing-dates">Object Motivation: Storing Dates</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-object-date">Example Object: Date</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes-methods">Attributes &amp; Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-attributes"><code class="docutils literal notranslate"><span class="pre">date</span></code> Attributes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#date-methods"><code class="docutils literal notranslate"><span class="pre">date</span></code> Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-summary">Objects: Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Shannon E. Ellis, Karan Narula, & Thomas Donoghue
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
