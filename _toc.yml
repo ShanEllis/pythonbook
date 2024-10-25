@@ -3,7 +3,6 @@ root: content/intro
 parts:
   - caption: Welcome
     chapters:
-      - file: content/01-welcome/intro
       - file: content/01-welcome/tools
       - file: content/01-welcome/who
       - file: content/01-welcome/why
@@ -15,21 +14,18 @@ parts:
       - file: content/02-getting-started/python-scripts
   - caption: The Basics
     chapters:
-      - file: content/03-basics/basics
       - file: content/03-basics/variables
       - file: content/03-basics/operators
       - file: content/03-basics/conditionals
       - file: content/03-basics/practice
   - caption: Functions
     chapters:
-      - file: content/04-functions/functions_intro
       - file: content/04-functions/functions
       - file: content/04-functions/debugging_errors
       - file: content/04-functions/namespaces_scope
       - file: content/04-functions/practice
   - caption: Collections
     chapters:
-      - file: content/05-collections/collections_loops
       - file: content/05-collections/lists
       - file: content/05-collections/tuples
       - file: content/05-collections/dictionaries
@@ -37,7 +33,6 @@ parts:
       - file: content/05-collections/practice
   - caption: Classes
     chapters:
-      - file: content/06-classes/classes_intro
       - file: content/06-classes/objects
       - file: content/06-classes/modules
       - file: content/06-classes/classes

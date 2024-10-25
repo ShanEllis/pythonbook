@@ -50,3 +50,7 @@ According to officials docs from the [Python Software Foundation](https://docs.p
 4. Make sure to check the box that says `Add Python to PATH` and click `Install Now`.
 
 5. You should be able to go into Powershell/Command Prompt and type in `python --version` or `py --version` to confirm that Python has been installed.
+
+## Installing Python on a Mac
+
+Instructions Coming Soon
