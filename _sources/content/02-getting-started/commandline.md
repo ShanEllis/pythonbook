@@ -44,7 +44,7 @@ If you are using Windows 10/11, we will be using a tool called Windows Powershel
 - Open your `Finder` and navigate to `Applications` -> `Utilities` -> `Terminal`. Click on the `Terminal` app to open it.
   - You can also use the `Spotlight Search` by pressing `Cmd + Space` and typing `Terminal`.
 
-![Mac Terminal](../images/02-getting-started/mac-terminal.png)
+![Mac Terminal](../images/02-getting=started/mac-terminal.png)
 
 ### Linux
 
