@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -510,6 +510,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-namespaces">Function Namespaces</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-values">Default Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-vs-keyword-arguments">Positional vs. Keyword Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style">Code Style</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">Docstrings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
@@ -527,6 +528,11 @@ document.write(`
 <h1>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h1>
 <p>So far, we’ve introduced a number of data types (integers, floats, lists, dictionaries, etc) and code constructs (conditionals and loops). Here, we’ll introduce <strong>functions</strong>, which provide your code with seemingly infinite flexibiltiy and reusability once mastered.</p>
 <p>We’ll discuss how to define a function, using <code class="docutils literal notranslate"><span class="pre">def</span></code>, how to get that function to <code class="docutils literal notranslate"><span class="pre">return</span></code> important information, how to specify input parameters to the function you define, and discuss how functions have a special, separate namespace.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_3z3j71i3&config[provider]={"widgetId":"1_s9h4unka"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
 <section id="id1">
 <h2>Functions<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>Functions are a way to write a few lines of code to accomplish a goal that can be reused over and over again, carrying out the <em>same operations</em> on <em>different inputs</em>.</p>
@@ -534,7 +540,7 @@ document.write(`
 A function is a re-usable piece of code that performs operations on a specified set of variables, and returns the result.
 </div><div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/AW5THfyPf7Q?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_ryqyi790&config[provider]={"widgetId":"1_58nmmcf1"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
 </div></div>
 </div>
 <p>You’ve been <em>using</em> functions without us really discussing it. For example, <code class="docutils literal notranslate"><span class="pre">type()</span></code> is a function that takes an input (a variable whose type you want to know). The function always carries out the same operation - it determines the input variable’s type, and returns that information to the viewer. <em>But</em>, it can take any variable as input. So, the inputs differ, but the procedure (what <code class="docutils literal notranslate"><span class="pre">type</span></code> does behind the scenes) remains the same.</p>
@@ -1044,6 +1050,11 @@ Outside, after function: 	 I am a variable
 </div>
 </div>
 </div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_t9mbqt8r&config[provider]={"widgetId":"1_q6szdh7i"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
 </section>
 <section id="default-values">
 <h2>Default Values<a class="headerlink" href="#default-values" title="Link to this heading">#</a></h2>
@@ -1186,6 +1197,45 @@ Arguments to a function can be indicated by either position or keyword.
 </div>
 </div>
 </section>
+<section id="code-style">
+<h2>Code Style<a class="headerlink" href="#code-style" title="Link to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_b49eag27&config[provider]={"widgetId":"1_717790wu"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
+<p>In general, when it comes to code style for functions we try to adhere to  the following code style guidellines:</p>
+<ul class="simple">
+<li><p>Function names should be snake_case (all lowercase with underscores separating words)</p></li>
+<li><p>Function names should describe task accomplished by function (typically: a verb)</p></li>
+<li><p>Separate out logical sections within a function with new lines</p></li>
+<li><p>Arguments should be separated by a comma and a space</p></li>
+<li><p>Default values do NOT need a space around the <code class="docutils literal notranslate"><span class="pre">=</span></code></p></li>
+</ul>
+<p>With the above in mind, here is an example of a function being defined with good code style:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remainder</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">divider</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    
+    <span class="n">r</span> <span class="o">=</span> <span class="n">number</span> <span class="o">%</span> <span class="n">divider</span>
+    
+    <span class="k">return</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, below, we see code that is functionally the same, but with code style to be avoided….and comments explaining why it’s not ideal. Remember that good code style is for the humans reading your code. The computer treats the code below and the code above the exact same, but hopefully you can see that the above is more easily readable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># could be improved by adding empty lines to separate out logical chunks</span>
+<span class="k">def</span> <span class="nf">remainder</span><span class="p">(</span><span class="n">number</span><span class="p">,</span><span class="n">divider</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span> <span class="c1"># needs space after comma</span>
+    <span class="n">r</span><span class="o">=</span><span class="n">number</span><span class="o">%</span><span class="k">divider</span> # needs spacing around operators
+    <span class="k">return</span> <span class="n">r</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="docstrings">
 <h2>Docstrings<a class="headerlink" href="#docstrings" title="Link to this heading">#</a></h2>
 <p>So far, we’ve mainly focused on writing code that will execute; however, it’s important that your code executes <em>and</em> that other people know how to use it. We’ll talk more extensively about documentation later, but we’ll introduce one piece of documentation now: the <strong>docstring</strong>.</p>
@@ -1211,6 +1261,11 @@ Arguments to a function can be indicated by either position or keyword.
 </div>
 </div>
 <p>To access this documentation within a Jupyter notebook, you can now use the familiar help (<code class="docutils literal notranslate"><span class="pre">?</span></code>) after the name of the function: <code class="docutils literal notranslate"><span class="pre">list_dictionary?</span></code>.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/AW5THfyPf7Q?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div></div>
+</div>
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
@@ -1328,6 +1383,7 @@ Arguments to a function can be indicated by either position or keyword.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-namespaces">Function Namespaces</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#default-values">Default Values</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#positional-vs-keyword-arguments">Positional vs. Keyword Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style">Code Style</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">Docstrings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
