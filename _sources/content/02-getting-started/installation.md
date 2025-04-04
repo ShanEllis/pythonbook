@@ -1,5 +1,9 @@
 # Installing Python
 
+<div style="border-left: 5px solid red; padding: 10px; background-color: #fff3cd;">
+<strong>Note:</strong> If you are taking COGS 18, you do not <i>need</i> to install Python on your local machine.
+</div>
+
 ## Installing Python on a Windows Machine
 
 There are three possible ways to install Python on a windows machine:
