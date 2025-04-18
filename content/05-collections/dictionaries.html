@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -62,7 +62,7 @@
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Loops" href="loops.html" />
+    <link rel="next" title="Membership Operators" href="membership_revisited.html" />
     <link rel="prev" title="Tuples" href="tuples.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -201,6 +201,8 @@
 <li class="toctree-l1"><a class="reference internal" href="lists.html">Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tuples.html">Tuples</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="membership_revisited.html">Membership Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chr_ord.html"><code class="docutils literal notranslate"><span class="pre">chr</span></code> and <code class="docutils literal notranslate"><span class="pre">ord</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="practice.html">Practice: Collections &amp; Loops</a></li>
 </ul>
@@ -503,7 +505,12 @@ document.write(`
 <p>The third and final new type of variable we’ll introduce here is the <strong>dictionary</strong>. Like dictionaries where you look up words and are provided with a definition of that word, Python dictionaries store two pieces of information. These two pieces are referred to as the <strong>key</strong> and its <strong>value</strong>. Dictionaries are a collection of <strong>key-value pairs</strong>.</p>
 <div class="alert alert-success">
 A <b>dictionary</b> is mutable collection of items, that can be of mixed-type, that are stored as key-value pairs.
-</div><section id="defining-a-dictionary">
+</div><div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_voovp1l0&config[provider]={"widgetId":"1_8nvnn26j"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
+<section id="defining-a-dictionary">
 <h2>Defining a dictionary<a class="headerlink" href="#defining-a-dictionary" title="Link to this heading">#</a></h2>
 <p>Specifically, dictionaries are defined using curly brackets <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Within the curly brackets are key-value pairs. Each key-value pair is created using a colon (<code class="docutils literal notranslate"><span class="pre">:</span></code>) between the key and its value. And, separate key-value pairs are stored by separating each key-value pair, using a comma (<code class="docutils literal notranslate"><span class="pre">,</span></code>).</p>
 <p>Here we create <code class="docutils literal notranslate"><span class="pre">my_dictionary</span></code> which stores two key-value pairs.</p>
@@ -845,11 +852,11 @@ D) mutable value specified</p>
       </div>
     </a>
     <a class="right-next"
-       href="loops.html"
+       href="membership_revisited.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Loops</p>
+        <p class="prev-next-title">Membership Operators</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

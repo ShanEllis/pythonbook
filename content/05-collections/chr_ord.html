@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Who is this for? &#8212; Introduction to Python</title>
+    <title>chr and ord &#8212; Introduction to Python</title>
   
   
   
@@ -57,13 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/01-welcome/who';</script>
-    <link rel="canonical" href="content/content/01-welcome/who.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/05-collections/chr_ord';</script>
+    <link rel="canonical" href="content/content/05-collections/chr_ord.html" />
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Why this book?" href="why.html" />
-    <link rel="prev" title="Tools" href="tools.html" />
+    <link rel="next" title="Loops" href="loops.html" />
+    <link rel="prev" title="Membership Operators" href="membership_revisited.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -171,10 +171,10 @@
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Welcome</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Tools</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Who is this for?</a></li>
-<li class="toctree-l1"><a class="reference internal" href="why.html">Why this book?</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/tools.html">Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/who.html">Who is this for?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-welcome/why.html">Why this book?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting Started</span></p>
 <ul class="nav bd-sidenav">
@@ -197,14 +197,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../04-functions/practice.html">Practice: Functions</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Collections</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../05-collections/lists.html">Lists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05-collections/tuples.html">Tuples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05-collections/dictionaries.html">Dictionaries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05-collections/membership_revisited.html">Membership Operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05-collections/chr_ord.html"><code class="docutils literal notranslate"><span class="pre">chr</span></code> and <code class="docutils literal notranslate"><span class="pre">ord</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05-collections/loops.html">Loops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../05-collections/practice.html">Practice: Collections &amp; Loops</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="lists.html">Lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tuples.html">Tuples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="membership_revisited.html">Membership Operators</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">chr</span></code> and <code class="docutils literal notranslate"><span class="pre">ord</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice.html">Practice: Collections &amp; Loops</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
 <ul class="nav bd-sidenav">
@@ -285,6 +285,37 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/05-collections/chr_ord.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -310,7 +341,7 @@
       
       
       
-      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/01-welcome/who.md" target="_blank"
+      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/05-collections/chr_ord.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +358,7 @@
       
       
       
-      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/01-welcome/who.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/05-collections/chr_ord.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +388,7 @@
       
       
       
-      <li><a href="../../_sources/content/01-welcome/who.md" target="_blank"
+      <li><a href="../../_sources/content/05-collections/chr_ord.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -367,7 +398,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -441,7 +472,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Who is this for?</h1>
+    <h1>chr and ord</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -451,7 +482,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-long-should-this-take">How Long Should This Take?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unicode">Unicode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ord-chr">ORD &amp; CHR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ord-chr-examples">ord &amp; chr examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses">Inverses</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -463,13 +499,101 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="who-is-this-for">
-<h1>Who is this for?<a class="headerlink" href="#who-is-this-for" title="Link to this heading">#</a></h1>
-<p>This book is written for individuals with no prior programming experience. It is meant to cover the basics and provide you with opportunities for practice. It is meant to move people who are complete novices when it comes to programming in the direction of being a beginner programmer. It is <em>not</em> meant to make anyone an expert programmer. That takes time and practice, but if you learn the basics up front, you’ll be well on your way.</p>
-<p>Beyond being for beginners, this approach to learning programmers is designed for individuals who will go on to become end-user programmers (rather than say, software engineers). Software engineers are trained to build software. End-user programmers are people who use code to accomplish a task, such as a complicated analysis. End-user programmers tend to be scientists of all types, data scientists, economists, mathematicians, business analysts, among others. They generally use code as a means to an answer, rather than as part of a larger system, whereas software engineers use code to build products or parts of systems.</p>
-<section id="how-long-should-this-take">
-<h2>How Long Should This Take?<a class="headerlink" href="#how-long-should-this-take" title="Link to this heading">#</a></h2>
-<p>As a gauge, my students spend approximately 30 hours with me in class, and then approximately 16 hours (on average) outside of class working on assignments. Beyond that, they study for two exams and develop a final project, which takes them minimally another 4-5 hours. All told, to have a strong grasp on the content in this course, each student engages with the material covered in this book for for at least 50 hours. Now, you may not spend as many hours practicing beyond this book, but I would guess that if you’re new programming, it will take around the same amount of time (~50 hours) to really get a grasp on the content covered in this book.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="chr-and-ord">
+<h1><code class="docutils literal notranslate"><span class="pre">chr</span></code> and <code class="docutils literal notranslate"><span class="pre">ord</span></code><a class="headerlink" href="#chr-and-ord" title="Link to this heading">#</a></h1>
+<section id="unicode">
+<h2>Unicode<a class="headerlink" href="#unicode" title="Link to this heading">#</a></h2>
+<div class="alert alert-success">
+Unicode is a system of systematically and consistently representing characters. 
+</div>
+<p>Every character has a unicode <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">point</span></code> - an integer that can be used to represent that character.</p>
+<p>If a computer is using unicode, it displays a requested character by following the unicode encodings of which <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">point</span></code> refers to which character.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_j23ezcvx&config[provider]={"widgetId":"1_xr8o936d"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
+<section id="ord-chr">
+<h3>ORD &amp; CHR<a class="headerlink" href="#ord-chr" title="Link to this heading">#</a></h3>
+<div class="alert alert-success">
+<b>ord</b> returns the unicode code point for a one-character string.
+</div>
+<div class="alert alert-success"> 
+<b>chr</b> returns the character encoding of a code point. 
+</div></section>
+<section id="ord-chr-examples">
+<h3>ord &amp; chr examples<a class="headerlink" href="#ord-chr-examples" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">ord</span></code> will always take in a <em>single</em> character as a string as input and will always return the code point integer that corresponds to that character:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>97
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;&amp;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38
+</pre></div>
+</div>
+</div>
+</div>
+<p>Conversely, <code class="docutils literal notranslate"><span class="pre">chr</span></code> will always take in a single integer and return the character associated with that code point integer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;a&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">chr</span><span class="p">(</span><span class="mi">38</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&amp;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="inverses">
+<h3>Inverses<a class="headerlink" href="#inverses" title="Link to this heading">#</a></h3>
+<p>More explicitly, <code class="docutils literal notranslate"><span class="pre">ord</span></code> and <code class="docutils literal notranslate"><span class="pre">chr</span></code> are inverses of one another. Consider the following example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inp</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span>
+<span class="n">out</span> <span class="o">=</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">inp</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b b
+</pre></div>
+</div>
+</div>
+</div>
+<p>Taking <code class="docutils literal notranslate"><span class="pre">ord('b')</span></code> returns the unicode code point assicoated with the character ‘b’, which is the number 98. But, if you then take the <code class="docutils literal notranslate"><span class="pre">chr(98)</span></code> you get back the original character you started with, ‘b’.</p>
+</section>
 </section>
 </section>
 
@@ -486,7 +610,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/01-welcome"
+            path: "./content/05-collections"
         },
         predefinedOutput: true
     }
@@ -504,20 +628,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="tools.html"
+       href="membership_revisited.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tools</p>
+        <p class="prev-next-title">Membership Operators</p>
       </div>
     </a>
     <a class="right-next"
-       href="why.html"
+       href="loops.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Why this book?</p>
+        <p class="prev-next-title">Loops</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -537,7 +661,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-long-should-this-take">How Long Should This Take?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unicode">Unicode</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ord-chr">ORD &amp; CHR</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ord-chr-examples">ord &amp; chr examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverses">Inverses</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

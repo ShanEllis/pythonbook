@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -201,6 +201,8 @@
 <li class="toctree-l1"><a class="reference internal" href="lists.html">Lists</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tuples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="membership_revisited.html">Membership Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chr_ord.html"><code class="docutils literal notranslate"><span class="pre">chr</span></code> and <code class="docutils literal notranslate"><span class="pre">ord</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="loops.html">Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="practice.html">Practice: Collections &amp; Loops</a></li>
 </ul>
@@ -506,7 +508,12 @@ document.write(`
 <p>Lists are not the only variable type that can store a collection of multiple elements. Like lists, <strong>tuples</strong> store elements of mixed type in an ordered manner. However, tuples are <em>immutable</em>. Once created, their contents can not be mutated or changed. Syntactically, tuples are specified with <em>parentheses</em> around the elements of the tuple. Separate elements in the tuple are separated using commas, as we saw previously.</p>
 <div class="alert alert-success">
 A tuple is an <b>immutable</b> collection of ordered items, that can be of mixed type. Tuples are created using parentheses.
-</div><section id="defining-a-tuple">
+</div><div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_x2y5nn2r&config[provider]={"widgetId":"1_ai35sak8"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
+<section id="defining-a-tuple">
 <h2>Defining a tuple<a class="headerlink" href="#defining-a-tuple" title="Link to this heading">#</a></h2>
 <p>Here, rather than square brackets which are used to create lists, we use parentheses around the elements of our tuple: <code class="docutils literal notranslate"><span class="pre">my_tuple</span></code>.</p>
 <div class="cell docutils container">
