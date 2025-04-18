@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -203,6 +203,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../05-collections/lists.html">Lists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-collections/tuples.html">Tuples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-collections/dictionaries.html">Dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/membership_revisited.html">Membership Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-collections/chr_ord.html"><code class="docutils literal notranslate"><span class="pre">chr</span></code> and <code class="docutils literal notranslate"><span class="pre">ord</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-collections/loops.html">Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-collections/practice.html">Practice: Collections &amp; Loops</a></li>
 </ul>
@@ -485,7 +487,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modular-programming">Modular Programming</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-functions">User-defined Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-statements"><code class="docutils literal notranslate"><span class="pre">return</span></code> statements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-input-parameters">Multiple Input Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-operations">Multiple Operations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-properties">Function Properties</a></li>
@@ -544,7 +545,7 @@ A function is a re-usable piece of code that performs operations on a specified 
 </section>
 <section id="modular-programming">
 <h2>Modular Programming<a class="headerlink" href="#modular-programming" title="Link to this heading">#</a></h2>
-<p>Specifically, functions are helpful when programming modularly. <strong>Modular programming</strong> is an approach to programming that focuses on building programs from indendent modules (‘pieces’). While these individual pieces can all fit together to accomplish a larger goal, each piece <em>can</em> operate independently.</p>
+<p>Specifically, functions are helpful when programming modularly. <strong>Modular programming</strong> is an approach to programming that focuses on building programs from independent modules (‘pieces’). While these individual pieces can all fit together to accomplish a larger goal, each piece <em>can</em> operate independently.</p>
 <p>Functions facilitate this approach to programming in the following ways:</p>
 <ul class="simple">
 <li><p>Functions allow us to flexibly re-use pieces of code</p></li>
@@ -560,36 +561,36 @@ A function is a re-usable piece of code that performs operations on a specified 
 <h2>User-defined Functions<a class="headerlink" href="#user-defined-functions" title="Link to this heading">#</a></h2>
 <p>While you’ve <em>used</em> other functions (<code class="docutils literal notranslate"><span class="pre">len()</span></code>, <code class="docutils literal notranslate"><span class="pre">type()</span></code>, <code class="docutils literal notranslate"><span class="pre">print()</span></code>) previously, we’ve yet to discuss the fact that you can write your <em>own</em> functions to carry out the procedures you want them to carry out.</p>
 <p>To define (create) a <strong>user-defined function</strong>, you’ll use <code class="docutils literal notranslate"><span class="pre">def</span></code>.</p>
-<p>This will always take hte general form:</p>
+<p>This will always take the general form:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">function_name</span><span class="p">(</span><span class="n">input_parameters</span><span class="p">):</span>
     <span class="c1"># code with function operation</span>
 </pre></div>
 </div>
 <p>As the creator of the function, you’ll specify the <code class="docutils literal notranslate"><span class="pre">function_name</span></code>, determine what variable names to use for your <code class="docutils literal notranslate"><span class="pre">input_parameters</span></code>, and write the code within your function to carry out the desired operations on your <code class="docutils literal notranslate"><span class="pre">input_parameters</span></code>.</p>
 <p>For example, the simplest function would be one that took an input and printed that input out. It’s not a very <em>interesting</em> or <em>helpful</em> function, but it demonstrates the idea of how these work.</p>
-<p>Here, we define a function called <code class="docutils literal notranslate"><span class="pre">print_value</span></code> that takes <code class="docutils literal notranslate"><span class="pre">num</span></code> as an input parameter.</p>
-<p>Within the function definition we see the line of code: <code class="docutils literal notranslate"><span class="pre">print(num)</span></code>. Notice that <code class="docutils literal notranslate"><span class="pre">num</span></code> refers to the input parameter specified within the parentheses after <code class="docutils literal notranslate"><span class="pre">print_value</span></code>.</p>
+<p>Here, we define a function called <code class="docutils literal notranslate"><span class="pre">return_value</span></code> that takes <code class="docutils literal notranslate"><span class="pre">num</span></code> as an input parameter.</p>
+<p>Within the function definition we see the line of code: <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">num</span></code>. Notice that <code class="docutils literal notranslate"><span class="pre">num</span></code> refers to the input parameter specified within the parentheses after <code class="docutils literal notranslate"><span class="pre">return_value</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a function: print_value</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a function: return_value</span>
 <span class="c1"># num is a parameter for the function</span>
-<span class="k">def</span> <span class="nf">print_value</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">return_value</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     
     <span class="c1"># do some operation</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">num</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>All the code above has done is define (or create) the function. We haven’t yet <em>used</em> the function.</p>
-<p>To use - or execute - this function, meaning, to get it to actually print out the <code class="docutils literal notranslate"><span class="pre">num</span></code> provided, we first call the function name <code class="docutils literal notranslate"><span class="pre">print_value()</span></code> and then provide a value to the parameter <code class="docutils literal notranslate"><span class="pre">num</span></code> within the parentheses.</p>
+<p>To use - or execute - this function, meaning, to get it to actually <code class="docutils literal notranslate"><span class="pre">return</span></code> out the <code class="docutils literal notranslate"><span class="pre">num</span></code> provided, we first call the function name <code class="docutils literal notranslate"><span class="pre">return_value()</span></code> and then provide a value to the parameter <code class="docutils literal notranslate"><span class="pre">num</span></code> within the parentheses.</p>
 <p>In the example below, we provide the value ‘6’ as the input parameter <code class="docutils literal notranslate"><span class="pre">num</span></code>.</p>
-<p>This means that when the code executes, <code class="docutils literal notranslate"><span class="pre">num</span></code> refers to the value ‘6’. Accordingly, upon execution, the function prints the value stored in <code class="docutils literal notranslate"><span class="pre">num</span></code> - 6:</p>
+<p>This means that when the code executes, <code class="docutils literal notranslate"><span class="pre">num</span></code> refers to the value ‘6’. Accordingly, upon execution, the function <code class="docutils literal notranslate"><span class="pre">return</span></code>s the value stored in <code class="docutils literal notranslate"><span class="pre">num</span></code> - 6:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># excecute a function by calling function by name</span>
 <span class="c1"># adding input within parentheses</span>
-<span class="n">print_value</span><span class="p">(</span><span class="n">num</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">return_value</span><span class="p">(</span><span class="n">num</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -604,88 +605,16 @@ A function is a re-usable piece of code that performs operations on a specified 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># equivalent function call</span>
 <span class="c1"># without specifying parameter</span>
-<span class="n">print_value</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="return-statements">
-<h2><code class="docutils literal notranslate"><span class="pre">return</span></code> statements<a class="headerlink" href="#return-statements" title="Link to this heading">#</a></h2>
-<p>When this function executes, the code within the function runs using the specified input. The code within this function says to <code class="docutils literal notranslate"><span class="pre">print()</span></code> the variable.</p>
-<p>However, what if we wanted to <em>store</em> that output for use later. What if we wanted to store the value ‘6’?</p>
-<p>Well, as the function is <em>currently</em> defined, we are unable to do that because currently the function <em>only</em> prints the value. It does not store and return it:</p>
-<p>If we try to store the output from the function in a new variable <code class="docutils literal notranslate"><span class="pre">new_var</span></code>. As the function is currently defined, nothing is stored and returned from the function. The first line of code <code class="docutils literal notranslate"><span class="pre">prints()</span></code> the input value 6. The second line of code (<code class="docutils literal notranslate"><span class="pre">print(new_var)</span></code>), returns ‘None’.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## why is it printing None?</span>
-<span class="c1">## lets look at return below</span>
-<span class="n">new_var</span> <span class="o">=</span> <span class="n">print_value</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">new_var</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-None
-</pre></div>
-</div>
-</div>
-</div>
-<p>All this function is doing currently is printing the input. It’s not actually <em>storing</em> any new information. To do that, we need to use <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
-<p>Here we define a function <code class="docutils literal notranslate"><span class="pre">return_value</span></code>. As with the previous <code class="docutils literal notranslate"><span class="pre">print_value()</span></code> function, it takes <code class="docutils literal notranslate"><span class="pre">num</span></code> as an input parameter.</p>
-<p>However, within the body of the function, we now store the input parameter <code class="docutils literal notranslate"><span class="pre">num</span></code> in the variable <code class="docutils literal notranslate"><span class="pre">output</span></code> and then <strong><code class="docutils literal notranslate"><span class="pre">return</span></code></strong> the variable <code class="docutils literal notranslate"><span class="pre">output</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># improving that function using return</span>
-<span class="k">def</span> <span class="nf">return_value</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    
-    <span class="c1"># do some operation</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">num</span>
-    
-    <span class="c1"># return an answer</span>
-    <span class="k">return</span> <span class="n">output</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Remember that the code above defines the function. It does <em>not</em> execute it.</p>
-<p>To do that, we call the function name <code class="docutils literal notranslate"><span class="pre">return_value</span></code> and provide a value to the input parameter <code class="docutils literal notranslate"><span class="pre">num</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># excecute that function</span>
 <span class="n">return_value</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-</pre></div>
-</div>
-</div>
-</div>
-<p>The output appears similar to what we saw with the <code class="docutils literal notranslate"><span class="pre">print_value()</span></code> function; however, we’ll notice the difference with this new function when we try to assign the output to a variable:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># execute function but assign output </span>
-<span class="c1"># store that output in variable new_val</span>
-<span class="n">new_val</span> <span class="o">=</span> <span class="n">return_value</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">new_val</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now, the output returned from the function <code class="docutils literal notranslate"><span class="pre">return_value(6)</span></code> can be stored in <code class="docutils literal notranslate"><span class="pre">new_val</span></code>. When we print the contents of this variable, it now stores the output, thanks to the use of <code class="docutils literal notranslate"><span class="pre">return</span></code> within the function!</p>
 </section>
 <section id="multiple-input-parameters">
 <h2>Multiple Input Parameters<a class="headerlink" href="#multiple-input-parameters" title="Link to this heading">#</a></h2>
@@ -824,214 +753,7 @@ The <b>namespace</b> is the 'place' where all your currently defined code is dec
 </div>
 </div>
 <p>This means that any variables created in a notebook outside of a function as you write code are <em>not</em> usable within the defined function.</p>
-<p>This is what allows functions to be indpendent and self-contained pieces of code. This means that if you created a variable called <code class="docutils literal notranslate"><span class="pre">my_fav_variable</span></code> outside of the function, you <em>cannot</em> use or refer to that variable within a function because <code class="docutils literal notranslate"><span class="pre">my_fav_variable</span></code> is in a <em>separate namespace</em>.</p>
-<p>Previously, we noted that within a Jupyter notebook, you can check the variables currently defined using <code class="docutils literal notranslate"><span class="pre">%whos</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remember, you can check defined variables with `%whos`</span>
-<span class="o">%</span><span class="k">whos</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable          Type        Data/Info
----------------------------------------
-add_two_numbers   function    &lt;function add_two_numbers at 0x10e0ee8c8&gt;
-even_odd          function    &lt;function even_odd at 0x10e0df598&gt;
-my_var            list        n=3
-new_val           int         6
-new_var           NoneType    None
-output            int         3
-print_value       function    &lt;function print_value at 0x10e0b1ae8&gt;
-return_value      function    &lt;function return_value at 0x10e0db7b8&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<p>This returns all the variables created and stored in your <em>global</em> namespace. These are available for use in operations in your notebook.</p>
-<p>However, each function <em>only</em> has access to the variables defined within the function or passed in as variables.</p>
-<p>To determine what variables a function has access to, we’ll create a function called <code class="docutils literal notranslate"><span class="pre">check_function_namespace()</span></code>. This takes an input and uses the  <code class="docutils literal notranslate"><span class="pre">locals()</span></code> function to return information about what variables the function has access to:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_function_namespace</span><span class="p">(</span><span class="n">function_input</span><span class="p">):</span>
-    <span class="c1"># Check what is defined and available inside the function</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>When we provide <code class="docutils literal notranslate"><span class="pre">check_function_namespace()</span></code> with the value ‘1’ as its input, it returns that the <em>only</em> variable it has access to is the input variable ‘1’.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Functions don&#39;t `see` everything</span>
-<span class="n">check_function_namespace</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;function_input&#39;: 1}
-</pre></div>
-</div>
-</div>
-</div>
-<p>When we provide <code class="docutils literal notranslate"><span class="pre">check_function_namespace()</span></code> with the value <code class="docutils literal notranslate"><span class="pre">True</span></code> as its input, it returns that the <em>only</em> variable it has access to is the input variable <code class="docutils literal notranslate"><span class="pre">True</span></code>. Note that it no longer has access to the value ‘1’, as that was <em>not</em> passed in as an input on this execution of hte function.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Functions don&#39;t `see` everything</span>
-<span class="n">check_function_namespace</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;function_input&#39;: True}
-</pre></div>
-</div>
-</div>
-</div>
-<p>The logic follows that if you pass two inputs into the function, the function will have access to both inputs, but the fact remains that those are the <em>only</em> variables to which the function has access. It cannot access the other variables stored outside the function in the global namespace:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using two different inputs to a function</span>
-<span class="k">def</span> <span class="nf">check_function_namespace2</span><span class="p">(</span><span class="n">function_input</span><span class="p">,</span> <span class="n">other_name</span><span class="p">):</span>
-    <span class="c1"># Check what is defined and available inside the function</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">locals</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># returning what each input is storing</span>
-<span class="n">check_function_namespace2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;other_name&#39;: True, &#39;function_input&#39;: 1}
-</pre></div>
-</div>
-</div>
-</div>
-<p>Names defined inside a function only exist within the function.</p>
-<p>For example, if we define a global variable <code class="docutils literal notranslate"><span class="pre">my_var</span></code> and store a string in that variable:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_var</span> <span class="o">=</span> <span class="s1">&#39;I am a variable&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The above line of code creates the variable <code class="docutils literal notranslate"><span class="pre">my_var</span></code>, storing ‘I am a variable’ in that varaible in the global namespace.</p>
-<p>Now, if we run our check_function_namespace, and pass that variable into the function, the function will have access to that variable:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_function_namespace</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;function_input&#39;: &#39;I am a variable&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<p><em>But</em>, if we pass a different variable into that function, <code class="docutils literal notranslate"><span class="pre">my_var</span></code> is no longer available within the function, as it was not passed into the function upon execution.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">check_function_namespace</span><span class="p">(</span><span class="s1">&#39;new string&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;function_input&#39;: &#39;new string&#39;}
-</pre></div>
-</div>
-</div>
-</div>
-<p>Regardless of whether or not the variable is available for use within the function, <code class="docutils literal notranslate"><span class="pre">my_var</span></code> still exists in the global namespace:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>I am a variable
-</pre></div>
-</div>
-</div>
-</div>
-<p>Given all of the above discussion about namespaces, it logically follows that a variable of the same name can exist in the global namespace <em>and</em> within a function, with each storing different information.</p>
-<p>This can be confusing when reading code, so it’s best to avoid these situations when writing code and choosing variable names, but it’s important to understand that it is logically possible.</p>
-<p>To demonstrate this point, let’s define a function called <code class="docutils literal notranslate"><span class="pre">change_var</span></code>. This function takes an input variable <code class="docutils literal notranslate"><span class="pre">my_var</span></code>. Within the function it stores ‘I am something else’ in <code class="docutils literal notranslate"><span class="pre">my_var</span></code> and prints ‘Inside function:’ and the value stored in <code class="docutils literal notranslate"><span class="pre">my_var</span></code> within the function:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">change_var</span><span class="p">(</span><span class="n">my_var</span><span class="p">):</span>
-    <span class="n">my_var</span> <span class="o">=</span> <span class="s1">&#39;I am something else&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Inside function: </span><span class="se">\t\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_var</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Remember, that we’ve already created <code class="docutils literal notranslate"><span class="pre">my_var</span></code> in the global namespace:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_var in the global namespace</span>
-<span class="n">my_var</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I am a variable&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>Now, when we execute our <code class="docutils literal notranslate"><span class="pre">change_var()</span></code> function, we see that despite passing <code class="docutils literal notranslate"><span class="pre">my_var</span></code> (which stores ‘I am a variable’) into the function, within the function, <code class="docutils literal notranslate"><span class="pre">my_var</span></code> gets defined as the string ‘I am something else’:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_var within the function</span>
-<span class="n">change_var</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inside function: 		 I am something else
-</pre></div>
-</div>
-</div>
-</div>
-<p>But, because the namespace within a function is separate, this change only occurs within the function. The value stored in <code class="docutils literal notranslate"><span class="pre">my_var</span></code> in the global namespace (outside the function) remains unchanged:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># my_var in the global namespace remains unchanged</span>
-<span class="n">my_var</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I am a variable&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>To summarize, <code class="docutils literal notranslate"><span class="pre">my_var</span></code> outside the function remains unchanged, only storing ‘I am somthing else’ within the<code class="docutils literal notranslate"><span class="pre">change_var()</span></code> function:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outside, before function: </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_var</span><span class="p">)</span>
-<span class="n">change_var</span><span class="p">(</span><span class="n">my_var</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outside, after function: </span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">my_var</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Outside, before function: 	 I am a variable
-Inside function: 		 I am something else
-Outside, after function: 	 I am a variable
-</pre></div>
-</div>
-</div>
-</div>
+<p>This is what allows functions to be independent and self-contained pieces of code. This means that if you created a variable called <code class="docutils literal notranslate"><span class="pre">my_fav_variable</span></code> outside of the function, you <em>cannot</em> use or refer to that variable within a function because <code class="docutils literal notranslate"><span class="pre">my_fav_variable</span></code> is in a <em>separate namespace</em>.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_t9mbqt8r&config[provider]={"widgetId":"1_q6szdh7i"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
@@ -1069,7 +791,7 @@ Function parameters can also take default values. This makes some parameters opt
 </div>
 </div>
 <p>As seen above, when we pass the value 2 to the <code class="docutils literal notranslate"><span class="pre">number</span></code> parameter, the function returns <span class="math notranslate nohighlight">\(2^2\)</span>, or 4. Notice that when a default value is specified, if you want the function to use that default value provided, you do not have to specify any inputs for that parameter.</p>
-<p>However, if you want to use a <em>different</em> value for your <code class="docutils literal notranslate"><span class="pre">exponent</span></code>, you still have that option. You could so so using the following:</p>
+<p>However, if you want to use a <em>different</em> value for your <code class="docutils literal notranslate"><span class="pre">exponent</span></code>, you still have that option. You could so using the following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Call the function, over-riding default value with something else</span>
@@ -1103,7 +825,7 @@ Function parameters can also take default values. This makes some parameters opt
 </section>
 <section id="positional-vs-keyword-arguments">
 <h2>Positional vs. Keyword Arguments<a class="headerlink" href="#positional-vs-keyword-arguments" title="Link to this heading">#</a></h2>
-<p>In the previous example we demonstrated that it is possible to use positional arguments (<code class="docutils literal notranslate"><span class="pre">exponentiate(2,</span> <span class="pre">3)</span></code>) or keyword arguments (<code class="docutils literal notranslate"><span class="pre">exponentiate(number</span> <span class="pre">=</span> <span class="pre">2,</span> <span class="pre">exponent</span> <span class="pre">=</span> <span class="pre">3)</span></code>)when calling a function without explicitly explaining what’s going on.</p>
+<p>In the previous example we demonstrated that it is possible to use positional arguments (<code class="docutils literal notranslate"><span class="pre">exponentiate(2,</span> <span class="pre">3)</span></code>) or keyword arguments (<code class="docutils literal notranslate"><span class="pre">exponentiate(number</span> <span class="pre">=</span> <span class="pre">2,</span> <span class="pre">exponent</span> <span class="pre">=</span> <span class="pre">3)</span></code>) when calling a function without explicitly explaining what’s going on.</p>
 <p>Here, we’ll explain exactly what is meant by <strong>positional</strong> and <strong>keyword</strong> arguments.</p>
 <div class="alert alert-success">
 Arguments to a function can be indicated by either position or keyword.
@@ -1263,15 +985,7 @@ Arguments to a function can be indicated by either position or keyword.
 <br></p>
 <p>Q3. <strong>Update your <code class="docutils literal notranslate"><span class="pre">greet</span></code> function to include an informative docstring</strong>.
 <br></p>
-<p>Q4. <strong>Given the following, what would <code class="docutils literal notranslate"><span class="pre">print_numbers(5,</span> <span class="pre">12.2)</span></code> print?</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">an_int</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">a_float</span> <span class="o">=</span> <span class="mf">11.5</span>
-
-<span class="k">def</span> <span class="nf">print_numbers</span><span class="p">(</span><span class="n">an_int</span><span class="p">,</span> <span class="n">a_float</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">an_int</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="n">a_float</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Q5. <strong>Given the following function, what would <code class="docutils literal notranslate"><span class="pre">string_manipulator('abcde')</span></code> return?</strong></p>
+<p>Q4. <strong>Given the following function, what would <code class="docutils literal notranslate"><span class="pre">string_manipulator('abcde')</span></code> return?</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">string_manipulator</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
     
     <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -1283,7 +997,7 @@ Arguments to a function can be indicated by either position or keyword.
     <span class="k">return</span> <span class="n">output</span>
 </pre></div>
 </div>
-<p>Q6. <strong>Given the following function, what would <code class="docutils literal notranslate"><span class="pre">exponentiate(exponent</span> <span class="pre">=</span> <span class="pre">2,</span> <span class="pre">number</span> <span class="pre">=</span> <span class="pre">4)</span></code> return</strong>?</p>
+<p>Q5. <strong>Given the following function, what would <code class="docutils literal notranslate"><span class="pre">exponentiate(exponent</span> <span class="pre">=</span> <span class="pre">2,</span> <span class="pre">number</span> <span class="pre">=</span> <span class="pre">4)</span></code> return</strong>?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exponentiate</span><span class="p">(</span><span class="n">number</span><span class="p">,</span> <span class="n">exponent</span> <span class="o">=</span> <span class="mi">2</span><span class="p">):</span>    
     <span class="k">return</span> <span class="n">number</span> <span class="o">**</span> <span class="n">exponent</span>
 </pre></div>
@@ -1358,7 +1072,6 @@ Arguments to a function can be indicated by either position or keyword.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modular-programming">Modular Programming</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-functions">User-defined Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#return-statements"><code class="docutils literal notranslate"><span class="pre">return</span></code> statements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-input-parameters">Multiple Input Parameters</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-operations">Multiple Operations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-properties">Function Properties</a></li>

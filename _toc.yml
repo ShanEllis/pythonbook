@@ -29,6 +29,8 @@ parts:
       - file: content/05-collections/lists
       - file: content/05-collections/tuples
       - file: content/05-collections/dictionaries
+      - file: content/05-collections/membership_revisited
+      - file: content/05-collections/chr_ord
       - file: content/05-collections/loops
       - file: content/05-collections/practice
   - caption: Classes
