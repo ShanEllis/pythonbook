@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -483,15 +483,28 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-loops">Why loops?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> Loops</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-strings">Looping through strings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-dictionaries">Looping through dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-the-concept">Loops: The Concept</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> loops</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-the-code">Loops: The Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">while</span></code> Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-strings">Looping through strings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-dictionaries">Looping through dictionaries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-continue-and-break"><code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>, and <code class="docutils literal notranslate"><span class="pre">break</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style-loops">Code Style: Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-loops">Functions &amp; Loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
             </nav>
@@ -508,15 +521,15 @@ document.write(`
 <h1>Loops<a class="headerlink" href="#loops" title="Link to this heading">#</a></h1>
 <p>We previously discussed conditionals as a way to control the flow of your code. Here, we introduce the concept of loops. We’ll discuss <code class="docutils literal notranslate"><span class="pre">while</span></code> loops and <code class="docutils literal notranslate"><span class="pre">for</span></code> loops and introduce how to incorporate these into your code.</p>
 <p>Specifically, <strong>loops</strong> are a procedure utilized in code to repeat a piece of code more than once.</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_wlspdu2r&config[provider]={"widgetId":"1_3daqrel3"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
 <div class="alert alert-success">
 A <b>loop</b> is a procedure to repeat a piece of code.
 </div><p>More specifically, loops help you to avoid copy and pasting similar pieces of your code over and over again throughout your code. It’s best to avoid copying and pasting code to (1) make your code more readable to yourself and others and (2) to avoid errors when debugging. By avoiding copying and pasting, when you make a change to improve your code, you only have to make that edit in one single location rather than in every place where the code has been copy and pasted.</p>
 <p>This means that when it comes to repetitive actions in code, if you find yourself copying + pasting, rethink your strategy. Loops are one way to avoid this. We’ll discuss other approaches later on.</p>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/0QefC8Kn3dY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-</div></div>
-</div>
 <section id="why-loops">
 <h2>Why loops?<a class="headerlink" href="#why-loops" title="Link to this heading">#</a></h2>
 <p>Imagine you wanted to send an email to all the email addresses in your list.</p>
@@ -537,8 +550,35 @@ A <b>loop</b> is a procedure to repeat a piece of code.
 <p>But, what if you had 100 emails or 1000 emails? Going through and changing the index to refer to the individual in your list of emails would take a long time and would be prone to error.</p>
 <p>This is when you want to turn to loops!</p>
 </section>
+<section id="loops-the-concept">
+<h2>Loops: The Concept<a class="headerlink" href="#loops-the-concept" title="Link to this heading">#</a></h2>
+<p>Before we jump into the code underlying loops in python, let’s consider some real-world examples of loops to help wrap our minds around the idea of loops generally and the difference between a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop and a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop</p>
+<section id="for-loops">
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_jtuzkwhv&config[provider]={"widgetId":"1_9ooqtcu6"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
+</section>
 <section id="while-loops">
-<h2><code class="docutils literal notranslate"><span class="pre">while</span></code> Loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h2>
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h3>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_6m0eefia&config[provider]={"widgetId":"1_zq288ywd"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
+</section>
+</section>
+<section id="loops-the-code">
+<h2>Loops: The Code<a class="headerlink" href="#loops-the-code" title="Link to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_o9c0wxnu&config[provider]={"widgetId":"1_hh24ynnk"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
+<section id="id1">
+<h3><code class="docutils literal notranslate"><span class="pre">while</span></code> Loops<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
 <p>A <code class="docutils literal notranslate"><span class="pre">while</span></code> loop is a procedure to use that will repeat the code within the loop for as long as a condition is met. The loop will terminate (stop running the code) once the condition is no longer met.</p>
 <div class="alert alert-success">
 A <b>while loop</b> is a procedure to repeat a piece of code while some condition is still met. 
@@ -607,8 +647,8 @@ A <b>while loop</b> is a procedure to repeat a piece of code while some conditio
 <p><code class="docutils literal notranslate"><span class="pre">keep_looping</span></code> now stores the value <code class="docutils literal notranslate"><span class="pre">False</span></code>. The <code class="docutils literal notranslate"><span class="pre">while</span></code> condition is no longer <code class="docutils literal notranslate"><span class="pre">True</span></code>, and the loop terminates.</p>
 <p>Note that the final line of code here (the <code class="docutils literal notranslate"><span class="pre">print()</span></code> statement) is <em>not</em> indented. This indicates that it is <em>not</em> part of the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. This line only executes, printing the last value stored in <code class="docutils literal notranslate"><span class="pre">counter</span></code> (3) once the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop terminates.</p>
 </section>
-<section id="for-loops">
-<h2><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>The second type of loop we’ll discuss for controlling the flow of your code is a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. This procedure repeats code for every element in a collection.</p>
 <p>So if you have a list and want the same code to operate on every element in the list, you’ll want to use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop.</p>
 <div class="alert alert-success">
@@ -657,7 +697,7 @@ True
 </div>
 <p>Above, we see that even though <code class="docutils literal notranslate"><span class="pre">my_item</span></code> was created and utilized within the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, it exists after the loop executes, storing whatever the last value stored during the <code class="docutils literal notranslate"><span class="pre">for</span></code> loops execution was.</p>
 <section id="looping-through-strings">
-<h3>Looping through strings<a class="headerlink" href="#looping-through-strings" title="Link to this heading">#</a></h3>
+<h4>Looping through strings<a class="headerlink" href="#looping-through-strings" title="Link to this heading">#</a></h4>
 <p>Note that loops are not used exclusively with strings. You can loop through all of the collections we’ve discussed previously - strings, tuples, and dictionaries.</p>
 <p>When we loop through strings, each character in the string is iterated through until the end of the string is encountered:</p>
 <div class="cell docutils container">
@@ -681,7 +721,7 @@ n
 </div>
 </section>
 <section id="looping-through-dictionaries">
-<h3>Looping through dictionaries<a class="headerlink" href="#looping-through-dictionaries" title="Link to this heading">#</a></h3>
+<h4>Looping through dictionaries<a class="headerlink" href="#looping-through-dictionaries" title="Link to this heading">#</a></h4>
 <p>Further, when we loop through dictionaries, we iterate across the keys. To see what we mean, let’s re-create a dictionary we’ve seen previously for use in this example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -735,8 +775,16 @@ ghopper@navy.usa
 <p>In each of these scenarios, as we loop through a dictionary, we are using <code class="docutils literal notranslate"><span class="pre">person</span></code> to refer to the keys in the <code class="docutils literal notranslate"><span class="pre">student_emails</span></code> dictionary. Within the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, we can <em>refer</em> to <code class="docutils literal notranslate"><span class="pre">person</span></code> to specify the <em>key</em> in the dictionary.</p>
 </section>
 </section>
+</section>
+<section id="range-continue-and-break">
+<h2><code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>, and <code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#range-continue-and-break" title="Link to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_8t3c6h7c&config[provider]={"widgetId":"1_d03pf27m"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
 <section id="range">
-<h2><code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#range" title="Link to this heading">#</a></h2>
+<h3><code class="docutils literal notranslate"><span class="pre">range</span></code><a class="headerlink" href="#range" title="Link to this heading">#</a></h3>
 <p>As you begin to write loops, you’ll become familiar with the <code class="docutils literal notranslate"><span class="pre">range</span></code> operator, which creates a range of numbers. This operator is frequently used with loops.</p>
 <div class="alert alert-success">
 <code>range</code> is an operator to create a range of numbers, that is often used with loops.
@@ -797,7 +845,7 @@ ghopper@navy.usa
 </div>
 </section>
 <section id="continue">
-<h2><code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#continue" title="Link to this heading">#</a></h2>
+<h3><code class="docutils literal notranslate"><span class="pre">continue</span></code><a class="headerlink" href="#continue" title="Link to this heading">#</a></h3>
 <p>Another helpful operator is <code class="docutils literal notranslate"><span class="pre">continue</span></code>. When encountered ina loop, <code class="docutils literal notranslate"><span class="pre">continue</span></code> specifies to jump ahead to the next iteration of a loop, regardless of the code below in the loop.</p>
 <div class="alert alert-success">
 <code>continue</code> is a special operator to jump ahead to the next iteration of a loop.
@@ -849,7 +897,7 @@ n
 </div>
 </section>
 <section id="break">
-<h2><code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#break" title="Link to this heading">#</a></h2>
+<h3><code class="docutils literal notranslate"><span class="pre">break</span></code><a class="headerlink" href="#break" title="Link to this heading">#</a></h3>
 <p>Finally, <code class="docutils literal notranslate"><span class="pre">break</span></code> is a special operator that, when encountered will terminate the loop. Unlike <code class="docutils literal notranslate"><span class="pre">continue</span></code> which carries on immediately to the next iteration of the loop, <code class="docutils literal notranslate"><span class="pre">break</span></code>, when <code class="docutils literal notranslate"><span class="pre">break</span></code> is encountered, the whole loop terminates (stops executing)</p>
 <div class="alert alert-success">
 <code>break</code> is a special operator to break out of a loop.
@@ -894,6 +942,106 @@ e
 </pre></div>
 </div>
 </div>
+</div>
+</section>
+</section>
+<section id="code-style-loops">
+<h2>Code Style: Loops<a class="headerlink" href="#code-style-loops" title="Link to this heading">#</a></h2>
+<p><strong>Good Code Style</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code>/<code class="docutils literal notranslate"><span class="pre">while</span></code> statement with a colon at the end on first line</p></li>
+<li><p>all code within the loop inside a code block (indented)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+
+<span class="k">while</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Code Style to Avoid</strong></p>
+<p>Whereas, we avoid putting a loop and its contents on a single line. And, of course, we don’t want to forget about spacing around operator guidelines discussed previously!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span><span class="o">=-</span><span class="mi">5</span>
+<span class="k">while</span> <span class="n">number</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span><span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">);</span><span class="n">number</span><span class="o">=</span><span class="n">number</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="functions-loops">
+<h2>Functions &amp; Loops<a class="headerlink" href="#functions-loops" title="Link to this heading">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe id="kaltura_player" type="text/javascript"  src='https://cdnapisec.kaltura.com/p/2323111/embedPlaykitJs/uiconf_id/52706832?iframeembed=true&entry_id=1_jli32hds&config[provider]={"widgetId":"1_873msqyp"}'  style="width: 800px;height: 450px;border: 0;" allowfullscreen webkitallowfullscreen mozAllowFullScreen allow="autoplay *; fullscreen *; encrypted-media *" sandbox="allow-forms allow-same-origin allow-scripts allow-top-navigation allow-pointer-lock allow-popups allow-modals allow-orientation-lock allow-popups-to-escape-sandbox allow-presentation allow-top-navigation-by-user-activation" title="Kaltura Player"></iframe>
+</div></div>
+</div>
+<p>To tie concepts discussed thus far together, let’s consider an example of a function where we want to take a string as input and count the number of vowels in the string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">count_vowels</span><span class="p">(</span><span class="n">input_string</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">vowels</span> <span class="o">=</span> <span class="s1">&#39;AEIOUaeiou&#39;</span>
+    
+    <span class="k">for</span> <span class="n">ltr</span> <span class="ow">in</span> <span class="n">input_string</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ltr</span> <span class="ow">in</span> <span class="n">vowels</span><span class="p">:</span>
+            <span class="n">count</span> <span class="o">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span>
+    
+    <span class="k">return</span> <span class="n">count</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above function we see that we’re looping through each <code class="docutils literal notranslate"><span class="pre">ltr</span></code> in the <code class="docutils literal notranslate"><span class="pre">input_string</span></code> (the specific string will be specified by the user on function execution. And, if that <code class="docutils literal notranslate"><span class="pre">ltr</span></code> is in the provided string containing the <code class="docutils literal notranslate"><span class="pre">vowels</span></code> then we will increase the value in <code class="docutils literal notranslate"><span class="pre">count</span></code> by 1. Once the loop terminates the final value of <code class="docutils literal notranslate"><span class="pre">count</span></code> (which will be the number of vowels in <code class="docutils literal notranslate"><span class="pre">input_string</span></code>) will be returned from the function.</p>
+<p>If we execute the function below, we’ll see the intended output:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># counts two vowels a and o</span>
+<span class="n">count_vowels</span><span class="p">(</span><span class="s1">&#39;Shannon&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># correctly counts capital vowels too</span>
+<span class="n">count_vowels</span><span class="p">(</span><span class="s1">&#39;KAYDEN&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># does not always output the value 2</span>
+<span class="n">count_vowels</span><span class="p">(</span><span class="s1">&#39;bbbbbAEIOUaeiouccc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/0QefC8Kn3dY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+</div></div>
 </div>
 </section>
 <section id="exercises">
@@ -1058,15 +1206,28 @@ E) This code prints forever</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-loops">Why loops?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> Loops</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-strings">Looping through strings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-dictionaries">Looping through dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-the-concept">Loops: The Concept</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops"><code class="docutils literal notranslate"><span class="pre">for</span></code> loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops"><code class="docutils literal notranslate"><span class="pre">while</span></code> loops</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loops-the-code">Loops: The Code</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><code class="docutils literal notranslate"><span class="pre">while</span></code> Loops</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><code class="docutils literal notranslate"><span class="pre">for</span></code> Loops</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-strings">Looping through strings</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-through-dictionaries">Looping through dictionaries</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#range-continue-and-break"><code class="docutils literal notranslate"><span class="pre">range</span></code>, <code class="docutils literal notranslate"><span class="pre">continue</span></code>, and <code class="docutils literal notranslate"><span class="pre">break</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range"><code class="docutils literal notranslate"><span class="pre">range</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#continue"><code class="docutils literal notranslate"><span class="pre">continue</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#break"><code class="docutils literal notranslate"><span class="pre">break</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-style-loops">Code Style: Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-loops">Functions &amp; Loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
   </nav></div>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -631,6 +631,74 @@ document.write(`
             <span class="n">output</span> <span class="o">=</span> <span class="n">key</span> <span class="o">*</span> <span class="n">salary</span>
     
     <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q7</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">exclaim</span><span class="p">(</span><span class="n">str_a</span><span class="p">,</span> <span class="n">str_b</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">str_a</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">str_b</span> <span class="o">+</span> <span class="s1">&#39;!&#39;</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+		<span class="n">exclaim</span><span class="p">(</span><span class="s1">&#39;Happy&#39;</span><span class="p">,</span> <span class="s1">&#39;Friday&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q8</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">return_bigger</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+<span class="k">if</span> <span class="n">num1</span> <span class="o">&gt;</span> <span class="n">num2</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">num1</span>
+<span class="k">elif</span> <span class="n">num2</span> <span class="o">&gt;</span> <span class="n">num1</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">num2</span>
+<span class="k">elif</span> <span class="n">num2</span> <span class="o">==</span> <span class="n">num1</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">num1</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q9</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">buy_or_save</span><span class="p">(</span><span class="n">round_1</span><span class="p">,</span> <span class="n">round_2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">round_1</span> <span class="o">==</span> <span class="s1">&#39;W&#39;</span> <span class="ow">and</span> <span class="n">round_2</span> <span class="o">==</span> <span class="s1">&#39;W&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;The team should save!&#39;</span>
+    <span class="k">elif</span> <span class="n">round_1</span> <span class="o">==</span> <span class="s1">&#39;L&#39;</span> <span class="ow">and</span> <span class="n">round_2</span> <span class="o">==</span> <span class="s1">&#39;L&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;The team should buy!&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;The team should half-buy!&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q10</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">matcha</span><span class="p">(</span><span class="n">color</span><span class="p">,</span> <span class="n">texture</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;vibrant green&quot;</span> <span class="ow">and</span> <span class="n">texture</span> <span class="o">==</span> <span class="s2">&quot;fine&quot;</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s2">&quot;This is ceremonial-grade matcha!&quot;</span> <span class="c1">#wording may vary</span>
+	<span class="k">elif</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">&quot;dull green&quot;</span> <span class="ow">and</span> <span class="n">texture</span> <span class="o">==</span> <span class="s2">&quot;fine&quot;</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s2">&quot;This is high-grade matcha!&quot;</span> <span class="c1">#wording may vary</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s2">&quot;This is low-grade matcha!&quot;</span> <span class="c1">#wording may vary</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q10</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">phone_time</span><span class="p">(</span><span class="n">screen_time</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">screen_time</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">type</span><span class="p">(</span><span class="n">screen_time</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s2">&quot;Invalid Input&quot;</span> <span class="c1">#message may vary</span>
+	<span class="k">elif</span> <span class="n">screen_time</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s2">&quot;Good job for keeping a low screen time!&quot;</span> <span class="c1">#message may vary</span>
+	<span class="k">elif</span> <span class="n">screen_time</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s2">&quot;It might be good to take a break.&quot;</span> <span class="c1">#message may vary</span>
 </pre></div>
 </div>
 </div>
