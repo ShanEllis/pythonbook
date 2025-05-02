@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -691,7 +691,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>UDFs Q10</strong></p>
+<p><strong>UDFs Q11</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">phone_time</span><span class="p">(</span><span class="n">screen_time</span><span class="p">):</span>
@@ -701,6 +701,25 @@ document.write(`
 		<span class="k">return</span> <span class="s2">&quot;Good job for keeping a low screen time!&quot;</span> <span class="c1">#message may vary</span>
 	<span class="k">elif</span> <span class="n">screen_time</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
 		<span class="k">return</span> <span class="s2">&quot;It might be good to take a break.&quot;</span> <span class="c1">#message may vary</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>UDFs Q12</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">reseller_markup</span><span class="p">(</span><span class="n">prices</span><span class="p">):</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+		<span class="k">return</span> <span class="err">“</span><span class="n">No</span> <span class="n">Labubu</span> <span class="n">resellers</span><span class="err">”</span>
+	
+    <span class="n">difference</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">prices</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+	
+    <span class="k">if</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">prices</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="err">“</span><span class="n">The</span> <span class="n">first</span> <span class="n">Labubu</span> <span class="n">reseller</span> <span class="ow">is</span> <span class="err">”</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">difference</span><span class="p">)</span> <span class="o">+</span> <span class="err">“</span> <span class="n">cheaper</span> <span class="n">than</span> <span class="n">the</span> <span class="n">second</span> <span class="n">reseller</span><span class="err">”</span>
+    <span class="k">elif</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">prices</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="err">“</span><span class="n">The</span> <span class="n">first</span> <span class="n">Labubu</span> <span class="n">reseller</span> <span class="ow">is</span> <span class="err">”</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">difference</span><span class="p">)</span> <span class="o">+</span> <span class="err">“</span> <span class="n">more</span> <span class="n">expensive</span> <span class="n">than</span> <span class="n">the</span> <span class="n">second</span> <span class="n">reseller</span><span class="err">”</span>
+	<span class="k">elif</span> <span class="n">prices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">prices</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+		<span class="k">return</span> <span class="err">“</span><span class="n">They</span> <span class="n">are</span> <span class="n">the</span> <span class="n">same</span> <span class="n">price</span><span class="err">”</span>
 </pre></div>
 </div>
 </div>
