@@ -57,13 +57,13 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/06-classes/modules';</script>
-    <link rel="canonical" href="content/content/06-classes/modules.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/07-scientific-computing/modules';</script>
+    <link rel="canonical" href="content/content/07-scientific-computing/modules.html" />
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Classes" href="classes.html" />
-    <link rel="prev" title="Objects" href="objects.html" />
+    <link rel="next" title="Scientific Computing" href="scientific_computing.html" />
+    <link rel="prev" title="Practice: Classes" href="../06-classes/practice.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -207,18 +207,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../05-collections/practice.html">Practice: Collections &amp; Loops</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Classes</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="objects.html">Objects</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="classes.html">Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="practice.html">Practice: Classes</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/methods.html">Methods: The Concept</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/objects.html">Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/classes.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-classes/practice.html">Practice: Classes</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Scientific Computing</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/scientific_computing.html">Scientific Computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/numpy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/pandas.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../07-scientific-computing/next_steps.html">Next Steps</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scientific_computing.html">Scientific Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numpy.html"><code class="docutils literal notranslate"><span class="pre">NumPy</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="pandas.html"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="next_steps.html">Next Steps</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Strong Code</span></p>
 <ul class="nav bd-sidenav">
@@ -293,7 +295,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/06-classes/modules.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/shanellis/pythonbook/blob/master/content/07-scientific-computing/modules.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -341,7 +343,7 @@
       
       
       
-      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/06-classes/modules.ipynb" target="_blank"
+      <li><a href="https://github.com/shanellis/pythonbook/edit/master/content/07-scientific-computing/modules.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,7 +360,7 @@
       
       
       
-      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/06-classes/modules.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/shanellis/pythonbook/issues/new?title=Issue%20on%20page%20%2Fcontent/07-scientific-computing/modules.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +390,7 @@
       
       
       
-      <li><a href="../../_sources/content/06-classes/modules.ipynb" target="_blank"
+      <li><a href="../../_sources/content/07-scientific-computing/modules.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -911,7 +913,7 @@ Warning: <code>*</code> <code>imports</code> are to be avoided.
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/06-classes"
+            path: "./content/07-scientific-computing"
         },
         predefinedOutput: true
     }
@@ -929,20 +931,20 @@ Warning: <code>*</code> <code>imports</code> are to be avoided.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="objects.html"
+       href="../06-classes/practice.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Objects</p>
+        <p class="prev-next-title">Practice: Classes</p>
       </div>
     </a>
     <a class="right-next"
-       href="classes.html"
+       href="scientific_computing.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Classes</p>
+        <p class="prev-next-title">Scientific Computing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
