@@ -35,12 +35,13 @@ parts:
       - file: content/05-collections/practice
   - caption: Classes
     chapters:
+      - file: content/06-classes/methods
       - file: content/06-classes/objects
-      - file: content/06-classes/modules
       - file: content/06-classes/classes
       - file: content/06-classes/practice
   - caption: Scientific Computing
     chapters:
+      - file: content/07-scientific-computing/modules
       - file: content/07-scientific-computing/scientific_computing
       - file: content/07-scientific-computing/numpy
       - file: content/07-scientific-computing/pandas
