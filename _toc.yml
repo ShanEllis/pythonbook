@@ -8,6 +8,7 @@ parts:
       - file: content/01-welcome/why
   - caption: Getting Started
     chapters:
+      - file: content/02-getting-started/file_paths
       - file: content/02-getting-started/commandline
       - file: content/02-getting-started/installation
       - file: content/02-getting-started/jupyter_notebooks
