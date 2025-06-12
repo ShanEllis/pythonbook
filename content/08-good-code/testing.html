@@ -62,7 +62,7 @@
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Answers" href="../0X-answers/answers_intro.html" />
+    <link rel="next" title="Practice: Strong Code" href="practice.html" />
     <link rel="prev" title="Documentation" href="documentation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -229,6 +229,7 @@
 <li class="toctree-l1"><a class="reference internal" href="code_style.html">Code Style</a></li>
 <li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Code Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practice.html">Practice: Strong Code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Answers</span></p>
 <ul class="nav bd-sidenav">
@@ -237,6 +238,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../0X-answers/03-answers.html">Answers: Collections &amp; Loops</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../0X-answers/04-answers.html">Answers: Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../0X-answers/05-answers.html">Answers: Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../0X-answers/08-answers.html">Answers: Strong Code</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements &amp; License</span></p>
 <ul class="nav bd-sidenav">
@@ -462,7 +464,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -478,6 +482,32 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-code-testing">Types of Code Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driven-development">Test-Driven Development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests">Unit Tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-write-tests">How to Write Tests</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unittest"><code class="docutils literal notranslate"><span class="pre">unittest</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unittest-template"><code class="docutils literal notranslate"><span class="pre">unittest</span></code> template</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assert-statements"><code class="docutils literal notranslate"><span class="pre">assert</span></code> statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assertequal-a-b"><code class="docutils literal notranslate"><span class="pre">.assertEqual(a,</span> <span class="pre">b)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#asserttrue-x"><code class="docutils literal notranslate"><span class="pre">.assertTrue(x)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assertfalse-x"><code class="docutils literal notranslate"><span class="pre">.assertFalse(x)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assertisinstance-a-b"><code class="docutils literal notranslate"><span class="pre">.assertIsInstance(a,</span> <span class="pre">b)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assertin-a-b"><code class="docutils literal notranslate"><span class="pre">.assertIn(a,</span> <span class="pre">b)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-unit-test">A unit test</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -489,7 +519,318 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="code-testing">
 <h1>Code Testing<a class="headerlink" href="#code-testing" title="Link to this heading">#</a></h1>
-<p>Coming Soon.</p>
+<p>Code testing involves the process of writing formal tests that ensure your code is working as intended. These tests can be compiled into a formal testing suite. The process of including a testing suite within a coding project not only enables you, the programmer, to efficiently check that your code is working as intended, but it also demonstrates to others looking through your projects that your code has been tested, making it more trustworthy.</p>
+<section id="types-of-code-testing">
+<h2>Types of Code Testing<a class="headerlink" href="#types-of-code-testing" title="Link to this heading">#</a></h2>
+<p>While there are more than the tests described here, these four are core to understanding testing code projects early on in one’s programming journey. In fact, if you’ve been writing bits of code to ensure that the function or class you’ve just written is working as intended, you’ve already been writing the first kind of test, a smoke test. <strong>Smoke tests</strong> are not formal tests, but rather they are the preliminary checks you run when writing your code to ensure that it’s working as intended. <strong>Unit tests</strong>, on the other hand, are formal tests that ensure the code you’ve written is behaving as expected. These are the tests we’ll focus on in this chapter. There are a number of different platforms that exist for code testing in python; however, here we’ll focus on the <code class="docutils literal notranslate"><span class="pre">unittest</span></code> framework to implement unit testing. Beyond unit testing, <strong>integration</strong> and <strong>sytem tests</strong> go beyond testing a single function or class to testing an entire code project. While we won’t go further with these here, it’s important to know that there is testing beyond unit tests.</p>
+<ol class="arabic simple">
+<li><p><strong>Smoke tests</strong>: preliminary tests to check basic functionality (gut check)</p></li>
+<li><p><strong>Unit tests</strong> (primary focus): test functions &amp; objects to ensure that the code is behaving as expected</p></li>
+<li><p><strong>Integration tests</strong>: test functions, classes &amp; modules interacting</p></li>
+<li><p><strong>System tests</strong>: tests end-to-end behavior</p></li>
+</ol>
+</section>
+<section id="test-driven-development">
+<h2>Test-Driven Development<a class="headerlink" href="#test-driven-development" title="Link to this heading">#</a></h2>
+<p>In software development, test-driven development is an approach in which you write tests first - and then write code to pass the tests.</p>
+<ul class="simple">
+<li><p>Ensures you go into writing code with a good plan / outline</p></li>
+<li><p>Ensures that you have a test suite, as you can not decide to neglect to test your code after the fact you made the test suite</p></li>
+<li><p>Note: when you complete (or at least write) assignments for this class, you are effectively doing test-driven development</p></li>
+</ul>
+</section>
+<section id="unit-tests">
+<h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Link to this heading">#</a></h2>
+<p>When we consider writing unit tests using the <code class="docutils literal notranslate"><span class="pre">unittest</span></code> framework, we’ll consider the following:</p>
+<ul class="simple">
+<li><p>We write one test for each “piece” of your code (function, class, etc.)</p></li>
+<li><p>Tests should ensure that the code is operating as expected</p></li>
+<li><p>Testing should consider “edge (atypical) cases”</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unittest</span></code> will let you know which tests pass/fail/throw an error</p></li>
+</ul>
+<p>By formalizing tests using the <code class="docutils literal notranslate"><span class="pre">unittest</span></code> framework will help you resist the urge to assume computers will act how you think it will work.</p>
+<section id="how-to-write-tests">
+<h3>How to Write Tests<a class="headerlink" href="#how-to-write-tests" title="Link to this heading">#</a></h3>
+<p>Given a function or class you want to test:</p>
+<ul class="simple">
+<li><p>You need to have an expectation for what it should do</p></li>
+<li><p>Write out some example cases, with known answers</p></li>
+<li><p>Use assert to check that your example cases do run as expected</p></li>
+<li><p>Collect these examples into test functions, stored in test files</p></li>
+</ul>
+</section>
+</section>
+<section id="unittest">
+<h2><code class="docutils literal notranslate"><span class="pre">unittest</span></code><a class="headerlink" href="#unittest" title="Link to this heading">#</a></h2>
+<p>When introducing the unittest framework, it’s important to know that its functionality will not be available until it’s imported:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="unittest-template">
+<h3><code class="docutils literal notranslate"><span class="pre">unittest</span></code> template<a class="headerlink" href="#unittest-template" title="Link to this heading">#</a></h3>
+<p>After importing, below you’ll find the basic <code class="docutils literal notranslate"><span class="pre">unittest</span></code> framework. Notably:</p>
+<ul class="simple">
+<li><p>the class name <em>must</em> start with <code class="docutils literal notranslate"><span class="pre">Test</span></code></p></li>
+<li><p>After <code class="docutils literal notranslate"><span class="pre">Test</span></code> the class name typically indicates the “piece” of code (function, class, etc.) being tested.</p></li>
+<li><p>Within the parentheses we inherit <code class="docutils literal notranslate"><span class="pre">TestCase</span></code> from <code class="docutils literal notranslate"><span class="pre">unittest</span></code> to enable use of its testing statements</p></li>
+<li><p>The methods within the class <em>must</em> start with <code class="docutils literal notranslate"><span class="pre">test_</span></code></p></li>
+<li><p>The rest of the method name after <code class="docutils literal notranslate"><span class="pre">test_</span></code> typically refer to what about the piece of code you’re testing</p></li>
+<li><p>Within each method, you can have any number of <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements.</p></li>
+</ul>
+<p>We’ll review a number of different <code class="docutils literal notranslate"><span class="pre">assert</span></code> statements and the cases in which you would use each in this chapter. The last three lines below run the test <code class="docutils literal notranslate"><span class="pre">TestName</span></code>. As you see, for each test/method within the class, we get a readout as to whether the test passes. Note taht <code class="docutils literal notranslate"><span class="pre">test_true</span></code> fails because what is within the parentheses (<code class="docutils literal notranslate"><span class="pre">False</span></code>) is NOT a true statement. This is included so you see what a failing test would look like; however, when we write tests, we’re writing them with the expectation/aim that they will all pass</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestName</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_equal</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_true</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># ...</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestName</span><span class="p">)</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_equal (__main__.TestName.test_equal) ... ok
+test_true (__main__.TestName.test_true) ... FAIL
+
+======================================================================
+FAIL: test_true (__main__.TestName.test_true)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;/var/folders/jp/hdbfltdj035719571j9wynwm0000gn/T/ipykernel_22759/3539443511.py&quot;, line 7, in test_true
+    self.assertTrue(False)
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.026s
+
+FAILED (failures=1)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="assert-statements">
+<h3><code class="docutils literal notranslate"><span class="pre">assert</span></code> statements<a class="headerlink" href="#assert-statements" title="Link to this heading">#</a></h3>
+<p>While there are many different <code class="docutils literal notranslate"><span class="pre">assert</span></code> statemetns within <code class="docutils literal notranslate"><span class="pre">unittest</span></code>, we’ll introduce a few of the most commonly-used here.</p>
+<section id="assertequal-a-b">
+<h4><code class="docutils literal notranslate"><span class="pre">.assertEqual(a,</span> <span class="pre">b)</span></code><a class="headerlink" href="#assertequal-a-b" title="Link to this heading">#</a></h4>
+<p>Checks if <code class="docutils literal notranslate"><span class="pre">a</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">b</span></code>. Similar to the expression <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code>.</p>
+<p>Note: Although it doesn’t affect the results, it’s good practice to let <code class="docutils literal notranslate"><span class="pre">a</span></code> be the expected value (what you think the result will be) and <code class="docutils literal notranslate"><span class="pre">b</span></code> be the actual value (what the result actually is).</p>
+<p>For example, if we wanted to check the <code class="docutils literal notranslate"><span class="pre">add</span></code> provided here:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>…we would want to consider our expectations of this function. Specifically, what would we expect the output from this function to be? Well, if we gave the inputs 4 and 6, we’d expect the output of the function to be 10. A perfect use case for <code class="docutils literal notranslate"><span class="pre">assertEqual</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Equality testing suite</span>
+<span class="k">class</span> <span class="nc">TestAdd</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_outcome</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestAdd</span><span class="p">)</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_outcome (__main__.TestAdd.test_outcome) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="asserttrue-x">
+<h4><code class="docutils literal notranslate"><span class="pre">.assertTrue(x)</span></code><a class="headerlink" href="#asserttrue-x" title="Link to this heading">#</a></h4>
+<p>Any time you have an expression that you expect to evaluate as <code class="docutils literal notranslate"><span class="pre">True</span></code>, you can use <code class="docutils literal notranslate"><span class="pre">assertTrue</span></code>, which checks if <code class="docutils literal notranslate"><span class="pre">x</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. Same as the expression <code class="docutils literal notranslate"><span class="pre">bool(x)</span> <span class="pre">==</span> <span class="pre">True</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Truth testing suite</span>
+<span class="k">class</span> <span class="nc">TestTrue</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_true</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestTrue</span><span class="p">)</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_true (__main__.TestTrue.test_true) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="assertfalse-x">
+<h4><code class="docutils literal notranslate"><span class="pre">.assertFalse(x)</span></code><a class="headerlink" href="#assertfalse-x" title="Link to this heading">#</a></h4>
+<p>On the other hand, <code class="docutils literal notranslate"><span class="pre">assertFalse</span></code> checks if <code class="docutils literal notranslate"><span class="pre">x</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>. Same as the expression <code class="docutils literal notranslate"><span class="pre">bool(x)</span> <span class="pre">==</span> <span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># False testing suite</span>
+<span class="k">class</span> <span class="nc">TestFalse</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_false</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span> <span class="o">==</span> <span class="mi">11</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestFalse</span><span class="p">)</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_false (__main__.TestFalse.test_false) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="assertisinstance-a-b">
+<h4><code class="docutils literal notranslate"><span class="pre">.assertIsInstance(a,</span> <span class="pre">b)</span></code><a class="headerlink" href="#assertisinstance-a-b" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">assertIsInstance</span></code> checks if <code class="docutils literal notranslate"><span class="pre">a</span></code> is of variable type <code class="docutils literal notranslate"><span class="pre">b</span></code> (int, float, str, bool) or is of an instance of class <code class="docutils literal notranslate"><span class="pre">b</span></code>. Similar to the expression <code class="docutils literal notranslate"><span class="pre">isinstance(a,</span> <span class="pre">b)</span></code> or <code class="docutils literal notranslate"><span class="pre">type(a)</span> <span class="pre">==</span> <span class="pre">b</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instance testing suite</span>
+<span class="k">class</span> <span class="nc">TestInstance</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    
+    <span class="k">def</span> <span class="nf">test_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestInstance</span><span class="p">)</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_instance (__main__.TestInstance.test_instance) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="assertin-a-b">
+<h4><code class="docutils literal notranslate"><span class="pre">.assertIn(a,</span> <span class="pre">b)</span></code><a class="headerlink" href="#assertin-a-b" title="Link to this heading">#</a></h4>
+<p>Finally, <code class="docutils literal notranslate"><span class="pre">assertIn</span></code> checks for membership, if <code class="docutils literal notranslate"><span class="pre">a</span></code> belongs in <code class="docutils literal notranslate"><span class="pre">b</span></code>. Same as the expression <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">in</span> <span class="pre">b</span></code>. Here, rather than test our <code class="docutils literal notranslate"><span class="pre">add</span></code> function, we’ll demonstrate that you can define an attribute (here <code class="docutils literal notranslate"><span class="pre">fruits</span></code>) and then test it within each of the methods:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membership testing suite</span>
+<span class="k">class</span> <span class="nc">TestIn</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="s1">&#39;bananas&#39;</span><span class="p">,</span> <span class="s1">&#39;oranges&#39;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">test_membership</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s1">&#39;apples&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fruits</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_membership_bad</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span><span class="s1">&#39;pears&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fruits</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestIn</span><span class="p">)</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_membership (__main__.TestIn.test_membership) ... ok
+test_membership_bad (__main__.TestIn.test_membership_bad) ... FAIL
+
+======================================================================
+FAIL: test_membership_bad (__main__.TestIn.test_membership_bad)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File &quot;/var/folders/jp/hdbfltdj035719571j9wynwm0000gn/T/ipykernel_22759/4249137848.py&quot;, line 10, in test_membership_bad
+    self.assertIn(&#39;pears&#39;, self.fruits)
+AssertionError: &#39;pears&#39; not found in [&#39;apples&#39;, &#39;bananas&#39;, &#39;oranges&#39;]
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.002s
+
+FAILED (failures=1)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="a-unit-test">
+<h3>A unit test<a class="headerlink" href="#a-unit-test" title="Link to this heading">#</a></h3>
+<p>Putting the above all together, we could test our <code class="docutils literal notranslate"><span class="pre">add</span></code> function with a few different assert statements, all of which we would expect to be be true if our function is working as intended. Specifically, <code class="docutils literal notranslate"><span class="pre">test_instance</span></code> checks that the output given two different inputs would be of the expected type. <code class="docutils literal notranslate"><span class="pre">test_output</span></code> checks that the specific values returned are correct. We’ve even snuck in an additional <code class="docutils literal notranslate"><span class="pre">assert</span></code> statement - <code class="docutils literal notranslate"><span class="pre">assertAlmostEqual</span></code>, which is helpful when checking float values!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestAllAdd</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+   
+    <span class="k">def</span> <span class="nf">test_instance</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsInstance</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="nb">float</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_output</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mf">10.5</span><span class="p">,</span> <span class="n">add</span><span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">suite</span> <span class="o">=</span> <span class="n">unittest</span><span class="o">.</span><span class="n">TestLoader</span><span class="p">()</span><span class="o">.</span><span class="n">loadTestsFromTestCase</span><span class="p">(</span><span class="n">TestAllAdd</span><span class="p">)</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">TextTestRunner</span><span class="p">(</span><span class="n">verbosity</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">suite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test_instance (__main__.TestAllAdd.test_instance) ... ok
+test_output (__main__.TestAllAdd.test_output) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -532,11 +873,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../0X-answers/answers_intro.html"
+       href="practice.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Answers</p>
+        <p class="prev-next-title">Practice: Strong Code</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -547,7 +888,38 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-code-testing">Types of Code Testing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-driven-development">Test-Driven Development</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unit-tests">Unit Tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-write-tests">How to Write Tests</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unittest"><code class="docutils literal notranslate"><span class="pre">unittest</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unittest-template"><code class="docutils literal notranslate"><span class="pre">unittest</span></code> template</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assert-statements"><code class="docutils literal notranslate"><span class="pre">assert</span></code> statements</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assertequal-a-b"><code class="docutils literal notranslate"><span class="pre">.assertEqual(a,</span> <span class="pre">b)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#asserttrue-x"><code class="docutils literal notranslate"><span class="pre">.assertTrue(x)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assertfalse-x"><code class="docutils literal notranslate"><span class="pre">.assertFalse(x)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assertisinstance-a-b"><code class="docutils literal notranslate"><span class="pre">.assertIsInstance(a,</span> <span class="pre">b)</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assertin-a-b"><code class="docutils literal notranslate"><span class="pre">.assertIn(a,</span> <span class="pre">b)</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-unit-test">A unit test</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
