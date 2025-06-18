@@ -8,7 +8,7 @@ It was initially developed for students in COGS 18 Introduction to Python at UC 
 
 ## Authors
 
-This book has been a collaborative effort over time. Text included has been written by Shannon Ellis, Thomas Donoghue, and Karan Narula. Videos feature both Shannon Ellis and Jason Fleishcer, and were produced/edited by Neha Pearce. Animation GIFs are by Keshav Tiwari. 
+This book has been a collaborative effort over time. Text included has been written by Shannon Ellis, Thomas Donoghue, and Karan Narula. Videos feature both Shannon Ellis and Jason Fleischer, and were produced/edited by Neha Pearce. Animation GIFs are by Keshav Tiwari. 
 
 ## Textbook Feedback
 
