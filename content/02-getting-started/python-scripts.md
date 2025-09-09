@@ -6,3 +6,4 @@ In the previous section, we learned how to use the Python interpreter to run Pyt
 
 A Python script is a file containing Python code. You can write Python scripts using any text editor, such as Notepad, TextEdit, or Visual Studio Code. To create a new Python script, follow these steps:
 
+[COMING SOON]

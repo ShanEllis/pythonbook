@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -520,29 +520,6 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Variables Q2</strong>. Consider each of the following scenarios and determine what type of collection (list, tuple, dictionary) would be best to use. For each scenario, store ‘list’, ‘tuple’ or ‘dictionary’ in the variable specified, depending upon which is best for the given scnenario. (Note: Capitalization and spelling matter.)</p>
-<p>For example, for <code class="docutils literal notranslate"><span class="pre">scenario_A</span></code>, if you thought the correct answer were ‘list’ your answer in the answer cell would be:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">scenario_A</span> <span class="o">=</span> <span class="s1">&#39;list&#39;</span>
-</pre></div>
-</div>
-<p>Scenarios:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">scenario_A</span></code> | You want to store all of the names of the films that won an Academy Award last year.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scenario_B</span></code> | You want to keep a record of all the email addresses (and only the email addresses) of all of Directors working in Hollywood, so that you can email them your brilliant ideas whenever you have them.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scenario_C</span></code> | You want to store the names <em>and</em> email addresses of all of the Directors working in Hollywood, so that you can email them your brilliant ideas whenever you have them <em>and</em> address the email to the right name.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">scenario_D</span></code> | You want to keep a record of all of the films that have ever won an Academy award and the year in which that award was won.</p></li>
-</ul>
-<p>Checks you can use to see if you’re on the right track:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">scenario_A</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tuple&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionary&#39;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">scenario_B</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tuple&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionary&#39;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">scenario_C</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tuple&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionary&#39;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">scenario_D</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tuple&#39;</span><span class="p">,</span> <span class="s1">&#39;list&#39;</span><span class="p">,</span> <span class="s1">&#39;dictionary&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="operators">
 <h2>Operators<a class="headerlink" href="#operators" title="Link to this heading">#</a></h2>
@@ -588,27 +565,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Operators Q3</strong>. Two variables (<code class="docutils literal notranslate"><span class="pre">spring_holidays</span></code> and <code class="docutils literal notranslate"><span class="pre">current_holidays</span></code>) have been created for you below. Using <strong>only these two variables and membership operators</strong>, define the following two variables below (<code class="docutils literal notranslate"><span class="pre">yes_member</span></code> and <code class="docutils literal notranslate"><span class="pre">no_member</span></code>), such that they meet the following specifications:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">yes_member</span></code> | stores the boolean <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">no_member</span></code> | stores the boolean <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
-</ul>
-<p>Variables provided:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">spring_holidays</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;César Chávez&#39;</span><span class="p">,</span> <span class="s1">&#39;Passover&#39;</span><span class="p">,</span> <span class="s1">&#39;Easter&#39;</span><span class="p">,</span> 
-                   <span class="s1">&#39;Ramadan&#39;</span><span class="p">,</span> <span class="s1">&#39;Shavout&#39;</span><span class="p">,</span> <span class="s1">&#39;Memorial Day&#39;</span><span class="p">]</span>
-<span class="n">current_holiday</span> <span class="o">=</span> <span class="s1">&#39;Ramadan&#39;</span>
-</pre></div>
-</div>
-<p>Checks you can use to see if you’re on the right track:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">yes_member</span>
-<span class="k">assert</span> <span class="ow">not</span> <span class="n">no_member</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Operators Q4</strong>. Create three variables: <code class="docutils literal notranslate"><span class="pre">var_even</span></code>, <code class="docutils literal notranslate"><span class="pre">var_odd</span></code>, and <code class="docutils literal notranslate"><span class="pre">var_operator</span></code>.</p>
+<p><strong>Operators Q3</strong>. Create three variables: <code class="docutils literal notranslate"><span class="pre">var_even</span></code>, <code class="docutils literal notranslate"><span class="pre">var_odd</span></code>, and <code class="docutils literal notranslate"><span class="pre">var_operator</span></code>.</p>
 <p>Across these three variables:</p>
 <ul class="simple">
 <li><p>all seven math operators (<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">**</span></code>, <code class="docutils literal notranslate"><span class="pre">%</span></code>, <code class="docutils literal notranslate"><span class="pre">//</span></code>) must be used <em>at least once</em></p></li>
@@ -627,7 +584,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Operators Q5</strong>. Your answer will define two variables: <code class="docutils literal notranslate"><span class="pre">true_var</span></code> and <code class="docutils literal notranslate"><span class="pre">false_var</span></code>.</p>
+<p><strong>Operators Q4</strong>. Your answer will define two variables: <code class="docutils literal notranslate"><span class="pre">true_var</span></code> and <code class="docutils literal notranslate"><span class="pre">false_var</span></code>.</p>
 <p>These variables must satisfy the following requirements:</p>
 <ol class="arabic simple">
 <li><p>Each variable must be defined using <em>at least one</em> comparison operator (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>,<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">!=</span></code>,<code class="docutils literal notranslate"><span class="pre">==</span></code>).</p></li>
@@ -650,7 +607,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><strong>Operators Q6</strong> Create three variables: <code class="docutils literal notranslate"><span class="pre">comp_a</span></code>, <code class="docutils literal notranslate"><span class="pre">comp_b</span></code>, and <code class="docutils literal notranslate"><span class="pre">comp_c</span></code>.</p>
+<p><strong>Operators Q5</strong> Create three variables: <code class="docutils literal notranslate"><span class="pre">comp_a</span></code>, <code class="docutils literal notranslate"><span class="pre">comp_b</span></code>, and <code class="docutils literal notranslate"><span class="pre">comp_c</span></code>.</p>
 <p>These variables must satisfy the following requirements:</p>
 <ol class="arabic simple">
 <li><p>Each variable must store (aka return) the Boolean <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
@@ -664,26 +621,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">comp_a</span>
 <span class="k">assert</span> <span class="n">comp_b</span>
 <span class="k">assert</span> <span class="n">comp_c</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Operators Q7</strong>. Using the following string and list provided below, create two variables <code class="docutils literal notranslate"><span class="pre">memb_a</span></code> and <code class="docutils literal notranslate"><span class="pre">memb_b</span></code> that satisfy the following conditions:</p>
-<ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">memb_a</span></code> must use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator to check membership in <code class="docutils literal notranslate"><span class="pre">my_string</span></code>. It should store (return) <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">memb_b</span></code> must use the <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> operator to check membership in <code class="docutils literal notranslate"><span class="pre">my_list</span></code>. It should store (return) <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">memb_a</span></code> must refer to the <code class="docutils literal notranslate"><span class="pre">my_string</span></code> variable defined for you below. <code class="docutils literal notranslate"><span class="pre">memb_b</span></code> must refer to the <code class="docutils literal notranslate"><span class="pre">my_list</span></code> variable defined for you below.</p></li>
-</ol>
-<p>Variables provided:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;I love Python!&#39;</span>
-<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Chapters&#39;</span><span class="p">,</span> <span class="s1">&#39;Exercises&#39;</span><span class="p">,</span> <span class="s1">&#39;Practice&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Checks you can use to see if you’re on the right track:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">assert</span> <span class="n">memb_a</span>
-<span class="k">assert</span> <span class="ow">not</span> <span class="n">memb_b</span>
 </pre></div>
 </div>
 </div>
