@@ -6,7 +6,7 @@ Before we go any further, let's briefly introduce the tools we'll be using throu
 
 ### What is Python
 
-**Python** is a programming language, whose development is led by the [Python Software Foundation](XXX). The official Python organization website is [https://www.python.org].
+**Python** is a programming language, whose development is led by the [Python Software Foundation](https://www.python.org/psf-landing/). The official Python organization website is [https://www.python.org](https://www.python.org).
 
 Python - and most programming languages - are updated over time. As changes are made, these updates are released to the public. In this book, we assume that everyone has either **Python 3.6 or 3.7**. Now, if you have an older version, a lot of this content will apply. If you have a newer version, most of this content should work perfectly fine!
 

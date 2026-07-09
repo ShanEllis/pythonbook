@@ -1,32 +1,31 @@
 format: jb-book
 root: content/intro
-parts:
-  - caption: Welcome
-    chapters:
+chapters:
+  - file: content/01-welcome/welcome
+    sections:
       - file: content/01-welcome/tools
       - file: content/01-welcome/who
       - file: content/01-welcome/why
-  - caption: Getting Started
-    chapters:
+  - file: content/02-getting-started/getting_started
+    sections:
       - file: content/02-getting-started/file_paths
-      - file: content/02-getting-started/commandline
       - file: content/02-getting-started/installation
-      - file: content/02-getting-started/jupyter_notebooks
+      - file: content/02-getting-started/commandline
       - file: content/02-getting-started/python-scripts
-  - caption: The Basics
-    chapters:
+      - file: content/02-getting-started/jupyter_notebooks
+  - file: content/03-basics/basics
+    sections:
       - file: content/03-basics/variables
       - file: content/03-basics/operators
       - file: content/03-basics/conditionals
       - file: content/03-basics/practice
-  - caption: Functions
-    chapters:
+  - file: content/04-functions/functions_intro
+    sections:
       - file: content/04-functions/functions
       - file: content/04-functions/debugging_errors
-      - file: content/04-functions/namespaces_scope
       - file: content/04-functions/practice
-  - caption: Collections
-    chapters:
+  - file: content/05-collections/collections_loops
+    sections:
       - file: content/05-collections/lists
       - file: content/05-collections/tuples
       - file: content/05-collections/dictionaries
@@ -34,35 +33,30 @@ parts:
       - file: content/05-collections/chr_ord
       - file: content/05-collections/loops
       - file: content/05-collections/practice
-  - caption: Classes
-    chapters:
+  - file: content/06-classes/classes_intro
+    sections:
       - file: content/06-classes/methods
       - file: content/06-classes/objects
       - file: content/06-classes/classes
       - file: content/06-classes/practice
-  - caption: Scientific Computing
-    chapters:
+  - file: content/07-scientific-computing/scientific_computing
+    sections:
       - file: content/07-scientific-computing/modules
-      - file: content/07-scientific-computing/scientific_computing
       - file: content/07-scientific-computing/numpy
       - file: content/07-scientific-computing/pandas
       - file: content/07-scientific-computing/next_steps
-  - caption: Strong Code
-    chapters:
-      - file: content/08-good-code/good_code_intro
+  - file: content/08-good-code/good_code_intro
+    sections:
       - file: content/08-good-code/code_style
       - file: content/08-good-code/documentation
       - file: content/08-good-code/testing
       - file: content/08-good-code/practice
-  - caption: Answers
-    chapters:
-      - file: content/0X-answers/answers_intro
-      - file: content/0X-answers/02-answers
+  - file: content/0X-answers/answers_intro
+    sections:
       - file: content/0X-answers/03-answers
       - file: content/0X-answers/04-answers
       - file: content/0X-answers/05-answers
+      - file: content/0X-answers/06-answers
       - file: content/0X-answers/08-answers
-  - caption: Acknowledgements & License
-    chapters:
-      - file: content/acknowledgements
-      - file: content/LICENSE
+  - file: content/acknowledgements
+  - file: content/LICENSE

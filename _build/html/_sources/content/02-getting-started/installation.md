@@ -39,7 +39,7 @@ You should be good to go! You now have access to Python in the terminal and Pyth
 
 A quick note about the Microsoft Store install of Python:
 
-According to officials docs from the [Python Software Foundation](https://docs.python.org/3/using/windows.html#the-microsoft-store-package) the Microsoft store installation of python is an easily installable version directed for interactive use cases, specifically for Students. For the purposes of this textbook, the Microsoft Store installation of Python is sufficient, however do note that there are issues with the [redirection of local data, registry and temporary paths](https://docs.python.org/3/using/windows.html#the-microsoft-store-package) that may prevent you from write access to certain file locations. It is unlikely that anything in this textbook will require you to modify any such data, but if you run into this issue, you may want to consider the Full installation of Python through their **official** website which we will highlight below.
+According to official docs from the [Python Software Foundation](https://docs.python.org/3/using/windows.html#the-microsoft-store-package) the Microsoft store installation of python is an easily installable version directed for interactive use cases, specifically for Students. For the purposes of this textbook, the Microsoft Store installation of Python is sufficient, however do note that there are issues with the [redirection of local data, registry and temporary paths](https://docs.python.org/3/using/windows.html#the-microsoft-store-package) that may prevent you from write access to certain file locations. It is unlikely that anything in this textbook will require you to modify any such data, but if you run into this issue, you may want to consider the Full installation of Python through their **official** website which we will highlight below.
 
 ### Installing Python through the Python Website
 
@@ -57,4 +57,40 @@ According to officials docs from the [Python Software Foundation](https://docs.p
 
 ## Installing Python on a Mac
 
-Instructions Coming Soon
+As with Windows, before we install anything, let's check whether Python is already on your machine. Open your Terminal by going to `Finder` -> `Applications` -> `Utilities` -> `Terminal` (or press `Cmd + Space` and type `Terminal`). Then, type in `python3 --version` and press enter.
+
+If you see something like `Python 3.12.2`, Python 3 is already installed and you're good to go!
+
+A note before you do this: on a Mac that has never had developer tools installed, typing `python3` may cause a pop-up asking if you'd like to install the "command line developer tools". If you click `Install`, macOS will install a version of Python 3 for you (along with some other useful tools) - a perfectly fine option! If you'd rather install Python directly, click `Cancel` and follow the instructions below.
+
+There are two common ways to install Python on a Mac:
+
+1. Through the Python website: The most straightforward and most common approach.
+
+2. Through Homebrew: A good option *if* you already use the Homebrew package manager.
+
+### Installing Python through the Python Website
+
+1. Go to the [Python website](https://www.python.org/downloads/). The site will detect that you're on a Mac and offer you the latest version of Python.
+
+2. Click the download button to download the macOS installer.
+
+3. Open the downloaded `.pkg` file and follow the prompts in the installer (`Continue`, agree to the license, `Install`). You may be asked for your password.
+
+4. Once the installer finishes, open a **new** Terminal window and type in `python3 --version` to confirm that Python has been installed.
+
+A quick note about `python` vs `python3` on a Mac:
+
+On Macs, you'll want to get in the habit of typing `python3` (rather than just `python`) to launch Python, as the `python` command may not be defined (or, on older machines, may point to a very old Python 2 installation that you do *not* want to use). Similarly, use `pip3` anywhere this book says `pip`.
+
+### Installing Python through Homebrew
+
+[Homebrew](https://brew.sh/) is a popular package manager for macOS - a command line tool for installing software. If you already have Homebrew installed, you can install Python with a single command in your Terminal:
+
+```
+brew install python
+```
+
+Once it finishes, confirm the installation with `python3 --version`.
+
+If you *don't* already use Homebrew, we recommend sticking with the Python website installation above - it's simpler, and there's no need to install a package manager just for this.

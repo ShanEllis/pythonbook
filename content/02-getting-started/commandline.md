@@ -72,7 +72,7 @@ Go ahead and in your command line, type `pwd` and press `Enter`. You should see 
 
 A fun exercise to understand what your terminal is doing would be to do the following:
 
-1. open your terminal and get your current working directory by ysing the `pwd` command.
+1. open your terminal and get your current working directory by using the `pwd` command.
 2. Open your file explorer and navigate to the same directory.
 3. Compare the files and folders listed in the terminal with the ones in the file explorer. You can do this by using the `ls` command in the terminal and visually comparing the files and folders in the file explorer.
 
@@ -113,6 +113,16 @@ Go ahead and try it out in your command line. Run the `ls` command to see the fi
 ```
 touch test.txt
 ```
+
+````{admonition} Using Windows Powershell? Click here!
+:class: dropdown
+
+`touch` is not a built-in command in Windows Powershell (it comes from the Mac/Linux world), so you may get an error that looks something like: `touch : The term 'touch' is not recognized...`. Not to worry! Powershell has its own command, `New-Item`, that does the same thing:
+
+```
+New-Item test.txt
+```
+````
 
 Go ahead and try it out in your command line. Run the `ls` command to see the files and folders in the current directory. Then run the `touch` command to create a new file. Run the `ls` command again to see the files and folders in the current directory. You should see the new file that you created.
 
